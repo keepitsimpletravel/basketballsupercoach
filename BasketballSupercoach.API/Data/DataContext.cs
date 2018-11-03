@@ -13,5 +13,7 @@ namespace BasketballSupercoach.API.Data
         public DbSet<Player> Players { get; set; }
 
         public DbSet<TeamDetail> TeamDetails { get; set; }
+
+        public DbSet<User> Users { get; set; }
     }
 }
