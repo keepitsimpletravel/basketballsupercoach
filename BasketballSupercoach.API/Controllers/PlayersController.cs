@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BasketballSupercoach.API.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BasketballSupercoach.API.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class PlayersController : ControllerBase
@@ -27,6 +29,7 @@ namespace BasketballSupercoach.API.Controllers
             return Ok(players);
         }
 
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetPlayer(int id)
         {
