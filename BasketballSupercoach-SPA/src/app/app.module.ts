@@ -11,6 +11,12 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { AlertifyService } from './_services/alertify.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { TeamComponent } from './team/team.component';
+import { RankingsComponent } from './rankings/rankings.component';
+import { PlayersComponent } from './players/players.component';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './routes';
 
 
 
@@ -19,13 +25,18 @@ import { AlertifyService } from './_services/alertify.service';
       AppComponent,
       NavComponent,
       HomeComponent,
-      RegisterComponent
+      RegisterComponent,
+      DashboardComponent,
+      TeamComponent,
+      RankingsComponent,
+      PlayersComponent
    ],
    imports: [
       BrowserModule,
       HttpClientModule,
       FormsModule,
-      BsDropdownModule.forRoot()
+      BsDropdownModule.forRoot(),
+      RouterModule.forRoot(appRoutes)
    ],
    providers: [
       AuthService,

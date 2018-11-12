@@ -1,19 +1,19 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
   <div class="container">  
-    <a class="navbar-brand" href="#">Basketball Supercoach</a>
+    <a class="navbar-brand" [routerLink]="['/home']">Basketball Supercoach</a>
 
     <ul *ngIf="loggedIn()"class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Dashboard</a>
+      <li class="nav-item" routerLinkActive="router-link-active">
+        <a class="nav-link" [routerLink]="['/dashboard']"  >Dashboard</a>
       </li>
-     <li class="nav-item">
-        <a class="nav-link" href="#">Team</a>
+     <li class="nav-item" routerLinkActive="router-link-active">
+        <a class="nav-link" [routerLink]="['/team']">Team</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Players</a>
+      <li class="nav-item" routerLinkActive="router-link-active">
+        <a class="nav-link" [routerLink]="['/players']">Players</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Rankings</a>
+      <li class="nav-item" routerLinkActive="router-link-active">
+        <a class="nav-link" [routerLink]="['/rankings']">Rankings</a>
       </li>
     </ul>
 
