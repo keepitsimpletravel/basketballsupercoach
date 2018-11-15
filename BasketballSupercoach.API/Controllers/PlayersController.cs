@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+// using AutoMapper;
 using BasketballSupercoach.API.Data;
+using BasketballSupercoach.API.Dtos;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BasketballSupercoach.API.Controllers
 {
@@ -14,47 +13,36 @@ namespace BasketballSupercoach.API.Controllers
     [ApiController]
     public class PlayersController : ControllerBase
     {
-        private readonly DataContext _context;
-
-        public PlayersController(DataContext context)
+        private readonly IBasketballSupercoachRepository _repo;
+        // private readonly IMapper _mapper;
+        public PlayersController(IBasketballSupercoachRepository repo) //, IMapper mapper)
         {
-            _context = context; 
+            // _mapper = mapper; 
+            _repo = repo;
         }
-        
-        [AllowAnonymous]
+
         [HttpGet]
         public async Task<IActionResult> GetPlayers()
         {
-            var players = await _context.Players.ToListAsync();
+            var players = await _repo.GetPlayers();
+
+            // var playersToReturn = _mapper.Map<IEnumerable<PlayerForListDto>>(players);
+            
+            // return Ok(playersToReturn);
 
             return Ok(players);
         }
 
-        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetPlayer(int id)
         {
-            var player = await _context.Players.FirstOrDefaultAsync(x => x.playerId == id);
+            var player = await _repo.GetPlayer(id);
 
+            // var playerToReturn = _mapper.Map<PlayerForListDto>(player);
+
+            // return Ok(playerToReturn);
             return Ok(player);
-        }
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }
+

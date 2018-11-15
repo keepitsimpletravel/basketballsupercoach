@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace BasketballSupercoach.API.Models
 {
     public class User
@@ -9,5 +11,7 @@ namespace BasketballSupercoach.API.Models
         public byte[] PasswordHash { get; set; }
 
         public byte[] PasswordSalt { get; set; }
+
+        public ICollection<Photo> Photos { get; set; }
     }
 }

@@ -1,6 +1,6 @@
-namespace BasketballSupercoach.API.Models
+namespace BasketballSupercoach.API.Dtos
 {
-    public class Player
+    public class PlayerForListDto
     {
         public int Id { get; set; }
         public int PlayerId { get; set; }
