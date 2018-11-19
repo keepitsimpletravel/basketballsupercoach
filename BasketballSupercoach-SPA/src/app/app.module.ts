@@ -18,8 +18,16 @@ import { PlayersComponent } from './players/players.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { AuthGuard } from './_guards/auth.guard';
+import { PlayersService } from './_services/players.service';
+import { SharedModule } from 'primeng/components/common/shared';
+import { TableModule } from 'primeng/table';
+import { DropdownModule } from 'primeng/dropdown';
+import { JwtModule } from '@auth0/angular-jwt';
+// import { PlayerCardComponent } from './playerscard/player-card/player-card.component';
 
-
+export function tokenGetter() {
+    return localStorage.getItem('token');
+}
 
 @NgModule({
    declarations: [
@@ -31,19 +39,31 @@ import { AuthGuard } from './_guards/auth.guard';
       TeamComponent,
       RankingsComponent,
       PlayersComponent
+    //   PlayerCardComponent
    ],
    imports: [
       BrowserModule,
       HttpClientModule,
       FormsModule,
       BsDropdownModule.forRoot(),
-      RouterModule.forRoot(appRoutes)
+      RouterModule.forRoot(appRoutes),
+      SharedModule,
+      TableModule,
+      DropdownModule,
+      JwtModule.forRoot({
+        config: {
+            tokenGetter: tokenGetter,
+            whitelistedDomains: ['localhost:5000'],
+            blacklistedRoutes: ['localhost:5000/api/auth']
+        }
+      })
    ],
    providers: [
       AuthService,
       ErrorInterceptorProvider,
       AlertifyService,
-      AuthGuard
+      AuthGuard,
+      PlayersService
    ],
    bootstrap: [
       AppComponent

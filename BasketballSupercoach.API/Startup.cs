@@ -19,7 +19,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using BasketballSupercoach.API.Helpers;
-// using AutoMapper;
+using AutoMapper;
 
 namespace BasketballSupercoach.API
 {
@@ -38,6 +38,7 @@ namespace BasketballSupercoach.API
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddCors();
+            services.AddAutoMapper();
             // services.AddAutoMapper();
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IBasketballSupercoachRepository, BasketballSupercoachRepository>();
