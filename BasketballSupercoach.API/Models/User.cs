@@ -12,6 +12,8 @@ namespace BasketballSupercoach.API.Models
 
         public byte[] PasswordSalt { get; set; }
 
+        public string Teamname { get; set; }
+
         public ICollection<Photo> Photos { get; set; }
     }
 }

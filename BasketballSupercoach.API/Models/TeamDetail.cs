@@ -3,7 +3,6 @@ namespace BasketballSupercoach.API.Models
     public class TeamDetail
     {
         public int Id { get; set; }
-        public int TeamID { get; set; }
 
         public User User { get; set; }
 

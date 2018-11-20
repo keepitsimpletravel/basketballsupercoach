@@ -7,7 +7,7 @@
     /* opacity: 0.5; */
   }
   .view {
-    height: 100vh !important;
+    height: 100vh;
   }
 
   .card-display {

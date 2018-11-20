@@ -37,12 +37,15 @@ namespace BasketballSupercoach.API.Controllers
             if(await _repo.UserExistis(userForRegisterDto.Username))
                 return BadRequest("Username already exists");
 
+            if(await _repo.TeamnameExists(userForRegisterDto.Teamname))
+                return BadRequest("Team name already exists");
+
             var userToCreate = new User
             {
                 Username = userForRegisterDto.Username
             };
 
-            var createdUser = await _repo.Register(userToCreate, userForRegisterDto.Password);
+            var createdUser = await _repo.Register(userToCreate, userForRegisterDto.Password, userForRegisterDto.Teamname);
 
             return StatusCode(201);
         }

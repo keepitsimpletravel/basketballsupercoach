@@ -41,13 +41,14 @@ namespace BasketballSupercoach.API.Data
             return true;
         }
 
-        public async Task<User> Register(User user, string password)
+        public async Task<User> Register(User user, string password, string teamname)
         {
             byte[] passwordHash, passwordSalt;
             CreatePasswordHash(password, out passwordHash, out passwordSalt);
 
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
+            user.Teamname = teamname;
 
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
@@ -67,6 +68,14 @@ namespace BasketballSupercoach.API.Data
         public async Task<bool> UserExistis(string username)
         {
             if (await _context.Users.AnyAsync(x => x.Username == username))
+                return true;
+
+            return false;
+        }
+
+        public async Task<bool> TeamnameExists(string teamname)
+        {
+            if (await _context.Users.AnyAsync(x => x.Teamname == teamname))
                 return true;
 
             return false;

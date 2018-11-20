@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BasketballSupercoach.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20181115073920_UpdatedDBSchema")]
-    partial class UpdatedDBSchema
+    [Migration("20181120112136_CreateDB")]
+    partial class CreateDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -73,8 +73,6 @@ namespace BasketballSupercoach.API.Migrations
 
                     b.Property<int>("Selected");
 
-                    b.Property<int>("TeamID");
-
                     b.Property<string>("Teamname");
 
                     b.Property<int>("UserID");
@@ -94,6 +92,8 @@ namespace BasketballSupercoach.API.Migrations
                     b.Property<byte[]>("PasswordHash");
 
                     b.Property<byte[]>("PasswordSalt");
+
+                    b.Property<string>("Teamname");
 
                     b.Property<string>("Username");
 

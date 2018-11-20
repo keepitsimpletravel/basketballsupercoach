@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BasketballSupercoach.API.Migrations
 {
-    public partial class UpdatedDBSchema : Migration
+    public partial class CreateDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -35,7 +35,8 @@ namespace BasketballSupercoach.API.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Username = table.Column<string>(nullable: true),
                     PasswordHash = table.Column<byte[]>(nullable: true),
-                    PasswordSalt = table.Column<byte[]>(nullable: true)
+                    PasswordSalt = table.Column<byte[]>(nullable: true),
+                    Teamname = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -70,7 +71,6 @@ namespace BasketballSupercoach.API.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    TeamID = table.Column<int>(nullable: false),
                     UserID = table.Column<int>(nullable: false),
                     Teamname = table.Column<string>(nullable: true),
                     Season = table.Column<string>(nullable: true),

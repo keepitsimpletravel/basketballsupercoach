@@ -71,8 +71,6 @@ namespace BasketballSupercoach.API.Migrations
 
                     b.Property<int>("Selected");
 
-                    b.Property<int>("TeamID");
-
                     b.Property<string>("Teamname");
 
                     b.Property<int>("UserID");
@@ -92,6 +90,8 @@ namespace BasketballSupercoach.API.Migrations
                     b.Property<byte[]>("PasswordHash");
 
                     b.Property<byte[]>("PasswordSalt");
+
+                    b.Property<string>("Teamname");
 
                     b.Property<string>("Username");
 

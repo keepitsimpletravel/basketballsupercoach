@@ -10,5 +10,8 @@ namespace BasketballSupercoach.API.Dtos
         [Required]
         [StringLength(12, MinimumLength = 6, ErrorMessage = "You must specify password between 6 and 12 characters")]
         public string Password { get; set; }
+
+        [Required]
+        public string Teamname { get; set; }
     }
 }
