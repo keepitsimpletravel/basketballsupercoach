@@ -14,6 +14,7 @@ import {DropdownModule} from 'primeng/dropdown';
 export class PlayersComponent implements OnInit {
 
   players: Player[];
+  selectedPlayer: Player;
 
   cols: any[];
 
@@ -102,4 +103,11 @@ export class PlayersComponent implements OnInit {
   reset() {
     this.first = 0;
   }
+
+  selectPlayerWithButton(player: Player) {
+    this.selectedPlayer = player;
+    // this.messageService.add({severity:'info', summary:'Car Selected', detail:'Vin: ' + car.vin});
+    const message = player.firstName + ' ' + player.surname + ' selected.';
+    this.alertify.success(message);
+}
 }

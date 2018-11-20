@@ -22,6 +22,7 @@ import { PlayersService } from './_services/players.service';
 import { SharedModule } from 'primeng/components/common/shared';
 import { TableModule } from 'primeng/table';
 import { DropdownModule } from 'primeng/dropdown';
+import { ButtonModule } from 'primeng/button';
 import { JwtModule } from '@auth0/angular-jwt';
 // import { PlayerCardComponent } from './playerscard/player-card/player-card.component';
 
@@ -50,6 +51,7 @@ export function tokenGetter() {
       SharedModule,
       TableModule,
       DropdownModule,
+      ButtonModule,
       JwtModule.forRoot({
         config: {
             tokenGetter: tokenGetter,

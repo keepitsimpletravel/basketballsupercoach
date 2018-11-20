@@ -1,18 +1,21 @@
-<div class="container mt-5" style="position: relative; z-index: 1;">
-  <img id="image-display" src="./assets/images/nbaCourt.jpg" id="bg" alt="" width="100%" height="80%">
-  <div *ngIf="!registerMode" style="text-align: center; position: absolute; top: 0px; z-index: 3;" >
-    <h1>The Ultimate Fantasy Basketball</h1>
-    <p class="lead">Show your fantasy basketball class... All you need to do is sign up!</p>
-    <div class="text-center">
-      <button class="btn btn-primary btn-lg mr-2" (click)="registerToggle()">Register</button>
-      <button class="btn btn-info btn-lg">Learn more</button>
-    </div>
+<section class="view intro-2">
+  <div class="container flex-center">
+    <!-- <div class="col-4"> -->
+      <div class="card text-center" id="card-display" *ngIf="!registerMode">
+          <h1>The Ultimate Fantasy Basketball</h1>
+          <p class="lead">Show your fantasy basketball class... All you need to do is sign up!</p>
+          <div class="text-center">
+            <button class="btn btn-primary btn-lg mr-2" (click)="registerToggle()">Register</button>
+            <button class="btn btn-info btn-lg">Learn more</button>
+          </div>
+        </div>
+        <div class="card" *ngIf="registerMode">
+          <div class="row justify-content-center">
+            <div class="col-4">
+              <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
   </div>
-  <div *ngIf="registerMode" tyle="text-align: center; position: absolute; top: 0px; z-index: 4;" >
-    <div class="row justify-content-center">
-      <div class="col-4">
-        <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
-      </div>
-    </div>
-  </div>
-</div>
+</section>
