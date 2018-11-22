@@ -24,7 +24,7 @@ import { TableModule } from 'primeng/table';
 import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 import { JwtModule } from '@auth0/angular-jwt';
-// import { PlayerCardComponent } from './playerscard/player-card/player-card.component';
+import { PlayersdetailedComponent } from './playersdetailed/playersdetailed.component';
 
 export function tokenGetter() {
     return localStorage.getItem('token');
@@ -39,8 +39,8 @@ export function tokenGetter() {
       DashboardComponent,
       TeamComponent,
       RankingsComponent,
-      PlayersComponent
-    //   PlayerCardComponent
+      PlayersComponent,
+      PlayersdetailedComponent
    ],
    imports: [
       BrowserModule,

@@ -106,8 +106,9 @@ export class PlayersComponent implements OnInit {
 
   selectPlayerWithButton(player: Player) {
     this.selectedPlayer = player;
+
     // this.messageService.add({severity:'info', summary:'Car Selected', detail:'Vin: ' + car.vin});
-    const message = player.firstName + ' ' + player.surname + ' selected.';
-    this.alertify.success(message);
+    // const message = player.firstName + ' ' + player.surname + ' selected.';
+    // this.alertify.success(message);
 }
 }

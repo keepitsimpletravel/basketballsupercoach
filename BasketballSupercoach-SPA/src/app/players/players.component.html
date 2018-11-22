@@ -30,7 +30,7 @@
                 <ng-container *ngIf="col.field != 'team'">{{rowData[col.field]}}</ng-container>
             </td>
             <td>
-                    <button pButton icon="fa fa-info" (click)="selectPlayerWithButton(rowData)"></button>
+                    <button pButton icon="fa fa-info" (click)="selectPlayerWithButton(rowData)" [routerLink]="['/players/', rowData.playerId]"></button>
             </td>
         </tr>
     </ng-template>
