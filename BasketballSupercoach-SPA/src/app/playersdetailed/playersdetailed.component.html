@@ -1,3 +1,26 @@
-<p>
-  {{player?.firstName}} {{player?.surname}}
-</p>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">
+        <img class="card-img-top img-thumbnail" src="assets/images/{{player?.team}}.jpg" alt="Player's Team">
+        <div class="card-body">
+          <div class="text-center">
+            <strong>{{player?.firstName}}, {{player?.surname}}</strong>
+            <p>{{player?.team}}</p>
+          </div>
+          <div class="text-center">
+            <strong>Position(s):</strong>
+            <p>{{player?.positionOne}}/{{player?.positionTwo}}/{{player?.positionThree}}</p>
+          </div>
+        </div>
+        <div class="text-center">
+            <strong>Price:</strong>
+            <p>${{player?.price}}</p>
+          </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+
+    </div>
+  </div>
+</div>
