@@ -4,6 +4,7 @@ import { PlayersService } from '../_services/players.service';
 import { AlertifyService } from '../_services/alertify.service';
 import {TableModule} from 'primeng/table';
 import {DropdownModule} from 'primeng/dropdown';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-players',
@@ -31,12 +32,15 @@ export class PlayersComponent implements OnInit {
 
   loading: boolean;
 
-  constructor(private playerService: PlayersService, private alertify: AlertifyService) { }
+  constructor(private playerService: PlayersService, private alertify: AlertifyService, private route: ActivatedRoute) { }
 
   ngOnInit() {
       this.loading = true;
         setTimeout(() => {
-            this.loadPlayers();
+            // this.loadPlayers();
+            this.route.data.subscribe(data => {
+              this.players = data['players'];
+            });
             this.loading = false;
         }, 1000);
 
@@ -92,23 +96,11 @@ export class PlayersComponent implements OnInit {
       }, 250);
   }
 
-  loadPlayers() {
-    this.playerService.getPlayers().subscribe((players: Player[]) => {
-      this.players = players;
-    }, error => {
-      this.alertify.error(error);
-    });
-  }
-
   reset() {
     this.first = 0;
   }
 
   selectPlayerWithButton(player: Player) {
     this.selectedPlayer = player;
-
-    // this.messageService.add({severity:'info', summary:'Car Selected', detail:'Vin: ' + car.vin});
-    // const message = player.firstName + ' ' + player.surname + ' selected.';
-    // this.alertify.success(message);
-}
+  }
 }

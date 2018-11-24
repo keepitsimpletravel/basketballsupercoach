@@ -91,6 +91,8 @@ namespace BasketballSupercoach.API.Migrations
 
                     b.Property<byte[]>("PasswordSalt");
 
+                    b.Property<int>("TeamSelected");
+
                     b.Property<string>("Teamname");
 
                     b.Property<string>("Username");

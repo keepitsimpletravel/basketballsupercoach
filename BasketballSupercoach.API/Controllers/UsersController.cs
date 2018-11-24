@@ -14,29 +14,38 @@ namespace BasketballSupercoach.API.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly DataContext _context;
+        private readonly IBasketballSupercoachRepository _repo;
 
-        public UsersController(DataContext context)
+        public UsersController(IBasketballSupercoachRepository repo)
         {
-            _context = context; 
+            _repo = repo;
         }
         
         [AllowAnonymous]
         [HttpGet]
-        public async Task<IActionResult> GetPlayers()
+        public async Task<IActionResult> GetUsers()
         {
-            var players = await _context.Players.ToListAsync();
+            var users = await _repo.GetUsers();
 
-            return Ok(players);
+            return Ok(users);
         }
 
         [AllowAnonymous]
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetPlayer(int id)
+        public async Task<IActionResult> GetUser(int id)
         {
-            var player = await _context.Players.FirstOrDefaultAsync(x => x.PlayerId == id);
+            var user = await _repo.GetUser(id);
 
-            return Ok(player);
+            return Ok(user);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("{username}")]
+        public async Task<IActionResult> GetUser(string username)
+        {
+            var user = await _repo.GetUser(username);
+
+            return Ok(user);
         }
 
         // POST api/values

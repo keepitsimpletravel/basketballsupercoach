@@ -25,6 +25,11 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 import { JwtModule } from '@auth0/angular-jwt';
 import { PlayersdetailedComponent } from './playersdetailed/playersdetailed.component';
+import { PlayersdeatiledResolver } from './_resolvers/playersdetailed.resolver';
+import { PlayersResolver } from './_resolvers/players.resolver';
+import { UserService } from './_services/user.service';
+import { SelectPlayerComponent } from './select-player/select-player.component';
+
 
 export function tokenGetter() {
     return localStorage.getItem('token');
@@ -40,7 +45,8 @@ export function tokenGetter() {
       TeamComponent,
       RankingsComponent,
       PlayersComponent,
-      PlayersdetailedComponent
+      PlayersdetailedComponent,
+      SelectPlayerComponent
    ],
    imports: [
       BrowserModule,
@@ -65,7 +71,10 @@ export function tokenGetter() {
       ErrorInterceptorProvider,
       AlertifyService,
       AuthGuard,
-      PlayersService
+      PlayersService,
+      PlayersdeatiledResolver,
+      PlayersResolver,
+      UserService
    ],
    bootstrap: [
       AppComponent

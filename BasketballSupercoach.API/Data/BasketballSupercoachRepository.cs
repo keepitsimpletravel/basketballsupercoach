@@ -44,6 +44,13 @@ namespace BasketballSupercoach.API.Data
             return user;
         }
 
+        public async Task<User> GetUser(string username)
+        {
+            var user = await _content.Users.Include(p => p.Photos).FirstOrDefaultAsync(u => u.Username == username);
+            
+            return user;
+        }
+
         public async Task<IEnumerable<User>> GetUsers()
         {
             var users = await _content.Users.Include(p => p.Photos).ToListAsync();

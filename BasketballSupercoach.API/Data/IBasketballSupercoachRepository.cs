@@ -19,5 +19,7 @@ namespace BasketballSupercoach.API.Data
          Task<IEnumerable<Player>> GetPlayers();
          
          Task<Player> GetPlayer(int id);
+
+         Task<User> GetUser(string username);
     }
 }

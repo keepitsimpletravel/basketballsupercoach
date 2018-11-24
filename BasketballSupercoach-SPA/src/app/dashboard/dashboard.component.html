@@ -1,11 +1,11 @@
-<div class="row">
-    <section>
-      
+<div class="row" *ngIf="!teamSelected()">
+    <section class="view intro-2"> 
+      <div class="container center">
+        <div class="team-not-selected mt-5 text-center">
+        <!-- /div> *ngIf="> -->
+            <p>Your team is not yet selected. Please select your team.</p>
+            <button class="w3-button w3-block w3-dark-grey" [routerLink]="['/team']" >Select {{user?.teamname}}</button>
+        </div>
+      </div>
     </section>
-    <div class="column">
-      Bench Section
-    </div>
-    <div class="column">
-      Inactive Section
-    </div>
   </div>

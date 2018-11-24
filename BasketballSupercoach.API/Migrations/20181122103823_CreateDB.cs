@@ -36,7 +36,8 @@ namespace BasketballSupercoach.API.Migrations
                     Username = table.Column<string>(nullable: true),
                     PasswordHash = table.Column<byte[]>(nullable: true),
                     PasswordSalt = table.Column<byte[]>(nullable: true),
-                    Teamname = table.Column<string>(nullable: true)
+                    Teamname = table.Column<string>(nullable: true),
+                    TeamSelected = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

@@ -4,6 +4,8 @@ import { map } from 'rxjs/operators';
 import { registerContentQuery } from '@angular/core/src/render3';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { environment } from 'src/environments/environment';
+import { User } from '../_models/user';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,9 +22,12 @@ export class AuthService {
       map((response: any) => {
         const user = response;
         if (user) {
+          console.log(user.selected);
           localStorage.setItem('token', user.token);
           this.decodedToken = this.jwtHelper.decodeToken(user.token);
           console.log(this.decodedToken);
+          console.log('ashley says hi');
+          console.log(user);
         }
       })
     );
@@ -37,5 +42,4 @@ export class AuthService {
     const token = localStorage.getItem('token');
     return !this.jwtHelper.isTokenExpired(token);
   }
-
 }

@@ -15,15 +15,18 @@ export class PlayersdetailedComponent implements OnInit {
   constructor(private playerService: PlayersService, private alertify: AlertifyService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.loadPlayer();
-  }
-
-  loadPlayer() {
-    this.playerService.getPlayer(+this.route.snapshot.params['id']).subscribe((player: Player) => {
-      this.player = player;
-    }, error => {
-      this.alertify.error(error);
+    // this.loadPlayer();
+    this.route.data.subscribe(data => {
+      this.player = data['player'];
     });
   }
+
+  // loadPlayer() {
+  //   this.playerService.getPlayer(+this.route.snapshot.params['id']).subscribe((player: Player) => {
+  //     this.player = player;
+  //   }, error => {
+  //     this.alertify.error(error);
+  //   });
+  // }
 
 }
