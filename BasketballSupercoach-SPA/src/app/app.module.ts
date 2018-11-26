@@ -28,7 +28,7 @@ import { PlayersdetailedComponent } from './playersdetailed/playersdetailed.comp
 import { PlayersdeatiledResolver } from './_resolvers/playersdetailed.resolver';
 import { PlayersResolver } from './_resolvers/players.resolver';
 import { UserService } from './_services/user.service';
-import { SelectPlayerComponent } from './select-player/select-player.component';
+import { SelectplayerComponent } from './selectplayer/selectplayer.component';
 
 
 export function tokenGetter() {
@@ -46,7 +46,7 @@ export function tokenGetter() {
       RankingsComponent,
       PlayersComponent,
       PlayersdetailedComponent,
-      SelectPlayerComponent
+      SelectplayerComponent
    ],
    imports: [
       BrowserModule,
