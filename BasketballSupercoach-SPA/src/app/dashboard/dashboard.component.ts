@@ -18,7 +18,11 @@ export class DashboardComponent implements OnInit {
     private route: ActivatedRoute, private alertify: AlertifyService) { }
 
   ngOnInit() {
-    this.loadUser();
+    this.route.data.subscribe(data => {
+      this.user = data['user'];
+    });
+
+    // this.loadUser();
   }
 
   loadUser() {
