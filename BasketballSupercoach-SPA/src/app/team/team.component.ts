@@ -16,13 +16,8 @@ export class TeamComponent implements OnInit {
   playerSelected(position: number) {
     console.log('position selected is ' + position);
 
-    // if (position > 5) {
-      // get all players
-      this.router.navigate(['selectplayer/']);
-    // } else {
-      // get specific position players
-      // this.router.navigate(['selectplayer/']);
-    // }
+    // How does this value get passed correctly
+    this.router.navigate(['selectplayer/' + position]);
   }
 
 }

@@ -37,6 +37,25 @@ namespace BasketballSupercoach.API.Data
             return players;
         }
 
+        public async Task<IEnumerable<Player>> GetSpecificPlayers(int pos)
+        {
+            var players = await _content.Players.ToListAsync();
+            List<Player> filterPlayers = new List<Player>();
+            if (pos < 5) {
+                // need to filter returned players
+                foreach(Player player in players) {
+                    if(player.PositionOne == pos || player.PositionTwo == pos || player.PositionThree == pos) {
+                        filterPlayers.Add(player);
+                    }
+                }
+            } else {
+                // else return all
+                filterPlayers = players;
+            }
+
+            return filterPlayers;
+        }
+
         public async Task<User> GetUser(int id)
         {
             var user = await _content.Users.Include(p => p.Photos).FirstOrDefaultAsync(u => u.Id == id);

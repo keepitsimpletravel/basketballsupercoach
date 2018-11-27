@@ -33,6 +33,14 @@ namespace BasketballSupercoach.API.Controllers
             return Ok(players);
         }
 
+        [HttpGet("filtered/{pos}")]
+        public async Task<IActionResult> GetSpecificPlayers(int pos)
+        {
+            var players = await _repo.GetSpecificPlayers(pos);
+
+            return Ok(players);
+        }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetPlayer(int id)
         {

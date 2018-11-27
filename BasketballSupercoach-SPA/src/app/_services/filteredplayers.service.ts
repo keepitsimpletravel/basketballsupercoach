@@ -7,21 +7,13 @@ import { Player } from '../_models/player';
 @Injectable({
   providedIn: 'root'
 })
-export class PlayersService {
+export class FilteredplayersService {
   baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
-  getPlayers(): Observable<Player[]> {
-    return this.http.get<Player[]>(this.baseUrl + 'players/');
-  }
-
   getSpecificPlayers(pos): Observable<Player[]> {
-    console.log(this.baseUrl + 'players/' + pos);
-    return this.http.get<Player[]>(this.baseUrl + 'players/' + pos);
-  }
-
-  getPlayer(id): Observable<Player> {
-    return this.http.get<Player>(this.baseUrl + 'players/' + id);
+    console.log(this.baseUrl + 'players/filtered/' + pos);
+    return this.http.get<Player[]>(this.baseUrl + 'players/filtered/' + pos);
   }
 }

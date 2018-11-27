@@ -33,6 +33,7 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 import { EditprofileResolver } from './_resolvers/editprofile.resolver';
 import { DashboardResolver } from './_resolvers/dashboard.resolver';
 import { SelectplayerResolver } from './_resolvers/selectplayer.resolver';
+import { FilteredplayersService } from './_services/filteredplayers.service';
 
 
 export function tokenGetter() {
@@ -82,7 +83,8 @@ export function tokenGetter() {
       UserService,
       EditprofileResolver,
       DashboardResolver,
-      SelectplayerResolver
+      SelectplayerResolver,
+      FilteredplayersService
    ],
    bootstrap: [
       AppComponent
