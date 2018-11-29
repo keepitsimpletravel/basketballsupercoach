@@ -67,17 +67,21 @@ namespace BasketballSupercoach.API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Season");
+                    b.Property<int>("Active");
 
-                    b.Property<int>("Selected");
+                    b.Property<int>("Captain");
 
-                    b.Property<string>("Teamname");
+                    b.Property<int>("Emergency");
 
-                    b.Property<int>("UserID");
+                    b.Property<int>("PlayerId");
+
+                    b.Property<int>("Position");
+
+                    b.Property<int>("SixthMan");
+
+                    b.Property<int>("UserId");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UserID");
 
                     b.ToTable("TeamDetails");
                 });
@@ -86,6 +90,8 @@ namespace BasketballSupercoach.API.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Active");
 
                     b.Property<byte[]>("PasswordHash");
 
@@ -106,14 +112,6 @@ namespace BasketballSupercoach.API.Migrations
                 {
                     b.HasOne("BasketballSupercoach.API.Models.User", "User")
                         .WithMany("Photos")
-                        .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("BasketballSupercoach.API.Models.TeamDetail", b =>
-                {
-                    b.HasOne("BasketballSupercoach.API.Models.User", "User")
-                        .WithMany()
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

@@ -89,4 +89,8 @@ export class SelectplayerComponent implements OnInit {
           ];
   }
 
+  playerSelected(playerId: number) {
+    console.log('selected player id is: ' + playerId);
+  }
+
 }

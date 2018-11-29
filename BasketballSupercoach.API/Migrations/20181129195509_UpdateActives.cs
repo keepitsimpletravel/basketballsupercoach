@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BasketballSupercoach.API.Migrations
 {
-    public partial class CreateDB : Migration
+    public partial class UpdateActives : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,6 +28,25 @@ namespace BasketballSupercoach.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "TeamDetails",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    UserId = table.Column<int>(nullable: false),
+                    PlayerId = table.Column<int>(nullable: false),
+                    Position = table.Column<int>(nullable: false),
+                    Captain = table.Column<int>(nullable: false),
+                    SixthMan = table.Column<int>(nullable: false),
+                    Emergency = table.Column<int>(nullable: false),
+                    Active = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TeamDetails", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
@@ -37,7 +56,8 @@ namespace BasketballSupercoach.API.Migrations
                     PasswordHash = table.Column<byte[]>(nullable: true),
                     PasswordSalt = table.Column<byte[]>(nullable: true),
                     Teamname = table.Column<string>(nullable: true),
-                    TeamSelected = table.Column<int>(nullable: false)
+                    TeamSelected = table.Column<int>(nullable: false),
+                    Active = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -66,36 +86,9 @@ namespace BasketballSupercoach.API.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "TeamDetails",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    UserID = table.Column<int>(nullable: false),
-                    Teamname = table.Column<string>(nullable: true),
-                    Season = table.Column<string>(nullable: true),
-                    Selected = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_TeamDetails", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_TeamDetails_Users_UserID",
-                        column: x => x.UserID,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_Photos_UserID",
                 table: "Photos",
-                column: "UserID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_TeamDetails_UserID",
-                table: "TeamDetails",
                 column: "UserID");
         }
 

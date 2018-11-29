@@ -17,5 +17,7 @@ namespace BasketballSupercoach.API.Models
         public int TeamSelected { get; set; }
 
         public ICollection<Photo> Photos { get; set; }
+
+        public int Active { get; set; }
     }
 }
