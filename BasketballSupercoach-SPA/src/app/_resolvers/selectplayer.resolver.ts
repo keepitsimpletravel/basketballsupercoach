@@ -11,11 +11,12 @@ import { FilteredplayersService } from '../_services/filteredplayers.service';
 export class SelectplayerResolver implements Resolve<Player[]> {
     constructor(private playerService: FilteredplayersService, private router: Router, private alertify: AlertifyService) { }
 
-    resolve(route: ActivatedRouteSnapshot): Observable<Player[]> {
-        console.log('here - TODO update to get the variable');
-        // this.router.
+    position: number;
 
-        return this.playerService.getSpecificPlayers(1).pipe(
+    resolve(route: ActivatedRouteSnapshot): Observable<Player[]> {
+        this.position = +route.params['pos'];
+
+        return this.playerService.getSpecificPlayers(this.position).pipe(
             catchError(error =>  {
                 this.alertify.error('Problem retrieving data');
                 this.router.navigate(['/team']);

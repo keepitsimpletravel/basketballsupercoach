@@ -23,5 +23,9 @@ namespace BasketballSupercoach.API.Data
          Task<Player> GetPlayer(int id);
 
          Task<User> GetUser(string username);
+
+         Task<bool> CreateTeamSalary(TeamSalary teamSalary);
+
+         Task<bool> CreateTeamDetailRecord(TeamDetail teamDetail);
     }
 }

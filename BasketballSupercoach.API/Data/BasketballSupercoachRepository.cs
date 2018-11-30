@@ -81,5 +81,15 @@ namespace BasketballSupercoach.API.Data
         {
             return await _content.SaveChangesAsync() > 0;
         }
+
+        public async Task<bool> CreateTeamSalary(TeamSalary teamSalary) {
+            await _content.TeamSalary.AddAsync(teamSalary);
+            return await _content.SaveChangesAsync() > 0;
+        }
+
+        public async Task<bool> CreateTeamDetailRecord(TeamDetail teamDetail) {
+            await _content.TeamDetails.AddAsync(teamDetail);
+            return await _content.SaveChangesAsync() > 0;
+        }
     }
 }

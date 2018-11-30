@@ -32,12 +32,9 @@ export class SelectplayerComponent implements OnInit {
   constructor(private playerService: PlayersService, private alertify: AlertifyService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.loading = true;
+    this.position = +localStorage.getItem('currentSelectPosition');
 
-    // this.route.queryParams.subscribe(params => {
-    //   // this.position = +params['pos'];
-    //   console.log('sent position is ' + this.position);
-    // });
+    this.loading = true;
         setTimeout(() => {
             console.log('players about to be filtered');
             this.route.data.subscribe(data => {
@@ -90,7 +87,10 @@ export class SelectplayerComponent implements OnInit {
   }
 
   playerSelected(playerId: number) {
-    console.log('selected player id is: ' + playerId);
+    console.log('the selected player id is: ' + playerId);
+
+    // Need to create a TeamDetail record for this player
+
   }
 
 }

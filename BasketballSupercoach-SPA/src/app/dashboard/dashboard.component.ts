@@ -5,6 +5,7 @@ import { User } from '../_models/user';
 import { ActivatedRoute } from '@angular/router';
 import { AlertifyService } from '../_services/alertify.service';
 import { UserService } from '../_services/user.service';
+import { TeamsalaryService } from '../_services/teamsalary.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,14 +16,12 @@ export class DashboardComponent implements OnInit {
   user: User;
 
   constructor(private authService: AuthService, private userService: UserService,
-    private route: ActivatedRoute, private alertify: AlertifyService) { }
+    private route: ActivatedRoute, private alertify: AlertifyService, private teamSalaryService: TeamsalaryService) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.user = data['user'];
     });
-
-    // this.loadUser();
   }
 
   loadUser() {

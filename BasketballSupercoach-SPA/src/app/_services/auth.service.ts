@@ -25,9 +25,9 @@ export class AuthService {
           console.log(user.selected);
           localStorage.setItem('token', user.token);
           this.decodedToken = this.jwtHelper.decodeToken(user.token);
-          console.log(this.decodedToken);
-          console.log('ashley says hi');
-          console.log(user);
+          // console.log(this.decodedToken);
+          // console.log('ashley says hi');
+          // console.log(user);
         }
       })
     );
