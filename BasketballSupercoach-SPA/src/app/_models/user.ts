@@ -6,4 +6,6 @@ export interface User {
     teamname: string;
     teamSelected: number;
     photos: any;
+    salarySet: number;
+    active: number;
 }

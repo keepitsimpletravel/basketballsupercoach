@@ -19,5 +19,7 @@ namespace BasketballSupercoach.API.Models
         public ICollection<Photo> Photos { get; set; }
 
         public int Active { get; set; }
+
+        public int SalarySet { get; set; }
     }
 }

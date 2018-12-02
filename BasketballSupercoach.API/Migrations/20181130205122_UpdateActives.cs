@@ -47,6 +47,20 @@ namespace BasketballSupercoach.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "TeamSalary",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    UserId = table.Column<int>(nullable: false),
+                    AvailableSalary = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TeamSalary", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
@@ -57,7 +71,8 @@ namespace BasketballSupercoach.API.Migrations
                     PasswordSalt = table.Column<byte[]>(nullable: true),
                     Teamname = table.Column<string>(nullable: true),
                     TeamSelected = table.Column<int>(nullable: false),
-                    Active = table.Column<int>(nullable: false)
+                    Active = table.Column<int>(nullable: false),
+                    SalarySet = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -102,6 +117,9 @@ namespace BasketballSupercoach.API.Migrations
 
             migrationBuilder.DropTable(
                 name: "TeamDetails");
+
+            migrationBuilder.DropTable(
+                name: "TeamSalary");
 
             migrationBuilder.DropTable(
                 name: "Users");

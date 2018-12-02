@@ -18,4 +18,12 @@ export class UserService {
     // console.log(this.http.get<User>(this.baseUrl + 'users/' + id)); // this is just an observable
     return this.http.get<User>(this.baseUrl + 'users/' + id);
   }
+
+  updateSalarySet(user: User) {
+    console.log('inside user service: ' + this.baseUrl + 'users/' + user);
+
+
+    console.log('inside user service: ' + this.baseUrl + 'users/' + user);
+    return this.http.put<User>(this.baseUrl + 'users/' + user.id, user);
+  }
 }

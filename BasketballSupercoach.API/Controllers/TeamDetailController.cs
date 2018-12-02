@@ -20,7 +20,7 @@ namespace BasketballSupercoach.API.Controllers
             _repo = repo;
         }
 
-        [HttpPost("createteamdetail")]
+        [HttpPost("create")]
         public async Task<IActionResult> CreateTeamDetail(TeamDetailForPlayerDto teamDetailDto)
         {
             var teamDetailToCreate = new TeamDetail

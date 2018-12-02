@@ -91,5 +91,10 @@ namespace BasketballSupercoach.API.Data
             await _content.TeamDetails.AddAsync(teamDetail);
             return await _content.SaveChangesAsync() > 0;
         }
+
+        public async Task<bool> UpdateUserSalarySet(User user) {
+            _content.Users.Update(user);
+            return await _content.SaveChangesAsync() > 0;
+        }
     }
 }

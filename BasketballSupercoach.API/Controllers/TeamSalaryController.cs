@@ -23,7 +23,21 @@ namespace BasketballSupercoach.API.Controllers
 
         // public IConfiguration Config { get; }
 
-       [HttpPost("createsalary")]
+    //    [HttpPost("createsalary")]
+    //     public async Task<IActionResult> CreateTeamSalary(TeamSalaryCreationDto teamSalaryDto)
+    //     {
+    //         var teamSalaryToCreate = new TeamSalary
+    //         {
+    //             AvailableSalary = teamSalaryDto.AvailableSalary,
+    //             UserId = teamSalaryDto.UserId
+    //         };
+
+
+    //         var createdSalary = await _repo.CreateTeamSalary(teamSalaryToCreate);
+    //         return StatusCode(201);
+    //     }
+
+    [HttpPost("createsalary")]
         public async Task<IActionResult> CreateTeamSalary(TeamSalaryCreationDto teamSalaryDto)
         {
             var teamSalaryToCreate = new TeamSalary

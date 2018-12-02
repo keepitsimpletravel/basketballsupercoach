@@ -86,6 +86,20 @@ namespace BasketballSupercoach.API.Migrations
                     b.ToTable("TeamDetails");
                 });
 
+            modelBuilder.Entity("BasketballSupercoach.API.Models.TeamSalary", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("AvailableSalary");
+
+                    b.Property<int>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TeamSalary");
+                });
+
             modelBuilder.Entity("BasketballSupercoach.API.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -96,6 +110,8 @@ namespace BasketballSupercoach.API.Migrations
                     b.Property<byte[]>("PasswordHash");
 
                     b.Property<byte[]>("PasswordSalt");
+
+                    b.Property<int>("SalarySet");
 
                     b.Property<int>("TeamSelected");
 

@@ -34,6 +34,8 @@ import { EditprofileResolver } from './_resolvers/editprofile.resolver';
 import { DashboardResolver } from './_resolvers/dashboard.resolver';
 import { SelectplayerResolver } from './_resolvers/selectplayer.resolver';
 import { FilteredplayersService } from './_services/filteredplayers.service';
+import { TeamdetailService } from './_services/teamdetail.service';
+import { TeamsalaryService } from './_services/teamsalary.service';
 
 
 export function tokenGetter() {
@@ -52,7 +54,7 @@ export function tokenGetter() {
       PlayersComponent,
       PlayersdetailedComponent,
       SelectplayerComponent,
-      EditprofileComponent
+      EditprofileComponent,
    ],
    imports: [
       BrowserModule,
@@ -84,7 +86,9 @@ export function tokenGetter() {
       EditprofileResolver,
       DashboardResolver,
       SelectplayerResolver,
-      FilteredplayersService
+      FilteredplayersService,
+      TeamdetailService,
+      TeamsalaryService
    ],
    bootstrap: [
       AppComponent

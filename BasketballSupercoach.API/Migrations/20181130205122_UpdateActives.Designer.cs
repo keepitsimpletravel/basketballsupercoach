@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BasketballSupercoach.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20181129195509_UpdateActives")]
+    [Migration("20181130205122_UpdateActives")]
     partial class UpdateActives
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -88,6 +88,20 @@ namespace BasketballSupercoach.API.Migrations
                     b.ToTable("TeamDetails");
                 });
 
+            modelBuilder.Entity("BasketballSupercoach.API.Models.TeamSalary", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("AvailableSalary");
+
+                    b.Property<int>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TeamSalary");
+                });
+
             modelBuilder.Entity("BasketballSupercoach.API.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -98,6 +112,8 @@ namespace BasketballSupercoach.API.Migrations
                     b.Property<byte[]>("PasswordHash");
 
                     b.Property<byte[]>("PasswordSalt");
+
+                    b.Property<int>("SalarySet");
 
                     b.Property<int>("TeamSelected");
 

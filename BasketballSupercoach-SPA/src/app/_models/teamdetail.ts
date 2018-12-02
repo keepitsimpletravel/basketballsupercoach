@@ -1,4 +1,4 @@
-export interface TeamSalary {
+export interface TeamDetail {
     id: number;
     userId: number;
     playerId: number;
