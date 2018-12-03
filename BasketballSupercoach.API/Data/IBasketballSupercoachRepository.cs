@@ -30,6 +30,8 @@ namespace BasketballSupercoach.API.Data
 
          Task<bool> UpdateUserSalarySet(User user);
 
+         Task<TeamSalary> GetTeamSalary(int userId);
+
          
     }
 }

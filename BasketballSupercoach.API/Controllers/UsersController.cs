@@ -55,18 +55,7 @@ namespace BasketballSupercoach.API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateSalarySet(User user)
         {
-            // if(userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
-                // return Unauthorized();
-
-            // var userFromRepo = await _repo.GetUser(userId);
             user.SalarySet = 1;
-            
-
-            // if(await _repo.SaveAll())
-            //     return NoContent();
-
-            // throw new Exception($"Updating user salary failed on save");
-
             var userSalaryUpdate = await _repo.UpdateUserSalarySet(user);
             return StatusCode(201);
         }

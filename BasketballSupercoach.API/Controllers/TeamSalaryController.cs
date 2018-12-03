@@ -50,5 +50,12 @@ namespace BasketballSupercoach.API.Controllers
             var createdSalary = await _repo.CreateTeamSalary(teamSalaryToCreate);
             return StatusCode(201);
         }
+
+        [HttpGet("{userId}")]
+        public async Task<IActionResult> GetTeamSalary(int userId) {
+            var teamSalary = await _repo.GetTeamSalary(userId);
+
+            return Ok(teamSalary);
+        }
     }
 }

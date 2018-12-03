@@ -8,6 +8,7 @@ import { TeamdetailService } from '../_services/teamdetail.service';
 import { AuthService } from '../_services/auth.service';
 import { UserService } from '../_services/user.service';
 import { User } from '../_models/user';
+import { TeamsalaryService } from '../_services/teamsalary.service';
 
 @Component({
   selector: 'app-selectplayer',
@@ -36,11 +37,29 @@ export class SelectplayerComponent implements OnInit {
   loading: boolean;
 
   model: any = {};
+  availableSalary: number;
+  user: User;
 
   // tslint:disable-next-line:max-line-length
-  constructor(private playerService: PlayersService, private alertify: AlertifyService, private route: ActivatedRoute, private teamDetailService: TeamdetailService, private authService: AuthService, private router: Router, private userService: UserService) { }
+  constructor(private playerService: PlayersService, private teamSalaryService: TeamsalaryService, private alertify: AlertifyService, private route: ActivatedRoute, private teamDetailService: TeamdetailService, private authService: AuthService, private router: Router, private userService: UserService) { }
 
   ngOnInit() {
+
+    console.log('userId - ' + this.authService.decodedToken.nameid);
+    this.userService.getUser(this.authService.decodedToken.nameid).subscribe((user: User) => {
+      this.user = user;
+      console.log(user);
+
+      // this.createTeamSalary();
+      this.teamSalaryService.getTeamSalary(this.user.id).subscribe(next => {
+        console.log('got team salary value - ' + next.availableSalary);
+        this.availableSalary = next.availableSalary;
+      }, error => {
+        this.alertify.error(error);
+      });
+    }, error => {
+      this.alertify.error(error);
+    });
 
     this.position = +localStorage.getItem('currentSelectPosition');
 

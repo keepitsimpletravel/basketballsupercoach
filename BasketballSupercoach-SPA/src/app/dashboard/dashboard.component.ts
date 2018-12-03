@@ -16,6 +16,7 @@ import { TeamSalary } from '../_models/teamsalary';
 export class DashboardComponent implements OnInit {
   user: User;
   model: any = {};
+  availableSalary: number;
 
   constructor(private authService: AuthService, private userService: UserService,
     private route: ActivatedRoute, private alertify: AlertifyService, private teamSalaryService: TeamsalaryService) { }
@@ -27,6 +28,7 @@ export class DashboardComponent implements OnInit {
 
         this.model.userId = this.user.id;
         this.model.availableSalary = 150000000;
+        this.availableSalary = this.model.availableSalary;
         console.log('model for Team Salary set');
 
         // need to create the TeamSalary object
@@ -38,6 +40,15 @@ export class DashboardComponent implements OnInit {
           }, error => {
             this.alertify.error(error);
           });
+        }, error => {
+          this.alertify.error(error);
+        });
+      } else {
+        // Need to get the salary for the team
+        console.log('userId for getting salary = ' + this.user.id);
+        this.teamSalaryService.getTeamSalary(this.user.id).subscribe(next => {
+          console.log('got team salary value - ' + next.availableSalary);
+          this.availableSalary = next.availableSalary;
         }, error => {
           this.alertify.error(error);
         });

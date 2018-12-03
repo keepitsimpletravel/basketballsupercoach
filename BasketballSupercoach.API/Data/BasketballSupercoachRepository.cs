@@ -70,6 +70,11 @@ namespace BasketballSupercoach.API.Data
             return user;
         }
 
+        public async Task<TeamSalary> GetTeamSalary(int userId) {
+            var teamSal = await _content.TeamSalary.FirstOrDefaultAsync(ts => ts.UserId == userId);
+            return teamSal;
+        }
+
         public async Task<IEnumerable<User>> GetUsers()
         {
             var users = await _content.Users.Include(p => p.Photos).ToListAsync();
