@@ -17,14 +17,7 @@ export class TeamdetailService {
     return this.http.post(this.baseUrl + 'create', model);
   }
 
-  // GetTeamDetailsForUser (userId: number) {
-  //   return this.http.get<TeamDetail[]>(this.baseUrl + userId);
-  // }
-
   GetPlayerCardsForUser (userId: number) {
-    console.log('calling get player cards api');
-
-    // not sure if this returned or not
     return this.http.get<Playercard[]>(this.baseUrl + userId);
   }
 }

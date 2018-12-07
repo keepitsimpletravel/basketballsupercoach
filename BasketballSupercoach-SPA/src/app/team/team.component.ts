@@ -38,15 +38,12 @@ export class TeamComponent implements OnInit {
     this.loaded = 0;
     this.playerAdded = 0;
 
-    console.log('in team component');
     // Need to get the current user
     this.userService.getUser(this.authService.decodedToken.nameid).subscribe((user: User) => {
       this.user = user;
-      console.log('in get user results');
 
       this.teamSalaryService.getTeamSalary(this.user.id).subscribe(next => {
         this.availableSalary = next.availableSalary;
-        console.log('in get team salary results');
       }, error => {
         this.alertify.error(error);
       });
@@ -58,6 +55,9 @@ export class TeamComponent implements OnInit {
     this.teamDetailService.GetPlayerCardsForUser(this.authService.decodedToken.nameid).subscribe(data => {
       console.log('data returned for player cards length: ' + data.length);
       this.playerCards = data;
+      for (let p = 0; p < this.playerCards.length; p ++) {
+        console.log(this.playerCards[p].playerId + ' - playerId for pos: ' + this.playerCards[p].cardPositionText);
+      }
     }, error => {
       this.alertify.error(error);
     }, () => {

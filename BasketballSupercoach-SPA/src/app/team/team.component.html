@@ -8,12 +8,32 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-2 col-md-3 col-sm-6">
-        <!-- <p>value = {{this.playerCards[0].firstName}}</p> -->
-        <!-- <p> loaded is {{this.loaded}}</p> -->
-        <!-- <p>First element of loop: {{this.playerCards[0].firstName}}</p> -->
-        <div *ngIf="this.loaded == 0">Loading</div>
-        <div *ngIf="this.loaded == 1">It has now loaded
-          
+        <div *ngIf="this.loaded == 0">Loading your team...</div>
+        <div *ngIf="this.loaded == 1">
+          <div *ngFor="let pc of this.playerCards">
+            <div *ngIf="pc.playerId != 0">
+              <div class="w3-container">
+                <p>{{pc.cardPositionText}}</p>
+                <div class="card">
+                    <div class="card-body">
+                      <img class="center" [attr.alt]="pc.team" src="assets/images/{{pc.team}}.jpg">
+                      <p><strong>{{pc.firstName}} {{pc.surname}}</strong> - {{pc.playerPosition}}</p>
+                      <p>{{pc.price}}</p>
+                      <p>Last Score: {{pc.lastScore}}</p>
+                      <p>Average Score: {{pc.averageScore}}</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="pc.playerId == 0">
+              <div class="w3-container">
+                <p>{{pc.cardPositionText}}</p>
+                  <button class="w3-button w3-block w3-dark-grey" (click)="playerSelected(pc.cardPosition)">
+                    + Select Player
+                  </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
