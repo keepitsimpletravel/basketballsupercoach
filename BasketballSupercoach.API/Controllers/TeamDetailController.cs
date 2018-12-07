@@ -37,53 +37,19 @@ namespace BasketballSupercoach.API.Controllers
             return StatusCode(201);
         }
 
-
-        // [HttpGet]
-        // public async Task<IActionResult> GetTeamPlayers()
+        // [HttpGet("{userId}")]
+        // public async Task<IActionResult> GetTeamDetailsForUser(int userId)
         // {
-            
+        //     var teamDetails = await _repo.GetTeamDetailsForUser(userId);
+        //     return Ok(teamDetails);
         // }
-    //     {
-    //         var players = await _repo.GetPlayers();
 
-    //         // var playersToReturn = _mapper.Map<IEnumerable<PlayerForListDto>>(players);
-            
-    //         // return Ok(playersToReturn);
-
-    //         return Ok(players);
-    //     }
-
-    //     [HttpGet]
-    //     public async Task<IActionResult> GetPlayers()
-    //     {
-    //         var players = await _repo.GetPlayers();
-
-    //         // var playersToReturn = _mapper.Map<IEnumerable<PlayerForListDto>>(players);
-            
-    //         // return Ok(playersToReturn);
-
-    //         return Ok(players);
-    //     }
-
-    //     [HttpGet("filtered/{pos}")]
-    //     public async Task<IActionResult> GetSpecificPlayers(int pos)
-    //     {
-    //         var players = await _repo.GetSpecificPlayers(pos);
-
-    //         return Ok(players);
-    //     }
-
-    //     [HttpGet("{id}")]
-    //     public async Task<IActionResult> GetPlayer(int id)
-    //     {
-    //         var player = await _repo.GetPlayer(id);
-
-    //         // var playerToReturn = _mapper.Map<PlayerForListDto>(player);
-
-    //         // return Ok(playerToReturn);
-    //         return Ok(player);
-    //     }
-    // }
+        [HttpGet("{userId}")]
+        public async Task<IActionResult> GetPlayerCardsForUser(int userId)
+        {
+            var playerCards = await _repo.GetPlayerCardsForUser(userId);
+            return Ok(playerCards);
+        }
     }
 }
 

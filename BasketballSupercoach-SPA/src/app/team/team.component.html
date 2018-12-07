@@ -1,116 +1,19 @@
 <section>
-    <div class="card mb-4" id="i2Card">
-        <div class="w3-container text-center">
-          <p>Available Salary Cap</p>
-          <p>{{this.availableSalary}}</p>
-        </div>
-      </div>
+  <div class="card mb-4" id="i2Card">
+    <div class="w3-container text-center">
+      <p>Available Salary Cap</p>
+      <p>{{ this.availableSalary }}</p>
+    </div>
+  </div>
   <div class="container">
     <div class="row">
       <div class="col-lg-2 col-md-3 col-sm-6">
-        <div class="card mb-4" id="pgCard">
-          <div class="w3-container">
-            <p>Point Guard</p>
-            <button id="btn-pg" class="w3-button w3-block w3-dark-grey" (click)="playerSelected(1)">
-              + Select Player
-            </button>
-          </div>
-        </div>
-        <div class="card mb-4" id="sgCard">
-          <div class="w3-container">
-            <p>Shooting Guard</p>
-            <button id="btn-sg" class="w3-button w3-block w3-dark-grey" (click)="playerSelected(2)">
-              + Select Player
-            </button>
-          </div>
-        </div>
-        <div class="card mb-4" id="sfCard">
-          <div class="w3-container">
-            <p>Small Forward</p>
-            <button id="btn-sf" class="w3-button w3-block w3-dark-grey" (click)="playerSelected(3)">
-              + Select Player
-            </button>
-          </div>
-        </div>
-        <div class="card mb-4" id="pfCard">
-          <div class="w3-container">
-            <p>Power Forward</p>
-            <button id="btn-pf" class="w3-button w3-block w3-dark-grey" (click)="playerSelected(4)">
-              + Select Player
-            </button>
-          </div>
-        </div>
-        <div class="card mb-4" id="cCard">
-          <div class="w3-container">
-            <p>Centre</p>
-            <button id="btn-c" class="w3-button w3-block w3-dark-grey" (click)="playerSelected(5)">
-              + Select Player
-            </button>
-          </div>
-        </div>
-        <div class="card mb-4" id="b1Card">
-          <div class="w3-container">
-            <p>Bench #1</p>
-            <button id="btn-b1" class="w3-button w3-block w3-dark-grey" (click)="playerSelected(6)">
-              + Select Player
-            </button>
-          </div>
-        </div>
-        <div class="card mb-4" id="b2Card">
-          <div class="w3-container">
-            <p>Bench #2</p>
-            <button id="btn-b2" class="w3-button w3-block w3-dark-grey" (click)="playerSelected(7)">
-              + Select Player
-            </button>
-          </div>
-        </div>
-        <div class="card mb-4" id="b3Card">
-          <div class="w3-container">
-            <p>Bench #3</p>
-            <button id="btn-b3" class="w3-button w3-block w3-dark-grey" (click)="playerSelected(8)">
-              + Select Player
-            </button>
-          </div>
-        </div>
-        <div class="card mb-4" id="b4Card">
-          <div class="w3-container">
-            <p>Bench #4</p>
-            <button id="btn-b4" class="w3-button w3-block w3-dark-grey" (click)="playerSelected(9)">
-              + Select Player
-            </button>
-          </div>
-        </div>
-        <div class="card mb-4" id="b5Card">
-          <div class="w3-container">
-            <p>Bench #5</p>
-            <button id="btn-b5" class="w3-button w3-block w3-dark-grey" (click)="playerSelected(10)">
-              + Select Player
-            </button>
-          </div>
-        </div>
-        <div class="card mb-4" id="i1Card">
-          <div class="w3-container">
-            <p>Inactive #1</p>
-            <button id="btn-i1" class="w3-button w3-block w3-dark-grey" (click)="playerSelected(11)">
-              + Select Player
-            </button>
-          </div>
-        </div>
-        <div class="card mb-4" id="i2Card">
-          <div class="w3-container">
-            <p>Inactive #2</p>
-            <button id="btn-i2" class="w3-button w3-block w3-dark-grey" (click)="playerSelected(12)">
-              + Select Player
-            </button>
-          </div>
-        </div>
-        <div class="card mb-4" id="i3Card">
-          <div class="w3-container">
-            <p>Inactive #3</p>
-            <button id="btn-i3" class="w3-button w3-block w3-dark-grey" (click)="playerSelected(13)">
-              + Select Player
-            </button>
-          </div>
+        <!-- <p>value = {{this.playerCards[0].firstName}}</p> -->
+        <!-- <p> loaded is {{this.loaded}}</p> -->
+        <!-- <p>First element of loop: {{this.playerCards[0].firstName}}</p> -->
+        <div *ngIf="this.loaded == 0">Loading</div>
+        <div *ngIf="this.loaded == 1">It has now loaded
+          
         </div>
       </div>
     </div>

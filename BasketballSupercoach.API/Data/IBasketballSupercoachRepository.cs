@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BasketballSupercoach.API.Dtos;
 using BasketballSupercoach.API.Models;
 
 namespace BasketballSupercoach.API.Data
@@ -32,6 +33,8 @@ namespace BasketballSupercoach.API.Data
 
          Task<TeamSalary> GetTeamSalary(int userId);
 
-         
+        //  Task<IEnumerable<TeamDetail>> GetTeamDetailsForUser(int userId);
+
+         Task<IEnumerable<PlayerCardDto>> GetPlayerCardsForUser(int userId);
     }
 }
