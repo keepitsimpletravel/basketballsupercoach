@@ -20,12 +20,12 @@ import { Observable } from 'rxjs';
 export class TeamComponent implements OnInit {
   availableSalary: number;
   user: User;
-  players: Player[];
-  teamDetails: TeamDetail[];
+  // players: Player[];
+  // teamDetails: TeamDetail[];
   playerCards: Playercard[] = [];
-  teamLoaded: Promise<boolean>;
+  // teamLoaded: Promise<boolean>;
   loaded: number;
-  playerAdded: number;
+  // playerAdded: number;
   // Observable<Array<any>>
   // playerCards: Observable<Array<any>>;
 
@@ -36,7 +36,7 @@ export class TeamComponent implements OnInit {
 
   ngOnInit() {
     this.loaded = 0;
-    this.playerAdded = 0;
+    // this.playerAdded = 0;
 
     // Need to get the current user
     this.userService.getUser(this.authService.decodedToken.nameid).subscribe((user: User) => {
@@ -51,7 +51,6 @@ export class TeamComponent implements OnInit {
       this.alertify.error(error);
     });
 
-    console.log('calling GetPlayerCardsForUser');
     this.teamDetailService.GetPlayerCardsForUser(this.authService.decodedToken.nameid).subscribe(data => {
       console.log('data returned for player cards length: ' + data.length);
       this.playerCards = data;

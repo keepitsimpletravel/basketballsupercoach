@@ -1,0 +1,29 @@
+<div *ngIf="playercard.playerId != 0">
+  <div class="card">
+    <div class="card-body">
+      <p>{{ playercard.cardPositionText }}</p>
+      <img
+        class="center"
+        [attr.alt]="playercard.team"
+        src="assets/images/{{playercard.team}}.jpg"
+      />
+      <p>
+        <strong>{{ playercard.firstName }} {{ playercard.surname }}</strong> -
+        {{ playercard.playerPosition }}
+      </p>
+      <p>{{ playercard.price }}</p>
+      <p>Last Score: {{ playercard.lastScore }}</p>
+      <p>Average Score: {{ playercard.averageScore }}</p>
+    </div>
+  </div>
+</div>
+<div *ngIf="playercard.playerId == 0">
+  <div class="w3-container">
+    <div class="card">
+      <div class="card-body">
+        <p>{{ playercard.cardPositionText }}</p>
+        <p><strong>Player Not Yet Selected</strong></p>
+      </div>
+    </div>
+  </div>
+</div>

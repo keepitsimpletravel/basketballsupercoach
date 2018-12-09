@@ -7,6 +7,8 @@ import { AlertifyService } from '../_services/alertify.service';
 import { UserService } from '../_services/user.service';
 import { TeamsalaryService } from '../_services/teamsalary.service';
 import { TeamSalary } from '../_models/teamsalary';
+import { TeamdetailService } from '../_services/teamdetail.service';
+import { Playercard } from '../_models/playercard';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,8 +20,12 @@ export class DashboardComponent implements OnInit {
   model: any = {};
   availableSalary: number;
 
+  playerCards: Playercard[] = [];
+  loaded: number;
+
   constructor(private authService: AuthService, private userService: UserService,
-    private route: ActivatedRoute, private alertify: AlertifyService, private teamSalaryService: TeamsalaryService) { }
+    private route: ActivatedRoute, private alertify: AlertifyService, private teamSalaryService: TeamsalaryService,
+    private teamDetailService: TeamdetailService) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
@@ -53,6 +59,19 @@ export class DashboardComponent implements OnInit {
           this.alertify.error(error);
         });
       }
+    });
+
+    this.teamDetailService.GetPlayerCardsForUser(this.authService.decodedToken.nameid).subscribe(data => {
+      console.log('data returned for player cards length: ' + data.length);
+      this.playerCards = data;
+      for (let p = 0; p < this.playerCards.length; p ++) {
+        console.log(this.playerCards[p].playerId + ' - playerId for pos: ' + this.playerCards[p].cardPositionText);
+      }
+    }, error => {
+      this.alertify.error(error);
+    }, () => {
+      // update the loaded
+      this.loaded = 1;
     });
   }
 

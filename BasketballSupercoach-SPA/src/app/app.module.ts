@@ -36,6 +36,8 @@ import { SelectplayerResolver } from './_resolvers/selectplayer.resolver';
 import { FilteredplayersService } from './_services/filteredplayers.service';
 import { TeamdetailService } from './_services/teamdetail.service';
 import { TeamsalaryService } from './_services/teamsalary.service';
+import { TeamcardComponent } from './teamcard/teamcard.component';
+import { DashboardcardComponent } from './dashboardcard/dashboardcard.component';
 
 
 export function tokenGetter() {
@@ -55,6 +57,8 @@ export function tokenGetter() {
       PlayersdetailedComponent,
       SelectplayerComponent,
       EditprofileComponent,
+      TeamcardComponent,
+      DashboardcardComponent
    ],
    imports: [
       BrowserModule,

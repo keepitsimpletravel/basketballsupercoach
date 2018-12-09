@@ -3,7 +3,7 @@
     <div class="card mb-4" id="i2Card">
       <div class="w3-container text-center">
         <p>Available Salary Cap</p>
-        <p>${{this.availableSalary}}</p>
+        <p>${{ this.availableSalary }}</p>
       </div>
     </div>
     <div class="row"><br /></div>
@@ -19,5 +19,19 @@
         </button>
       </div>
     </div>
+    <div class="row"><br /></div>
   </section>
 </div>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div *ngIf="this.loaded == 0">Loading your team...</div>
+      <div *ngIf="this.loaded == 1">
+        <div *ngFor="let pc of this.playerCards">
+          <app-dashboardcard [playercard]="pc"></app-dashboardcard>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
