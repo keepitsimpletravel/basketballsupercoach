@@ -17,7 +17,7 @@ export class PlayersService {
   }
 
   getSpecificPlayers(pos): Observable<Player[]> {
-    console.log(this.baseUrl + 'players/' + pos);
+    console.log('ASH HERE ' + this.baseUrl + 'players/' + pos);
     return this.http.get<Player[]>(this.baseUrl + 'players/' + pos);
   }
 

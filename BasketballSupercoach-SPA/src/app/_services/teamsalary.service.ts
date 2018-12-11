@@ -24,4 +24,11 @@ export class TeamsalaryService {
     console.log('url: ' + this.baseUrl + userId);
     return this.http.get<TeamSalary>(this.baseUrl + userId);
   }
+
+  updateTeamSalary(model: TeamSalary) {
+    console.log('updated salary: ' + model.availableSalary);
+    console.log('for userId: ' + model.userId);
+    console.log('url: ' + this.baseUrl + 'updatesalary');
+    return this.http.put(this.baseUrl + 'updatesalary', model);
+  }
 }

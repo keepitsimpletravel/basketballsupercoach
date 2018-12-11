@@ -52,10 +52,10 @@ export class TeamComponent implements OnInit {
     });
 
     this.teamDetailService.GetPlayerCardsForUser(this.authService.decodedToken.nameid).subscribe(data => {
-      console.log('data returned for player cards length: ' + data.length);
+      // console.log('data returned for player cards length: ' + data.length);
       this.playerCards = data;
       for (let p = 0; p < this.playerCards.length; p ++) {
-        console.log(this.playerCards[p].playerId + ' - playerId for pos: ' + this.playerCards[p].cardPositionText);
+        // console.log(this.playerCards[p].playerId + ' - playerId for pos: ' + this.playerCards[p].cardPositionText);
       }
     }, error => {
       this.alertify.error(error);
@@ -193,7 +193,7 @@ export class TeamComponent implements OnInit {
   // }
 
   playerSelected(position: number) {
-    // console.log('position selected is ' + position);
+    console.log('position selected is ' + position);
     localStorage.setItem('currentSelectPosition', position.toString());
 
     // How does this value get passed correctly

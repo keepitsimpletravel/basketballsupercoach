@@ -8,7 +8,13 @@
           <p>{{playercard.price}}</p>
           <p>Last Score: {{playercard.lastScore}}</p>
           <p>Average Score: {{playercard.averageScore}}</p>
-          <ul class="li"></ul>
+          <ul class="list-inline playerbuttons animate text-center">
+              <li class="list-inline-item"><button class="btn btn-primary">T</button></li>
+              <li class="list-inline-item"><button class="btn btn-primary">S</button></li>
+              <li *ngIf="playercard.cardPosition < 6" class="list-inline-item"><button class="btn btn-primary">C</button></li>
+              <li *ngIf="playercard.cardPosition > 5 && playercard.cardPosition < 11" class="list-inline-item"><button class="btn btn-primary">6</button></li>
+              <li *ngIf="playercard.cardPosition > 10" class="list-inline-item"><button class="btn btn-primary">E</button></li>
+          </ul>
         </div>
     </div>
   </div>
@@ -18,7 +24,8 @@
     <div class="card">
         <div class="card-body">
         <p>{{playercard.cardPositionText}}</p>
-        <button class="w3-button w3-block w3-dark-grey">
+        <p>{{playercard.cardPosition}}</p>
+        <button class="w3-button w3-block w3-dark-grey" [routerLink]="['/selectplayer/', playercard.cardPosition]" >
           <p></p>+ Select Player
         </button>
       </div>

@@ -9,6 +9,7 @@ import { AuthService } from '../_services/auth.service';
 import { UserService } from '../_services/user.service';
 import { User } from '../_models/user';
 import { TeamsalaryService } from '../_services/teamsalary.service';
+import { TeamSalary } from '../_models/teamsalary';
 
 @Component({
   selector: 'app-selectplayer',
@@ -38,22 +39,25 @@ export class SelectplayerComponent implements OnInit {
 
   model: any = {};
   availableSalary: number;
+  salaryObject: TeamSalary;
   user: User;
 
   // tslint:disable-next-line:max-line-length
   constructor(private playerService: PlayersService, private teamSalaryService: TeamsalaryService, private alertify: AlertifyService, private route: ActivatedRoute, private teamDetailService: TeamdetailService, private authService: AuthService, private router: Router, private userService: UserService) { }
 
   ngOnInit() {
-
-    console.log('userId - ' + this.authService.decodedToken.nameid);
+    // console.log('param: ' +  this.route.snapshot.params['pos']);
+    // console.log('param: ' +  +this.route.snapshot.params['pos']);
+    // console.log('userId - ' + this.authService.decodedToken.nameid);
     this.userService.getUser(this.authService.decodedToken.nameid).subscribe((user: User) => {
       this.user = user;
       console.log(user);
 
       // this.createTeamSalary();
       this.teamSalaryService.getTeamSalary(this.user.id).subscribe(next => {
-        console.log('got team salary value - ' + next.availableSalary);
+        // console.log('got team salary value - ' + next.availableSalary);
         this.availableSalary = next.availableSalary;
+        this.salaryObject = next;
       }, error => {
         this.alertify.error(error);
       });
@@ -61,14 +65,21 @@ export class SelectplayerComponent implements OnInit {
       this.alertify.error(error);
     });
 
-    this.position = +localStorage.getItem('currentSelectPosition');
+    // this.position = +localStorage.getItem('currentSelectPosition'); // this is not being updated properly
+    this.position = +this.route.snapshot.params['pos'];
 
     this.loading = true;
         setTimeout(() => {
             console.log('players about to be filtered');
+            // this.playerService.getSpecificPlayers(+this.route.snapshot.params['pos']).subscribe(data => {
+            //   this.players = data['specificplayers'];
+            //   console.log('players received' + this.players);
+            // }, error => {
+            //   this.alertify.error(error);
+            // });
             this.route.data.subscribe(data => {
               this.players = data['specificplayers'];
-              console.log('players received' + this.players);
+              // console.log('players received' + this.players);
             });
             this.loading = false;
         }, 1000);
@@ -115,41 +126,52 @@ export class SelectplayerComponent implements OnInit {
           ];
   }
 
-  playerSelected(playerId: number) {
+  playerSelected(playerId: number, price: number) {
     console.log('the selected player id is: ' + playerId);
 
-    // Need to create a TeamDetail record for this player
-    this.model.captain = 0;
-    this.model.emergency = 0;
-    this.model.sixthMan = 0;
-    this.model.position = this.position;
-    this.model.playerId = playerId;
-    this.model.userId = this.authService.decodedToken.nameid;
+    // Need the price value to be checked against available salary
+    if (price <= this.availableSalary) {
+      // Then the player is affordable
+      // Need to create a TeamDetail record for this player
+      this.model.captain = 0;
+      this.model.emergency = 0;
+      this.model.sixthMan = 0;
+      this.model.position = this.position; // this is wrong!
+      this.model.playerId = playerId;
+      this.model.userId = this.authService.decodedToken.nameid;
 
-    // Now need to pass the model somewhere
-    this.teamDetailService.createTeamDetail(this.model).subscribe(next => {
-      this.alertify.success('player selection saved successfully');
-      // Need to add check to see if set salary is needed to be set to 1
-      this.userService.getUser(this.authService.decodedToken.nameid).subscribe(curr => {
-        if (curr.salarySet === 0) {
-          // Then we need to update and set the salarySet to be 1 for this user
-          // this.userService.updateSalarySet(curr.id).subscribe(udt => {
-          //   console.log('Salary Set to 1');
-          // }, error => {
-          //   this.alertify.error(error);
-          // });
-        }
+      // Now need to pass the model somewhere
+      this.teamDetailService.createTeamDetail(this.model).subscribe(next => {
+        this.alertify.success('player selection saved successfully');
+        // Need to add check to see if set salary is needed to be set to 1
+        this.userService.getUser(this.authService.decodedToken.nameid).subscribe(curr => {
+          // if (curr.salarySet === 0) {
+          // }
+        }, error => {
+          this.alertify.error(error);
+        }, () => {
+          // this.router.navigate(['/dashboard']);
+        });
+
       }, error => {
         this.alertify.error(error);
       }, () => {
-        // this.router.navigate(['/dashboard']);
+        this.router.navigate(['/team']);
       });
 
-    }, error => {
-      this.alertify.error(error);
-    }, () => {
-      this.router.navigate(['/team']);
-    });
+      // Need to update the teams available salary
+      this.availableSalary = this.availableSalary - price;
+      this.salaryObject.availableSalary = this.availableSalary;
+
+      this.teamSalaryService.updateTeamSalary(this.salaryObject).subscribe(next => {
+
+      }, error => {
+        this.alertify.error(error);
+      });
+
+    } else {
+      this.alertify.error('You cannot afford this player');
+    }
   }
 
 }

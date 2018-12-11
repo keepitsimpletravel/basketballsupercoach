@@ -37,7 +37,7 @@ namespace BasketballSupercoach.API.Controllers
     //         return StatusCode(201);
     //     }
 
-    [HttpPost("createsalary")]
+        [HttpPost("createsalary")]
         public async Task<IActionResult> CreateTeamSalary(TeamSalaryCreationDto teamSalaryDto)
         {
             var teamSalaryToCreate = new TeamSalary
@@ -48,6 +48,21 @@ namespace BasketballSupercoach.API.Controllers
 
 
             var createdSalary = await _repo.CreateTeamSalary(teamSalaryToCreate);
+            return StatusCode(201);
+        }
+
+        [HttpPut("updatesalary")]
+        public async Task<IActionResult> UpdateTeamSalary(TeamSalaryCreationDto teamSalaryDto)
+        {
+            var salaryToUpdate = new TeamSalary
+            {
+                Id = teamSalaryDto.Id,
+                AvailableSalary = teamSalaryDto.AvailableSalary,
+                UserId = teamSalaryDto.UserId
+            };
+
+
+            var updateSalary = await _repo.UpdateTeamSalary(salaryToUpdate);
             return StatusCode(201);
         }
 

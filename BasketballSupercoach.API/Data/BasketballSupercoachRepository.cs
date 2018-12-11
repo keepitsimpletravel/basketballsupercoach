@@ -104,6 +104,12 @@ namespace BasketballSupercoach.API.Data
             return await _content.SaveChangesAsync() > 0;
         }
 
+        public async Task<bool> UpdateTeamSalary(TeamSalary teamSalary) {
+            _content.TeamSalary.Update(teamSalary);
+            // await CreateTeamSalary(teamSalary);
+            return await _content.SaveChangesAsync() > 0;
+        }
+
         // public async Task<IEnumerable<TeamDetail>> GetTeamDetailsForUser(int userId)
         // {
         //     var teamDetails = await _content.TeamDetails.Where(x => x.UserId == userId).ToListAsync();
