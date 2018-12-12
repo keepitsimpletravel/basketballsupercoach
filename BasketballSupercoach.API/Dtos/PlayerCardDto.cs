@@ -20,6 +20,12 @@ namespace BasketballSupercoach.API.Dtos
 
         public int averageScore { get; set; }
 
+        public int isCaptain { get; set; }
+
+        public int isSixthMan { get; set; }
+
+        public int isEmergency { get; set; }
+
         public int lastScore { get; set; }
     }
 }

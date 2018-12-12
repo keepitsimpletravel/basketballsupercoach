@@ -9,4 +9,7 @@ export interface Playercard {
     cardPositionText: string;
     averageScore: number;
     lastScore: number;
+    isCaptain: number;
+    isSixthMan: number;
+    isEmergency: number;
 }

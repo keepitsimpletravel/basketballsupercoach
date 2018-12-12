@@ -145,6 +145,9 @@ namespace BasketballSupercoach.API.Data
                         pgDto.Price = player.Price;
                         pgDto.Surname = player.Surname;
                         pgDto.Team = player.Team;
+                        pgDto.isCaptain = detail.Captain;
+                        pgDto.isSixthMan = detail.SixthMan;
+                        pgDto.isEmergency = detail.Emergency;
 
                         playerCardsList.Add(pgDto);
 

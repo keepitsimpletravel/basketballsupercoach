@@ -11,7 +11,7 @@
         <div *ngIf="this.loaded == 0">Loading your team...</div>
         <div *ngIf="this.loaded == 1">
           <div *ngFor="let pc of this.playerCards">
-            <app-teamcard [playercard]="pc"></app-teamcard>
+            <app-teamcard [playercard]="pc" (captainSet)="setCaptainValues($event)"></app-teamcard>
           </div>
         </div>
       </div>
