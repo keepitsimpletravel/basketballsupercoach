@@ -82,4 +82,22 @@ export class TeamComponent implements OnInit {
       }
     }
   }
+
+  setSixthManValues(sixth: number) {
+    if (sixth !== 0) {
+      // Then the captain has been changed
+      for (let i = 0; i < this.playerCards.length; i ++) {
+        this.playerCards[i].isSixthMan = sixth;
+      }
+    }
+  }
+
+  setEmergencyValues(emergency: number) {
+    if (emergency !== 0) {
+      // Then the captain has been changed
+      for (let i = 0; i < this.playerCards.length; i ++) {
+        this.playerCards[i].isEmergency = emergency;
+      }
+    }
+  }
 }

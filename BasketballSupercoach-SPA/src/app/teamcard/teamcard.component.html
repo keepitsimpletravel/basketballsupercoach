@@ -2,7 +2,7 @@
   <div class="w3-container">
     <div class="card">
         <!-- <div class="card-body" [ngStyle]="{'background-color': playercard.isCaptain? 'yellow' : 'white'}"> -->
-            <div class="card-body" [ngStyle]="this.playercard.isCaptain === this.playercard.cardPosition && {'background-color':'yellow'} || this.currentPosition !== this.playercard.cardPosition && {'background-color':'white'}">
+            <div class="card-body" [ngStyle]="this.playercard.isCaptain === this.playercard.cardPosition && {'background-color':'yellow'} || this.playercard.isSixthMan === this.playercard.cardPosition && {'background-color':'blue'} || this.playercard.isEmergency === this.playercard.cardPosition && {'background-color':'gray'}">
             
           <p>{{playercard.cardPositionText}}</p>
           <img class="center" [attr.alt]="playercard.team" src="assets/images/{{playercard.team}}.jpg">
@@ -14,8 +14,8 @@
               <li class="list-inline-item"><button class="btn btn-primary">T</button></li>
               <li class="list-inline-item"><button class="btn btn-primary">S</button></li>
               <li *ngIf="playercard.cardPosition < 6" class="list-inline-item"><button class="btn btn-primary" (click)="setCaptain(playercard.cardPosition)">C</button></li>
-              <li *ngIf="playercard.cardPosition > 5 && playercard.cardPosition < 11" class="list-inline-item"><button class="btn btn-primary">6</button></li>
-              <li *ngIf="playercard.cardPosition > 10" class="list-inline-item"><button class="btn btn-primary">E</button></li>
+              <li *ngIf="playercard.cardPosition > 5 && playercard.cardPosition < 11" class="list-inline-item"><button class="btn btn-primary" (click)="setSixthMan(playercard.cardPosition)">6</button></li>
+              <li *ngIf="playercard.cardPosition > 10" class="list-inline-item"><button class="btn btn-primary" (click)="setEmergency(playercard.cardPosition)">E</button></li>
           </ul>
         </div>
     </div>
