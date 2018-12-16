@@ -23,7 +23,15 @@ export class TeamdetailService {
 
   updateTeamDetailRecord (playercard: Playercard) {
     playercard.userId = +localStorage.getItem('currentUserId');
-    console.log(this.baseUrl + 'updateteamdetail');
+    // console.log(this.baseUrl + 'updateteamdetail');
     return this.http.put<Playercard>(this.baseUrl + 'updateteamdetail', playercard);
+  }
+
+  updateAllTeamDetailRecords (playercards: Playercard[]) {
+    for (let p = 0; p < playercards.length; p ++) {
+      playercards[p].userId = +localStorage.getItem('currentUserId');
+      this.http.put<Playercard>(this.baseUrl + 'updateteamdetail', playercards[p]);
+    }
+    return 201;
   }
 }

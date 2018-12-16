@@ -40,6 +40,7 @@ import { TeamcardComponent } from './teamcard/teamcard.component';
 import { DashboardcardComponent } from './dashboardcard/dashboardcard.component';
 import { TradeplayerComponent } from './tradeplayer/tradeplayer.component';
 import { SubplayerComponent } from './subplayer/subplayer.component';
+import { SubplayercardComponent } from './subplayercard/subplayercard.component';
 
 export function tokenGetter() {
     return localStorage.getItem('token');
@@ -61,7 +62,8 @@ export function tokenGetter() {
       TeamcardComponent,
       DashboardcardComponent,
       TradeplayerComponent,
-      SubplayerComponent
+      SubplayerComponent,
+      SubplayercardComponent
    ],
    imports: [
       BrowserModule,

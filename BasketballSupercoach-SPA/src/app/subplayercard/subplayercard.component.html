@@ -1,0 +1,22 @@
+<div *ngIf="playercard.playerId != 0">
+    <div class="card">
+      <div class="card-body">
+        <p>{{ playercard.cardPositionText }}</p>
+        <button class="btn btn-primary" (click)="movePlayers(playercard.cardPosition)">Move</button>
+        <br />
+        <br />
+        <img
+          class="center"
+          [attr.alt]="playercard.team"
+          src="assets/images/{{playercard.team}}.jpg"
+        />
+        <p>
+          <strong>{{ playercard.firstName }} {{ playercard.surname }}</strong> -
+          {{ playercard.playerPosition }}
+        </p>
+        <p>{{ playercard.price }}</p>
+        <p>Last Score: {{ playercard.lastScore }}</p>
+        <p>Average Score: {{ playercard.averageScore }}</p>
+      </div>
+    </div>
+  </div>

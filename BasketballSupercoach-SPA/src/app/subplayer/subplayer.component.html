@@ -6,11 +6,11 @@
   <app-dashboardcard [playercard]="playercard"></app-dashboardcard>
 </section>
 <section>
-  Need to display all of the other possible move options here
+  <strong>Players that can be selected</strong>
   <div *ngIf="this.loaded == 0">Loading substitution options...</div>
   <div *ngIf="this.loaded == 1">
     <div *ngFor="let pc of this.subPlayers">
-      <app-dashboardcard [playercard]="pc"></app-dashboardcard>
+      <app-subplayercard [playercard]="pc" (subPlayer)="playerSub($event)"></app-subplayercard>
     </div>  
   </div>
 </section>
