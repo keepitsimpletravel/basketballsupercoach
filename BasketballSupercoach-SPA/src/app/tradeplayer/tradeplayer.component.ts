@@ -150,6 +150,7 @@ export class TradeplayerComponent implements OnInit {
     }, error => {
       this.alertify.error(error);
     }, () => {
+      this.alertify.success('Team Saved Successfully');
       this.router.navigate(['team/']);
     });
   }

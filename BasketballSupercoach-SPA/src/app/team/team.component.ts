@@ -26,6 +26,7 @@ export class TeamComponent implements OnInit {
   // teamLoaded: Promise<boolean>;
   loaded: number;
   captainSelected = 0;
+  updates = 0;
   // playerAdded: number;
   // Observable<Array<any>>
   // playerCards: Observable<Array<any>>;
@@ -75,6 +76,7 @@ export class TeamComponent implements OnInit {
   }
 
   setCaptainValues(captain: number) {
+    this.updates = 1;
     if (captain !== 0) {
       // Then the captain has been changed
       for (let i = 0; i < this.playerCards.length; i ++) {
@@ -84,6 +86,7 @@ export class TeamComponent implements OnInit {
   }
 
   setSixthManValues(sixth: number) {
+    this.updates = 1;
     if (sixth !== 0) {
       // Then the captain has been changed
       for (let i = 0; i < this.playerCards.length; i ++) {
@@ -93,11 +96,23 @@ export class TeamComponent implements OnInit {
   }
 
   setEmergencyValues(emergency: number) {
+    this.updates = 1;
     if (emergency !== 0) {
       // Then the captain has been changed
       for (let i = 0; i < this.playerCards.length; i ++) {
         this.playerCards[i].isEmergency = emergency;
       }
+    }
+  }
+
+  saveTeam() {
+    for (let p = 0; p < this.playerCards.length; p ++) {
+      this.teamDetailService.updateTeamDetailRecord(this.playerCards[p]).subscribe(data => {
+      }, error => {
+        this.alertify.error(error);
+      }, () => {
+        this.alertify.success('Team Saved Successfully');
+      });
     }
   }
 }

@@ -1,6 +1,6 @@
 <div *ngIf="playercard.playerId != 0">
   <div class="card">
-    <div class="card-body">
+    <div class="card-body" [ngStyle]="this.playercard.isCaptain === this.playercard.cardPosition && {'background-color':'yellow'} || this.playercard.isSixthMan === this.playercard.cardPosition && {'background-color':'blue'} || this.playercard.isEmergency === this.playercard.cardPosition && {'background-color':'gray'}">
       <p>{{ playercard.cardPositionText }}</p>
       <img
         class="center"

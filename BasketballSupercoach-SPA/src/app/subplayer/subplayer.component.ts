@@ -102,6 +102,7 @@ export class SubplayerComponent implements OnInit {
       }, error => {
         this.alertify.error(error);
       }, () => {
+        this.alertify.success('Team Saved Successfully');
       });
     }
 
