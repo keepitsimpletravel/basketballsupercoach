@@ -14,6 +14,7 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 import { EditprofileResolver } from './_resolvers/editprofile.resolver';
 import { SelectplayerResolver } from './_resolvers/selectplayer.resolver';
 import { DashboardResolver } from './_resolvers/dashboard.resolver';
+import { TradeplayerComponent } from './tradeplayer/tradeplayer.component';
 
 export const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -24,6 +25,7 @@ export const appRoutes: Routes = [
     { path: 'team', component: TeamComponent, canActivate: [AuthGuard] },
     // tslint:disable-next-line:max-line-length
     { path: 'selectplayer/:pos', component: SelectplayerComponent, canActivate: [AuthGuard], resolve: { specificplayers: SelectplayerResolver } },
+    { path: 'tradeplayer/:playercard', component: TradeplayerComponent, canActivate: [AuthGuard] },
     // { path: 'selectplayer/:pos', component: SelectplayerComponent, canActivate: [AuthGuard] },
     // {path : 'heroes', component : HeroDetailComponent, data : {some_data : 'some value'}}
     { path: 'editprofile', component: EditprofileComponent, canActivate: [AuthGuard], resolve: {user: EditprofileResolver} },

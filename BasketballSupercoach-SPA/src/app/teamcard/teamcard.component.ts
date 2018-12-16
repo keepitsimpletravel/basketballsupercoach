@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Playercard } from '../_models/playercard';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-teamcard',
@@ -12,7 +13,7 @@ export class TeamcardComponent implements OnInit {
   @Output() sixthManSet = new EventEmitter<number>();
   @Output() emergencySet = new EventEmitter<number>();
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   setCaptain(position: number) {
     if (this.playercard.isCaptain === position) {
@@ -54,14 +55,9 @@ export class TeamcardComponent implements OnInit {
     }
   }
 
-  // setStyles(type: number) {
-  //   // tslint:disable-next-line:prefer-const
-  //   let styles = {
-  //     'background-color': this.playercard.isExpired ? 'red' : 'transparent',
-  //     'font-weight': this.isImportant ? 'bold' : 'normal'
-  //   };
-  //   return styles;
-  // }
+  tradePlayer(pc: Playercard) {
+    this.router.navigate(['/tradeplayer/', JSON.stringify(pc)]);
+  }
 
   ngOnInit() {
   }

@@ -99,6 +99,17 @@ namespace BasketballSupercoach.API.Data
             return await _content.SaveChangesAsync() > 0;
         }
 
+        public TeamDetail GetTeamDetailForPosition(int userId, int position) {
+            var teamdetail = _content.TeamDetails.FirstOrDefault(td => td.UserId == userId && td.Position == position);
+            _content.Entry(teamdetail).State = EntityState.Detached;
+            return teamdetail;
+        }
+
+        public async Task<bool> UpdateTeamDetail(TeamDetail teamDetail) {
+            _content.TeamDetails.Update(teamDetail);
+            return await _content.SaveChangesAsync() > 0;
+        }
+
         public async Task<bool> UpdateUserSalarySet(User user) {
             _content.Users.Update(user);
             return await _content.SaveChangesAsync() > 0;

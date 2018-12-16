@@ -20,4 +20,10 @@ export class TeamdetailService {
   GetPlayerCardsForUser (userId: number) {
     return this.http.get<Playercard[]>(this.baseUrl + userId);
   }
+
+  updateTeamDetailRecord (playercard: Playercard) {
+    playercard.userId = +localStorage.getItem('currentUserId');
+    console.log(this.baseUrl + 'updateteamdetail');
+    return this.http.put<Playercard>(this.baseUrl + 'updateteamdetail', playercard);
+  }
 }

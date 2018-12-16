@@ -27,5 +27,7 @@ namespace BasketballSupercoach.API.Dtos
         public int isEmergency { get; set; }
 
         public int lastScore { get; set; }
+
+        public int userId { get; set; }
     }
 }
