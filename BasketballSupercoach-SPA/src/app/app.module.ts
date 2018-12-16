@@ -39,7 +39,7 @@ import { TeamsalaryService } from './_services/teamsalary.service';
 import { TeamcardComponent } from './teamcard/teamcard.component';
 import { DashboardcardComponent } from './dashboardcard/dashboardcard.component';
 import { TradeplayerComponent } from './tradeplayer/tradeplayer.component';
-
+import { SubplayerComponent } from './subplayer/subplayer.component';
 
 export function tokenGetter() {
     return localStorage.getItem('token');
@@ -60,7 +60,8 @@ export function tokenGetter() {
       EditprofileComponent,
       TeamcardComponent,
       DashboardcardComponent,
-      TradeplayerComponent
+      TradeplayerComponent,
+      SubplayerComponent
    ],
    imports: [
       BrowserModule,

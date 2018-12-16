@@ -140,24 +140,8 @@ export class TradeplayerComponent implements OnInit {
   }
 
   tradePlayer() {
-    console.log('Trading Player');
-
-    // NEed to map out how the update happens
-    // this.emergencySet.emit(this.playercard.cardPosition);
-    // this.returnPlayercard.emit(this.tradingPlayercard);
-
-    // Update the TeamDetails table
-    // Get the current playercard position
-    // this.playercard.cardPosition;
-
-
-    //
-    // pass playercard, captain, sixtMan, emergency
-    console.log('about to call update team detail record');
     this.teamDetailService.updateTeamDetailRecord(this.tradingPlayercard).subscribe(data => {
-      console.log('salary - this.availableSalary - ' + this.availableSalary + ' minus the price: ' + this.tradingPlayercard.price);
       this.salaryObject.availableSalary = this.availableSalary - this.tradingPlayercard.price;
-      console.log('salary value = ' + this.salaryObject.availableSalary);
       this.teamSalaryService.updateTeamSalary(this.salaryObject).subscribe(next => {
 
       }, error => {
@@ -168,12 +152,5 @@ export class TradeplayerComponent implements OnInit {
     }, () => {
       this.router.navigate(['team/']);
     });
-
-    // Service will need to convert playercards to team details and then call the API
-    // The question that I have now, will be how do I update the Team Details records
-    // - delete all of the existing TeamDetail records for the current team
-    // - then add new TeamDetail records
-
-    // Update the TeamSalary
   }
 }

@@ -1,0 +1,16 @@
+<section>
+  <strong>Substitute Player</strong>
+</section>
+<section>
+  <div><strong>Player being Subbed</strong></div>
+  <app-dashboardcard [playercard]="playercard"></app-dashboardcard>
+</section>
+<section>
+  Need to display all of the other possible move options here
+  <div *ngIf="this.loaded == 0">Loading substitution options...</div>
+  <div *ngIf="this.loaded == 1">
+    <div *ngFor="let pc of this.subPlayers">
+      <app-dashboardcard [playercard]="pc"></app-dashboardcard>
+    </div>  
+  </div>
+</section>

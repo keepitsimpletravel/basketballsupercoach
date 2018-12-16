@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Playercard } from '../_models/playercard';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatDialog, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-teamcard',
@@ -57,6 +58,11 @@ export class TeamcardComponent implements OnInit {
 
   tradePlayer(pc: Playercard) {
     this.router.navigate(['/tradeplayer/', JSON.stringify(pc)]);
+  }
+
+  subPlayer(pc: Playercard) {
+    console.log('Sub button pressed for ' + pc.cardPositionText);
+    this.router.navigate(['/subplayer/', JSON.stringify(pc)]);
   }
 
   ngOnInit() {
