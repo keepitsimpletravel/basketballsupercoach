@@ -41,6 +41,7 @@ import { DashboardcardComponent } from './dashboardcard/dashboardcard.component'
 import { TradeplayerComponent } from './tradeplayer/tradeplayer.component';
 import { SubplayerComponent } from './subplayer/subplayer.component';
 import { SubplayercardComponent } from './subplayercard/subplayercard.component';
+import { AdminComponent } from './admin/admin.component';
 
 export function tokenGetter() {
     return localStorage.getItem('token');
@@ -63,7 +64,8 @@ export function tokenGetter() {
       DashboardcardComponent,
       TradeplayerComponent,
       SubplayerComponent,
-      SubplayercardComponent
+      SubplayercardComponent,
+      AdminComponent
    ],
    imports: [
       BrowserModule,

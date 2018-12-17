@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BasketballSupercoach.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20181130205122_UpdateActives")]
-    partial class UpdateActives
+    [Migration("20181217074540_InitialDB")]
+    partial class InitialDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -62,6 +62,40 @@ namespace BasketballSupercoach.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Players");
+                });
+
+            modelBuilder.Entity("BasketballSupercoach.API.Models.ScoringSystem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Assists");
+
+                    b.Property<int>("Blocks");
+
+                    b.Property<int>("DRebounds");
+
+                    b.Property<int>("DoubleDouble");
+
+                    b.Property<int>("MadeThrees");
+
+                    b.Property<int>("Minutes");
+
+                    b.Property<int>("ORebounds");
+
+                    b.Property<int>("Points");
+
+                    b.Property<int>("QuadDouble");
+
+                    b.Property<int>("Steals");
+
+                    b.Property<int>("TripleDouble");
+
+                    b.Property<int>("Turnovers");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ScoringSystems");
                 });
 
             modelBuilder.Entity("BasketballSupercoach.API.Models.TeamDetail", b =>

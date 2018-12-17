@@ -62,6 +62,40 @@ namespace BasketballSupercoach.API.Migrations
                     b.ToTable("Players");
                 });
 
+            modelBuilder.Entity("BasketballSupercoach.API.Models.ScoringSystem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Assists");
+
+                    b.Property<int>("Blocks");
+
+                    b.Property<int>("DRebounds");
+
+                    b.Property<int>("DoubleDouble");
+
+                    b.Property<int>("MadeThrees");
+
+                    b.Property<int>("Minutes");
+
+                    b.Property<int>("ORebounds");
+
+                    b.Property<int>("Points");
+
+                    b.Property<int>("QuadDouble");
+
+                    b.Property<int>("Steals");
+
+                    b.Property<int>("TripleDouble");
+
+                    b.Property<int>("Turnovers");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ScoringSystems");
+                });
+
             modelBuilder.Entity("BasketballSupercoach.API.Models.TeamDetail", b =>
                 {
                     b.Property<int>("Id")

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BasketballSupercoach.API.Migrations
 {
-    public partial class UpdateActives : Migration
+    public partial class InitialDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -25,6 +25,30 @@ namespace BasketballSupercoach.API.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Players", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ScoringSystems",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Points = table.Column<int>(nullable: false),
+                    ORebounds = table.Column<int>(nullable: false),
+                    DRebounds = table.Column<int>(nullable: false),
+                    Assists = table.Column<int>(nullable: false),
+                    Steals = table.Column<int>(nullable: false),
+                    Blocks = table.Column<int>(nullable: false),
+                    DoubleDouble = table.Column<int>(nullable: false),
+                    TripleDouble = table.Column<int>(nullable: false),
+                    QuadDouble = table.Column<int>(nullable: false),
+                    Minutes = table.Column<int>(nullable: false),
+                    Turnovers = table.Column<int>(nullable: false),
+                    MadeThrees = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ScoringSystems", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -114,6 +138,9 @@ namespace BasketballSupercoach.API.Migrations
 
             migrationBuilder.DropTable(
                 name: "Players");
+
+            migrationBuilder.DropTable(
+                name: "ScoringSystems");
 
             migrationBuilder.DropTable(
                 name: "TeamDetails");

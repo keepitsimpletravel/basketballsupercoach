@@ -16,6 +16,7 @@ import { SelectplayerResolver } from './_resolvers/selectplayer.resolver';
 import { DashboardResolver } from './_resolvers/dashboard.resolver';
 import { TradeplayerComponent } from './tradeplayer/tradeplayer.component';
 import { SubplayerComponent } from './subplayer/subplayer.component';
+import { AdminComponent } from './admin/admin.component';
 
 export const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -24,6 +25,7 @@ export const appRoutes: Routes = [
     { path: 'players/:id', component: PlayersdetailedComponent, canActivate: [AuthGuard], resolve: {player: PlayersdeatiledResolver}},
     { path: 'rankings', component: RankingsComponent, canActivate: [AuthGuard] },
     { path: 'team', component: TeamComponent, canActivate: [AuthGuard] },
+    { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
     // tslint:disable-next-line:max-line-length
     { path: 'selectplayer/:pos', component: SelectplayerComponent, canActivate: [AuthGuard], resolve: { specificplayers: SelectplayerResolver } },
     { path: 'tradeplayer/:playercard', component: TradeplayerComponent, canActivate: [AuthGuard] },

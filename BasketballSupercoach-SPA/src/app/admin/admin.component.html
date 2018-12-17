@@ -1,0 +1,89 @@
+<section>
+  <p><strong>Administration</strong></p>
+</section>
+<div class="row"></div>
+<section>
+  <p>Get Daily Player Scores</p>
+  <div class="container">
+    <p>Date: Date Picker Goes HERE</p>
+    <button class="btn btn-primary">Run Scores</button>
+  </div>
+</section>
+<div class="row"></div>
+<br />
+<br />
+<section>
+  <p>Set Scoring Values</p>
+  <div class="container">
+      <form #scoringForm="ngForm">
+        <h2 class="text-center text-primary">Scoring System</h2>
+          <hr>
+          <div class="form-group">
+            Points:
+            <input type="text" class="form-control" required name="points" placeholder="Points">
+          </div>
+        
+          <div class="form-group">
+            Offesive Rebounds:
+            <input type="text" class="form-control" required name="orebounds" placeholder="Offensive Rebounds">
+          </div>
+        
+          <div class="form-group">
+              Defensive Rebounds:
+              <input type="text" class="form-control" required name="drebounds" placeholder="Defensive Rebounds">
+          </div>
+
+          <div class="form-group">
+              Assists:
+              <input type="text" class="form-control" required name="assists" placeholder="Assists">
+          </div>
+
+          <div class="form-group">
+              Steals:
+              <input type="text" class="form-control" required name="steals" placeholder="Steals">
+          </div>
+
+          <div class="form-group">
+              Blocks:
+              <input type="text" class="form-control" required name="blocks" placeholder="Blocks">
+          </div>
+
+          <div class="form-group">
+              3 Point Makes:
+              <input type="text" class="form-control" required name="threes" placeholder="3PM">
+          </div>
+
+          <div class="form-group">
+              Turnovers:
+              <input type="text" class="form-control" required name="turnovers" placeholder="Turnovers">
+          </div>
+
+          <div class="form-group">
+              Minutes:
+              <input type="text" class="form-control" required name="minutes" placeholder="Minutes">
+          </div>
+
+          <div class="form-group">
+              Double Double:
+              <input type="text" class="form-control" required name="doubledouble" placeholder="DD">
+          </div>
+
+          <div class="form-group">
+              Triple Doulbe:
+              <input type="text" class="form-control" required name="tripledouble" placeholder="TD">
+          </div>
+
+          <div class="form-group">
+              Quadrouple Double:
+              <input type="text" class="form-control" required name="quaddouble" placeholder="QD">
+          </div>
+
+
+        
+          <div class="form-group text-center">
+            <button class="btn btn-success" type="submit">Update Scoring System</button>
+          </div>
+          
+        </form>
+  </div>
+</section>

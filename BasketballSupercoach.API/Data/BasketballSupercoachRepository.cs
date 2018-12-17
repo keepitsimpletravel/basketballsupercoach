@@ -32,6 +32,12 @@ namespace BasketballSupercoach.API.Data
             return player;
         }
 
+    public async Task<ScoringSystem> GetScoringSystem()
+        {
+            var scoring = await _content.ScoringSystems.FirstOrDefaultAsync();
+            return scoring;
+        }
+
         public async Task<IEnumerable<Player>> GetPlayers()
         {
             var players = await _content.Players.ToListAsync();
