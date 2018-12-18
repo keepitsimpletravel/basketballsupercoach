@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace BasketballSupercoach.API.Models
 {
     public class ScoringSystem
@@ -6,11 +8,14 @@ namespace BasketballSupercoach.API.Models
 
         public int Points { get; set; }
 
-        public int ORebounds { get; set; }
+        [Column(TypeName = "decimal(1, 2)")]
+        public decimal ORebounds { get; set; }
 
-        public int DRebounds { get; set; }
+        [Column(TypeName = "decimal(1, 2)")]
+        public decimal DRebounds { get; set; }
 
-        public int Assists { get; set; }
+        [Column(TypeName = "decimal(1, 2)")]
+        public decimal Assists { get; set; }
 
         public int Steals { get; set; }
 
@@ -22,10 +27,12 @@ namespace BasketballSupercoach.API.Models
 
         public int QuadDouble { get; set; }
 
-        public int Minutes { get; set; }
+        [Column(TypeName = "decimal(1, 2)")]
+        public decimal Minutes { get; set; }
 
         public int Turnovers { get; set; }
 
-        public int MadeThrees { get; set; }
+        [Column(TypeName = "decimal(1, 2)")]
+        public decimal MadeThrees { get; set; }
     }
 }

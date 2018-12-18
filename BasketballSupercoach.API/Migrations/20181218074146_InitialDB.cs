@@ -34,17 +34,17 @@ namespace BasketballSupercoach.API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Points = table.Column<int>(nullable: false),
-                    ORebounds = table.Column<int>(nullable: false),
-                    DRebounds = table.Column<int>(nullable: false),
-                    Assists = table.Column<int>(nullable: false),
+                    ORebounds = table.Column<decimal>(type: "decimal(1, 2)", nullable: false),
+                    DRebounds = table.Column<decimal>(type: "decimal(1, 2)", nullable: false),
+                    Assists = table.Column<decimal>(type: "decimal(1, 2)", nullable: false),
                     Steals = table.Column<int>(nullable: false),
                     Blocks = table.Column<int>(nullable: false),
                     DoubleDouble = table.Column<int>(nullable: false),
                     TripleDouble = table.Column<int>(nullable: false),
                     QuadDouble = table.Column<int>(nullable: false),
-                    Minutes = table.Column<int>(nullable: false),
+                    Minutes = table.Column<decimal>(type: "decimal(1, 2)", nullable: false),
                     Turnovers = table.Column<int>(nullable: false),
-                    MadeThrees = table.Column<int>(nullable: false)
+                    MadeThrees = table.Column<decimal>(type: "decimal(1, 2)", nullable: false)
                 },
                 constraints: table =>
                 {

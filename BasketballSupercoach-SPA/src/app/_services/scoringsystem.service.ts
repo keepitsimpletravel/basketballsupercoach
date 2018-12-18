@@ -7,10 +7,15 @@ import { Scoringsystem } from '../_models/scoringsystem';
   providedIn: 'root'
 })
 export class ScoringsystemService {
-baseUrl = environment.apiUrl + 'scoringsystem/';
+  baseUrl = environment.apiUrl + 'scoringsystem/';
 
-constructor(private http: HttpClient) { }
-GetScoringSystem () {
-  return this.http.get<Scoringsystem>(this.baseUrl);
-}
+  constructor(private http: HttpClient) { }
+  GetScoringSystem () {
+    // console.log(this.baseUrl);
+    return this.http.get<Scoringsystem>(this.baseUrl);
+  }
+
+  UpdateScoringSystem (scoring: Scoringsystem) {
+    return this.http.put<Scoringsystem>(this.baseUrl + 'update', Scoringsystem);
+  }
 }

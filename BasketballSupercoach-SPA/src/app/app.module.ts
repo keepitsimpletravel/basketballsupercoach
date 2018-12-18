@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { BsDropdownModule } from 'ngx-bootstrap';
+import { BsDropdownModule, BsDatepickerModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
@@ -42,6 +42,7 @@ import { TradeplayerComponent } from './tradeplayer/tradeplayer.component';
 import { SubplayerComponent } from './subplayer/subplayer.component';
 import { SubplayercardComponent } from './subplayercard/subplayercard.component';
 import { AdminComponent } from './admin/admin.component';
+import { DatePipe } from '@angular/common';
 
 export function tokenGetter() {
     return localStorage.getItem('token');
@@ -71,11 +72,13 @@ export function tokenGetter() {
       BrowserModule,
       HttpClientModule,
       FormsModule,
+      ReactiveFormsModule,
       BsDropdownModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       SharedModule,
       TableModule,
       DropdownModule,
+      BsDatepickerModule.forRoot(),
       ButtonModule,
       JwtModule.forRoot({
         config: {
@@ -99,7 +102,8 @@ export function tokenGetter() {
       SelectplayerResolver,
       FilteredplayersService,
       TeamdetailService,
-      TeamsalaryService
+      TeamsalaryService,
+      DatePipe
    ],
    bootstrap: [
       AppComponent

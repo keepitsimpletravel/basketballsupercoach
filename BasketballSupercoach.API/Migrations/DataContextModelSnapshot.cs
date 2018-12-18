@@ -67,19 +67,24 @@ namespace BasketballSupercoach.API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("Assists");
+                    b.Property<decimal>("Assists")
+                        .HasColumnType("decimal(1, 2)");
 
                     b.Property<int>("Blocks");
 
-                    b.Property<int>("DRebounds");
+                    b.Property<decimal>("DRebounds")
+                        .HasColumnType("decimal(1, 2)");
 
                     b.Property<int>("DoubleDouble");
 
-                    b.Property<int>("MadeThrees");
+                    b.Property<decimal>("MadeThrees")
+                        .HasColumnType("decimal(1, 2)");
 
-                    b.Property<int>("Minutes");
+                    b.Property<decimal>("Minutes")
+                        .HasColumnType("decimal(1, 2)");
 
-                    b.Property<int>("ORebounds");
+                    b.Property<decimal>("ORebounds")
+                        .HasColumnType("decimal(1, 2)");
 
                     b.Property<int>("Points");
 

@@ -3,10 +3,14 @@
 </section>
 <div class="row"></div>
 <section>
-  <p>Get Daily Player Scores</p>
   <div class="container">
-    <p>Date: Date Picker Goes HERE</p>
-    <button class="btn btn-primary">Run Scores</button>
+    <form [formGroup]="runscoresForm">
+        <p>Get Daily Player Scores</p>
+        <input type="text" bsDatepicker class="form-control" formControlName="gameDate" placeholder="Date">
+    </form>
+    <div class="form-group text-center">
+        <button class="btn btn-success" type="submit" (click)="runScores()">Run Scores</button>
+      </div>
   </div>
 </section>
 <div class="row"></div>
@@ -15,75 +19,76 @@
 <section>
   <p>Set Scoring Values</p>
   <div class="container">
-      <form #scoringForm="ngForm">
+      <form [formGroup]="scoringForm" (ngSubmit)="updateScoringSystem()">
         <h2 class="text-center text-primary">Scoring System</h2>
           <hr>
           <div class="form-group">
             Points:
-            <input type="text" class="form-control" required name="points" placeholder="Points">
+            <input type="text" class="form-control" formControlName="points" placeholder="Points">
           </div>
         
           <div class="form-group">
             Offesive Rebounds:
-            <input type="text" class="form-control" required name="orebounds" placeholder="Offensive Rebounds">
+            <input type="text" class="form-control" formControlName="orebounds" placeholder="Offensive Rebounds">
           </div>
         
           <div class="form-group">
               Defensive Rebounds:
-              <input type="text" class="form-control" required name="drebounds" placeholder="Defensive Rebounds">
+              <input type="text" class="form-control" formControlName="drebounds" placeholder="Defensive Rebounds">
           </div>
 
           <div class="form-group">
               Assists:
-              <input type="text" class="form-control" required name="assists" placeholder="Assists">
+              <input type="text" class="form-control" formControlName="assists" placeholder="Assists">
           </div>
 
           <div class="form-group">
               Steals:
-              <input type="text" class="form-control" required name="steals" placeholder="Steals">
+              <input type="text" class="form-control" formControlName="steals" placeholder="Steals">
           </div>
 
           <div class="form-group">
               Blocks:
-              <input type="text" class="form-control" required name="blocks" placeholder="Blocks">
+              <input type="text" class="form-control" formControlName="blocks" placeholder="Blocks">
           </div>
 
           <div class="form-group">
               3 Point Makes:
-              <input type="text" class="form-control" required name="threes" placeholder="3PM">
+              <input type="text" class="form-control" formControlName="threes" placeholder="3PM">
           </div>
 
           <div class="form-group">
               Turnovers:
-              <input type="text" class="form-control" required name="turnovers" placeholder="Turnovers">
+              <input type="text" class="form-control" formControlName="turnovers" placeholder="Turnovers">
           </div>
 
           <div class="form-group">
               Minutes:
-              <input type="text" class="form-control" required name="minutes" placeholder="Minutes">
+              <input type="text" class="form-control" formControlName="minutes" placeholder="Minutes">
           </div>
 
           <div class="form-group">
               Double Double:
-              <input type="text" class="form-control" required name="doubledouble" placeholder="DD">
+              <input type="text" class="form-control" formControlName="doubledouble" placeholder="DD">
           </div>
 
           <div class="form-group">
               Triple Doulbe:
-              <input type="text" class="form-control" required name="tripledouble" placeholder="TD">
+              <input type="text" class="form-control" formControlName="tripledouble" placeholder="TD">
           </div>
 
           <div class="form-group">
               Quadrouple Double:
-              <input type="text" class="form-control" required name="quaddouble" placeholder="QD">
+              <input type="text" class="form-control" formControlName="quaddouble" placeholder="QD">
           </div>
 
-
-        
           <div class="form-group text-center">
             <button class="btn btn-success" type="submit">Update Scoring System</button>
           </div>
           
         </form>
+
+        <p>Form Value: {{scoringForm.value | json}}</p>
+        <p>Form Status: {{scoringForm.status | json}}</p>
   </div>
 </section>
