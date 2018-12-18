@@ -46,7 +46,7 @@ namespace BasketballSupercoach.API.Data
         {
             string url = "https://api.mysportsfeeds.com/v2.0/pull/nba/2018-19-regular/date/" + value + "/player_gamelogs.json";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create (new Uri(url));
-            request.Headers.Add("Authorization", "Basic " + base64_encode({'ebe965ee-1ebd-4e1c-a9dd-0e324c'} + ":" + MYSPORTSFEEDS));
+            request.Headers.Add("Authorization", "Basic " + Base64Encode("ebe965ee-1ebd-4e1c-a9dd-0e324c") + ":" + "MYSPORTSFEEDS");
             request.Method = "GET";
             using (WebResponse response = await request.GetResponseAsync ()) {
                 using (Stream stream = response.GetResponseStream ()) {
@@ -54,7 +54,7 @@ namespace BasketballSupercoach.API.Data
                     //process the response
                 }
             }
-            return false;
+            // return false;
         }
 
         public async Task<IEnumerable<Player>> GetPlayers()
@@ -257,6 +257,11 @@ namespace BasketballSupercoach.API.Data
                     break;
             }
             return positionString;
+        }
+
+        public static string Base64Encode(string plainText) {
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
+            return System.Convert.ToBase64String(plainTextBytes);
         }
     }
 }
