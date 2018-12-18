@@ -19,6 +19,8 @@ namespace BasketballSupercoach.API.Data
 
          Task<ScoringSystem> GetScoringSystem();
 
+         Task<bool> RunScoresForDate(string value);
+
          Task<IEnumerable<Player>> GetPlayers();
 
          Task<IEnumerable<Player>> GetSpecificPlayers(int pos);

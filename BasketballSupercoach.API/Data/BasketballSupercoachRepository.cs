@@ -1,9 +1,13 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using BasketballSupercoach.API.Dtos;
 using BasketballSupercoach.API.Models;
 using Microsoft.EntityFrameworkCore;
+using System.IO;
+using System.Text;
 
 namespace BasketballSupercoach.API.Data
 {
@@ -32,10 +36,25 @@ namespace BasketballSupercoach.API.Data
             return player;
         }
 
-    public async Task<ScoringSystem> GetScoringSystem()
+        public async Task<ScoringSystem> GetScoringSystem()
         {
             var scoring = await _content.ScoringSystems.FirstOrDefaultAsync();
             return scoring;
+        }
+
+        public async Task<bool> RunScoresForDate(string value)
+        {
+            string url = "https://api.mysportsfeeds.com/v2.0/pull/nba/2018-19-regular/date/" + value + "/player_gamelogs.json";
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create (new Uri(url));
+            request.Headers.Add("Authorization", "Basic " + base64_encode({'ebe965ee-1ebd-4e1c-a9dd-0e324c'} + ":" + MYSPORTSFEEDS));
+            request.Method = "GET";
+            using (WebResponse response = await request.GetResponseAsync ()) {
+                using (Stream stream = response.GetResponseStream ()) {
+                    return true;
+                    //process the response
+                }
+            }
+            return false;
         }
 
         public async Task<IEnumerable<Player>> GetPlayers()
