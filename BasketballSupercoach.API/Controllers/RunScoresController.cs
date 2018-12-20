@@ -17,7 +17,7 @@ namespace BasketballSupercoach.API.Controllers
             _repo = repo;
         }
 
-        [HttpGet]
+        [HttpGet("{value}")]
         public async Task<IActionResult> RunScoresForDate(string value)
         {
             var result = await _repo.RunScoresForDate(value);

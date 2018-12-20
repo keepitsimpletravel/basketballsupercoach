@@ -4,6 +4,7 @@ import { Scoringsystem } from '../_models/scoringsystem';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 // import { DatePipe } from '@angular/common';
 import { DatePipe } from '@angular/common';
+import { RunscoresService } from '../_services/runscores.service';
 
 @Component({
   selector: 'app-admin',
@@ -16,7 +17,8 @@ export class AdminComponent implements OnInit {
   runscoresForm: FormGroup;
   selectedDate: Date;
 
-  constructor(private scoringSystemService: ScoringsystemService, private fb: FormBuilder, private datePipe: DatePipe) { }
+  constructor(private scoringSystemService: ScoringsystemService, private fb: FormBuilder, private datePipe: DatePipe
+    , private runScoresService: RunscoresService) { }
 
   ngOnInit() {
     this.createRunScoresForm();
@@ -24,10 +26,10 @@ export class AdminComponent implements OnInit {
 
     this.scoringSystemService.GetScoringSystem().subscribe(next => {
       this.scoringSystem = next;
-      // console.log('id value is ' + this.scoringSystem.id);
-      // console.log('points value is ' + this.scoringSystem.points);
-      // console.log('double double value is ' + this.scoringSystem.dd);
-      // console.log('orebounds value is ' + this.scoringSystem.orebounds);
+      console.log('id value is ' + this.scoringSystem.id);
+      console.log('points value is ' + this.scoringSystem.points);
+      console.log('double double value is ' + this.scoringSystem.dd);
+      console.log('orebounds value is ' + this.scoringSystem.orebounds);
     }, error => {
 
     }, () => {
@@ -96,6 +98,12 @@ export class AdminComponent implements OnInit {
     this.selectedDate = this.runscoresForm.get('gameDate').value;
     const latest_date = this.datePipe.transform(this.selectedDate, 'yyyyMMdd');
     console.log('Date formatted: ' + latest_date);
+
+    this.runScoresService.RunScoresForDate(latest_date).subscribe(next => {
+      console.log('run scores body');
+    }, error => {
+      console.log(error);
+    });
   }
 
 }

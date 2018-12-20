@@ -6,11 +6,11 @@ namespace BasketballSupercoach.API.Dtos
 
         public int Points { get; set; }
 
-        public int ORebounds { get; set; }
+        public decimal ORebounds { get; set; }
 
-        public int DRebounds { get; set; }
+        public decimal DRebounds { get; set; }
 
-        public int Assists { get; set; }
+        public decimal Assists { get; set; }
 
         public int Steals { get; set; }
 
@@ -22,10 +22,10 @@ namespace BasketballSupercoach.API.Dtos
 
         public int QuadDouble { get; set; }
 
-        public int Minutes { get; set; }
+        public decimal Minutes { get; set; }
 
         public int Turnovers { get; set; }
 
-        public int MadeThrees { get; set; }
+        public decimal MadeThrees { get; set; }
     }
 }

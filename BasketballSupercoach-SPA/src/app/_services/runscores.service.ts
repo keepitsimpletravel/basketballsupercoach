@@ -11,7 +11,7 @@ export class RunscoresService {
 constructor(private http: HttpClient) { }
 
 RunScoresForDate (value: string) {
-  // console.log(this.baseUrl);
+  console.log('inside run scores service ' + this.baseUrl + value);
   return this.http.get<number>(this.baseUrl + value);
 }
 
