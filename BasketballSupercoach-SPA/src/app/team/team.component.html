@@ -1,4 +1,51 @@
-<section>
+<div class="page-content d-flex align-items-stretch">
+    <div class="content-inner">
+        <header class="page-header">
+          <div class="container-fluid">
+            <h2 class="no-margin-bottom">Your Team</h2>
+          </div>
+        </header>
+<!-- Details Counts Section-->
+    <section class="dashboard-counts no-padding-bottom">
+        <div class="container-fluid">
+            <div class="row bg-white has-shadow">
+                <div class="col-xl-4 col-sm-8">
+                    <div class="item d-flex align-items-center">
+                        <div class="title"><span><strong>Available Salary</strong></span>
+                          <div class="number">{{ this.availableSalary }}</div>
+                          <div><br></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-sm-8">
+                    <div class="item d-flex align-items-center">
+                        <div class="title"><span><strong>Trades Remaining</strong></span>
+                          <div class="number">30</div>
+                          <div><br></div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </section>
+    <section class="playercard-displays no-padding-bottom">
+        <div class="container-fluid">
+          <div class="row bg-white has-shadow">
+              <div *ngIf="this.loaded == 0">Loading your team...</div>
+              <div *ngIf="this.loaded == 1">
+                <div class="row card-group">
+                  <div class="indcard col-5" *ngFor="let pc of this.playerCards">
+                      <app-teamcard [playercard]="pc" (captainSet)="setCaptainValues($event)" (emergencySet)="setEmergencyValues($event)" (sixthManSet)="setSixthManValues($event)"></app-teamcard>
+                  </div>
+                </div>      
+              </div>
+          </div>
+        </div>
+    </section>
+  </div>
+</div>
+
+<!-- <section>
   <div class="card mb-4" id="i2Card">
     <div class="w3-container text-center">
       <p>Available Salary Cap</p>
@@ -22,4 +69,4 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
