@@ -4,12 +4,10 @@
         <!-- <div class="card-body" [ngStyle]="{'background-color': playercard.isCaptain? 'yellow' : 'white'}"> -->
             <div class="card-body" [ngStyle]="this.playercard.isCaptain === this.playercard.cardPosition && {'background-color':'yellow'} || this.playercard.isSixthMan === this.playercard.cardPosition && {'background-color':'blue'} || this.playercard.isEmergency === this.playercard.cardPosition && {'background-color':'gray'}">
             
-          <p>{{playercard.cardPositionText}}</p>
-          <img class="center" [attr.alt]="playercard.team" src="assets/images/{{playercard.team}}.jpg">
-          <p><strong>{{playercard.firstName}} {{playercard.surname}}</strong> - {{playercard.playerPosition}}</p>
-          <p>{{playercard.price}}</p>
-          <p>Last Score: {{playercard.lastScore}}</p>
-          <p>Average Score: {{playercard.averageScore}}</p>
+          <p><strong>{{playercard.cardPositionText}}</strong></p>
+          <p><img class="center" [attr.alt]="playercard.team" src="assets/images/{{playercard.team}}.jpg">
+            <strong>{{playercard.firstName}} {{playercard.surname}}</strong> - {{playercard.playerPosition}}<br>
+            ${{playercard.price}}<br><strong>Last Score:</strong> {{playercard.lastScore}}<br><strong>Average Score:</strong> {{playercard.averageScore}}</p>
           <ul class="list-inline playerbuttons animate text-center">
               <li class="list-inline-item"><button class="btn btn-primary" (click)="tradePlayer(playercard)">T</button></li>
               <li class="list-inline-item"><button class="btn btn-primary" (click)="subPlayer(playercard)">S</button></li>

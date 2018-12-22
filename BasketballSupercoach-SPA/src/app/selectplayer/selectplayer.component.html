@@ -1,4 +1,147 @@
-<section>
+<div class="page-content d-flex align-items-stretch">
+    <div class="content-inner">
+        <header class="page-header">
+          <div class="container-fluid">
+            <h2 class="no-margin-bottom">Dashboard</h2>
+          </div>
+        </header>
+        <!-- Dashboard Counts Section-->
+        <section class="dashboard-counts no-padding-bottom">
+            <div class="container-fluid">
+                <div class="row bg-white has-shadow">
+                    <div class="col-xl-4 col-sm-8">
+                        <div class="item d-flex align-items-center">
+                            <div class="title"><span><strong>Available Salary</strong></span>
+                              <div class="number">{{ this.availableSalary }}</div>
+                              <div><br></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+          <div class="tabledisplay">
+            <p-table
+            #dt
+            [columns]="cols"
+            [value]="players"
+            [paginator]="true"
+            [rows]="25"
+            [loading]="loading"
+          >
+            <ng-template pTemplate="caption">
+              <!-- <div style="text-align: right">
+                <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+                <input
+                  type="text"
+                  pInputText
+                  size="50"
+                  placeholder="Global Filter"
+                  (input)="dt.filterGlobal($event.target.value, 'contains')"
+                  style="width:auto"
+                />
+              </div> -->
+            </ng-template>
+            <ng-template pTemplate="header" let-columns>
+              <tr>
+                <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                  {{ col.header }}
+                  <p-sortIcon
+                    [field]="col.field"
+                    ariaLabel="Activate to sort"
+                    ariaLabelDesc="Activate to sort in descending order"
+                    ariaLabelAsc="Activate to sort in ascending order"
+                  ></p-sortIcon>
+                </th>
+              </tr>
+              <tr>
+                <th *ngFor="let col of columns" [ngSwitch]="col.field">
+                  <input
+                    *ngSwitchCase="'firstName'"
+                    pInputText
+                    type="text"
+                    (input)="
+                      dt.filter($event.target.value, col.field, col.filterMatchMode)
+                    "
+                  />
+                  <input
+                    *ngSwitchCase="'surname'"
+                    pInputText
+                    type="text"
+                    (input)="
+                      dt.filter($event.target.value, col.field, col.filterMatchMode)
+                    "
+                  />
+                  <input
+                    *ngSwitchCase="'positionOne'"
+                    pInputText
+                    type="text"
+                    (input)="
+                      dt.filter($event.target.value, col.field, col.filterMatchMode)
+                    "
+                  />
+                  <input
+                    *ngSwitchCase="'price'"
+                    pInputText
+                    type="text"
+                    (input)="
+                      dt.filter($event.target.value, col.field, col.filterMatchMode)
+                    "
+                  />
+                  <input
+                    *ngSwitchCase="'team'"
+                    pInputText
+                    type="text"
+                    (input)="
+                      dt.filter($event.target.value, col.field, col.filterMatchMode)
+                    "
+                  />
+                  <!--
+                    <p-dropdown *ngSwitchCase="'team'" [options]="teams" [style]="{'width':'100%'}" (onChange)="dt.filter($event.value, col.field, 'equals')"></p-dropdown>
+                  -->
+                </th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+              <tr [pSelectableRow]="rowData">
+                <td *ngFor="let col of columns">
+                  <ng-container *ngIf="col.field == 'team'"
+                    ><img
+                      class="center"
+                      [attr.alt]="rowData[col.field]"
+                      src="assets/images/{{rowData.team}}.jpg"
+                  /></ng-container>
+                  <ng-container *ngIf="col.field != 'team'">{{
+                    rowData[col.field]
+                  }}</ng-container>
+                </td>
+                <td>
+                  <button
+                    pButton
+                    icon="fa fa-check-circle"
+                    (click)="playerSelected(rowData.playerId, rowData.price)"
+                  ></button>
+                </td>
+              </tr>
+            </ng-template>
+          
+            <ng-template pTemplate="paginatorleft" let-state>
+              {{ state.first }} <button type="button" pButton icon="fa-refresh"></button>
+            </ng-template>
+            <ng-template pTemplate="paginatorright">
+              <button type="button" pButton icon="fa-cloud-upload"></button>
+            </ng-template>
+          </p-table>
+        </div>
+        </section>
+    </div>
+</div>
+
+
+
+
+<!-- <section>
   <div class="card mb-4" id="i2Card">
     <div class="w3-container text-center">
       <p>Available Salary Cap</p>
@@ -11,115 +154,4 @@
       <p>{{position}}</p>
     </div>
   </div>
-</section>
-<p-table
-  #dt
-  [columns]="cols"
-  [value]="players"
-  [paginator]="true"
-  [rows]="25"
-  [loading]="loading"
->
-  <ng-template pTemplate="caption">
-    <div style="text-align: right">
-      <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
-      <input
-        type="text"
-        pInputText
-        size="50"
-        placeholder="Global Filter"
-        (input)="dt.filterGlobal($event.target.value, 'contains')"
-        style="width:auto"
-      />
-    </div>
-  </ng-template>
-  <ng-template pTemplate="header" let-columns>
-    <tr>
-      <th *ngFor="let col of columns" [pSortableColumn]="col.field">
-        {{ col.header }}
-        <p-sortIcon
-          [field]="col.field"
-          ariaLabel="Activate to sort"
-          ariaLabelDesc="Activate to sort in descending order"
-          ariaLabelAsc="Activate to sort in ascending order"
-        ></p-sortIcon>
-      </th>
-    </tr>
-    <tr>
-      <th *ngFor="let col of columns" [ngSwitch]="col.field">
-        <input
-          *ngSwitchCase="'firstName'"
-          pInputText
-          type="text"
-          (input)="
-            dt.filter($event.target.value, col.field, col.filterMatchMode)
-          "
-        />
-        <input
-          *ngSwitchCase="'surname'"
-          pInputText
-          type="text"
-          (input)="
-            dt.filter($event.target.value, col.field, col.filterMatchMode)
-          "
-        />
-        <input
-          *ngSwitchCase="'positionOne'"
-          pInputText
-          type="text"
-          (input)="
-            dt.filter($event.target.value, col.field, col.filterMatchMode)
-          "
-        />
-        <input
-          *ngSwitchCase="'price'"
-          pInputText
-          type="text"
-          (input)="
-            dt.filter($event.target.value, col.field, col.filterMatchMode)
-          "
-        />
-        <input
-          *ngSwitchCase="'team'"
-          pInputText
-          type="text"
-          (input)="
-            dt.filter($event.target.value, col.field, col.filterMatchMode)
-          "
-        />
-        <!--
-          <p-dropdown *ngSwitchCase="'team'" [options]="teams" [style]="{'width':'100%'}" (onChange)="dt.filter($event.value, col.field, 'equals')"></p-dropdown>
-        -->
-      </th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-rowData let-columns="columns">
-    <tr [pSelectableRow]="rowData">
-      <td *ngFor="let col of columns">
-        <ng-container *ngIf="col.field == 'team'"
-          ><img
-            class="center"
-            [attr.alt]="rowData[col.field]"
-            src="assets/images/{{rowData.team}}.jpg"
-        /></ng-container>
-        <ng-container *ngIf="col.field != 'team'">{{
-          rowData[col.field]
-        }}</ng-container>
-      </td>
-      <td>
-        <button
-          pButton
-          icon="fa fa-check-circle"
-          (click)="playerSelected(rowData.playerId, rowData.price)"
-        ></button>
-      </td>
-    </tr>
-  </ng-template>
-
-  <ng-template pTemplate="paginatorleft" let-state>
-    {{ state.first }} <button type="button" pButton icon="fa-refresh"></button>
-  </ng-template>
-  <ng-template pTemplate="paginatorright">
-    <button type="button" pButton icon="fa-cloud-upload"></button>
-  </ng-template>
-</p-table>
+</section> -->

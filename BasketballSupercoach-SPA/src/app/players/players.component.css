@@ -1,0 +1,64 @@
+.halfcourt-2 {
+    background: url("../../assets/images/halfCourt.png")no-repeat center center;
+    background-size: cover;
+    /* opacity: 0.5; */
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+  
+  a,
+  i,
+  span {
+    display: inline-block;
+    text-decoration: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+
+  section {
+    padding: 10px 20px;
+  }
+
+  .container-fluid {
+    padding: 0 30px;
+  }
+
+  header.page-header {
+    padding: 20px 0;
+  }
+
+  @media (max-width: 575px) {
+    .container-fluid {
+      padding: 0 15px;
+    }
+  }
+
+  .content-inner {
+    position: relative;
+    /* width: calc(100% - 250px); */
+    
+    width: 95%;
+    margin: auto;
+    /* background: #ff00ff; */
+
+    min-height: calc(100vh - 70px);
+    padding-bottom: 60px;
+  }
+  
+  .content-inner.active {
+    /* width: calc(100% - 90px); */
+    width: 100%;
+  }
+
+  
+
+  .page-header {
+    background: #fff;
+    padding: 20px;
+    -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 8;
+  }
