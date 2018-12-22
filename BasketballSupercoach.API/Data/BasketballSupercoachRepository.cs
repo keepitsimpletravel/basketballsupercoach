@@ -8,6 +8,7 @@ using BasketballSupercoach.API.Models;
 using Microsoft.EntityFrameworkCore;
 using System.IO;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace BasketballSupercoach.API.Data
 {
@@ -44,16 +45,97 @@ namespace BasketballSupercoach.API.Data
 
         public async Task<bool> RunScoresForDate(string value)
         {
+            // Get the scoring system
+            var scoring = await _content.ScoringSystems.FirstOrDefaultAsync();
+
             string url = "https://api.mysportsfeeds.com/v2.0/pull/nba/2018-19-regular/date/" + value + "/player_gamelogs.json";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create (new Uri(url));
-            request.Headers.Add("Authorization", "Basic " + Base64Encode("ebe965ee-1ebd-4e1c-a9dd-0e324c") + ":" + "MYSPORTSFEEDS");
+
+            string username = "ebe965ee-1ebd-4e1c-a9dd-0e324c";
+            string password = "MYSPORTSFEEDS";
+
+            byte[] userPassBytes = Encoding.UTF8.GetBytes(string.Format("{0}:{1}", username, password));
+            string userPassBase64 = Convert.ToBase64String(userPassBytes);
+
+            // Authen new AuthenticationHeaderValue("Basic", base64Auth);
+            request.Headers.Add("Authorization", "Basic " + userPassBase64);
+            //base64.encode(username + ":" + password));
+            //Base64Encode("ebe965ee-1ebd-4e1c-a9dd-0e324c") + ":" + "MYSPORTSFEEDS");
+            // ('Authorization', 'Basic ' 
             request.Method = "GET";
-            using (WebResponse response = await request.GetResponseAsync ()) {
-                using (Stream stream = response.GetResponseStream ()) {
-                    return true;
-                    //process the response
+
+            // using(HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            // using(Stream stream = response.GetResponseStream())
+            // using(StreamReader reader = new StreamReader(stream))
+            // {
+            //     string s = reader.ReadToEnd();
+            //     string t = "";
+            // }
+
+            using(HttpWebResponse response = (HttpWebResponse)await request.GetResponseAsync())
+            using(Stream stream = response.GetResponseStream())
+            using(StreamReader reader = new StreamReader(stream))
+            {
+                string json = await reader.ReadToEndAsync();
+                dynamic jsonValues = JsonConvert.DeserializeObject(json);
+                // string luo = jsonValues.lastUpdatedOn;
+                foreach(var gamelog in jsonValues.gamelogs) {
+                    // Now need to get the required details
+                    int gameId = gamelog.game.id;
+                    // value is the date for the game
+                    int playerId = gamelog.player.id;
+                    int madeThrees = gamelog.stats.fieldGoals.fg3PtMade;
+                    int missedFTs = gamelog.stats.freeThrows.ftAtt - gamelog.stats.freeThrows.ftMade;
+                    int offReb = gamelog.stats.rebounds.offReb;
+                    int defReb = gamelog.stats.rebounds.defReb;
+                    int rebs = gamelog.stats.rebounds.reb;
+                    int asts = gamelog.stats.offense.ast;
+                    int points = gamelog.stats.offense.pts;
+                    int turnovers = gamelog.stats.defense.tov;
+                    int steals = gamelog.stats.defense.stl;
+                    int blocks = gamelog.stats.defense.blk;
+                    int fouls = gamelog.stats.miscellaneous.fouls;
+                    int minutes = gamelog.stats.miscellaneous.minSeconds / 60;
+
+                    int dd = 0;
+                    if ((points >= 10 && rebs >= 10) || (points >= 10 && asts >= 10) || (points >=10 && steals >= 10) || (points >=10 && blocks >=10)
+                     || (rebs >=10 && asts >=10) || (rebs >=10 && steals >=10) || (rebs >=10 && blocks >=10) || (asts >=10 && steals>=10) || (asts >=10 && blocks >=10)
+                     || (steals>=10 && blocks >=10)) {
+                        dd = 1;
+                    }
+
+                    int td = 0;
+                    if ((points >=10 && rebs >=10 && asts >=10) || (points >=10 && rebs>=10 && steals>=10) || (points>=10 && rebs>=10 && blocks>=10) || (points>=10 && asts>=10 && steals>=10)
+                    || (points>=10 && asts>=10 & blocks>=10) || (points>=10 && steals>=10 && blocks>=10) && (rebs>=10 && asts>=10 && steals>=10) || (rebs>=10 && asts>=10 && blocks>=10)
+                    || (rebs>=10 && steals>=10 && blocks>=10) || (asts>=10 && steals>=10 && blocks>=10)) {
+                        td = 1;
+                    }
+
+                    // Now need to determine the players score
+                    decimal playersScore = (madeThrees * scoring.MadeThrees) + (offReb * scoring.ORebounds) + (defReb * scoring.DRebounds)
+                        + (asts * scoring.Assists) + (points * scoring.Points) + (turnovers * scoring.Turnovers) +(steals * scoring.Steals)
+                        + (blocks * scoring.Blocks) + (td * scoring.TripleDouble) + (dd * scoring.DoubleDouble);
+
+                    // Now need to create the PlayerScore object and put this into the database
+                    string test = "";
                 }
             }
+
+            return false;
+            // Need to work out how to make the call to get the data now
+            // using (HttpResponseMessage httpResponse = await httpClient.GetAsync(requestUrl).ConfigureAwait(false))
+            // {
+                // string json = await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+                // return json;
+            // }
+
+            // using (WebResponse response = await request.GetResponseAsync ()) {
+            //     using (Stream stream = response.GetResponseStream ()) {
+            //         return true;
+            //         //process the response
+            //     }
+            // }
             // return false;
         }
 
