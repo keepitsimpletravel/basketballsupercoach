@@ -26,12 +26,12 @@ namespace BasketballSupercoach.API.Controllers
             return Ok(scoringSystem);
         }
 
-        [HttpPut("updateteamdetail")]
+        [HttpPut("update")]
         public async Task<IActionResult> UpdateScoringSystem(ScoringSystemDto scoreDto)
         {
             var scoringSystemToUpdate = new ScoringSystem
             {
-                Id = scoreDto.Id,
+                Id = 1,
                 Points = scoreDto.Points,
                 ORebounds = scoreDto.ORebounds,
                 DRebounds = scoreDto.DRebounds,
@@ -45,7 +45,12 @@ namespace BasketballSupercoach.API.Controllers
                 QuadDouble = scoreDto.QuadDouble
             };
 
-            return null;
+            // call the repo method
+            var userSalaryUpdate = await _repo.UpdateScoringSystem(scoringSystemToUpdate);
+            return StatusCode(201);
+
+            // return output
+            // return null;
         }
         
     }

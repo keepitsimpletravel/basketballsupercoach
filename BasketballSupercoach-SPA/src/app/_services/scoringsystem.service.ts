@@ -16,6 +16,6 @@ export class ScoringsystemService {
   }
 
   UpdateScoringSystem (scoring: Scoringsystem) {
-    return this.http.put<Scoringsystem>(this.baseUrl + 'update', Scoringsystem);
+    return this.http.put<Scoringsystem>(this.baseUrl + 'update', scoring);
   }
 }

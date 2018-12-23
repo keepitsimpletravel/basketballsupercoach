@@ -43,6 +43,11 @@ namespace BasketballSupercoach.API.Data
             return scoring;
         }
 
+        public async Task<bool> UpdateScoringSystem(ScoringSystem scoring) {
+            _content.ScoringSystems.Update(scoring);
+            return await _content.SaveChangesAsync() > 0;
+        }
+
         public async Task<bool> RunScoresForDate(string value)
         {
             // Get the scoring system
@@ -99,7 +104,7 @@ namespace BasketballSupercoach.API.Data
 
                     // Now need to determine the players score
                     decimal playersScore = (madeThrees * scoring.MadeThrees) + (offReb * scoring.ORebounds) + (defReb * scoring.DRebounds)
-                        + (asts * scoring.Assists) + (points * scoring.Points) + (turnovers * scoring.Turnovers) +(steals * scoring.Steals)
+                        + (asts * scoring.Assists) + (points * scoring.Points) + ((turnovers * scoring.Turnovers) * -1) +(steals * scoring.Steals)
                         + (blocks * scoring.Blocks) + (td * scoring.TripleDouble) + (dd * scoring.DoubleDouble);
 
                     // Create the PlayerGame object
