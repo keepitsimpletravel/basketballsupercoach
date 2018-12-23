@@ -10,6 +10,7 @@ import { UserService } from '../_services/user.service';
 import { User } from '../_models/user';
 import { TeamsalaryService } from '../_services/teamsalary.service';
 import { TeamSalary } from '../_models/teamsalary';
+import { Playerwithscore } from '../_models/playerWithScore';
 
 @Component({
   selector: 'app-selectplayer',
@@ -17,7 +18,7 @@ import { TeamSalary } from '../_models/teamsalary';
   styleUrls: ['./selectplayer.component.css']
 })
 export class SelectplayerComponent implements OnInit {
-  players: Player[];
+  players: Playerwithscore[];
   selectedPlayer: Player;
   position: number;
   currentUser: User;
@@ -80,6 +81,9 @@ export class SelectplayerComponent implements OnInit {
             this.route.data.subscribe(data => {
               this.players = data['specificplayers'];
               // console.log('players received' + this.players);
+              for (let i = 0; i < this.players.length; i++) {
+                this.players[i].lastScore = this.players[i].lastScore / 100;
+              }
             });
             this.loading = false;
         }, 1000);
@@ -89,7 +93,8 @@ export class SelectplayerComponent implements OnInit {
               { field: 'firstName', header: 'Given Name' },
               { field: 'surname', header: 'Surname' },
               { field: 'price', header: 'Price' },
-              { field: 'positionOne', header: 'Position' }
+              { field: 'positionOne', header: 'Position' },
+              { field: 'lastScore', header: 'Last Score' }
             ];
       this.teams = [
               { label: 'All Teams', value: null },

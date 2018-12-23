@@ -10,6 +10,7 @@ import { Player } from '../_models/player';
 import { PlayersService } from '../_services/players.service';
 import { TeamdetailService } from '../_services/teamdetail.service';
 import { TeamSalary } from '../_models/teamsalary';
+import { Playerwithscore } from '../_models/playerWithScore';
 
 @Component({
   selector: 'app-tradeplayer',
@@ -26,7 +27,7 @@ export class TradeplayerComponent implements OnInit {
   tradePlay: Player[];
   selectedPlayer: Player;
 
-  players: Player[];
+  players: Playerwithscore[];
   teams: any[];
   cols: any[];
   loading: boolean;
@@ -63,6 +64,9 @@ export class TradeplayerComponent implements OnInit {
             // Need to call the getPlayers for position
             this.playerService.getSpecificPlayers(this.playercard.cardPosition).subscribe(data => {
               this.players = data;
+              for (let i = 0; i < this.players.length; i++) {
+                this.players[i].lastScore = this.players[i].lastScore / 100;
+              }
             });
             this.loading = false;
         }, 1000);
@@ -72,7 +76,8 @@ export class TradeplayerComponent implements OnInit {
           { field: 'firstName', header: 'Given Name' },
           { field: 'surname', header: 'Surname' },
           { field: 'price', header: 'Price' },
-          { field: 'positionOne', header: 'Position' }
+          { field: 'positionOne', header: 'Position' },
+          { field: 'lastScore', header: 'Last Score' }
         ];
   this.teams = [
           { label: 'All Teams', value: null },

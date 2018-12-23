@@ -17,8 +17,8 @@ export class PlayersService {
     return this.http.get<Playerwithscore[]>(this.baseUrl + 'players/');
   }
 
-  getSpecificPlayers(pos): Observable<Player[]> {
-    return this.http.get<Player[]>(this.baseUrl + 'players/filtered/' + pos);
+  getSpecificPlayers(pos): Observable<Playerwithscore[]> {
+    return this.http.get<Playerwithscore[]>(this.baseUrl + 'players/filtered/' + pos);
   }
 
   getPlayer(id): Observable<Player> {

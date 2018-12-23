@@ -23,7 +23,7 @@ namespace BasketballSupercoach.API.Data
 
          Task<IEnumerable<PlayersWithScoresDto>> GetPlayers();
 
-         Task<IEnumerable<Player>> GetSpecificPlayers(int pos);
+         Task<IEnumerable<PlayersWithScoresDto>> GetSpecificPlayers(int pos);
          
          Task<Player> GetPlayer(int id);
 

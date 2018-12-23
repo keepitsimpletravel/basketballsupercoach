@@ -108,6 +108,14 @@
               dt.filter($event.target.value, col.field, col.filterMatchMode)
             "
           />
+          <input
+            *ngSwitchCase="'lastScore'"
+            pInputText
+            type="text"
+            (input)="
+              dt.filter($event.target.value, col.field, col.filterMatchMode)
+            "
+          />
           <!--
             <p-dropdown *ngSwitchCase="'team'" [options]="teams" [style]="{'width':'100%'}" (onChange)="dt.filter($event.value, col.field, 'equals')"></p-dropdown>
           -->

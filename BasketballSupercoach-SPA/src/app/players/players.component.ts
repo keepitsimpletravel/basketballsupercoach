@@ -41,8 +41,8 @@ export class PlayersComponent implements OnInit {
             // this.loadPlayers();
             this.route.data.subscribe(data => {
               this.players = data['players'];
-              console.log('firstname:', this.players[0].firstName);
-              console.log('lastscore:', this.players[0].lastScore);
+              // console.log('firstname:', this.players[0].firstName);
+              // console.log('lastscore:', this.players[0].lastScore);
               for (let i = 0; i < this.players.length; i++) {
                 this.players[i].lastScore = this.players[i].lastScore / 100;
               }

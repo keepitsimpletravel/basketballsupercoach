@@ -168,22 +168,63 @@ namespace BasketballSupercoach.API.Data
             return playersWithScore;
         }
 
-        public async Task<IEnumerable<Player>> GetSpecificPlayers(int pos)
+        public async Task<IEnumerable<PlayersWithScoresDto>> GetSpecificPlayers(int pos)
         {
             var players = await _content.Players.ToListAsync();
-            List<Player> filterPlayers = new List<Player>();
+            List<PlayersWithScoresDto> filterPlayers = new List<PlayersWithScoresDto>();
             if (pos < 5) {
                 // need to filter returned players
                 foreach(Player player in players) {
                     if(player.PositionOne == pos || player.PositionTwo == pos || player.PositionThree == pos) {
-                        filterPlayers.Add(player);
+                        PlayerScores ps =  _content.PlayerScores.OrderByDescending(x => x.GameDate).FirstOrDefault(p => p.PlayerId == player.PlayerId);
+
+                        PlayersWithScoresDto newDto = new PlayersWithScoresDto();
+                        newDto.FirstName = player.FirstName;
+                        newDto.Id = player.Id;
+
+                        if(ps == null) {
+                            newDto.LastScore = 0;
+                        } else {
+                            newDto.LastScore = ps.Score;
+                        }
+                
+                        newDto.PlayerId = player.PlayerId;
+                        newDto.PositionOne = player.PositionOne;
+                        newDto.PositionThree = player.PositionThree;
+                        newDto.PositionTwo = player.PositionTwo;
+                        newDto.Price = player.Price;
+                        newDto.Surname = player.Surname;
+                        newDto.Team = player.Team;
+
+                        filterPlayers.Add(newDto);
                     }
                 }
             } else {
                 // else return all
-                filterPlayers = players;
-            }
+                foreach(Player player in players) {
+                    PlayerScores ps =  _content.PlayerScores.OrderByDescending(x => x.GameDate).FirstOrDefault(p => p.PlayerId == player.PlayerId);
 
+                    PlayersWithScoresDto newDto = new PlayersWithScoresDto();
+                    newDto.FirstName = player.FirstName;
+                    newDto.Id = player.Id;
+
+                    if(ps == null) {
+                        newDto.LastScore = 0;
+                    } else {
+                        newDto.LastScore = ps.Score;
+                    }
+                
+                    newDto.PlayerId = player.PlayerId;
+                    newDto.PositionOne = player.PositionOne;
+                    newDto.PositionThree = player.PositionThree;
+                    newDto.PositionTwo = player.PositionTwo;
+                    newDto.Price = player.Price;
+                    newDto.Surname = player.Surname;
+                    newDto.Team = player.Team;
+
+                    filterPlayers.Add(newDto);
+                }
+            }
             return filterPlayers;
         }
 
