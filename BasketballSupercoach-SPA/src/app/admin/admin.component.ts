@@ -5,6 +5,7 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 // import { DatePipe } from '@angular/common';
 import { DatePipe } from '@angular/common';
 import { RunscoresService } from '../_services/runscores.service';
+import { AlertifyService } from '../_services/alertify.service';
 
 @Component({
   selector: 'app-admin',
@@ -18,7 +19,7 @@ export class AdminComponent implements OnInit {
   selectedDate: Date;
 
   constructor(private scoringSystemService: ScoringsystemService, private fb: FormBuilder, private datePipe: DatePipe
-    , private runScoresService: RunscoresService) { }
+    , private runScoresService: RunscoresService, private alertify: AlertifyService) { }
 
   ngOnInit() {
     this.createRunScoresForm();
@@ -100,9 +101,11 @@ export class AdminComponent implements OnInit {
     console.log('Date formatted: ' + latest_date);
 
     this.runScoresService.RunScoresForDate(latest_date).subscribe(next => {
-      console.log('run scores body');
+      console.log('run scores body - next value: ' + next);
     }, error => {
       console.log(error);
+    }, () => {
+      this.alertify.success('Player scores run in successfully');
     });
   }
 

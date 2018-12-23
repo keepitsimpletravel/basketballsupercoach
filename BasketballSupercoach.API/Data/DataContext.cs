@@ -21,5 +21,9 @@ namespace BasketballSupercoach.API.Data
         public DbSet<Photo> Photos { get; set; } 
 
         public DbSet<ScoringSystem> ScoringSystems { get; set; } 
+
+        public DbSet<PlayerGame> PlayerGames { get; set; }
+
+        public DbSet<PlayerScores> PlayerScores { get; set; }
     }
 }

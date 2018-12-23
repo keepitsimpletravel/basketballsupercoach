@@ -56,22 +56,8 @@ namespace BasketballSupercoach.API.Data
 
             byte[] userPassBytes = Encoding.UTF8.GetBytes(string.Format("{0}:{1}", username, password));
             string userPassBase64 = Convert.ToBase64String(userPassBytes);
-
-            // Authen new AuthenticationHeaderValue("Basic", base64Auth);
             request.Headers.Add("Authorization", "Basic " + userPassBase64);
-            //base64.encode(username + ":" + password));
-            //Base64Encode("ebe965ee-1ebd-4e1c-a9dd-0e324c") + ":" + "MYSPORTSFEEDS");
-            // ('Authorization', 'Basic ' 
             request.Method = "GET";
-
-            // using(HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-            // using(Stream stream = response.GetResponseStream())
-            // using(StreamReader reader = new StreamReader(stream))
-            // {
-            //     string s = reader.ReadToEnd();
-            //     string t = "";
-            // }
-
             using(HttpWebResponse response = (HttpWebResponse)await request.GetResponseAsync())
             using(Stream stream = response.GetResponseStream())
             using(StreamReader reader = new StreamReader(stream))
@@ -116,27 +102,37 @@ namespace BasketballSupercoach.API.Data
                         + (asts * scoring.Assists) + (points * scoring.Points) + (turnovers * scoring.Turnovers) +(steals * scoring.Steals)
                         + (blocks * scoring.Blocks) + (td * scoring.TripleDouble) + (dd * scoring.DoubleDouble);
 
+                    // Create the PlayerGame object
+                    PlayerGame game = new PlayerGame();
+                    game.Assists = asts;
+                    game.Blocks = blocks;
+                    game.DefRebounds = defReb;
+                    game.GameDate = value;
+                    game.GameId = gameId;
+                    game.Minutes = minutes;
+                    game.OffRebounds = offReb;
+                    game.PlayerId = playerId;
+                    game.Points = points;
+                    game.Steals = steals;
+                    game.ThreesMade = madeThrees;
+                    game.Turnovers = turnovers;
+
+                    // Now add the PlayerGame record
+                    await _content.PlayerGames.AddAsync(game);
+                    // await _content.SaveChangesAsync();
+
                     // Now need to create the PlayerScore object and put this into the database
-                    string test = "";
+                    PlayerScores scores= new PlayerScores();
+                    scores.GameDate = value;
+                    scores.GameId = gameId;
+                    scores.PlayerId = playerId;
+                    scores.Score = Convert.ToInt32(playersScore * 100);
+                    
+                    await _content.PlayerScores.AddAsync(scores);
+                    await _content.SaveChangesAsync();
                 }
             }
-
-            return false;
-            // Need to work out how to make the call to get the data now
-            // using (HttpResponseMessage httpResponse = await httpClient.GetAsync(requestUrl).ConfigureAwait(false))
-            // {
-                // string json = await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
-
-                // return json;
-            // }
-
-            // using (WebResponse response = await request.GetResponseAsync ()) {
-            //     using (Stream stream = response.GetResponseStream ()) {
-            //         return true;
-            //         //process the response
-            //     }
-            // }
-            // return false;
+            return true;
         }
 
         public async Task<IEnumerable<Player>> GetPlayers()

@@ -3,14 +3,16 @@ using System;
 using BasketballSupercoach.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BasketballSupercoach.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20181222213004_PlayerDetails")]
+    partial class PlayerDetails
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -60,58 +62,6 @@ namespace BasketballSupercoach.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Players");
-                });
-
-            modelBuilder.Entity("BasketballSupercoach.API.Models.PlayerGame", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("Assists");
-
-                    b.Property<int>("Blocks");
-
-                    b.Property<int>("DefRebounds");
-
-                    b.Property<string>("GameDate");
-
-                    b.Property<int>("GameId");
-
-                    b.Property<int>("Minutes");
-
-                    b.Property<int>("OffRebounds");
-
-                    b.Property<int>("PlayerId");
-
-                    b.Property<int>("Points");
-
-                    b.Property<int>("Steals");
-
-                    b.Property<int>("ThreesMade");
-
-                    b.Property<int>("Turnovers");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PlayerGames");
-                });
-
-            modelBuilder.Entity("BasketballSupercoach.API.Models.PlayerScores", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("GameDate");
-
-                    b.Property<int>("GameId");
-
-                    b.Property<int>("PlayerId");
-
-                    b.Property<int>("Score");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PlayerScores");
                 });
 
             modelBuilder.Entity("BasketballSupercoach.API.Models.ScoringSystem", b =>
