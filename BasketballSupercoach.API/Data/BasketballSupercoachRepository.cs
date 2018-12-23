@@ -135,11 +135,37 @@ namespace BasketballSupercoach.API.Data
             return true;
         }
 
-        public async Task<IEnumerable<Player>> GetPlayers()
+        public async Task<IEnumerable<PlayersWithScoresDto>> GetPlayers()
         {
             var players = await _content.Players.ToListAsync();
 
-            return players;
+            List<PlayersWithScoresDto> playersWithScore = new List<PlayersWithScoresDto>();
+            // need to go through and get each last score for each player and then return the Dto
+            foreach (var player in players) {
+                PlayerScores ps =  _content.PlayerScores.OrderByDescending(x => x.GameDate).FirstOrDefault(p => p.PlayerId == player.PlayerId);
+                
+                PlayersWithScoresDto newDto = new PlayersWithScoresDto();
+                newDto.FirstName = player.FirstName;
+                newDto.Id = player.Id;
+
+                if(ps == null) {
+                    newDto.LastScore = 0;
+                } else {
+                    newDto.LastScore = ps.Score;
+                }
+                
+                newDto.PlayerId = player.PlayerId;
+                newDto.PositionOne = player.PositionOne;
+                newDto.PositionThree = player.PositionThree;
+                newDto.PositionTwo = player.PositionTwo;
+                newDto.Price = player.Price;
+                newDto.Surname = player.Surname;
+                newDto.Team = player.Team;
+
+                playersWithScore.Add(newDto);
+            }
+
+            return playersWithScore;
         }
 
         public async Task<IEnumerable<Player>> GetSpecificPlayers(int pos)

@@ -5,6 +5,7 @@ import { AlertifyService } from '../_services/alertify.service';
 import {TableModule} from 'primeng/table';
 import {DropdownModule} from 'primeng/dropdown';
 import { ActivatedRoute } from '@angular/router';
+import { Playerwithscore } from '../_models/playerWithScore';
 
 @Component({
   selector: 'app-players',
@@ -14,7 +15,7 @@ import { ActivatedRoute } from '@angular/router';
 
 export class PlayersComponent implements OnInit {
 
-  players: Player[];
+  players: Playerwithscore[];
   selectedPlayer: Player;
 
   cols: any[];
@@ -40,6 +41,11 @@ export class PlayersComponent implements OnInit {
             // this.loadPlayers();
             this.route.data.subscribe(data => {
               this.players = data['players'];
+              console.log('firstname:', this.players[0].firstName);
+              console.log('lastscore:', this.players[0].lastScore);
+              for (let i = 0; i < this.players.length; i++) {
+                this.players[i].lastScore = this.players[i].lastScore / 100;
+              }
             });
             this.loading = false;
         }, 1000);
@@ -49,7 +55,8 @@ export class PlayersComponent implements OnInit {
               { field: 'firstName', header: 'Given Name' },
               { field: 'surname', header: 'Surname' },
               { field: 'price', header: 'Price' },
-              { field: 'positionOne', header: 'Position' }
+              { field: 'positionOne', header: 'Position' },
+              { field: 'lastScore', header: 'Last Score' }
             ];
       this.teams = [
               { label: 'All Teams', value: null },
