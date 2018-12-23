@@ -1,15 +1,15 @@
 export class Scoringsystem {
     id?: number;
     points?: number;
-    orebounds?: number;
-    drebounds?: number;
+    oRebounds?: number;
+    dRebounds?: number;
     assists?: number;
     steals?: number;
     blocks?: number;
-    turnover?: number;
-    threes?: number;
-    dd?: number;
-    td?: number;
-    qd?: number;
+    turnovers?: number;
+    madeThrees?: number;
+    doubleDouble?: number;
+    tripleDouble?: number;
+    quadDouble?: number;
     minutes?: number;
 }
