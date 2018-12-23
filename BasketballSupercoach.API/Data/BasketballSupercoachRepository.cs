@@ -248,13 +248,16 @@ namespace BasketballSupercoach.API.Data
                         // Need to get the player object
                         Player player = await _content.Players.FirstOrDefaultAsync(p => p.PlayerId == detail.PlayerId);
 
+                        // Get the last score for the player
+                        PlayerScores ps =  _content.PlayerScores.OrderByDescending(x => x.GameDate).FirstOrDefault(p => p.PlayerId == detail.PlayerId);
+
                         PlayerCardDto pgDto = new PlayerCardDto();
                         pgDto.PlayerId = detail.PlayerId;
                         pgDto.averageScore = 0;
                         pgDto.CardPosition = pos;
                         pgDto.CardPositionText = GetPositionText(pos);
                         pgDto.FirstName = player.FirstName;
-                        pgDto.lastScore = 0;
+                        pgDto.lastScore = ps.Score;
                         pgDto.PlayerPosition = player.PositionOne;
                         pgDto.Price = player.Price;
                         pgDto.Surname = player.Surname;

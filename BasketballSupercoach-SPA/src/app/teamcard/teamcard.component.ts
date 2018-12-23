@@ -13,6 +13,7 @@ export class TeamcardComponent implements OnInit {
   @Output() captainSet = new EventEmitter<number>();
   @Output() sixthManSet = new EventEmitter<number>();
   @Output() emergencySet = new EventEmitter<number>();
+  lastScore: number;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
@@ -66,6 +67,7 @@ export class TeamcardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.lastScore = this.playercard.lastScore / 100;
   }
 
 }
