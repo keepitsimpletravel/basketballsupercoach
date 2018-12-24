@@ -207,7 +207,7 @@ namespace BasketballSupercoach.API.Data
         {
             var players = await _content.Players.ToListAsync();
             List<PlayersWithScoresDto> filterPlayers = new List<PlayersWithScoresDto>();
-            if (pos < 5) {
+            if (pos <= 5) {
                 // need to filter returned players
                 foreach(Player player in players) {
                     if(player.PositionOne == pos || player.PositionTwo == pos || player.PositionThree == pos) {

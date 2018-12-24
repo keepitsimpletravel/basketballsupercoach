@@ -70,6 +70,7 @@ export class TeamComponent implements OnInit {
     console.log('position selected is ' + position);
     localStorage.setItem('currentSelectPosition', position.toString());
 
+    console.log('position selected: ' + position);
     // How does this value get passed correctly
     this.router.navigate(['selectplayer/', position]);
   }
