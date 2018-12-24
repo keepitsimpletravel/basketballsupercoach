@@ -27,11 +27,19 @@ export class TeamdetailService {
     return this.http.put<Playercard>(this.baseUrl + 'updateteamdetail', playercard);
   }
 
-  updateAllTeamDetailRecords (playercards: Playercard[]) {
+  updateSubTeamDetailRecords (playercards: Playercard[]) {
     for (let p = 0; p < playercards.length; p ++) {
       playercards[p].userId = +localStorage.getItem('currentUserId');
-      this.http.put<Playercard>(this.baseUrl + 'updateteamdetail', playercards[p]);
+      console.log('sub players: ' + playercards[p].surname + ' pos: ' + playercards[p].cardPosition);
     }
-    return 201;
+    return this.http.put<Playercard[]>(this.baseUrl + 'updatesubteamdetail', playercards);
+    // }
+    // return 201;
   }
+
+  // updateTeamDetailsForSub (origPlayercard: Playercard, newPlayercard: Playercard) {
+  //   origPlayercard.userId = +localStorage.getItem('currentUserId');
+  //   newPlayercard.userId = +localStorage.getItem('currentUserId');
+  //   this.http.put<Playercard[]>(this.baseUrl + 'subteamdetail', );
+  // }
 }

@@ -17,6 +17,7 @@ export class SubplayerComponent implements OnInit {
   loaded = 0;
   selected = 0;
   subbingPlayercard: Playercard = {};
+  playersToMove: Playercard[] = [];
 
   constructor(private alertify: AlertifyService, private dataRoute: ActivatedRoute,
      private teamDetailService: TeamdetailService, private authService: AuthService, private router: Router) { }
@@ -36,7 +37,8 @@ export class SubplayerComponent implements OnInit {
           // The player is on the bench so the subbing player does not matter, the player being selected does
           if (this.playerCards[p].playerPosition === this.playercard.cardPosition) {
             this.subPlayers.push(this.playerCards[p]);
-            console.log('Added - ' + this.playerCards[p].firstName + ' ' + this.playerCards[p].surname);
+            // tslint:disable-next-line:max-line-length
+            console.log('Added - ' + this.playerCards[p].firstName + ' ' + this.playerCards[p].surname + 'current position = ' + this.playerCards[p].cardPosition);
           }
         }
       }
@@ -50,64 +52,81 @@ export class SubplayerComponent implements OnInit {
   }
 
   playerSub(subWith: number) {
-    // console.log('selected position number: ' + subWith);
     for (let p = 0; p < this.playerCards.length; p ++) {
       if (this.playerCards[p].cardPosition === subWith) {
         this.subbingPlayercard = this.playerCards[p];
-        // console.log('aaaaaaaaaaa - ' + this.subbingPlayercard.cardPositionText);
       }
     }
 
-    // console.log(this.subbingPlayercard.firstName + ' '
-    //  + this.subbingPlayercard.surname + ' - ' + this.subbingPlayercard.cardPosition + ' at ' + this.subbingPlayercard.cardPositionText);
+    // Try saving the team detail for just the 2 records being moved
+    const original = this.playercard;
+    const moveWith = this.subbingPlayercard;
 
-    const positionText = this.subbingPlayercard.cardPositionText;
+    console.log('original: ' + original.surname + ' at pos: ' + original.cardPosition);
+    console.log('moveWith: ' + moveWith.surname + ' at pos: ' + moveWith.cardPosition);
 
-    //  console.log(this.playercard.firstName + ' '
-    //  + this.playercard.surname + ' - ' + this.playercard.cardPosition);
+    const originalPos = original.cardPosition;
+    const newPos = moveWith.cardPosition;
 
-     const newOrigPlayer = this.subbingPlayercard;
-     newOrigPlayer.cardPosition = this.playercard.cardPosition;
-     newOrigPlayer.cardPositionText = this.playercard.cardPositionText;
+    console.log('orig pos: ' + originalPos + ' new pos: ' + newPos);
+    // const original
+    // Something in here is broken
+    // original.cardPosition = this.subbingPlayercard.cardPosition;
+    // original.cardPositionText = this.subbingPlayercard.cardPositionText;
+    // moveWith.cardPosition = this.playercard.cardPosition;
+    // moveWith.cardPositionText = this.playercard.cardPositionText;
+    original.cardPosition = newPos;
+    moveWith.cardPosition = originalPos;
 
-     // This is correct
-    //  console.log(newOrigPlayer.firstName + ' '
-    //  + newOrigPlayer.surname + ' - ' + newOrigPlayer.cardPosition + ' correct');
 
-     const newMovePlayer = this.playercard;
-     newMovePlayer.cardPosition = subWith;
-     newMovePlayer.cardPositionText = positionText;
 
-    //  console.log(newMovePlayer.firstName + ' '
-    //  + newMovePlayer.surname + ' - ' + newMovePlayer.cardPosition + ' pos: ' + newMovePlayer.cardPositionText);
+    this.playersToMove.push(original);
+    this.playersToMove.push(moveWith);
 
-    for (let p = 0; p < this.playerCards.length; p ++) {
-      if (this.playerCards[p].playerId === this.playercard.playerId) {
-        // console.log('updating original player');
-        this.playerCards[p] = newMovePlayer;
-      } else if (this.playerCards[p].playerId === this.subbingPlayercard.playerId) {
-        // console.log('updating moving player');
-        this.playerCards[p] = newOrigPlayer;
-      }
-    }
+    console.log('original: ' + this.playersToMove[0].surname + ' at pos: ' + this.playersToMove[0].cardPosition);
+    console.log('moving: ' + this.playersToMove[1].surname + ' at pos: ' + this.playersToMove[1].cardPosition);
+
+    this.teamDetailService.updateSubTeamDetailRecords(this.playersToMove).subscribe(data => {
+
+    }, error => {
+      this.alertify.error(error);
+    }, () => {
+      this.alertify.success('Team Saved Successfully');
+      // Only once this is completed will the page go back to team
+      this.router.navigate(['team/']);
+    });
+
+    // // Need to write these to the database
+    // this.teamDetailService
+
+    // const positionText = this.subbingPlayercard.cardPositionText;
+
+    // const newOrigPlayer = this.subbingPlayercard;
+    // newOrigPlayer.cardPosition = this.playercard.cardPosition;
+    // newOrigPlayer.cardPositionText = this.playercard.cardPositionText;
+
+
+    // const newMovePlayer = this.playercard;
+    // newMovePlayer.cardPosition = subWith;
+    // newMovePlayer.cardPositionText = positionText;
 
     // for (let p = 0; p < this.playerCards.length; p ++) {
-    //   console.log('Player ' + p + ' is ' +  this.playerCards[p].surname +
-    //    ' at ' + this.playerCards[p].cardPosition + ', ' + this.playerCards[p].cardPositionText);
+    //   if (this.playerCards[p].playerId === this.playercard.playerId) {
+    //     this.playerCards[p] = newMovePlayer;
+    //   } else if (this.playerCards[p].playerId === this.subbingPlayercard.playerId) {
+    //     this.playerCards[p] = newOrigPlayer;
+    //   }
     // }
 
     // Now need to write to the database
-    for (let p = 0; p < this.playerCards.length; p ++) {
-      this.teamDetailService.updateTeamDetailRecord(this.playerCards[p]).subscribe(data => {
-      }, error => {
-        this.alertify.error(error);
-      }, () => {
-        this.alertify.success('Team Saved Successfully');
-      });
-    }
-
-    // Only once this is completed will the page go back to team
-    this.router.navigate(['team/']);
+    // for (let p = 0; p < this.playerCards.length; p ++) {
+      // this.teamDetailService.updateSubTeamDetailRecords(this.playerCards).subscribe(data => {
+      // }, error => {
+      //   this.alertify.error(error);
+      // }, () => {
+      //   this.alertify.success('Team Saved Successfully');
+      // });
+    // }
   }
 
 }
