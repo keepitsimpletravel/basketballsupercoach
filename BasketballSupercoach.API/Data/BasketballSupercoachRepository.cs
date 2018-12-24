@@ -353,7 +353,14 @@ namespace BasketballSupercoach.API.Data
                         // Get the last score for the player
                         PlayerScores ps =  _content.PlayerScores.OrderByDescending(x => x.GameDate).FirstOrDefault(p => p.PlayerId == detail.PlayerId);
 
-                        int averageScore = this.GetAverageScoreForPlayer(player.PlayerId);
+                        int averageScore = 0;
+                        int lastScore = 0;
+                        if (ps == null) {
+                            lastScore = 0;
+                        } else {
+                            averageScore = this.GetAverageScoreForPlayer(player.PlayerId);
+                            lastScore = ps.Score;
+                        }
 
                         PlayerCardDto pgDto = new PlayerCardDto();
                         pgDto.PlayerId = detail.PlayerId;
@@ -361,7 +368,7 @@ namespace BasketballSupercoach.API.Data
                         pgDto.CardPosition = pos;
                         pgDto.CardPositionText = GetPositionText(pos);
                         pgDto.FirstName = player.FirstName;
-                        pgDto.lastScore = ps.Score;
+                        pgDto.lastScore = lastScore;
                         pgDto.PlayerPosition = player.PositionOne;
                         pgDto.Price = player.Price;
                         pgDto.Surname = player.Surname;
