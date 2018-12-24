@@ -25,6 +25,10 @@ namespace BasketballSupercoach.API.Data
 
          Task<IEnumerable<PlayersWithScoresDto>> GetPlayers();
 
+         int GetTotalScoreForPlayer(int playerId);
+
+         int GetAverageScoreForPlayer(int playerId);
+
          Task<IEnumerable<PlayersWithScoresDto>> GetSpecificPlayers(int pos);
          
          Task<Player> GetPlayer(int id);

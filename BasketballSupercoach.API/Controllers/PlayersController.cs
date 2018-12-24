@@ -25,11 +25,6 @@ namespace BasketballSupercoach.API.Controllers
         public async Task<IActionResult> GetPlayers()
         {
             var players = await _repo.GetPlayers();
-
-            // var playersToReturn = _mapper.Map<IEnumerable<PlayerForListDto>>(players);
-            
-            // return Ok(playersToReturn);
-
             return Ok(players);
         }
 
@@ -37,7 +32,6 @@ namespace BasketballSupercoach.API.Controllers
         public async Task<IActionResult> GetSpecificPlayers(int pos)
         {
             var players = await _repo.GetSpecificPlayers(pos);
-
             return Ok(players);
         }
 
@@ -45,10 +39,6 @@ namespace BasketballSupercoach.API.Controllers
         public async Task<IActionResult> GetPlayer(int id)
         {
             var player = await _repo.GetPlayer(id);
-
-            // var playerToReturn = _mapper.Map<PlayerForListDto>(player);
-
-            // return Ok(playerToReturn);
             return Ok(player);
         }
     }

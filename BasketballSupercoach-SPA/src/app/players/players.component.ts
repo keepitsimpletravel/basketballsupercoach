@@ -38,13 +38,13 @@ export class PlayersComponent implements OnInit {
   ngOnInit() {
       this.loading = true;
         setTimeout(() => {
-            // this.loadPlayers();
             this.route.data.subscribe(data => {
               this.players = data['players'];
-              // console.log('firstname:', this.players[0].firstName);
-              // console.log('lastscore:', this.players[0].lastScore);
               for (let i = 0; i < this.players.length; i++) {
                 this.players[i].lastScore = this.players[i].lastScore / 100;
+                // console.log(this.players[i].averageScore);
+                this.players[i].averageScore = this.players[i].averageScore / 100;
+                this.players[i].totalScore = this.players[i].totalScore / 100;
               }
             });
             this.loading = false;
@@ -56,7 +56,9 @@ export class PlayersComponent implements OnInit {
               { field: 'surname', header: 'Surname' },
               { field: 'price', header: 'Price' },
               { field: 'positionOne', header: 'Position' },
-              { field: 'lastScore', header: 'Last Score' }
+              { field: 'lastScore', header: 'Last Score' },
+              { field: 'averageScore', header: 'Average Score' },
+              { field: 'totalScore', header: 'Total Score' }
             ];
       this.teams = [
               { label: 'All Teams', value: null },

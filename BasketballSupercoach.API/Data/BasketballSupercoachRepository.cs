@@ -48,6 +48,32 @@ namespace BasketballSupercoach.API.Data
             return await _content.SaveChangesAsync() > 0;
         }
 
+        public int GetTotalScoreForPlayer(int playerId) {
+            // await _content.PlayerScores.OrderByDescending(x => x.GameDate).FirstOrDefault(p => p.PlayerId == playerId);
+            var playerScores = _content.PlayerScores.ToList();
+            List<PlayerScores> scores = playerScores.Where(p => p.PlayerId == playerId).ToList();
+            int total = 0;
+            foreach(var score in scores) {
+                total = total + score.Score;
+            }
+            return total;
+        }
+
+        public int GetAverageScoreForPlayer(int playerId) {
+            // await _content.PlayerScores.OrderByDescending(x => x.GameDate).FirstOrDefault(p => p.PlayerId == playerId);
+            var playerScores = _content.PlayerScores.ToList();
+            List<PlayerScores> scores = playerScores.Where(p => p.PlayerId == playerId).ToList();
+            int total = 0;
+            foreach(var score in scores) {
+                total = total + score.Score;
+            }
+            int average = 0;
+            if(total != 0) {
+                average = total / scores.Count;
+            }
+            return average;
+        }
+
         public async Task<bool> RunScoresForDate(string value)
         {
             // Get the scoring system
@@ -147,18 +173,22 @@ namespace BasketballSupercoach.API.Data
             List<PlayersWithScoresDto> playersWithScore = new List<PlayersWithScoresDto>();
             // need to go through and get each last score for each player and then return the Dto
             foreach (var player in players) {
-                PlayerScores ps =  _content.PlayerScores.OrderByDescending(x => x.GameDate).FirstOrDefault(p => p.PlayerId == player.PlayerId);
-                
+                PlayerScores lastPS =  _content.PlayerScores.OrderByDescending(x => x.GameDate).FirstOrDefault(p => p.PlayerId == player.PlayerId);
+                int totalScore = this.GetTotalScoreForPlayer(player.PlayerId);
+                int averageScore = this.GetAverageScoreForPlayer(player.PlayerId);
+
                 PlayersWithScoresDto newDto = new PlayersWithScoresDto();
                 newDto.FirstName = player.FirstName;
                 newDto.Id = player.Id;
 
-                if(ps == null) {
+                if(lastPS == null) {
                     newDto.LastScore = 0;
                 } else {
-                    newDto.LastScore = ps.Score;
+                    newDto.LastScore = lastPS.Score;
                 }
-                
+
+                newDto.TotalScore = totalScore;
+                newDto.AverageScore = averageScore;
                 newDto.PlayerId = player.PlayerId;
                 newDto.PositionOne = player.PositionOne;
                 newDto.PositionThree = player.PositionThree;
@@ -323,9 +353,11 @@ namespace BasketballSupercoach.API.Data
                         // Get the last score for the player
                         PlayerScores ps =  _content.PlayerScores.OrderByDescending(x => x.GameDate).FirstOrDefault(p => p.PlayerId == detail.PlayerId);
 
+                        int averageScore = this.GetAverageScoreForPlayer(player.PlayerId);
+
                         PlayerCardDto pgDto = new PlayerCardDto();
                         pgDto.PlayerId = detail.PlayerId;
-                        pgDto.averageScore = 0;
+                        pgDto.averageScore = averageScore;
                         pgDto.CardPosition = pos;
                         pgDto.CardPositionText = GetPositionText(pos);
                         pgDto.FirstName = player.FirstName;

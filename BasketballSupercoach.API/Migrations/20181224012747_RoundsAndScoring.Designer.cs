@@ -3,14 +3,16 @@ using System;
 using BasketballSupercoach.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BasketballSupercoach.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20181224012747_RoundsAndScoring")]
+    partial class RoundsAndScoring
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -205,23 +207,6 @@ namespace BasketballSupercoach.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TeamSalary");
-                });
-
-            modelBuilder.Entity("BasketballSupercoach.API.Models.TeamScore", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("RoundId");
-
-                    b.Property<decimal>("Total")
-                        .HasColumnType("decimal(5, 2)");
-
-                    b.Property<int>("UserId");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TeamScores");
                 });
 
             modelBuilder.Entity("BasketballSupercoach.API.Models.User", b =>

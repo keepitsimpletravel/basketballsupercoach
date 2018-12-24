@@ -66,6 +66,7 @@ export class DashboardComponent implements OnInit {
       this.playerCards = data;
       for (let p = 0; p < this.playerCards.length; p ++) {
         console.log(this.playerCards[p].playerId + ' - playerId for pos: ' + this.playerCards[p].cardPositionText);
+        this.playerCards[p].averageScore = this.playerCards[p].averageScore / 100;
       }
     }, error => {
       this.alertify.error(error);

@@ -54,10 +54,9 @@ export class TeamComponent implements OnInit {
     });
 
     this.teamDetailService.GetPlayerCardsForUser(this.authService.decodedToken.nameid).subscribe(data => {
-      // console.log('data returned for player cards length: ' + data.length);
       this.playerCards = data;
       for (let p = 0; p < this.playerCards.length; p ++) {
-        // console.log(this.playerCards[p].playerId + ' - playerId for pos: ' + this.playerCards[p].cardPositionText);
+        this.playerCards[p].averageScore = this.playerCards[p].averageScore / 100;
       }
     }, error => {
       this.alertify.error(error);

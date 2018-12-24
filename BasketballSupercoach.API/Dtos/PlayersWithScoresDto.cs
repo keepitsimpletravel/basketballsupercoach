@@ -21,5 +21,9 @@ namespace BasketballSupercoach.API.Dtos
         public int Price { get; set; }
 
         public int LastScore { get; set; }
+
+        public int TotalScore { get; set; }
+
+        public decimal AverageScore { get; set; }
     }
 }

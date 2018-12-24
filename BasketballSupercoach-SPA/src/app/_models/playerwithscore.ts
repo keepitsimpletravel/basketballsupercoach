@@ -9,4 +9,6 @@ export interface Playerwithscore {
     team: string;
     price: number;
     lastScore: number;
+    averageScore: number;
+    totalScore: number;
 }

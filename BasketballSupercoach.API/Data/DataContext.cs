@@ -25,5 +25,9 @@ namespace BasketballSupercoach.API.Data
         public DbSet<PlayerGame> PlayerGames { get; set; }
 
         public DbSet<PlayerScores> PlayerScores { get; set; }
+
+        public DbSet<Round> Rounds { get; set; }
+
+        public DbSet<TeamScore> TeamScores { get; set; }
     }
 }
