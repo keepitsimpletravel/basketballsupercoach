@@ -156,6 +156,15 @@ export class AdminComponent implements OnInit {
       this.alertify.error(error);
     }, () => {
       this.alertify.success('Round Successfully Created');
+      // Now need to create all of the TeamScores
+      console.log('Round: ' + this.newRound.roundNumber);
+      this.runScoresService.CreateTeamScoresForRound(this.newRound).subscribe(next => {
+
+      }, error => {
+        this.alertify.error(error);
+      }, () => {
+        this.alertify.success('Team Scores created successfully');
+      });
     });
   }
 

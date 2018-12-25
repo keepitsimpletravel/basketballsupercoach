@@ -26,4 +26,10 @@ CreateNewRound(newRound: Round) {
   return this.http.post(this.baseUrl + 'createround', newRound);
 }
 
+CreateTeamScoresForRound(round: Round) {
+  console.log('round value in service: ' + round);
+  // const r = round.toString();
+  return this.http.post(this.baseUrl + 'createteamscores', round);
+}
+
 }

@@ -76,6 +76,9 @@ namespace BasketballSupercoach.API.Data
 
         public async Task<bool> RunTeamScoresForDate(string value) 
         {
+            // Get the current round
+            var round = _content.Rounds.FromSql("SELECT * FROM Rounds where CAST(startDate AS INT) <= {0} and CAST(endDate AS INT) >= {0}", value).FirstOrDefault();
+
             // What will be happening is for each userId
             var users = _content.Users.ToList();
 
@@ -97,7 +100,10 @@ namespace BasketballSupercoach.API.Data
                 }
                 
                 // once all teamDetails are completed for the user, then update entry to the TeamScore table for the day
-                
+                TeamScore ts = new TeamScore();
+                ts.UserId = user.Id;
+                ts.RoundId = round.RoundNumber;
+                ts.Total = daysScore;
             }
 
             
@@ -111,6 +117,21 @@ namespace BasketballSupercoach.API.Data
             round.StartDate = value.StartDate;
             round.EndDate = value.EndDate;
             await _content.Rounds.AddAsync(round);
+            return await _content.SaveChangesAsync() > 0;
+        }
+
+        public async Task<bool> CreateTeamScoresForRound(RoundDto round)
+        {
+            var users = _content.Users.ToList();
+
+            foreach(var user in users) {
+                // Need to create the TeamScore for the Round
+                TeamScore ts = new TeamScore();
+                ts.RoundId = round.RoundNumber;
+                ts.Total = 0;
+                ts.UserId = user.Id;
+                await _content.TeamScores.AddAsync(ts);
+            }
             return await _content.SaveChangesAsync() > 0;
         }
 
