@@ -10,10 +10,14 @@ export class SubplayercardComponent implements OnInit {
   @Input() playercard: Playercard;
   @Output() subPlayer = new EventEmitter<number>();
   selected = 0;
+  lastScore: number;
+  averageScore: number;
 
   constructor() { }
 
   ngOnInit() {
+    this.lastScore = this.playercard.lastScore / 100;
+    this.averageScore = this.playercard.averageScore / 100;
   }
 
   movePlayers(pc: number) {
