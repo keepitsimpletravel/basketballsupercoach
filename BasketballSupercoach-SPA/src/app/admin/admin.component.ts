@@ -6,6 +6,7 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { DatePipe } from '@angular/common';
 import { RunscoresService } from '../_services/runscores.service';
 import { AlertifyService } from '../_services/alertify.service';
+import { Round } from '../_models/round';
 
 @Component({
   selector: 'app-admin',
@@ -16,13 +17,19 @@ export class AdminComponent implements OnInit {
   scoringSystem: Scoringsystem = {};
   scoringForm: FormGroup;
   runscoresForm: FormGroup;
+  runteamscoresForm: FormGroup;
+  createRoundForm: FormGroup;
   selectedDate: Date;
+  newRoundNumber: number;
+  newRound: Round = {};
 
   constructor(private scoringSystemService: ScoringsystemService, private fb: FormBuilder, private datePipe: DatePipe
     , private runScoresService: RunscoresService, private alertify: AlertifyService) { }
 
   ngOnInit() {
     this.createRunScoresForm();
+    this.createRunTeamScoresForm();
+    this.createRoundObjectForm();
     this.createScoringSystemForm();
 
     this.scoringSystemService.GetScoringSystem().subscribe(next => {
@@ -71,6 +78,20 @@ export class AdminComponent implements OnInit {
     });
   }
 
+  createRunTeamScoresForm() {
+    this.runteamscoresForm = this.fb.group({
+      teamDate: ['']
+    });
+  }
+
+  createRoundObjectForm() {
+    this.createRoundForm = this.fb.group({
+      roundnumber: [''],
+      startdate: [''],
+      enddate: ['']
+    });
+  }
+
   updateScoringSystem() {
     console.log(this.scoringForm.value);
 
@@ -107,6 +128,34 @@ export class AdminComponent implements OnInit {
       console.log(error);
     }, () => {
       this.alertify.success('Player scores run in successfully');
+    });
+  }
+
+  runTeamScores() {
+    this.selectedDate = this.runteamscoresForm.get('teamDate').value;
+    const latest_date = this.datePipe.transform(this.selectedDate, 'yyyyMMdd');
+    console.log('Date formatted: ' + latest_date);
+
+  }
+
+  createRound() {
+    const startDate = this.createRoundForm.get('startdate').value;
+    const endDate = this.createRoundForm.get('enddate').value;
+    const start_date = this.datePipe.transform(startDate, 'yyyyMMdd');
+    const end_date = this.datePipe.transform(endDate, 'yyyyMMdd');
+
+    this.newRound.roundNumber = +this.createRoundForm.get('roundnumber').value;
+    this.newRound.startDate = start_date;
+    this.newRound.endDate = end_date;
+
+    console.log('round values: ' + this.newRound.roundNumber + ' start: ' + this.newRound.startDate + ' end: ' + this.newRound.endDate);
+
+    this.runScoresService.CreateNewRound(this.newRound).subscribe(next => {
+
+    }, error => {
+      this.alertify.error(error);
+    }, () => {
+      this.alertify.success('Round Successfully Created');
     });
   }
 

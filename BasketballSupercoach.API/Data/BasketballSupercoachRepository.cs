@@ -74,6 +74,46 @@ namespace BasketballSupercoach.API.Data
             return average;
         }
 
+        public async Task<bool> RunTeamScoresForDate(string value) 
+        {
+            // What will be happening is for each userId
+            var users = _content.Users.ToList();
+
+            foreach(var user in users) {
+                var daysScore = 0;
+                // Their teamDetails are got
+                var teamdetails = _content.TeamDetails.FromSql("SELECT * FROM TeamDetails where userId = {0}", user.Id).ToList();
+
+                // Then for each teamdetail record
+                foreach(var teamdetail in teamdetails) {
+                    // Check to see if there is a score for the player for the gameDate of value
+                    var playerScore = _content.PlayerScores.FromSql("SELECT * FROM PlayerScores where PlayerId = {0} and GameDate = {1}", teamdetail.UserId, teamdetail.PlayerId).ToList();
+
+                    if(playerScore != null) {
+                        // if yes add the score to the team score after applying any bonuses (C or 6)
+                        // if(teamdetail.Captain) TODO - CAPTAIN AND SIXTHMAN
+                        daysScore = daysScore + playerScore[0].Score;
+                    }
+                }
+                
+                // once all teamDetails are completed for the user, then update entry to the TeamScore table for the day
+                
+            }
+
+            
+            return true;
+        }
+
+        public async Task<bool> CreateNewRound(RoundDto value)
+        {
+            Round round = new Round();
+            round.RoundNumber = value.RoundNumber;
+            round.StartDate = value.StartDate;
+            round.EndDate = value.EndDate;
+            await _content.Rounds.AddAsync(round);
+            return await _content.SaveChangesAsync() > 0;
+        }
+
         public async Task<bool> RunScoresForDate(string value)
         {
             // Get the scoring system

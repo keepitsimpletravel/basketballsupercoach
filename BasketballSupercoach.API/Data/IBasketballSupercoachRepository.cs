@@ -23,6 +23,10 @@ namespace BasketballSupercoach.API.Data
 
          Task<bool> RunScoresForDate(string value);
 
+         Task<bool> RunTeamScoresForDate(string value);
+
+         Task<bool> CreateNewRound(RoundDto value);
+
          Task<IEnumerable<PlayersWithScoresDto>> GetPlayers();
 
          int GetTotalScoreForPlayer(int playerId);
