@@ -39,11 +39,11 @@ namespace BasketballSupercoach.API.Controllers
             return Ok(result);
         }
 
-        [HttpGet("team/{value}")]
-        public async Task<IActionResult> RunTeamScoresForDate(string value)
+        [HttpPut("updateteamscores")]
+        public async Task<IActionResult> RunTeamScoresForDate(RunTeamDateDto value)
         {
-            var result = await _repo.RunTeamScoresForDate(value);
-            return Ok(result);
+            var updateTeamscores = await _repo.RunTeamScoresForDate(value);
+            return StatusCode(201);
         }
     }
 }

@@ -74,25 +74,28 @@ namespace BasketballSupercoach.API.Data
             return average;
         }
 
-        public async Task<bool> RunTeamScoresForDate(string value) 
+        public async Task<bool> RunTeamScoresForDate(RunTeamDateDto value) 
         {
             // Get the current round
-            var round = _content.Rounds.FromSql("SELECT * FROM Rounds where CAST(startDate AS INT) <= {0} and CAST(endDate AS INT) >= {0}", value).FirstOrDefault();
+            var round = _content.Rounds.FromSql("SELECT * FROM Rounds where CAST(startDate AS INT) <= {0} and CAST(endDate AS INT) >= {0}", value.RunDate).FirstOrDefault();
 
             // What will be happening is for each userId
             var users = _content.Users.ToList();
 
             foreach(var user in users) {
                 var daysScore = 0;
+
+                // Need to get the current rounds score
+
                 // Their teamDetails are got
                 var teamdetails = _content.TeamDetails.FromSql("SELECT * FROM TeamDetails where userId = {0}", user.Id).ToList();
 
                 // Then for each teamdetail record
                 foreach(var teamdetail in teamdetails) {
                     // Check to see if there is a score for the player for the gameDate of value
-                    var playerScore = _content.PlayerScores.FromSql("SELECT * FROM PlayerScores where PlayerId = {0} and GameDate = {1}", teamdetail.UserId, teamdetail.PlayerId).ToList();
+                    var playerScore = _content.PlayerScores.FromSql("SELECT * FROM PlayerScores where PlayerId = {0} and GameDate = {1}", teamdetail.PlayerId, value.RunDate).ToList();
 
-                    if(playerScore != null) {
+                    if(playerScore.Count > 0) {
                         // if yes add the score to the team score after applying any bonuses (C or 6)
                         // if(teamdetail.Captain) TODO - CAPTAIN AND SIXTHMAN
                         daysScore = daysScore + playerScore[0].Score;
@@ -100,14 +103,17 @@ namespace BasketballSupercoach.API.Data
                 }
                 
                 // once all teamDetails are completed for the user, then update entry to the TeamScore table for the day
-                TeamScore ts = new TeamScore();
-                ts.UserId = user.Id;
-                ts.RoundId = round.RoundNumber;
-                ts.Total = daysScore;
-            }
+                var teamScore = _content.TeamScores.FirstOrDefault(t => t.RoundId == round.RoundNumber && t.UserId == user.Id);
 
-            
-            return true;
+                // TeamScore ts = new TeamScore();
+                teamScore.UserId = user.Id;
+                teamScore.RoundId = round.RoundNumber;
+                teamScore.Total = daysScore;
+
+                // Now need to update the TeamScore
+                _content.TeamScores.Update(teamScore);
+            }
+            return await _content.SaveChangesAsync() > 0;
         }
 
         public async Task<bool> CreateNewRound(RoundDto value)

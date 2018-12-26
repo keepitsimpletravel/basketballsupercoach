@@ -23,7 +23,7 @@ namespace BasketballSupercoach.API.Data
 
          Task<bool> RunScoresForDate(string value);
 
-         Task<bool> RunTeamScoresForDate(string value);
+         Task<bool> RunTeamScoresForDate(RunTeamDateDto value);
 
          Task<bool> CreateNewRound(RoundDto value);
 

@@ -7,6 +7,7 @@ import { DatePipe } from '@angular/common';
 import { RunscoresService } from '../_services/runscores.service';
 import { AlertifyService } from '../_services/alertify.service';
 import { Round } from '../_models/round';
+import { Rundate } from '../_models/runDate';
 
 @Component({
   selector: 'app-admin',
@@ -22,6 +23,7 @@ export class AdminComponent implements OnInit {
   selectedDate: Date;
   newRoundNumber: number;
   newRound: Round = {};
+  rd: Rundate = {};
 
   constructor(private scoringSystemService: ScoringsystemService, private fb: FormBuilder, private datePipe: DatePipe
     , private runScoresService: RunscoresService, private alertify: AlertifyService) { }
@@ -134,7 +136,16 @@ export class AdminComponent implements OnInit {
   runTeamScores() {
     this.selectedDate = this.runteamscoresForm.get('teamDate').value;
     const latest_date = this.datePipe.transform(this.selectedDate, 'yyyyMMdd');
-    console.log('Date formatted: ' + latest_date);
+    console.log('Date formatted for team score: ' + latest_date);
+    this.rd.runDate = latest_date;
+
+    this.runScoresService.RunTeamScoresForDate(this.rd).subscribe(next => {
+      console.log('run team scores body: ' + next);
+    }, error => {
+      console.log(error);
+    }, () => {
+      this.alertify.success('Team Scores Run For Day Successfully');
+    });
 
   }
 
@@ -148,7 +159,7 @@ export class AdminComponent implements OnInit {
     this.newRound.startDate = start_date;
     this.newRound.endDate = end_date;
 
-    console.log('round values: ' + this.newRound.roundNumber + ' start: ' + this.newRound.startDate + ' end: ' + this.newRound.endDate);
+    // console.log('round values: ' + this.newRound.roundNumber + ' start: ' + this.newRound.startDate + ' end: ' + this.newRound.endDate);
 
     this.runScoresService.CreateNewRound(this.newRound).subscribe(next => {
 
