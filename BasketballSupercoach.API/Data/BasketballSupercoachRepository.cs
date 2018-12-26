@@ -83,7 +83,7 @@ namespace BasketballSupercoach.API.Data
             var users = _content.Users.ToList();
 
             foreach(var user in users) {
-                var daysScore = 0;
+                decimal daysScore = 0;
 
                 // Need to get the current rounds score
 
@@ -97,8 +97,16 @@ namespace BasketballSupercoach.API.Data
 
                     if(playerScore.Count > 0) {
                         // if yes add the score to the team score after applying any bonuses (C or 6)
-                        // if(teamdetail.Captain) TODO - CAPTAIN AND SIXTHMAN
-                        daysScore = daysScore + playerScore[0].Score;
+                        if(teamdetail.Position <= 10) {
+                            if(teamdetail.Position == teamdetail.Captain) {
+                                daysScore = daysScore + (playerScore[0].Score * 2);
+                            } else if (teamdetail.Position == teamdetail.SixthMan) {
+                                decimal tempValue = (decimal) playerScore[0].Score;
+                                daysScore = daysScore + tempValue;
+                            } else {
+                                daysScore = daysScore + playerScore[0].Score;
+                            }
+                        }
                     }
                 }
                 
@@ -108,7 +116,7 @@ namespace BasketballSupercoach.API.Data
                 // TeamScore ts = new TeamScore();
                 teamScore.UserId = user.Id;
                 teamScore.RoundId = round.RoundNumber;
-                teamScore.Total = daysScore;
+                teamScore.Total = (int)daysScore;
 
                 // Now need to update the TeamScore
                 _content.TeamScores.Update(teamScore);

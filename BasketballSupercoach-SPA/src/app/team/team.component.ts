@@ -27,6 +27,7 @@ export class TeamComponent implements OnInit {
   loaded: number;
   captainSelected = 0;
   updates = 0;
+  saved = 0;
   // playerAdded: number;
   // Observable<Array<any>>
   // playerCards: Observable<Array<any>>;
@@ -107,12 +108,26 @@ export class TeamComponent implements OnInit {
 
   saveTeam() {
     for (let p = 0; p < this.playerCards.length; p ++) {
+      this.playerCards[p].averageScore = this.playerCards[p].averageScore * 100;
+      // this.playerCards[p].lastScore = this.playerCards[p].lastScore * 100;
       this.teamDetailService.updateTeamDetailRecord(this.playerCards[p]).subscribe(data => {
       }, error => {
+        console.log('error + ' + error);
         this.alertify.error(error);
+        this.saved = 0;
       }, () => {
-        this.alertify.success('Team Saved Successfully');
+        this.playerCards[p].averageScore = this.playerCards[p].averageScore / 100;
+        this.saved = this.saved + 1;
+        console.log('saved update');
+        this.displaySave();
       });
+    }
+  }
+
+  displaySave() {
+    if (this.saved === 13) {
+      this.alertify.success('Team Saved Successfully');
+      this.saved = 0;
     }
   }
 }
