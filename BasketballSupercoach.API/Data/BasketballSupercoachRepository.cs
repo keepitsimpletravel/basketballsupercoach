@@ -407,6 +407,45 @@ namespace BasketballSupercoach.API.Data
         //     return teamDetails;
         // }
 
+        public async Task<int> GetRoundRank(int id)
+        {
+            // Need to get the current round
+            // DateTime dateTime = DateTime.UtcNow.Date;
+
+            // string currentDate = dateTime.ToString("yyyyMMdd");
+            // int value = Convert.ToInt32(currentDate);
+            int value = 20181016;
+            Round round = _content.Rounds.FromSql("SELECT * FROM Rounds where CAST(startDate AS INT) <= {0} and CAST(endDate AS INT) >= {0}", value).FirstOrDefault();
+            
+
+            // Now need to get the user's rank
+            List <TeamScore> ts = await _content.TeamScores.FromSql("select * from TeamScores where RoundId = {0} order by Total desc", round.RoundNumber).ToListAsync();
+
+            // Now need to find what rank the user is for the round
+            for (int i = 0; i < ts.Count; i++) {
+                if (ts[i].UserId == id) {
+                    // We have a match
+                    return i+1;
+                }
+            }
+            return 0;
+        }
+        
+        public async Task<decimal> GetRoundScore(int id)
+        {
+            // Need to get the current round
+            // DateTime dateTime = DateTime.UtcNow.Date;
+
+            // string currentDate = dateTime.ToString("yyyyMMdd");
+            // int value = Convert.ToInt32(currentDate);
+            int value = 20181016;
+            Round round = _content.Rounds.FromSql("SELECT * FROM Rounds where CAST(startDate AS INT) <= {0} and CAST(endDate AS INT) >= {0}", value).FirstOrDefault();
+            
+            TeamScore ts = await _content.TeamScores.FromSql("SELECT * FROM TeamScores where RoundId = {0} and UserId = {1}", round.RoundNumber, id).FirstOrDefaultAsync();
+
+            return ts.Total;
+        }
+
         public async Task<IEnumerable<PlayerCardDto>> GetPlayerCardsForUser(int userId) {
             var teamDetails = await _content.TeamDetails.Where(x => x.UserId == userId).ToListAsync();
 

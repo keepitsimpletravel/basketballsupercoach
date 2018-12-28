@@ -97,7 +97,9 @@ export class SubplayerComponent implements OnInit {
 
     console.log('orig pos: ' + originalPos + ' new pos: ' + newPos);
     original.cardPosition = newPos;
+    original.averageScore = original.averageScore * 100;
     moveWith.cardPosition = originalPos;
+    moveWith.averageScore = moveWith.averageScore * 100;
 
 
 

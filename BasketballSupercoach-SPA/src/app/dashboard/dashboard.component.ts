@@ -23,6 +23,9 @@ export class DashboardComponent implements OnInit {
   playerCards: Playercard[] = [];
   loaded: number;
 
+  roundScore: number;
+  roundRank = 0;
+
   constructor(private authService: AuthService, private userService: UserService,
     private route: ActivatedRoute, private alertify: AlertifyService, private teamSalaryService: TeamsalaryService,
     private teamDetailService: TeamdetailService) { }
@@ -73,6 +76,18 @@ export class DashboardComponent implements OnInit {
     }, () => {
       // update the loaded
       this.loaded = 1;
+    });
+
+    this.teamDetailService.getRoundrank(this.authService.decodedToken.nameid).subscribe(data => {
+      this.roundRank = data;
+    }, error => {
+      this.alertify.error(error);
+    });
+
+    this.teamDetailService.getRoundScore(this.authService.decodedToken.nameid).subscribe(data => {
+      this.roundScore = data / 100;
+    }, error => {
+      this.alertify.error(error);
     });
   }
 

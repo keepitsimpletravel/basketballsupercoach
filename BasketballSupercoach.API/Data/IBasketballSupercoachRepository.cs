@@ -17,6 +17,10 @@ namespace BasketballSupercoach.API.Data
 
          Task<User> GetUser(int id);
 
+         Task<int> GetRoundRank(int id);
+
+         Task<decimal> GetRoundScore(int id);
+
          Task<ScoringSystem> GetScoringSystem();
 
          Task<bool> UpdateScoringSystem(ScoringSystem scoring);

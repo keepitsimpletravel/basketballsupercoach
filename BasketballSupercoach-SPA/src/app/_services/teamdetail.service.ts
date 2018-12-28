@@ -37,6 +37,15 @@ export class TeamdetailService {
     // return 201;
   }
 
+  getRoundrank (userid: number) {
+    console.log('getRoundrank()');
+    return this.http.get<number>(environment.apiUrl + 'teamrank/' + userid);
+  }
+
+  getRoundScore(userid: number) {
+    return this.http.get<number>(environment.apiUrl + 'teamrank/score/' + userid);
+  }
+
   // updateTeamDetailsForSub (origPlayercard: Playercard, newPlayercard: Playercard) {
   //   origPlayercard.userId = +localStorage.getItem('currentUserId');
   //   newPlayercard.userId = +localStorage.getItem('currentUserId');
