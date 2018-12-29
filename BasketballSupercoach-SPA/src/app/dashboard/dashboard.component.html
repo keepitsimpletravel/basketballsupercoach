@@ -2,7 +2,10 @@
     <div class="content-inner">
         <header class="page-header">
           <div class="container-fluid">
-            <h2 class="no-margin-bottom">Dashboard</h2>
+            <h2 class="no-margin-bottom">Dashboard       </h2>
+            <h4 class="no-margin-bottom">Round #{{this.round}}</h4>
+            <h4 *ngIf="this.currentState === 0" class="no-margin-bottom">Compeititon Status: Open</h4>
+            <h4 *ngIf="this.currentState === 1" class="no-margin-bottom">Compeititon Status: Lockout</h4>
           </div>
         </header>
         <!-- Dashboard Counts Section-->
@@ -44,7 +47,7 @@
                     <div class="col-xl-4 col-sm-8">
                         <div class="item d-flex align-items-center">
                             <div class="title"><span><strong>Overall # Score</strong></span>
-                              <div class="number">3654</div>
+                              <div class="number">{{this.totalScore}}</div>
                               <div><br></div>
                             </div>
                         </div>
@@ -52,7 +55,7 @@
                     <div class="col-xl-4 col-sm-8">
                         <div class="item d-flex align-items-center">
                             <div class="title"><span><strong>Overall Rank</strong></span>
-                              <div class="number">111</div>
+                              <div class="number">{{this.totalRank}}</div>
                               <div><br></div>
                             </div>
                         </div>

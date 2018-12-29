@@ -46,6 +46,22 @@ export class TeamdetailService {
     return this.http.get<number>(environment.apiUrl + 'teamrank/score/' + userid);
   }
 
+  getTotalScore(userid: number) {
+    return this.http.get<number>(environment.apiUrl + 'teamrank/totalscore/' + userid);
+  }
+
+  getTotalRank(userid: number) {
+    return this.http.get<number>(environment.apiUrl + 'teamrank/totalrank/' + userid);
+  }
+
+  getCurrentRound() {
+    return this.http.get<number>(environment.apiUrl + 'teamrank/getround/');
+  }
+
+  getCompetitionStatus() {
+    return this.http.get<number>(environment.apiUrl + 'runscores/getstatus/');
+  }
+
   // updateTeamDetailsForSub (origPlayercard: Playercard, newPlayercard: Playercard) {
   //   origPlayercard.userId = +localStorage.getItem('currentUserId');
   //   newPlayercard.userId = +localStorage.getItem('currentUserId');

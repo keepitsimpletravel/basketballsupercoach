@@ -29,5 +29,7 @@ namespace BasketballSupercoach.API.Data
         public DbSet<Round> Rounds { get; set; }
 
         public DbSet<TeamScore> TeamScores { get; set; }
+
+        public DbSet<Lockout> Lockouts { get; set; }
     }
 }

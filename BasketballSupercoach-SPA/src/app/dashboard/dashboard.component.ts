@@ -25,6 +25,10 @@ export class DashboardComponent implements OnInit {
 
   roundScore: number;
   roundRank = 0;
+  totalScore: number;
+  totalRank = 0;
+  round = 0;
+  currentState = 0;
 
   constructor(private authService: AuthService, private userService: UserService,
     private route: ActivatedRoute, private alertify: AlertifyService, private teamSalaryService: TeamsalaryService,
@@ -86,6 +90,31 @@ export class DashboardComponent implements OnInit {
 
     this.teamDetailService.getRoundScore(this.authService.decodedToken.nameid).subscribe(data => {
       this.roundScore = data / 100;
+    }, error => {
+      this.alertify.error(error);
+    });
+
+    this.teamDetailService.getTotalRank(this.authService.decodedToken.nameid).subscribe(data => {
+      this.totalRank = data;
+    }, error => {
+      this.alertify.error(error);
+    });
+
+    this.teamDetailService.getTotalScore(this.authService.decodedToken.nameid).subscribe(data => {
+      this.totalScore = data;
+    }, error => {
+      this.alertify.error(error);
+    });
+
+    this.teamDetailService.getCurrentRound().subscribe(data => {
+      this.round = data;
+    }, error => {
+      this.alertify.error(error);
+    });
+
+    // Get compteitio status
+    this.teamDetailService.getCompetitionStatus().subscribe(data => {
+      this.currentState = data;
     }, error => {
       this.alertify.error(error);
     });

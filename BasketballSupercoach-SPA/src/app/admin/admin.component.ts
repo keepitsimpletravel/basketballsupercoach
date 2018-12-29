@@ -8,6 +8,7 @@ import { RunscoresService } from '../_services/runscores.service';
 import { AlertifyService } from '../_services/alertify.service';
 import { Round } from '../_models/round';
 import { Rundate } from '../_models/runDate';
+import { Lockout } from '../_models/lockout';
 
 @Component({
   selector: 'app-admin',
@@ -24,6 +25,7 @@ export class AdminComponent implements OnInit {
   newRoundNumber: number;
   newRound: Round = {};
   rd: Rundate = {};
+  lockout: Lockout = {};
 
   constructor(private scoringSystemService: ScoringsystemService, private fb: FormBuilder, private datePipe: DatePipe
     , private runScoresService: RunscoresService, private alertify: AlertifyService) { }
@@ -176,6 +178,19 @@ export class AdminComponent implements OnInit {
       }, () => {
         this.alertify.success('Team Scores created successfully');
       });
+    });
+  }
+
+  setLockout(value: number) {
+    // need to update the lockout
+    this.lockout.locked = value;
+
+    this.runScoresService.UpdateLockout(this.lockout).subscribe(next => {
+
+    }, error => {
+      this.alertify.error(error);
+    }, () => {
+      this.alertify.success('Lockout updated');
     });
   }
 

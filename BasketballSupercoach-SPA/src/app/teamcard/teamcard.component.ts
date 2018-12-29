@@ -2,6 +2,8 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Playercard } from '../_models/playercard';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog, MatDialogRef } from '@angular/material';
+import { TeamdetailService } from '../_services/teamdetail.service';
+import { AlertifyService } from '../_services/alertify.service';
 
 @Component({
   selector: 'app-teamcard',
@@ -14,8 +16,10 @@ export class TeamcardComponent implements OnInit {
   @Output() sixthManSet = new EventEmitter<number>();
   @Output() emergencySet = new EventEmitter<number>();
   lastScore: number;
+  currentState = 0;
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router, private teamDetailService: TeamdetailService,
+     private alertify: AlertifyService) { }
 
   setCaptain(position: number) {
     if (this.playercard.isCaptain === position) {
@@ -68,6 +72,13 @@ export class TeamcardComponent implements OnInit {
 
   ngOnInit() {
     this.lastScore = this.playercard.lastScore / 100;
+
+    // Get compteitio status
+    this.teamDetailService.getCompetitionStatus().subscribe(data => {
+      this.currentState = data;
+    }, error => {
+      this.alertify.error(error);
+    });
   }
 
 }

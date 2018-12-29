@@ -33,5 +33,26 @@ namespace BasketballSupercoach.API.Controllers
             var score = await _repo.GetRoundScore(id);
             return Ok(score);
         }
+
+        [HttpGet("totalscore/{id}")]
+        public async Task<IActionResult> GetTotalScore(int id)
+        {
+            var score = await _repo.GetTotalScore(id);
+            return Ok(score);
+        }
+
+        [HttpGet("totalrank/{id}")]
+        public async Task<IActionResult> GetTotalRank(int id)
+        {
+            var rank = await _repo.GetTotalRank(id);
+            return Ok(rank);
+        }
+
+        [HttpGet("getround/")]
+        public async Task<IActionResult> GetCurrentRound()
+        {
+            var round = await _repo.GetCurrentRound();
+            return Ok(round);
+        }
     }
 }

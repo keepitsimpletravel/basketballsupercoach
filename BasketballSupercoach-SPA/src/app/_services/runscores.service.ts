@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Round } from '../_models/round';
 import { Rundate } from '../_models/runDate';
+import { Lockout } from '../_models/lockout';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +32,10 @@ CreateTeamScoresForRound(round: Round) {
   console.log('round value in service for: ' + round);
   // const r = round.toString();
   return this.http.post(this.baseUrl + 'createteamscores', round);
+}
+
+UpdateLockout(value: Lockout) {
+  return this.http.put(this.baseUrl + 'updatelockout', value);
 }
 
 }

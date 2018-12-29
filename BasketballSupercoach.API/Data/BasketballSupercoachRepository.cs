@@ -430,6 +430,17 @@ namespace BasketballSupercoach.API.Data
             }
             return 0;
         }
+
+        public async Task<int> GetCurrentRound(){
+            // Need to get the current round
+            // DateTime dateTime = DateTime.UtcNow.Date;
+
+            // string currentDate = dateTime.ToString("yyyyMMdd");
+            // int value = Convert.ToInt32(currentDate);
+            int value = 20181016;
+            Round round = await _content.Rounds.FromSql("SELECT * FROM Rounds where CAST(startDate AS INT) <= {0} and CAST(endDate AS INT) >= {0}", value).FirstOrDefaultAsync();
+            return round.RoundNumber;
+        }
         
         public async Task<decimal> GetRoundScore(int id)
         {
@@ -444,6 +455,49 @@ namespace BasketballSupercoach.API.Data
             TeamScore ts = await _content.TeamScores.FromSql("SELECT * FROM TeamScores where RoundId = {0} and UserId = {1}", round.RoundNumber, id).FirstOrDefaultAsync();
 
             return ts.Total;
+        }
+
+        public async Task<int> GetTotalRank(int id)
+        {
+            // List<TotalRankDto> totalRankObjects = await _content.TeamScores.FromSql("SELECT SUM(total), UserId FROM TeamScores GROUP BY UserId", id).ToListAsync();
+            List<TeamScore> ts = await _content.TeamScores.FromSql("SELECT Id, UserID, RoundId, SUM(total) AS Total FROM TeamScores GROUP BY UserId").ToListAsync();
+
+            for (int i = 0; i < ts.Count; i++) {
+                if (ts[i].UserId == id) {
+                    // We have a match
+                    return i+1;
+                }
+            }    
+            return 0;        
+        }
+
+        public async Task<decimal> GetTotalScore(int id)
+        {
+            List<TeamScore> ts = await _content.TeamScores.FromSql("SELECT * FROM TeamScores where UserId = {0}", id).ToListAsync();
+
+            decimal total = 0;
+            for (int i = 0; i < ts.Count; i++) {
+                total = total + ts[i].Total;
+            }
+
+            return total / 100;
+        }
+
+        public async Task<bool> UpdateLockout(int value)
+        {
+            Lockout lockout = new Lockout
+            {
+                Id = 1,
+                Locked = value
+            };
+            _content.Lockouts.Update(lockout);
+            return await _content.SaveChangesAsync() > 0;
+        }
+
+        public async Task<int> GetCompetitionStatus() {
+            var state = await _content.Lockouts.ToListAsync();
+
+            return state[0].Locked;
         }
 
         public async Task<IEnumerable<PlayerCardDto>> GetPlayerCardsForUser(int userId) {

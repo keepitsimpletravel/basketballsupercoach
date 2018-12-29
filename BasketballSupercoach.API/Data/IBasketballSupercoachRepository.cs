@@ -19,7 +19,13 @@ namespace BasketballSupercoach.API.Data
 
          Task<int> GetRoundRank(int id);
 
+         Task<int> GetCurrentRound();
+
+         Task<int> GetTotalRank(int id);
+
          Task<decimal> GetRoundScore(int id);
+
+         Task<decimal> GetTotalScore(int id);
 
          Task<ScoringSystem> GetScoringSystem();
 
@@ -56,6 +62,10 @@ namespace BasketballSupercoach.API.Data
          TeamDetail GetTeamDetailForPosition(int userId, int position);
 
          Task<bool> UpdateUserSalarySet(User user);
+
+         Task<bool> UpdateLockout(int value);
+
+         Task<int> GetCompetitionStatus();
 
          Task<TeamSalary> GetTeamSalary(int userId);
 

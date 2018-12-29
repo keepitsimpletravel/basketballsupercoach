@@ -45,5 +45,19 @@ namespace BasketballSupercoach.API.Controllers
             var updateTeamscores = await _repo.RunTeamScoresForDate(value);
             return StatusCode(201);
         }
+
+        [HttpPut("updatelockout")]
+        public async Task<IActionResult> UpdateLockout(LockoutDto value)
+        {
+            var updateLockout = await _repo.UpdateLockout(value.Locked);
+            return StatusCode(201);
+        }
+
+        [HttpGet("getstatus")]
+        public async Task<IActionResult> GetCompetitionStatus()
+        {
+            var result = await _repo.GetCompetitionStatus();
+            return Ok(result);
+        }
     }
 }
