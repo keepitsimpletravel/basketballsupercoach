@@ -243,6 +243,10 @@ namespace BasketballSupercoach.API.Migrations
 
                     b.Property<int>("Active");
 
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Name");
+
                     b.Property<byte[]>("PasswordHash");
 
                     b.Property<byte[]>("PasswordSalt");

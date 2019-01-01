@@ -3,10 +3,47 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BasketballSupercoach.API.Migrations
 {
-    public partial class InitialDB : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Lockouts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Locked = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Lockouts", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PlayerGames",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    GameId = table.Column<int>(nullable: false),
+                    PlayerId = table.Column<int>(nullable: false),
+                    GameDate = table.Column<string>(nullable: true),
+                    ThreesMade = table.Column<int>(nullable: false),
+                    OffRebounds = table.Column<int>(nullable: false),
+                    DefRebounds = table.Column<int>(nullable: false),
+                    Assists = table.Column<int>(nullable: false),
+                    Turnovers = table.Column<int>(nullable: false),
+                    Steals = table.Column<int>(nullable: false),
+                    Blocks = table.Column<int>(nullable: false),
+                    Minutes = table.Column<int>(nullable: false),
+                    Points = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PlayerGames", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Players",
                 columns: table => new
@@ -25,6 +62,37 @@ namespace BasketballSupercoach.API.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Players", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PlayerScores",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    PlayerId = table.Column<int>(nullable: false),
+                    GameId = table.Column<int>(nullable: false),
+                    GameDate = table.Column<string>(nullable: true),
+                    Score = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PlayerScores", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Rounds",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    RoundNumber = table.Column<int>(nullable: false),
+                    StartDate = table.Column<string>(nullable: true),
+                    EndDate = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Rounds", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -85,6 +153,21 @@ namespace BasketballSupercoach.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "TeamScores",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    UserId = table.Column<int>(nullable: false),
+                    RoundId = table.Column<int>(nullable: false),
+                    Total = table.Column<decimal>(type: "decimal(5, 2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TeamScores", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
@@ -93,6 +176,8 @@ namespace BasketballSupercoach.API.Migrations
                     Username = table.Column<string>(nullable: true),
                     PasswordHash = table.Column<byte[]>(nullable: true),
                     PasswordSalt = table.Column<byte[]>(nullable: true),
+                    Name = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
                     Teamname = table.Column<string>(nullable: true),
                     TeamSelected = table.Column<int>(nullable: false),
                     Active = table.Column<int>(nullable: false),
@@ -134,10 +219,22 @@ namespace BasketballSupercoach.API.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Lockouts");
+
+            migrationBuilder.DropTable(
                 name: "Photos");
 
             migrationBuilder.DropTable(
+                name: "PlayerGames");
+
+            migrationBuilder.DropTable(
                 name: "Players");
+
+            migrationBuilder.DropTable(
+                name: "PlayerScores");
+
+            migrationBuilder.DropTable(
+                name: "Rounds");
 
             migrationBuilder.DropTable(
                 name: "ScoringSystems");
@@ -147,6 +244,9 @@ namespace BasketballSupercoach.API.Migrations
 
             migrationBuilder.DropTable(
                 name: "TeamSalary");
+
+            migrationBuilder.DropTable(
+                name: "TeamScores");
 
             migrationBuilder.DropTable(
                 name: "Users");

@@ -12,6 +12,10 @@ namespace BasketballSupercoach.API.Models
 
         public byte[] PasswordSalt { get; set; }
 
+        public string Name { get; set; }
+
+        public string Email { get; set; }
+
         public string Teamname { get; set; }
 
         public int TeamSelected { get; set; }

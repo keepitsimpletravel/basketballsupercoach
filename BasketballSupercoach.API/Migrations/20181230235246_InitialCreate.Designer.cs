@@ -9,14 +9,26 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BasketballSupercoach.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20181224012747_RoundsAndScoring")]
-    partial class RoundsAndScoring
+    [Migration("20181230235246_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.1.4-rtm-31024");
+
+            modelBuilder.Entity("BasketballSupercoach.API.Models.Lockout", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Locked");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Lockouts");
+                });
 
             modelBuilder.Entity("BasketballSupercoach.API.Models.Photo", b =>
                 {
@@ -209,12 +221,33 @@ namespace BasketballSupercoach.API.Migrations
                     b.ToTable("TeamSalary");
                 });
 
+            modelBuilder.Entity("BasketballSupercoach.API.Models.TeamScore", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("RoundId");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(5, 2)");
+
+                    b.Property<int>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TeamScores");
+                });
+
             modelBuilder.Entity("BasketballSupercoach.API.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("Active");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Name");
 
                     b.Property<byte[]>("PasswordHash");
 

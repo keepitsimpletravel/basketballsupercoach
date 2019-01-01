@@ -42,12 +42,17 @@ namespace BasketballSupercoach.API.Controllers
 
             var userToCreate = new User
             {
-                Username = userForRegisterDto.Username
+                Username = userForRegisterDto.Username,
+                Name = userForRegisterDto.Name,
+                Email = userForRegisterDto.Email
             };
 
+            // This needs updating
             var createdUser = await _repo.Register(userToCreate, userForRegisterDto.Password, userForRegisterDto.Teamname);
 
+            // var userToRetunr = 
             return StatusCode(201);
+            // CreatedAtRoute("GetUser", new  { controller = "Users", id = createdUser.Id}, );
         }
 
         [HttpPost("login")]
