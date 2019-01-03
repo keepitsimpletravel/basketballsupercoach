@@ -43,6 +43,7 @@ export class TeamdetailService {
   }
 
   getRoundScore(userid: number) {
+    console.log('inside round score for user - ' + userid);
     return this.http.get<number>(environment.apiUrl + 'teamrank/score/' + userid);
   }
 

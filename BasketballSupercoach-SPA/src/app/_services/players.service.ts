@@ -3,7 +3,8 @@ import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Player } from '../_models/player';
-import { Playerwithscore } from '../_models/playerWithScore';
+import { Scoreforplayer } from '../_models/scoreforplayer';
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +14,12 @@ export class PlayersService {
 
   constructor(private http: HttpClient) { }
 
-  getPlayers(): Observable<Playerwithscore[]> {
-    return this.http.get<Playerwithscore[]>(this.baseUrl + 'players/');
+  getPlayers(): Observable<Scoreforplayer[]> {
+    return this.http.get<Scoreforplayer[]>(this.baseUrl + 'players/');
   }
 
-  getSpecificPlayers(pos): Observable<Playerwithscore[]> {
-    return this.http.get<Playerwithscore[]>(this.baseUrl + 'players/filtered/' + pos);
+  getSpecificPlayers(pos): Observable<Scoreforplayer[]> {
+    return this.http.get<Scoreforplayer[]>(this.baseUrl + 'players/filtered/' + pos);
   }
 
   getPlayer(id): Observable<Player> {

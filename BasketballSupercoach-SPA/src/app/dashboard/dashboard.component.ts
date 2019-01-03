@@ -35,8 +35,10 @@ export class DashboardComponent implements OnInit {
     private teamDetailService: TeamdetailService) { }
 
   ngOnInit() {
+    console.log('dashboard #1');
     this.route.data.subscribe(data => {
       this.user = data['user'];
+      console.log('dashboard #2');
       if (this.user.salarySet === 0) {
 
         this.model.userId = this.user.id;
@@ -44,6 +46,7 @@ export class DashboardComponent implements OnInit {
         this.availableSalary = this.model.availableSalary;
         console.log('model for Team Salary set');
 
+        console.log('dashboard #3');
         // need to create the TeamSalary object
         this.teamSalaryService.createTeamSalary(this.model).subscribe(next => {
           // Need to set the salary set to be 1
@@ -84,30 +87,36 @@ export class DashboardComponent implements OnInit {
 
     this.teamDetailService.getRoundrank(this.authService.decodedToken.nameid).subscribe(data => {
       this.roundRank = data;
+      console.log('dashboard #4');
     }, error => {
       this.alertify.error(error);
     });
 
+    // Falling over here!
     this.teamDetailService.getRoundScore(this.authService.decodedToken.nameid).subscribe(data => {
       this.roundScore = data / 100;
+      console.log('dashboard #5');
     }, error => {
       this.alertify.error(error);
     });
 
     this.teamDetailService.getTotalRank(this.authService.decodedToken.nameid).subscribe(data => {
       this.totalRank = data;
+      console.log('dashboard #6');
     }, error => {
       this.alertify.error(error);
     });
 
     this.teamDetailService.getTotalScore(this.authService.decodedToken.nameid).subscribe(data => {
       this.totalScore = data;
+      console.log('dashboard #7');
     }, error => {
       this.alertify.error(error);
     });
 
     this.teamDetailService.getCurrentRound().subscribe(data => {
       this.round = data;
+      console.log('dashboard #8');
     }, error => {
       this.alertify.error(error);
     });
@@ -115,6 +124,7 @@ export class DashboardComponent implements OnInit {
     // Get compteitio status
     this.teamDetailService.getCompetitionStatus().subscribe(data => {
       this.currentState = data;
+      console.log('dashboard #9');
     }, error => {
       this.alertify.error(error);
     });

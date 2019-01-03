@@ -1,4 +1,4 @@
-export class Playerwithscore {
+export class Scoreforplayer {
     id: number;
     playerId: number;
     firstName: string;

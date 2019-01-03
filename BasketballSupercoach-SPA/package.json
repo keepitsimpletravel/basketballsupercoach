@@ -31,6 +31,7 @@
     "ngx-bootstrap": "^3.0.1",
     "primeng": "^6.1.6",
     "rxjs": "~6.3.3",
+    "tsify": "^4.0.1",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

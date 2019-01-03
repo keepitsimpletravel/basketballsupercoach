@@ -49,17 +49,17 @@ export class RegisterComponent implements OnInit {
     console.log('Registering');
     if (this.registerForm.valid) {
       this.user = Object.assign({}, this.registerForm.value);
-      console.log('Registering 2');
+      // console.log('Registering 2');
       this.authService.register(this.user).subscribe(() => {
-        console.log('Registering 3');
+        // console.log('Registering 3');
         this.alertify.success('Registration successful');
       }, error => {
         this.alertify.error(error);
       }, () => {
         this.authService.login(this.user).subscribe(() => {
-          console.log('Registering 4');
+          // console.log('Registering 4');
           this.router.navigate(['/dashboard']);
-          console.log('Registering 5');
+          // console.log('Registering 5');
         });
       });
     }
