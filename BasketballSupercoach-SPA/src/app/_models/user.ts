@@ -4,6 +4,8 @@ export interface User {
     passwordHash: any;
     passwordSalt: any;
     teamname: string;
+    name: string;
+    email: string;
     teamSelected: number;
     photos: any;
     salarySet: number;
