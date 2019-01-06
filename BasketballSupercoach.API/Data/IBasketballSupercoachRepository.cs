@@ -15,6 +15,8 @@ namespace BasketballSupercoach.API.Data
 
          Task<IEnumerable<User>> GetUsers();
 
+         Task<PlayersWithScoresDto> GetPlayerWithScores(int id);
+
          Task<User> GetUser(int id);
 
          Task<int> GetRoundRank(int id);

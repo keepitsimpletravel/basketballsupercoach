@@ -25,4 +25,8 @@ export class PlayersService {
   getPlayer(id): Observable<Player> {
     return this.http.get<Player>(this.baseUrl + 'players/' + id);
   }
+
+  getDetailedPlayer(id): Observable<Scoreforplayer> {
+    return this.http.get<Scoreforplayer>(this.baseUrl + 'players/detailed/' + id);
+  }
 }

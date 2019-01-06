@@ -37,6 +37,37 @@ namespace BasketballSupercoach.API.Data
             return player;
         }
 
+        public async Task<PlayersWithScoresDto> GetPlayerWithScores(int id)
+        {
+            var player = await _content.Players.FirstOrDefaultAsync(p => p.PlayerId == id);
+
+            PlayersWithScoresDto dto = new PlayersWithScoresDto();
+            dto.FirstName = player.FirstName;
+            dto.Id = player.Id;
+            dto.PlayerId = player.PlayerId;
+            dto.PositionOne = player.PositionOne;
+            dto.PositionTwo = player.PositionTwo;
+            dto.PositionThree = player.PositionThree;
+            dto.Price = player.Price;
+            dto.Surname = player.Surname;
+            dto.Team = player.Team;
+
+            //  Now need to get the average
+            dto.AverageScore = GetAverageScoreForPlayer(id);
+            dto.TotalScore = GetTotalScoreForPlayer(id);
+
+            PlayerScores lastPS =  _content.PlayerScores.OrderByDescending(x => x.GameDate).FirstOrDefault(p => p.PlayerId == player.PlayerId);
+
+            if(lastPS != null) {
+                dto.LastScore = lastPS.Score;
+            } else {
+                dto.LastScore = 0;
+            }
+            
+
+            return dto;
+        }
+
         public async Task<ScoringSystem> GetScoringSystem()
         {
             var scoring = await _content.ScoringSystems.FirstOrDefaultAsync();

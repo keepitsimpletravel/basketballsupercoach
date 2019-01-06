@@ -41,6 +41,13 @@ namespace BasketballSupercoach.API.Controllers
             var player = await _repo.GetPlayer(id);
             return Ok(player);
         }
+
+        [HttpGet("detailed/{id}")]
+        public async Task<IActionResult> GetDetailedPlayer(int id)
+        {
+            var player = await _repo.GetPlayerWithScores(id);
+            return Ok(player);
+        }
     }
 }
 
