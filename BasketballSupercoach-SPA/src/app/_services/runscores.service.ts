@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Round } from '../_models/round';
-import { Rundate } from '../_models/runDate';
+// import { Rundate } from '../_models/runDate';
 import { Lockout } from '../_models/lockout';
+import { Daterun } from '../_models/daterun';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ RunScoresForDate (value: string) {
   return this.http.get<number>(this.baseUrl + value);
 }
 
-RunTeamScoresForDate(value: Rundate) {
+RunTeamScoresForDate(value: Daterun) {
   console.log('Running Team Scores service - ' + value.runDate);
   return this.http.put(this.baseUrl + 'updateteamscores', value);
 }

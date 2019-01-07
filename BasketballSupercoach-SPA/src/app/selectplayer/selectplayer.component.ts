@@ -10,7 +10,8 @@ import { UserService } from '../_services/user.service';
 import { User } from '../_models/user';
 import { TeamsalaryService } from '../_services/teamsalary.service';
 import { TeamSalary } from '../_models/teamsalary';
-import { Playerwithscore } from '../_models/playerWithScore';
+import { Scoreforplayer } from '../_models/scoreforplayer';
+// import { Playerwithscore } from '../_models/playerWithScore';
 
 @Component({
   selector: 'app-selectplayer',
@@ -18,7 +19,7 @@ import { Playerwithscore } from '../_models/playerWithScore';
   styleUrls: ['./selectplayer.component.css']
 })
 export class SelectplayerComponent implements OnInit {
-  players: Playerwithscore[];
+  players: Scoreforplayer[];
   selectedPlayer: Player;
   position: number;
   currentUser: User;

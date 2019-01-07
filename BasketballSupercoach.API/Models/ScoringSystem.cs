@@ -8,13 +8,13 @@ namespace BasketballSupercoach.API.Models
 
         public int Points { get; set; }
 
-        [Column(TypeName = "decimal(1, 2)")]
+        [Column(TypeName = "decimal(5, 2)")]
         public decimal ORebounds { get; set; }
 
-        [Column(TypeName = "decimal(1, 2)")]
+        [Column(TypeName = "decimal(5, 2)")]
         public decimal DRebounds { get; set; }
 
-        [Column(TypeName = "decimal(1, 2)")]
+        [Column(TypeName = "decimal(5, 2)")]
         public decimal Assists { get; set; }
 
         public int Steals { get; set; }
@@ -27,12 +27,12 @@ namespace BasketballSupercoach.API.Models
 
         public int QuadDouble { get; set; }
 
-        [Column(TypeName = "decimal(1, 2)")]
+        [Column(TypeName = "decimal(5, 2)")]
         public decimal Minutes { get; set; }
 
         public int Turnovers { get; set; }
 
-        [Column(TypeName = "decimal(1, 2)")]
+        [Column(TypeName = "decimal(5, 2)")]
         public decimal MadeThrees { get; set; }
     }
 }

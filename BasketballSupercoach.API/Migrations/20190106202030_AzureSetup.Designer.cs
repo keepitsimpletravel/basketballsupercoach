@@ -3,25 +3,29 @@ using System;
 using BasketballSupercoach.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BasketballSupercoach.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20181230235246_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20190106202030_AzureSetup")]
+    partial class AzureSetup
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024");
+                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
+                .HasAnnotation("Relational:MaxIdentifierLength", 128)
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("BasketballSupercoach.API.Models.Lockout", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("Locked");
 
@@ -33,7 +37,8 @@ namespace BasketballSupercoach.API.Migrations
             modelBuilder.Entity("BasketballSupercoach.API.Models.Photo", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("DateAdded");
 
@@ -53,7 +58,8 @@ namespace BasketballSupercoach.API.Migrations
             modelBuilder.Entity("BasketballSupercoach.API.Models.Player", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("FirstName");
 
@@ -79,7 +85,8 @@ namespace BasketballSupercoach.API.Migrations
             modelBuilder.Entity("BasketballSupercoach.API.Models.PlayerGame", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("Assists");
 
@@ -113,7 +120,8 @@ namespace BasketballSupercoach.API.Migrations
             modelBuilder.Entity("BasketballSupercoach.API.Models.PlayerScores", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("GameDate");
 
@@ -131,7 +139,8 @@ namespace BasketballSupercoach.API.Migrations
             modelBuilder.Entity("BasketballSupercoach.API.Models.Round", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("EndDate");
 
@@ -147,26 +156,27 @@ namespace BasketballSupercoach.API.Migrations
             modelBuilder.Entity("BasketballSupercoach.API.Models.ScoringSystem", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<decimal>("Assists")
-                        .HasColumnType("decimal(1, 2)");
+                        .HasColumnType("decimal(5, 2)");
 
                     b.Property<int>("Blocks");
 
                     b.Property<decimal>("DRebounds")
-                        .HasColumnType("decimal(1, 2)");
+                        .HasColumnType("decimal(5, 2)");
 
                     b.Property<int>("DoubleDouble");
 
                     b.Property<decimal>("MadeThrees")
-                        .HasColumnType("decimal(1, 2)");
+                        .HasColumnType("decimal(5, 2)");
 
                     b.Property<decimal>("Minutes")
-                        .HasColumnType("decimal(1, 2)");
+                        .HasColumnType("decimal(5, 2)");
 
                     b.Property<decimal>("ORebounds")
-                        .HasColumnType("decimal(1, 2)");
+                        .HasColumnType("decimal(5, 2)");
 
                     b.Property<int>("Points");
 
@@ -186,7 +196,8 @@ namespace BasketballSupercoach.API.Migrations
             modelBuilder.Entity("BasketballSupercoach.API.Models.TeamDetail", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("Active");
 
@@ -210,7 +221,8 @@ namespace BasketballSupercoach.API.Migrations
             modelBuilder.Entity("BasketballSupercoach.API.Models.TeamSalary", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("AvailableSalary");
 
@@ -224,7 +236,8 @@ namespace BasketballSupercoach.API.Migrations
             modelBuilder.Entity("BasketballSupercoach.API.Models.TeamScore", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("RoundId");
 
@@ -241,7 +254,8 @@ namespace BasketballSupercoach.API.Migrations
             modelBuilder.Entity("BasketballSupercoach.API.Models.User", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("Active");
 

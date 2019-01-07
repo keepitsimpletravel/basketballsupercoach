@@ -5,7 +5,8 @@ import { AlertifyService } from '../_services/alertify.service';
 import {TableModule} from 'primeng/table';
 import {DropdownModule} from 'primeng/dropdown';
 import { ActivatedRoute } from '@angular/router';
-import { Playerwithscore } from '../_models/playerWithScore';
+import { Scoreforplayer } from '../_models/scoreforplayer';
+// import { Playerwithscore } from '../_models/playerWithScore';
 
 @Component({
   selector: 'app-players',
@@ -15,7 +16,7 @@ import { Playerwithscore } from '../_models/playerWithScore';
 
 export class PlayersComponent implements OnInit {
 
-  players: Playerwithscore[];
+  players: Scoreforplayer[];
   selectedPlayer: Player;
 
   cols: any[];

@@ -7,8 +7,9 @@ import { DatePipe } from '@angular/common';
 import { RunscoresService } from '../_services/runscores.service';
 import { AlertifyService } from '../_services/alertify.service';
 import { Round } from '../_models/round';
-import { Rundate } from '../_models/runDate';
+// import { Rundate } from '../_models/runDate';
 import { Lockout } from '../_models/lockout';
+import { Daterun } from '../_models/daterun';
 
 @Component({
   selector: 'app-admin',
@@ -24,7 +25,7 @@ export class AdminComponent implements OnInit {
   selectedDate: Date;
   newRoundNumber: number;
   newRound: Round = {};
-  rd: Rundate = {};
+  rd: Daterun = {};
   lockout: Lockout = {};
 
   constructor(private scoringSystemService: ScoringsystemService, private fb: FormBuilder, private datePipe: DatePipe

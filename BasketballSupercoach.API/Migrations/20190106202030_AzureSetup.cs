@@ -1,9 +1,10 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BasketballSupercoach.API.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class AzureSetup : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +13,7 @@ namespace BasketballSupercoach.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Locked = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -25,7 +26,7 @@ namespace BasketballSupercoach.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     GameId = table.Column<int>(nullable: false),
                     PlayerId = table.Column<int>(nullable: false),
                     GameDate = table.Column<string>(nullable: true),
@@ -49,7 +50,7 @@ namespace BasketballSupercoach.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     PlayerId = table.Column<int>(nullable: false),
                     FirstName = table.Column<string>(nullable: true),
                     Surname = table.Column<string>(nullable: true),
@@ -69,7 +70,7 @@ namespace BasketballSupercoach.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     PlayerId = table.Column<int>(nullable: false),
                     GameId = table.Column<int>(nullable: false),
                     GameDate = table.Column<string>(nullable: true),
@@ -85,7 +86,7 @@ namespace BasketballSupercoach.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     RoundNumber = table.Column<int>(nullable: false),
                     StartDate = table.Column<string>(nullable: true),
                     EndDate = table.Column<string>(nullable: true)
@@ -100,19 +101,19 @@ namespace BasketballSupercoach.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Points = table.Column<int>(nullable: false),
-                    ORebounds = table.Column<decimal>(type: "decimal(1, 2)", nullable: false),
-                    DRebounds = table.Column<decimal>(type: "decimal(1, 2)", nullable: false),
-                    Assists = table.Column<decimal>(type: "decimal(1, 2)", nullable: false),
+                    ORebounds = table.Column<decimal>(type: "decimal(5, 2)", nullable: false),
+                    DRebounds = table.Column<decimal>(type: "decimal(5, 2)", nullable: false),
+                    Assists = table.Column<decimal>(type: "decimal(5, 2)", nullable: false),
                     Steals = table.Column<int>(nullable: false),
                     Blocks = table.Column<int>(nullable: false),
                     DoubleDouble = table.Column<int>(nullable: false),
                     TripleDouble = table.Column<int>(nullable: false),
                     QuadDouble = table.Column<int>(nullable: false),
-                    Minutes = table.Column<decimal>(type: "decimal(1, 2)", nullable: false),
+                    Minutes = table.Column<decimal>(type: "decimal(5, 2)", nullable: false),
                     Turnovers = table.Column<int>(nullable: false),
-                    MadeThrees = table.Column<decimal>(type: "decimal(1, 2)", nullable: false)
+                    MadeThrees = table.Column<decimal>(type: "decimal(5, 2)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -124,7 +125,7 @@ namespace BasketballSupercoach.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     UserId = table.Column<int>(nullable: false),
                     PlayerId = table.Column<int>(nullable: false),
                     Position = table.Column<int>(nullable: false),
@@ -143,7 +144,7 @@ namespace BasketballSupercoach.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     UserId = table.Column<int>(nullable: false),
                     AvailableSalary = table.Column<int>(nullable: false)
                 },
@@ -157,7 +158,7 @@ namespace BasketballSupercoach.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     UserId = table.Column<int>(nullable: false),
                     RoundId = table.Column<int>(nullable: false),
                     Total = table.Column<decimal>(type: "decimal(5, 2)", nullable: false)
@@ -172,7 +173,7 @@ namespace BasketballSupercoach.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Username = table.Column<string>(nullable: true),
                     PasswordHash = table.Column<byte[]>(nullable: true),
                     PasswordSalt = table.Column<byte[]>(nullable: true),
@@ -193,7 +194,7 @@ namespace BasketballSupercoach.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Url = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     DateAdded = table.Column<DateTime>(nullable: false),

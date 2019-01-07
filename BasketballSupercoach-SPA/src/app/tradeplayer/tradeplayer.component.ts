@@ -10,7 +10,8 @@ import { Player } from '../_models/player';
 import { PlayersService } from '../_services/players.service';
 import { TeamdetailService } from '../_services/teamdetail.service';
 import { TeamSalary } from '../_models/teamsalary';
-import { Playerwithscore } from '../_models/playerWithScore';
+import { Scoreforplayer } from '../_models/scoreforplayer';
+// import { Playerwithscore } from '../_models/playerWithScore';
 
 @Component({
   selector: 'app-tradeplayer',
@@ -27,7 +28,7 @@ export class TradeplayerComponent implements OnInit {
   tradePlay: Player[];
   selectedPlayer: Player;
 
-  players: Playerwithscore[];
+  players: Scoreforplayer[];
   teams: any[];
   cols: any[];
   loading: boolean;
