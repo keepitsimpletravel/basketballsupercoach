@@ -19,14 +19,6 @@ export class RegisterComponent implements OnInit {
   constructor(private authService: AuthService, private alertify: AlertifyService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
-    // this.registerForm = new FormGroup({
-    //   username: new FormControl('', Validators.required),
-    //   password: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(10)]),
-    //   confirmPassword: new FormControl('', Validators.required),
-    //   email: new FormControl('', Validators.required),
-    //   name: new FormControl('', Validators.required),
-    //   teamname: new FormControl('', Validators.required)
-    // }, this.passwordMatchValidator);
     this.createRegisterForm();
   }
 
@@ -46,43 +38,21 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    console.log('Registering');
     if (this.registerForm.valid) {
       this.user = Object.assign({}, this.registerForm.value);
-      // console.log('Registering 2');
       this.authService.register(this.user).subscribe(() => {
-        // console.log('Registering 3');
         this.alertify.success('Registration successful');
       }, error => {
         this.alertify.error(error);
       }, () => {
         this.authService.login(this.user).subscribe(() => {
-          // console.log('Registering 4');
           this.router.navigate(['/dashboard']);
-          // console.log('Registering 5');
         });
       });
     }
-    // this.authService.register(this.model).subscribe(() => {
-    //   // this.createTeamSalary();
-    //   this.alertify.success('registration successful');
-    // }, error => {
-    //   this.alertify.error(error);
-    // });
-    // console.log(this.registerForm.value);
   }
 
   cancel() {
     this.cancelRegister.emit(false);
   }
-
-  // createTeamSalary() {
-  //   // Need to get the users id and pass in
-  //   this.teamSalaryService.createTeamSalary(this.authService.decodedToken.nameid).subscribe(() => {
-  //     this.alertify.success('teams salary created');
-  //   }, error => {
-  //       this.alertify.error(error);
-  //   });
-  // }
-
 }

@@ -448,17 +448,19 @@ namespace BasketballSupercoach.API.Data
             int value = 20181016;
             Round round = _content.Rounds.FromSql("SELECT * FROM Rounds where CAST(startDate AS INT) <= {0} and CAST(endDate AS INT) >= {0}", value).FirstOrDefault();
             
+            if(round != null) {
+                // Now need to get the user's rank
+                List <TeamScore> ts = await _content.TeamScores.FromSql("select * from TeamScores where RoundId = {0} order by Total desc", round.RoundNumber).ToListAsync();
 
-            // Now need to get the user's rank
-            List <TeamScore> ts = await _content.TeamScores.FromSql("select * from TeamScores where RoundId = {0} order by Total desc", round.RoundNumber).ToListAsync();
-
-            // Now need to find what rank the user is for the round
-            for (int i = 0; i < ts.Count; i++) {
-                if (ts[i].UserId == id) {
-                    // We have a match
-                    return i+1;
+                // Now need to find what rank the user is for the round
+                for (int i = 0; i < ts.Count; i++) {
+                    if (ts[i].UserId == id) {
+                        // We have a match
+                        return i+1;
+                    }
                 }
-            }
+            } 
+            
             return 0;
         }
 
@@ -470,7 +472,11 @@ namespace BasketballSupercoach.API.Data
             // int value = Convert.ToInt32(currentDate);
             int value = 20181016;
             Round round = await _content.Rounds.FromSql("SELECT * FROM Rounds where CAST(startDate AS INT) <= {0} and CAST(endDate AS INT) >= {0}", value).FirstOrDefaultAsync();
-            return round.RoundNumber;
+
+            if(round != null) {
+                return round.RoundNumber;
+            }
+            return 0;
         }
         
         public async Task<decimal> GetRoundScore(int id)
@@ -483,15 +489,18 @@ namespace BasketballSupercoach.API.Data
             int value = 20181016;
             Round round = _content.Rounds.FromSql("SELECT * FROM Rounds where CAST(startDate AS INT) <= {0} and CAST(endDate AS INT) >= {0}", value).FirstOrDefault();
             
-            TeamScore ts = await _content.TeamScores.FromSql("SELECT * FROM TeamScores where RoundId = {0} and UserId = {1}", round.RoundNumber, id).FirstOrDefaultAsync();
-
-            return ts.Total;
+            if (round != null) {
+                TeamScore ts = await _content.TeamScores.FromSql("SELECT * FROM TeamScores where RoundId = {0} and UserId = {1}", round.RoundNumber, id).FirstOrDefaultAsync();
+                return ts.Total;
+            }
+            return 0;
         }
 
         public async Task<int> GetTotalRank(int id)
         {
-            // List<TotalRankDto> totalRankObjects = await _content.TeamScores.FromSql("SELECT SUM(total), UserId FROM TeamScores GROUP BY UserId", id).ToListAsync();
-            List<TeamScore> ts = await _content.TeamScores.FromSql("SELECT Id, UserID, RoundId, SUM(total) AS Total FROM TeamScores GROUP BY UserId").ToListAsync();
+            // This query
+            // List<TeamScore> ts = await _content.TeamScores.FromSql("SELECT max(UserID), sum(RoundId), SUM(total) AS Total FROM TeamScores GROUP BY UserId").ToListAsync();
+            List<TeamScore> ts = await _content.TeamScores.ToListAsync();
 
             for (int i = 0; i < ts.Count; i++) {
                 if (ts[i].UserId == id) {
@@ -511,7 +520,10 @@ namespace BasketballSupercoach.API.Data
                 total = total + ts[i].Total;
             }
 
-            return total / 100;
+            if (total != 0) {
+                return total / 100;
+            }
+            return 0;
         }
 
         public async Task<bool> UpdateLockout(int value)

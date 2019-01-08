@@ -33,17 +33,13 @@ export class TeamdetailService {
       console.log('sub players: ' + playercards[p].surname + ' pos: ' + playercards[p].cardPosition);
     }
     return this.http.put<Playercard[]>(this.baseUrl + 'updatesubteamdetail', playercards);
-    // }
-    // return 201;
   }
 
   getRoundrank (userid: number) {
-    console.log('getRoundrank()');
     return this.http.get<number>(environment.apiUrl + 'teamrank/' + userid);
   }
 
   getRoundScore(userid: number) {
-    console.log('inside round score for user - ' + userid);
     return this.http.get<number>(environment.apiUrl + 'teamrank/score/' + userid);
   }
 
