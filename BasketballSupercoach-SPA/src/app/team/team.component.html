@@ -3,6 +3,10 @@
         <header class="page-header">
           <div class="container-fluid">
             <h2 class="no-margin-bottom">Your Team</h2>
+            <h4 *ngIf="this.round !== 0" class="no-margin-bottom">Round #{{this.round}}</h4>
+            <h4 *ngIf="this.round === 0" class="no-margin-bottom">Compeititon Status: Preseason</h4>
+            <h4 *ngIf="this.currentState === 0 && this.round !== 0" class="no-margin-bottom">Compeititon Status: Open</h4>
+            <h4 *ngIf="this.currentState === 1 && this.round !== 0" class="no-margin-bottom">Compeititon Status: Lockout</h4>
           </div>
         </header>
 <!-- Details Counts Section-->
@@ -12,7 +16,7 @@
                 <div class="col-xl-4 col-sm-8">
                     <div class="item d-flex align-items-center">
                         <div class="title"><span><strong>Available Salary</strong></span>
-                          <div class="number">{{ this.availableSalary }}</div>
+                          <div class="number">${{ this.availableSalary | number : 0 }}</div>
                           <div><br></div>
                         </div>
                     </div>
@@ -20,7 +24,8 @@
                 <div class="col-xl-4 col-sm-8">
                     <div class="item d-flex align-items-center">
                         <div class="title"><span><strong>Trades Remaining</strong></span>
-                          <div class="number">30</div>
+                          <!-- <div class="number">30</div> -->
+                          <div class="number" *ngIf="this.round === 0">N/A</div>
                           <div><br></div>
                         </div>
                     </div>

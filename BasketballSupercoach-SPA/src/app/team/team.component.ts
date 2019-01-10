@@ -28,6 +28,8 @@ export class TeamComponent implements OnInit {
   captainSelected = 0;
   updates = 0;
   saved = 0;
+  round = 0;
+  currentState = 0;
   // playerAdded: number;
   // Observable<Array<any>>
   // playerCards: Observable<Array<any>>;
@@ -64,6 +66,19 @@ export class TeamComponent implements OnInit {
     }, () => {
       // update the loaded
       this.loaded = 1;
+    });
+
+    this.teamDetailService.getCurrentRound().subscribe(data => {
+      this.round = data;
+    }, error => {
+      this.alertify.error('error has occurred getting the current round');
+    });
+
+    // Get compteitio status
+    this.teamDetailService.getCompetitionStatus().subscribe(data => {
+      this.currentState = data;
+    }, error => {
+      this.alertify.error('error has occurred getting the competition status');
     });
   }
 
