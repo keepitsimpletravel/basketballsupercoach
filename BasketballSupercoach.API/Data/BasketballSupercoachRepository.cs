@@ -421,6 +421,30 @@ namespace BasketballSupercoach.API.Data
             return await _content.SaveChangesAsync() > 0;
         }
 
+        public async Task<bool> UpdateTeamDetail(PlayerCardDto teamDetail) {
+            // TeamDetail td = _content.TeamDetails.
+            // var td = new TeamDetail() { UserId = teamDetail.userId, Position = teamDetail.CardPosition, PlayerId = teamDetail.PlayerId };
+            // using (var db = new DataContext())
+
+//             var teamdetail = _content.TeamDetails.FirstOrDefault(td => td.UserId == teamDetail.userId && td.Position == teamDetail.CardPosition);
+// //   {
+//             _content.TeamDetails.Attach(teamdetail);
+//             _content.Entry(teamdetail).Property(x => x.Position).IsModified = true;
+//             return await _content.SaveChangesAsync() > 0;
+//   }
+
+            // var user= new User() {Id = id, TargetColumn = "test"};
+            // context.Users.Attach(user);
+            // var entry = context.Entry(user);
+            // entry.Property(e => e.TargetColumn ).IsModified = true;
+
+            // 
+            TeamDetail td = _content.TeamDetails.FirstOrDefault(x => x.UserId == teamDetail.userId && x.Position == teamDetail.CardPosition);
+            td.PlayerId = teamDetail.PlayerId;
+            _content.TeamDetails.Update(td);
+            return await _content.SaveChangesAsync() > 0;
+        }
+
         public async Task<bool> UpdateUserSalarySet(User user) {
             _content.Users.Update(user);
             return await _content.SaveChangesAsync() > 0;

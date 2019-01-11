@@ -29,9 +29,11 @@ export class TeamdetailService {
 
   updateSubTeamDetailRecords (playercards: Playercard[]) {
     for (let p = 0; p < playercards.length; p ++) {
-      playercards[p].userId = +localStorage.getItem('currentUserId');
+      console.log('userId = ' +localStorage.getItem('currentUserId')); // this appears to be wrong!)
+      playercards[p].userId = +localStorage.getItem('currentUserId'); // this appears to be wrong!
       console.log('sub players: ' + playercards[p].surname + ' pos: ' + playercards[p].cardPosition);
     }
+    console.log('players updated - ASHLEY');
     return this.http.put<Playercard[]>(this.baseUrl + 'updatesubteamdetail', playercards);
   }
 

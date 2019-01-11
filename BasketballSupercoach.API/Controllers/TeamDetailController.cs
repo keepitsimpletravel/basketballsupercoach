@@ -94,29 +94,37 @@ namespace BasketballSupercoach.API.Controllers
         [HttpPut("updatesubteamdetail")]
         public async Task<IActionResult> UpdateSubTeamDetailRecord(PlayerCardDto[] playerDtos)
         {
-            // Need to update both all of the records
+            // // Need to update both all of the records
+            // foreach(var playerDto in playerDtos) {
+            //     // Need to get the correct Id for the current cardPosition for the User
+            //     var existingTeamDetailForPosition = _repo.GetTeamDetailForPosition(playerDto.userId , playerDto.CardPosition);
+
+            //     // System.out
+            //     if(existingTeamDetailForPosition != null) {
+            //         // This needs to be updated
+            //         var teamDetailToUpdate = new TeamDetail
+            //         {
+            //             Active = 1,
+            //             Captain = playerDto.isCaptain,
+            //             Emergency = playerDto.isEmergency,
+            //             Id = existingTeamDetailForPosition.Id,
+            //             PlayerId = playerDto.PlayerId,
+            //             Position = playerDto.CardPosition,
+            //             SixthMan = playerDto.isSixthMan,
+            //             UserId = playerDto.userId
+            //         };
+
+            //         // Now need to call the update method of the TeamDetail
+            //         var teamDetail = await _repo.UpdateTeamDetail(teamDetailToUpdate);
+            //     }
+            // }
+            // return StatusCode(201);
+
             foreach(var playerDto in playerDtos) {
-                // Need to get the correct Id for the current cardPosition for the User
-                var existingTeamDetailForPosition = _repo.GetTeamDetailForPosition(playerDto.userId , playerDto.CardPosition);
-
-                if(existingTeamDetailForPosition != null) {
-                    // This needs to be updated
-                    var teamDetailToUpdate = new TeamDetail
-                    {
-                        Active = 1,
-                        Captain = playerDto.isCaptain,
-                        Emergency = playerDto.isEmergency,
-                        Id = existingTeamDetailForPosition.Id,
-                        PlayerId = playerDto.PlayerId,
-                        Position = playerDto.CardPosition,
-                        SixthMan = playerDto.isSixthMan,
-                        UserId = playerDto.userId
-                    };
-
-                    // Now need to call the update method of the TeamDetail
-                    var teamDetail = await _repo.UpdateTeamDetail(teamDetailToUpdate);
-                }
+            //     // TeamDetail td = _con
+                var teamDetail = await _repo.UpdateTeamDetail(playerDto);
             }
+
             return StatusCode(201);
         }
     }

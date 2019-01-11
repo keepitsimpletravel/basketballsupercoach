@@ -61,6 +61,8 @@ namespace BasketballSupercoach.API.Data
 
          Task<bool> UpdateTeamDetail(TeamDetail teamDetail);
 
+         Task<bool> UpdateTeamDetail(PlayerCardDto teamDetail);
+
          TeamDetail GetTeamDetailForPosition(int userId, int position);
 
          Task<bool> UpdateUserSalarySet(User user);

@@ -97,14 +97,17 @@ export class SubplayerComponent implements OnInit {
 
     console.log('orig pos: ' + originalPos + ' new pos: ' + newPos);
     original.cardPosition = newPos;
-    original.averageScore = original.averageScore * 100;
+    original.averageScore = moveWith.averageScore * 100;
     moveWith.cardPosition = originalPos;
-    moveWith.averageScore = moveWith.averageScore * 100;
+    moveWith.averageScore = original.averageScore * 100;
 
+    console.log('original: ' + original.surname + ' at pos: ' + original.cardPosition);
+    console.log('moveWith: ' + moveWith.surname + ' at pos: ' + moveWith.cardPosition);
 
-
+    console.log('playersToMove: ' + this.playersToMove.length);
     this.playersToMove.push(original);
     this.playersToMove.push(moveWith);
+    console.log('playersToMove: ' + this.playersToMove.length);
 
     console.log('original: ' + this.playersToMove[0].surname + ' at pos: ' + this.playersToMove[0].cardPosition);
     console.log('moving: ' + this.playersToMove[1].surname + ' at pos: ' + this.playersToMove[1].cardPosition);
@@ -114,6 +117,8 @@ export class SubplayerComponent implements OnInit {
     }, error => {
       this.alertify.error(error);
     }, () => {
+      console.log('SUB PLAYERS HAS COMPLETED SUCCESSFULLY');
+      this.playersToMove = [];
       this.alertify.success('Team Saved Successfully');
       // Only once this is completed will the page go back to team
       this.router.navigate(['team/']);
