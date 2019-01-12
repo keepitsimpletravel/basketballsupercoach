@@ -6,7 +6,7 @@
             
           <p><strong>{{playercard.cardPositionText}}</strong></p>
           <p><img class="center" [attr.alt]="playercard.team" src="assets/images/{{playercard.team}}.jpg">
-            <strong>{{playercard.firstName}} {{playercard.surname}}</strong> - {{playercard.playerPosition}}<br>
+            <strong>{{playercard.firstName}} {{playercard.surname}}</strong> - {{playercard.playerPosition}}<span [hidden]="playercard.playerPositionTwo === 0">, {{playercard.playerPositionTwo}}</span><span [hidden]="playercard.playerPositionThree === 0">, {{playercard.playerPositionThree}}</span><br>
             ${{playercard.price}}<br><strong>Last Score:</strong> {{lastScore}}<br><strong>Average Score:</strong> {{playercard.averageScore}}</p>
           <ul class="list-inline playerbuttons animate text-center">
               <li *ngIf="currentState === 0" class="list-inline-item"><button class="btn btn-primary" (click)="tradePlayer(playercard)">T</button></li>

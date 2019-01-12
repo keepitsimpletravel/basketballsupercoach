@@ -5,6 +5,8 @@ export interface Playercard {
     team?: string;
     price?: number;
     playerPosition?: number;
+    playerPositionTwo?: number;
+    playerPositionThree?: number;
     cardPosition?: number;
     cardPositionText?: string;
     averageScore?: number;

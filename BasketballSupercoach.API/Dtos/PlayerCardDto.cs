@@ -14,6 +14,10 @@ namespace BasketballSupercoach.API.Dtos
 
         public int PlayerPosition { get; set; }
 
+        public int PlayerPositionTwo { get; set; }
+
+        public int PlayerPositionThree { get; set; }
+
         public int CardPosition { get; set; }
 
         public string CardPositionText { get; set; }

@@ -12,7 +12,7 @@
         />
         <p>
           <strong>{{ playercard.firstName }} {{ playercard.surname }}</strong> -
-          {{ playercard.playerPosition }}
+          {{ playercard.playerPosition }}<span [hidden]="playercard.playerPositionTwo === 0">, {{playercard.playerPositionTwo}}</span><span [hidden]="playercard.playerPositionThree === 0">, {{playercard.playerPositionThree}}</span>
         </p>
         <p>{{ playercard.price }}</p>
         <p>Last Score: {{ lastScore }}</p>

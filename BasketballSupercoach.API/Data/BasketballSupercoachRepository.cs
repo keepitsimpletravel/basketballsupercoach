@@ -607,6 +607,8 @@ namespace BasketballSupercoach.API.Data
                         pgDto.FirstName = player.FirstName;
                         pgDto.lastScore = lastScore;
                         pgDto.PlayerPosition = player.PositionOne;
+                        pgDto.PlayerPositionTwo = player.PositionTwo;
+                        pgDto.PlayerPositionThree = player.PositionThree;
                         pgDto.Price = player.Price;
                         pgDto.Surname = player.Surname;
                         pgDto.Team = player.Team;
@@ -630,6 +632,8 @@ namespace BasketballSupercoach.API.Data
                     pgDto.FirstName = "";
                     pgDto.lastScore = 0;
                     pgDto.PlayerPosition = 0;
+                    pgDto.PlayerPositionTwo = 0;
+                    pgDto.PlayerPositionThree = 0;
                     pgDto.Price = 0;
                     pgDto.Surname = "";
                     pgDto.Team = "";
