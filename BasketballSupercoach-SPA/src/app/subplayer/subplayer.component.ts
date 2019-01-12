@@ -25,7 +25,7 @@ export class SubplayerComponent implements OnInit {
   ngOnInit() {
     this.playercard = JSON.parse(this.dataRoute.snapshot.params['playercard']);
 
-    console.log(this.playercard.cardPosition + ' - the selected position'); // this is correct
+    // console.log(this.playercard.cardPosition + ' - the selected position'); // this is correct
     // Need to get all of the player cards
     this.teamDetailService.GetPlayerCardsForUser(this.authService.decodedToken.nameid).subscribe(data => {
       // console.log('data returned for player cards length: ' + data.length);
@@ -39,19 +39,19 @@ export class SubplayerComponent implements OnInit {
               // Then the player can play the position
               this.subPlayers.push(this.playerCards[p]);
               // tslint:disable-next-line:max-line-length
-              console.log('Added - ' + this.playerCards[p].firstName + ' ' + this.playerCards[p].surname + 'current position = ' + this.playerCards[p].cardPosition);
+              // console.log('Added - ' + this.playerCards[p].firstName + ' ' + this.playerCards[p].surname + 'current position = ' + this.playerCards[p].cardPosition);
             }
           } else {
             if (this.playerCards[p].cardPosition <= 5) {
               if (this.playercard.playerPosition === this.playerCards[p].cardPosition) {
                 this.subPlayers.push(this.playerCards[p]);
                 // tslint:disable-next-line:max-line-length
-              console.log('Added - ' + this.playerCards[p].firstName + ' ' + this.playerCards[p].surname + 'current position = ' + this.playerCards[p].cardPosition);
+              // console.log('Added - ' + this.playerCards[p].firstName + ' ' + this.playerCards[p].surname + 'current position = ' + this.playerCards[p].cardPosition);
               }
             } else {
               this.subPlayers.push(this.playerCards[p]);
               // tslint:disable-next-line:max-line-length
-              console.log('Added - ' + this.playerCards[p].firstName + ' ' + this.playerCards[p].surname + 'current position = ' + this.playerCards[p].cardPosition);
+              // console.log('Added - ' + this.playerCards[p].firstName + ' ' + this.playerCards[p].surname + 'current position = ' + this.playerCards[p].cardPosition);
             }
           }
         }
@@ -69,7 +69,7 @@ export class SubplayerComponent implements OnInit {
         //   }
         // }
       }
-      console.log('available players lenght: - ' + this.subPlayers.length);
+      // console.log('available players lenght: - ' + this.subPlayers.length);
     }, error => {
       this.alertify.error(error);
     }, () => {
@@ -89,37 +89,33 @@ export class SubplayerComponent implements OnInit {
     const original = this.playercard;
     const moveWith = this.subbingPlayercard;
 
-    console.log('original: ' + original.surname + ' at pos: ' + original.cardPosition);
-    console.log('moveWith: ' + moveWith.surname + ' at pos: ' + moveWith.cardPosition);
+    // console.log('original: ' + original.surname + ' at pos: ' + original.cardPosition);
+    // console.log('moveWith: ' + moveWith.surname + ' at pos: ' + moveWith.cardPosition);
 
     const originalPos = original.cardPosition;
     const newPos = moveWith.cardPosition;
 
-    console.log('orig pos: ' + originalPos + ' new pos: ' + newPos);
+    // console.log('orig pos: ' + originalPos + ' new pos: ' + newPos);
     original.cardPosition = newPos;
     original.averageScore = moveWith.averageScore * 100;
     moveWith.cardPosition = originalPos;
     moveWith.averageScore = original.averageScore * 100;
 
-    console.log('original: ' + original.surname + ' at pos: ' + original.cardPosition);
-    console.log('moveWith: ' + moveWith.surname + ' at pos: ' + moveWith.cardPosition);
+    // console.log('original: ' + original.surname + ' at pos: ' + original.cardPosition);
+    // console.log('moveWith: ' + moveWith.surname + ' at pos: ' + moveWith.cardPosition);
 
-    console.log('playersToMove: ' + this.playersToMove.length);
+    // console.log('playersToMove: ' + this.playersToMove.length);
     this.playersToMove.push(original);
     this.playersToMove.push(moveWith);
-    console.log('playersToMove: ' + this.playersToMove.length);
-
-    console.log('original: ' + this.playersToMove[0].surname + ' at pos: ' + this.playersToMove[0].cardPosition);
-    console.log('moving: ' + this.playersToMove[1].surname + ' at pos: ' + this.playersToMove[1].cardPosition);
 
     this.teamDetailService.updateSubTeamDetailRecords(this.playersToMove).subscribe(data => {
 
     }, error => {
       this.alertify.error(error);
     }, () => {
-      console.log('SUB PLAYERS HAS COMPLETED SUCCESSFULLY');
+      // console.log('SUB PLAYERS HAS COMPLETED SUCCESSFULLY');
       this.playersToMove = [];
-      this.alertify.success('Team Saved Successfully');
+      this.alertify.success('Team Saved Successfully'); // it is hitting here
       // Only once this is completed will the page go back to team
       this.router.navigate(['team/']);
     });

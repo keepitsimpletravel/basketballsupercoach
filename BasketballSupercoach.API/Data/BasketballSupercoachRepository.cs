@@ -438,8 +438,10 @@ namespace BasketballSupercoach.API.Data
             // var entry = context.Entry(user);
             // entry.Property(e => e.TargetColumn ).IsModified = true;
 
-            // 
+            // System.Diagnostics.Trace.WriteLine("Inside team detail");
             TeamDetail td = _content.TeamDetails.FirstOrDefault(x => x.UserId == teamDetail.userId && x.Position == teamDetail.CardPosition);
+            // System.Diagnostics.Trace.WriteLine("td: playerId: " + td.PlayerId);
+            // System.Diagnostics.Trace.WriteLine("td: position: " + td.Position);
             td.PlayerId = teamDetail.PlayerId;
             _content.TeamDetails.Update(td);
             return await _content.SaveChangesAsync() > 0;

@@ -119,9 +119,12 @@ namespace BasketballSupercoach.API.Controllers
             //     }
             // }
             // return StatusCode(201);
-
+            // console.log(log data here) 
+            // cons
+            System.Diagnostics.Trace.WriteLine("Entering the Update Team Detail");
             foreach(var playerDto in playerDtos) {
             //     // TeamDetail td = _con
+                System.Diagnostics.Trace.WriteLine("Entering the Update Team Detail + player: " + playerDto.PlayerId + " and pos: " + playerDto.CardPosition + " for user: " + playerDto.userId);
                 var teamDetail = await _repo.UpdateTeamDetail(playerDto);
             }
 
