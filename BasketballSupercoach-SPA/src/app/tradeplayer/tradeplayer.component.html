@@ -138,6 +138,13 @@
         <td>
           <button
             pButton
+            icon="fa fa-info"
+            [routerLink]="['/players/', rowData.playerId]"
+          ></button>
+        </td>
+        <td>
+          <button
+            pButton
             icon="fa fa-check-circle"
             (click)="playerSelected(rowData.playerId, rowData.price)">
           </button>

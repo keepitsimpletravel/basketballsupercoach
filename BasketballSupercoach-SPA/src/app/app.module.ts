@@ -23,6 +23,7 @@ import { SharedModule } from 'primeng/components/common/shared';
 import { TableModule } from 'primeng/table';
 import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
+import { ChartModule } from 'primeng/chart';
 import { JwtModule } from '@auth0/angular-jwt';
 import { PlayersdetailedComponent } from './playersdetailed/playersdetailed.component';
 import { PlayersdeatiledResolver } from './_resolvers/playersdetailed.resolver';
@@ -80,6 +81,7 @@ export function tokenGetter() {
       DropdownModule,
       BsDatepickerModule.forRoot(),
       ButtonModule,
+      ChartModule,
       JwtModule.forRoot({
         config: {
             tokenGetter: tokenGetter,

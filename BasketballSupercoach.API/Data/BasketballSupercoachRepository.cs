@@ -274,7 +274,7 @@ namespace BasketballSupercoach.API.Data
 
         public async Task<IEnumerable<PlayersWithScoresDto>> GetPlayers()
         {
-            var players = await _content.Players.ToListAsync();
+            var players = await _content.Players.OrderByDescending(a => a.Price).ToListAsync();
 
             List<PlayersWithScoresDto> playersWithScore = new List<PlayersWithScoresDto>();
             // need to go through and get each last score for each player and then return the Dto
@@ -311,7 +311,7 @@ namespace BasketballSupercoach.API.Data
 
         public async Task<IEnumerable<PlayersWithScoresDto>> GetSpecificPlayers(int pos)
         {
-            var players = await _content.Players.ToListAsync();
+            var players = await _content.Players.OrderByDescending(a => a.Price).ToListAsync();
             List<PlayersWithScoresDto> filterPlayers = new List<PlayersWithScoresDto>();
             if (pos <= 5) {
                 // need to filter returned players

@@ -35,7 +35,8 @@ export class SubplayerComponent implements OnInit {
         if (this.playerCards[p].cardPosition !== this.playercard.cardPosition) {
           if (this.playercard.cardPosition <= 5) {
             // Now need to check the other cards and whether they can play the position
-            if (this.playercard.cardPosition === this.playerCards[p].playerPosition) {
+            // tslint:disable-next-line:max-line-length
+            if (this.playercard.cardPosition === this.playerCards[p].playerPosition || this.playercard.cardPosition === this.playerCards[p].playerPositionTwo || this.playercard.cardPosition === this.playerCards[p].playerPositionThree) {
               // Then the player can play the position
               this.subPlayers.push(this.playerCards[p]);
               // tslint:disable-next-line:max-line-length
@@ -43,7 +44,8 @@ export class SubplayerComponent implements OnInit {
             }
           } else {
             if (this.playerCards[p].cardPosition <= 5) {
-              if (this.playercard.playerPosition === this.playerCards[p].cardPosition) {
+              // tslint:disable-next-line:max-line-length
+              if (this.playercard.playerPosition === this.playerCards[p].cardPosition || this.playercard.cardPosition === this.playerCards[p].playerPositionTwo || this.playercard.cardPosition === this.playerCards[p].playerPositionThree) {
                 this.subPlayers.push(this.playerCards[p]);
                 // tslint:disable-next-line:max-line-length
               // console.log('Added - ' + this.playerCards[p].firstName + ' ' + this.playerCards[p].surname + 'current position = ' + this.playerCards[p].cardPosition);

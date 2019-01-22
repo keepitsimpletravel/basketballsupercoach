@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { TeamdetailService } from '../_services/teamdetail.service';
 import { AlertifyService } from '../_services/alertify.service';
+import { Player } from '../_models/player';
 
 @Component({
   selector: 'app-teamcard',
@@ -17,6 +18,7 @@ export class TeamcardComponent implements OnInit {
   @Output() emergencySet = new EventEmitter<number>();
   lastScore: number;
   currentState = 0;
+  selectedPlayer: Player;
 
   constructor(private route: ActivatedRoute, private router: Router, private teamDetailService: TeamdetailService,
      private alertify: AlertifyService) { }
@@ -59,6 +61,11 @@ export class TeamcardComponent implements OnInit {
       this.playercard.isEmergency = 1;
       this.emergencySet.emit(this.playercard.cardPosition);
     }
+  }
+
+  viewPlayer(playerId: number) {
+    console.log('Viewing Player');
+    this.router.navigate(['/players/', playerId]);
   }
 
   tradePlayer(pc: Playercard) {
