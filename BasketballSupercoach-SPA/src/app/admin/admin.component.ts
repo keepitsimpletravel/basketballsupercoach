@@ -22,6 +22,7 @@ export class AdminComponent implements OnInit {
   runscoresForm: FormGroup;
   runteamscoresForm: FormGroup;
   createRoundForm: FormGroup;
+  createNewTeamScoresForm: FormGroup;
   selectedDate: Date;
   newRoundNumber: number;
   newRound: Round = {};
@@ -36,6 +37,7 @@ export class AdminComponent implements OnInit {
     this.createRunTeamScoresForm();
     this.createRoundObjectForm();
     this.createScoringSystemForm();
+    this.createTeamScoresForm();
 
     this.scoringSystemService.GetScoringSystem().subscribe(next => {
       this.scoringSystem = next;
@@ -97,6 +99,12 @@ export class AdminComponent implements OnInit {
     });
   }
 
+  createTeamScoresForm() {
+    this.createNewTeamScoresForm = this.fb.group({
+      roundnumber: ['']
+    });
+  }
+
   updateScoringSystem() {
     console.log(this.scoringForm.value);
 
@@ -150,6 +158,17 @@ export class AdminComponent implements OnInit {
       this.alertify.success('Team Scores Run For Day Successfully');
     });
 
+  }
+
+  createNewTeamScores() {
+    this.runScoresService.CreateNewTeamScores(+this.createRoundForm.get('roundnumber').value).subscribe(next => {
+
+    }, error => {
+      this.alertify.error(error);
+    }, () => {
+      this.alertify.success('Team Scores created successfully');
+    });
+    // console.log('create new team scores');
   }
 
   createRound() {

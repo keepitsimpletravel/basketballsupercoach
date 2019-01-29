@@ -41,6 +41,8 @@ namespace BasketballSupercoach.API.Data
 
          Task<bool> CreateTeamScoresForRound(RoundDto round);
 
+         Task<bool> CreateNewTeamScores(int round);
+
          Task<IEnumerable<PlayersWithScoresDto>> GetPlayers();
 
          int GetTotalScoreForPlayer(int playerId);

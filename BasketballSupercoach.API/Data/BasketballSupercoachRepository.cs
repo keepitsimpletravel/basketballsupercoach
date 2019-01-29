@@ -180,6 +180,26 @@ namespace BasketballSupercoach.API.Data
             return await _content.SaveChangesAsync() > 0;
         }
 
+        public async Task<bool> CreateNewTeamScores(int round) {
+            List<int> allUsers = await _content.Users.Select(x => x.Id).Distinct().ToListAsync();
+            List<int> allTeamScoreUsers = await _content.TeamScores.Select(x => x.UserId).Distinct().ToListAsync();
+
+            // foreach (int idValue in allUsers) {
+            var exists = allUsers.Except(allTeamScoreUsers).ToList();
+            // }
+            // var firstNotSecond = list1.Except(list2).ToList();
+
+            foreach(int value in exists) {
+                // Need to create a new TeamScore for the current round
+                TeamScore ts = new TeamScore();
+                ts.RoundId = round;
+                ts.Total = 0;
+                ts.UserId = value;
+                await _content.TeamScores.AddAsync(ts);
+            }
+            return await _content.SaveChangesAsync() > 0;
+        }
+
         public async Task<bool> RunScoresForDate(string value)
         {
             // Get the scoring system

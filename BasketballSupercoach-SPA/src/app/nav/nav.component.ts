@@ -19,6 +19,7 @@ export class NavComponent implements OnInit {
   login() {
     this.authService.login(this.model).subscribe(next => {
       this.alertify.success('logged in successfully - ' + this.authService.decodedToken.nameid);
+      // this.authService.decodedToken.unique_name
       localStorage.setItem('currentUserId', this.authService.decodedToken.nameid);
     }, error => {
       this.alertify.error(error);

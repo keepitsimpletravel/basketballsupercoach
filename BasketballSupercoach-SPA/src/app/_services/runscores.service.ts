@@ -39,4 +39,8 @@ UpdateLockout(value: Lockout) {
   return this.http.put(this.baseUrl + 'updatelockout', value);
 }
 
+CreateNewTeamScores(round: Number) {
+  return this.http.post(this.baseUrl + 'createnewteamscores', round);
+}
+
 }

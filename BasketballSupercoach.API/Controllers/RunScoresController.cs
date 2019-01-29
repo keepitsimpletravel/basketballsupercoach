@@ -39,6 +39,13 @@ namespace BasketballSupercoach.API.Controllers
             return Ok(result);
         }
 
+        [HttpPost("createnewteamscores")]
+        public async Task<IActionResult> CreateNewTeamScores(int round)
+        {
+            var result = await _repo.CreateNewTeamScores(round);
+            return Ok(1); //result
+        }
+
         [HttpPut("updateteamscores")]
         public async Task<IActionResult> RunTeamScoresForDate(RunTeamDateDto value)
         {
