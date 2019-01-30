@@ -6,6 +6,7 @@ using BasketballSupercoach.API.Dtos;
 using BasketballSupercoach.API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace BasketballSupercoach.API.Controllers
 {
@@ -15,9 +16,11 @@ namespace BasketballSupercoach.API.Controllers
     public class TeamDetailController : ControllerBase
     {
         private readonly IBasketballSupercoachRepository _repo;
-        public TeamDetailController(IBasketballSupercoachRepository repo) 
+        private readonly ILogger _logger;
+        public TeamDetailController(IBasketballSupercoachRepository repo, ILogger < TeamDetailController > logger) 
         {
             _repo = repo;
+            _logger = logger;
         }
 
         [HttpPost("create")]
@@ -54,8 +57,12 @@ namespace BasketballSupercoach.API.Controllers
         [HttpPut("updateteamdetail")]
         public async Task<IActionResult> UpdateTeamDetailRecord(PlayerCardDto playerDto)
         {
+            _logger.LogInformation("Demo Logging Information in Index Method"); 
+
             // Need to get the correct Id for the current cardPosition for the User
             var existingTeamDetailForPosition = _repo.GetTeamDetailForPosition(playerDto.userId , playerDto.CardPosition);
+
+            _logger.LogInformation("existing teamDetail for position is now being set"); 
 
             if(existingTeamDetailForPosition != null) {
                 // This needs to be updated
@@ -72,7 +79,11 @@ namespace BasketballSupercoach.API.Controllers
                 };
 
                 // Now need to call the update method of the TeamDetail
+                _logger.LogInformation("About to call to the Update Team Detail Repo"); 
+
                 var updateSalary = await _repo.UpdateTeamDetail(teamDetailToUpdate);
+
+                _logger.LogInformation("Returned from the Update Team Detail repo - with status of: " + updateSalary); 
                 return StatusCode(201);
             } else {
                 // This is a new Team Detail record - realistically it should never get here

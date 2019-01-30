@@ -1,0 +1,71 @@
+
+2019-01-30T16:52:35.2197150+10:00 0HLK6FTNVCBCR:0000002E [INF] Request finished in 22.561ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-30T16:52:38.6508500+10:00 0HLK6FTNVCBCR:0000002F [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamdetail/updatesubteamdetail   (ca22a1cb)
+2019-01-30T16:52:38.6510980+10:00 0HLK6FTNVCBCR:0000002F [INF] Policy execution successful. (0204925d)
+2019-01-30T16:52:38.6514300+10:00 0HLK6FTNVCBCR:0000002F [INF] Request finished in 0.747ms 204  (791a596a)
+2019-01-30T16:52:38.6541450+10:00 0HLK6FTNVCBCR:00000030 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/teamdetail/updatesubteamdetail application/json 582 (ca22a1cb)
+2019-01-30T16:52:38.6543120+10:00 0HLK6FTNVCBCR:00000030 [INF] Policy execution successful. (0204925d)
+2019-01-30T16:52:38.6546440+10:00 0HLK6FTNVCBCR:00000030 [INF] Successfully validated the token. (60169667)
+2019-01-30T16:52:38.6598790+10:00 0HLK6FTNVCBCR:00000030 [INF] Route matched with "{action = \"UpdateSubTeamDetailRecord\", controller = \"TeamDetail\"}". Executing action "BasketballSupercoach.API.Controllers.TeamDetailController.UpdateSubTeamDetailRecord (BasketballSupercoach.API)" (a44c0341)
+2019-01-30T16:52:38.6601020+10:00 0HLK6FTNVCBCR:00000030 [INF] Authorization was successful. (0d575a54)
+2019-01-30T16:52:38.6771160+10:00 0HLK6FTNVCBCR:00000030 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamDetailController.UpdateSubTeamDetailRecord (BasketballSupercoach.API)" with arguments (["BasketballSupercoach.API.Dtos.PlayerCardDto[]"]) - Validation state: Valid (4e3479ed)
+2019-01-30T16:52:38.6842940+10:00 0HLK6FTNVCBCR:00000030 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-01-30T16:52:38.6953700+10:00 0HLK6FTNVCBCR:00000030 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-01-30T16:52:38.6963160+10:00 0HLK6FTNVCBCR:00000030 [INF] Executed DbCommand ("0"ms) [Parameters=["@__teamDetail_userId_0='?', @__teamDetail_CardPosition_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"Id\", \"x\".\"Active\", \"x\".\"Captain\", \"x\".\"Emergency\", \"x\".\"PlayerId\", \"x\".\"Position\", \"x\".\"SixthMan\", \"x\".\"UserId\"
+FROM \"TeamDetails\" AS \"x\"
+WHERE (\"x\".\"UserId\" = @__teamDetail_userId_0) AND (\"x\".\"Position\" = @__teamDetail_CardPosition_1)
+LIMIT 1" (0723d8ff)
+2019-01-30T16:52:38.6981410+10:00 0HLK6FTNVCBCR:00000030 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-01-30T16:52:38.6989230+10:00 0HLK6FTNVCBCR:00000030 [INF] Executed DbCommand ("0"ms) [Parameters=["@p7='?', @p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?', @p6='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"TeamDetails\" SET \"Active\" = @p0, \"Captain\" = @p1, \"Emergency\" = @p2, \"PlayerId\" = @p3, \"Position\" = @p4, \"SixthMan\" = @p5, \"UserId\" = @p6
+WHERE \"Id\" = @p7;
+SELECT changes();" (0723d8ff)
+2019-01-30T16:52:38.7001640+10:00 0HLK6FTNVCBCR:00000030 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-01-30T16:52:38.7006680+10:00 0HLK6FTNVCBCR:00000030 [INF] Executed DbCommand ("0"ms) [Parameters=["@__teamDetail_userId_0='?', @__teamDetail_CardPosition_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"Id\", \"x\".\"Active\", \"x\".\"Captain\", \"x\".\"Emergency\", \"x\".\"PlayerId\", \"x\".\"Position\", \"x\".\"SixthMan\", \"x\".\"UserId\"
+FROM \"TeamDetails\" AS \"x\"
+WHERE (\"x\".\"UserId\" = @__teamDetail_userId_0) AND (\"x\".\"Position\" = @__teamDetail_CardPosition_1)
+LIMIT 1" (0723d8ff)
+2019-01-30T16:52:38.7011720+10:00 0HLK6FTNVCBCR:00000030 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-01-30T16:52:38.7020380+10:00 0HLK6FTNVCBCR:00000030 [INF] Executed DbCommand ("0"ms) [Parameters=["@p7='?', @p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?', @p6='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"TeamDetails\" SET \"Active\" = @p0, \"Captain\" = @p1, \"Emergency\" = @p2, \"PlayerId\" = @p3, \"Position\" = @p4, \"SixthMan\" = @p5, \"UserId\" = @p6
+WHERE \"Id\" = @p7;
+SELECT changes();" (0723d8ff)
+2019-01-30T16:52:38.7032180+10:00 0HLK6FTNVCBCR:00000030 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamDetailController.UpdateSubTeamDetailRecord (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.StatusCodeResult" in 25.823ms. (50a9e262)
+2019-01-30T16:52:38.7033990+10:00 0HLK6FTNVCBCR:00000030 [INF] Executing HttpStatusCodeResult, setting HTTP status code 201 (e28ccfae)
+2019-01-30T16:52:38.7036170+10:00 0HLK6FTNVCBCR:00000030 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamDetailController.UpdateSubTeamDetailRecord (BasketballSupercoach.API)" in 43.553ms (afa2e885)
+2019-01-30T16:52:38.7039160+10:00 0HLK6FTNVCBCR:00000030 [INF] Request finished in 49.977ms 201  (791a596a)
+2019-01-30T16:52:38.7153410+10:00 0HLK6FTNVCBCR:00000031 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/5   (ca22a1cb)
+2019-01-30T16:52:38.7159910+10:00 0HLK6FTNVCBCR:00000031 [INF] Policy execution successful. (0204925d)
+2019-01-30T16:52:38.7162760+10:00 0HLK6FTNVCBCR:00000031 [INF] Request finished in 1.475ms 204  (791a596a)
+2019-01-30T16:52:38.7229310+10:00 0HLK6FTNVCBCR:00000032 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamdetail/5   (ca22a1cb)
+2019-01-30T16:52:38.7231880+10:00 0HLK6FTNVCBCR:00000032 [INF] Policy execution successful. (0204925d)
+2019-01-30T16:52:38.7234350+10:00 0HLK6FTNVCBCR:00000032 [INF] Request finished in 1.325ms 204  (791a596a)
+2019-01-30T16:52:38.7235990+10:00 0HLK6FTNVCBCQ:00000020 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamrank/getround/   (ca22a1cb)
+2019-01-30T16:52:38.7239060+10:00 0HLK6FTNVCBCN:0000001A [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/runscores/getstatus/   (ca22a1cb)
+2019-01-30T16:52:38.7239680+10:00 0HLK6FTNVCBCQ:00000020 [INF] Policy execution successful. (0204925d)
+2019-01-30T16:52:38.7240880+10:00 0HLK6FTNVCBCN:0000001A [INF] Policy execution successful. (0204925d)
+2019-01-30T16:52:38.7242010+10:00 0HLK6FTNVCBCQ:00000020 [INF] Request finished in 0.683ms 204  (791a596a)
+2019-01-30T16:52:38.7242530+10:00 0HLK6FTNVCBCN:0000001A [INF] Request finished in 0.636ms 204  (791a596a)
+2019-01-30T16:52:38.7299300+10:00 0HLK6FTNVCBCN:0000001B [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/5   (ca22a1cb)
+2019-01-30T16:52:38.7299300+10:00 0HLK6FTNVCBCR:00000033 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamrank/getround/   (ca22a1cb)
+2019-01-30T16:52:38.7299300+10:00 0HLK6FTNVCBCQ:00000021 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamdetail/5   (ca22a1cb)
+2019-01-30T16:52:38.7304830+10:00 0HLK6FTNVCBCR:00000033 [INF] Policy execution successful. (0204925d)
+2019-01-30T16:52:38.7305200+10:00 0HLK6FTNVCBCQ:00000021 [INF] Policy execution successful. (0204925d)
+2019-01-30T16:52:38.7304830+10:00 0HLK6FTNVCBCN:0000001B [INF] Policy execution successful. (0204925d)
+2019-01-30T16:52:38.7312340+10:00 0HLK6FTNVCBCS:0000002A [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/runscores/getstatus/   (ca22a1cb)
+2019-01-30T16:52:38.7313540+10:00 0HLK6FTNVCBCR:00000033 [INF] Successfully validated the token. (60169667)
+2019-01-30T16:52:38.7313610+10:00 0HLK6FTNVCBCQ:00000021 [INF] Successfully validated the token. (60169667)
+2019-01-30T16:52:38.7316100+10:00 0HLK6FTNVCBCN:0000001B [INF] Successfully validated the token. (60169667)
+2019-01-30T16:52:38.7314170+10:00 0HLK6FTNVCBCS:0000002A [INF] Policy execution successful. (0204925d)
+2019-01-30T16:52:38.7320940+10:00 0HLK6FTNVCBCR:00000033 [INF] Route matched with "{action = \"GetCurrentRound\", controller = \"TeamRank\"}". Executing action "BasketballSupercoach.API.Controllers.TeamRankController.GetCurrentRound (BasketballSupercoach.API)" (a44c0341)
+2019-01-30T16:52:38.7322040+10:00 0HLK6FTNVCBCQ:00000021 [INF] Route matched with "{action = \"GetPlayerCardsForUser\", controller = \"TeamDetail\"}". Executing action "BasketballSupercoach.API.Controllers.TeamDetailController.GetPlayerCardsForUser (BasketballSupercoach.API)" (a44c0341)
+2019-01-30T16:52:38.7323120+10:00 0HLK6FTNVCBCN:0000001B [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing action "BasketballSupercoach.API.Controllers.UsersController.GetUser (BasketballSupercoach.API)" (a44c0341)
+2019-01-30T16:52:38.7335380+10:00 0HLK6FTNVCBCQ:00000021 [INF] Authorization was successful. (0d575a54)
+2019-01-30T16:52:38.7335320+10:00 0HLK6FTNVCBCR:00000033 [INF] Authorization was successful. (0d575a54)
+2019-01-30T16:52:38.7336740+10:00 0HLK6FTNVCBCS:0000002A [INF] Successfully validated the token. (60169667)

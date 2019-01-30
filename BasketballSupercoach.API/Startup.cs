@@ -57,6 +57,7 @@ namespace BasketballSupercoach.API
 
         public void ConfigureDevelopmentServices(IServiceCollection services)
         {
+
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddCors();
@@ -77,7 +78,7 @@ namespace BasketballSupercoach.API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -98,6 +99,9 @@ namespace BasketballSupercoach.API
                 });
                 // app.UseHsts();
             }
+
+            loggerFactory.AddConsole();
+            loggerFactory.AddFile("Logs/bs-{Date}.txt");
 
             // app.UseHttpsRedirection();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
