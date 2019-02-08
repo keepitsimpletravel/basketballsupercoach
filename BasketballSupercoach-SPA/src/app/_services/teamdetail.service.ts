@@ -23,18 +23,34 @@ export class TeamdetailService {
 
   updateTeamDetailRecord (playercard: Playercard) {
     playercard.userId = +localStorage.getItem('currentUserId');
-    // console.log(this.baseUrl + 'updateteamdetail');
     return this.http.put<Playercard>(this.baseUrl + 'updateteamdetail', playercard);
   }
 
-  updateSubTeamDetailRecords (playercards: Playercard[]) {
-    for (let p = 0; p < playercards.length; p ++) {
-      console.log('userId = ' +localStorage.getItem('currentUserId')); // this appears to be wrong!)
-      playercards[p].userId = +localStorage.getItem('currentUserId'); // this appears to be wrong!
-      console.log('sub players: ' + playercards[p].surname + ' pos: ' + playercards[p].cardPosition);
-    }
-    console.log('players updated - ASHLEY');
-    return this.http.put<Playercard[]>(this.baseUrl + 'updatesubteamdetail', playercards);
+  // updateSubTeamDetailRecords (playercards: Playercard[]) {
+  //   for (let p = 0; p < playercards.length; p ++) {
+  //     // console.log('userId = ' +localStorage.getItem('currentUserId')); // this appears to be wrong!)
+  //     playercards[p].userId = +localStorage.getItem('currentUserId'); // this appears to be wrong!
+  //     // console.log('sub players: ' + playercards[p].surname + ' pos: ' + playercards[p].cardPosition);
+  //   }
+  //   // console.log('players updated - ASHLEY');
+  //   console.log('playercards passed in: ' + playercards);
+  //   return this.http.put<Playercard[]>(this.baseUrl + 'updatesubteamdetail', playercards);
+  // }
+
+  // updateSubTeamDetailRecords (playercards: Playercard[]) {
+  //   for (let p = 0; p < playercards.length; p ++) {
+  //     // console.log('userId = ' +localStorage.getItem('currentUserId')); // this appears to be wrong!)
+  //     playercards[p].userId = +localStorage.getItem('currentUserId'); // this appears to be wrong!
+  //     // console.log('sub players: ' + playercards[p].surname + ' pos: ' + playercards[p].cardPosition);
+  //   }
+  //   // console.log('players updated - ASHLEY');
+  //   console.log('playercards passed in: ' + playercards);
+  //   return this.http.put<Playercard>(this.baseUrl + 'updatesubteamdetail', playercards[1]);
+  // }
+
+  updateSubTeamDetailRecords (playercard: Playercard) {
+    playercard.userId = +localStorage.getItem('currentUserId'); // this appears to be wrong!
+    return this.http.put<Playercard>(this.baseUrl + 'updatesubteamdetail', playercard);
   }
 
   getRoundrank (userid: number) {

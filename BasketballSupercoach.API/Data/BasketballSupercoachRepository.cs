@@ -437,31 +437,12 @@ namespace BasketballSupercoach.API.Data
         }
 
         public async Task<bool> UpdateTeamDetail(TeamDetail teamDetail) {
-            _content.TeamDetails.Update(teamDetail);
+            _content.TeamDetails.Update(teamDetail); // cant make this async
             return await _content.SaveChangesAsync() > 0;
         }
 
         public async Task<bool> UpdateTeamDetail(PlayerCardDto teamDetail) {
-            // TeamDetail td = _content.TeamDetails.
-            // var td = new TeamDetail() { UserId = teamDetail.userId, Position = teamDetail.CardPosition, PlayerId = teamDetail.PlayerId };
-            // using (var db = new DataContext())
-
-//             var teamdetail = _content.TeamDetails.FirstOrDefault(td => td.UserId == teamDetail.userId && td.Position == teamDetail.CardPosition);
-// //   {
-//             _content.TeamDetails.Attach(teamdetail);
-//             _content.Entry(teamdetail).Property(x => x.Position).IsModified = true;
-//             return await _content.SaveChangesAsync() > 0;
-//   }
-
-            // var user= new User() {Id = id, TargetColumn = "test"};
-            // context.Users.Attach(user);
-            // var entry = context.Entry(user);
-            // entry.Property(e => e.TargetColumn ).IsModified = true;
-
-            // System.Diagnostics.Trace.WriteLine("Inside team detail");
             TeamDetail td = _content.TeamDetails.FirstOrDefault(x => x.UserId == teamDetail.userId && x.Position == teamDetail.CardPosition);
-            // System.Diagnostics.Trace.WriteLine("td: playerId: " + td.PlayerId);
-            // System.Diagnostics.Trace.WriteLine("td: position: " + td.Position);
             td.PlayerId = teamDetail.PlayerId;
             _content.TeamDetails.Update(td);
             return await _content.SaveChangesAsync() > 0;
@@ -474,15 +455,8 @@ namespace BasketballSupercoach.API.Data
 
         public async Task<bool> UpdateTeamSalary(TeamSalary teamSalary) {
             _content.TeamSalary.Update(teamSalary);
-            // await CreateTeamSalary(teamSalary);
             return await _content.SaveChangesAsync() > 0;
         }
-
-        // public async Task<IEnumerable<TeamDetail>> GetTeamDetailsForUser(int userId)
-        // {
-        //     var teamDetails = await _content.TeamDetails.Where(x => x.UserId == userId).ToListAsync();
-        //     return teamDetails;
-        // }
 
         public async Task<int> GetRoundRank(int id)
         {

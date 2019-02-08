@@ -110,17 +110,32 @@ export class SubplayerComponent implements OnInit {
     this.playersToMove.push(original);
     this.playersToMove.push(moveWith);
 
-    this.teamDetailService.updateSubTeamDetailRecords(this.playersToMove).subscribe(data => {
+    // this.teamDetailService.updateSubTeamDetailRecords(this.playersToMove).subscribe(data => {
 
-    }, error => {
-      this.alertify.error(error);
-    }, () => {
-      // console.log('SUB PLAYERS HAS COMPLETED SUCCESSFULLY');
-      this.playersToMove = [];
-      this.alertify.success('Team Saved Successfully'); // it is hitting here
-      // Only once this is completed will the page go back to team
-      this.router.navigate(['team/']);
-    });
+    // }, error => {
+    //   this.alertify.error(error);
+    // }, () => {
+    //   // console.log('SUB PLAYERS HAS COMPLETED SUCCESSFULLY');
+    //   this.playersToMove = [];
+    //   this.alertify.success('Team Saved Successfully'); // it is hitting here
+    //   // Only once this is completed will the page go back to team
+    //   this.router.navigate(['team/']);
+    // });
+
+    this.teamDetailService.updateSubTeamDetailRecords(original).subscribe(data => {
+
+      }, error => {
+        this.alertify.error(error);
+      }, () => {
+        this.teamDetailService.updateSubTeamDetailRecords(moveWith).subscribe(p => {
+
+        }, err => {
+          this.alertify.error(err);
+        }, () => {
+          this.alertify.success('Team Saved Successfully');
+          this.router.navigate(['team/']);
+        });
+      });
   }
 
 }
