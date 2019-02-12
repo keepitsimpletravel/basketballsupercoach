@@ -78,5 +78,9 @@ namespace BasketballSupercoach.API.Data
         //  Task<IEnumerable<TeamDetail>> GetTeamDetailsForUser(int userId);
 
          Task<IEnumerable<PlayerCardDto>> GetPlayerCardsForUser(int userId);
+
+         Task<IEnumerable<User>> GetAllUsers();
+
+         Task<IEnumerable<TeamDetail>> GetTeamDetailsForUser(int id);
     }
 }

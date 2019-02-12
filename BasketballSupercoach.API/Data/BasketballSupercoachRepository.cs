@@ -208,7 +208,8 @@ namespace BasketballSupercoach.API.Data
             string url = "https://api.mysportsfeeds.com/v2.0/pull/nba/2018-19-regular/date/" + value + "/player_gamelogs.json";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create (new Uri(url));
 
-            string username = "ebe965ee-1ebd-4e1c-a9dd-0e324c";
+            // string username = "ebe965ee-1ebd-4e1c-a9dd-0e324c";
+            string username = "f8c4bdff-7210-463a-859f-811fa2";
             string password = "MYSPORTSFEEDS";
 
             byte[] userPassBytes = Encoding.UTF8.GetBytes(string.Format("{0}:{1}", username, password));
@@ -490,7 +491,7 @@ namespace BasketballSupercoach.API.Data
 
             // string currentDate = dateTime.ToString("yyyyMMdd");
             // int value = Convert.ToInt32(currentDate);
-            int value = 20181016;
+            int value = 20181018;
             Round round = await _content.Rounds.FromSql("SELECT * FROM Rounds where CAST(startDate AS INT) <= {0} and CAST(endDate AS INT) >= {0}", value).FirstOrDefaultAsync();
 
             if(round != null) {
@@ -637,6 +638,18 @@ namespace BasketballSupercoach.API.Data
             }
 
             return playerCardsList;
+        }
+
+        public async Task<IEnumerable<User>> GetAllUsers()
+        {
+            List<User> users = await _content.Users.ToListAsync();
+            return users;
+        }
+
+        public async Task<IEnumerable<TeamDetail>> GetTeamDetailsForUser(int id)
+        {
+            List<TeamDetail> teamdetails = await _content.TeamDetails.FromSql("SELECT * FROM TeamDetails where userId = {0}", id).ToListAsync();
+            return teamdetails;
         }
 
         public string GetPositionText(int pos) {

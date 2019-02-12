@@ -1,0 +1,1249 @@
+2019-02-12T06:15:36.8218140+10:00  [WRN] Heartbeat took longer than "00:00:01" at "02/11/2019 20:15:35 +00:00". (439152bf)
+2019-02-12T16:56:00.8747600+10:00  [WRN] Heartbeat took longer than "00:00:01" at "02/12/2019 06:56:00 +00:00". (439152bf)
+2019-02-12T17:27:55.9453670+10:00 0HLKGNEDL2AEJ:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login   (ca22a1cb)
+2019-02-12T17:27:55.9643060+10:00 0HLKGNEDL2AEJ:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:55.9719830+10:00 0HLKGNEDL2AEJ:00000001 [INF] Request finished in 35.288ms 204  (791a596a)
+2019-02-12T17:27:55.9782730+10:00 0HLKGNEDL2AEJ:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 42 (ca22a1cb)
+2019-02-12T17:27:55.9785900+10:00 0HLKGNEDL2AEJ:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:56.1766030+10:00 0HLKGNEDL2AEJ:00000002 [INF] Route matched with "{action = \"Login\", controller = \"Auth\"}". Executing action "BasketballSupercoach.API.Controllers.AuthController.Login (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:27:56.5188700+10:00 0HLKGNEDL2AEJ:00000002 [INF] Executing action method "BasketballSupercoach.API.Controllers.AuthController.Login (BasketballSupercoach.API)" with arguments (["BasketballSupercoach.API.Dtos.UserForLoginDto"]) - Validation state: Valid (4e3479ed)
+2019-02-12T17:27:57.0851100+10:00 0HLKGNEDL2AEK:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 42 (ca22a1cb)
+2019-02-12T17:27:57.0853430+10:00 0HLKGNEDL2AEK:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:57.0864640+10:00 0HLKGNEDL2AEK:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Auth\"}". Executing action "BasketballSupercoach.API.Controllers.AuthController.Login (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:27:57.0883230+10:00 0HLKGNEDL2AEK:00000001 [INF] Executing action method "BasketballSupercoach.API.Controllers.AuthController.Login (BasketballSupercoach.API)" with arguments (["BasketballSupercoach.API.Dtos.UserForLoginDto"]) - Validation state: Valid (4e3479ed)
+2019-02-12T17:27:57.2062650+10:00 0HLKGNEDL2AEK:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:27:57.2062650+10:00 0HLKGNEDL2AEJ:00000002 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:27:57.5968760+10:00 0HLKGNEDL2AEJ:00000002 [INF] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:27:57.5968750+10:00 0HLKGNEDL2AEK:00000001 [INF] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:27:57.6563950+10:00 0HLKGNEDL2AEJ:00000002 [INF] Executed DbCommand ("15"ms) [Parameters=["@__username_0='?' (Size = 5)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"Id\", \"x\".\"Active\", \"x\".\"Email\", \"x\".\"Name\", \"x\".\"PasswordHash\", \"x\".\"PasswordSalt\", \"x\".\"SalarySet\", \"x\".\"TeamSelected\", \"x\".\"Teamname\", \"x\".\"Username\"
+FROM \"Users\" AS \"x\"
+WHERE \"x\".\"Username\" = @__username_0
+LIMIT 1" (0723d8ff)
+2019-02-12T17:27:57.6564010+10:00 0HLKGNEDL2AEK:00000001 [INF] Executed DbCommand ("15"ms) [Parameters=["@__username_0='?' (Size = 5)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"Id\", \"x\".\"Active\", \"x\".\"Email\", \"x\".\"Name\", \"x\".\"PasswordHash\", \"x\".\"PasswordSalt\", \"x\".\"SalarySet\", \"x\".\"TeamSelected\", \"x\".\"Teamname\", \"x\".\"Username\"
+FROM \"Users\" AS \"x\"
+WHERE \"x\".\"Username\" = @__username_0
+LIMIT 1" (0723d8ff)
+2019-02-12T17:27:57.8155080+10:00 0HLKGNEDL2AEJ:00000002 [INF] Executed action method "BasketballSupercoach.API.Controllers.AuthController.Login (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1293.384ms. (50a9e262)
+2019-02-12T17:27:57.8155080+10:00 0HLKGNEDL2AEK:00000001 [INF] Executed action method "BasketballSupercoach.API.Controllers.AuthController.Login (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 723.855ms. (50a9e262)
+2019-02-12T17:27:57.8242790+10:00 0HLKGNEDL2AEK:00000001 [INF] Executing ObjectResult, writing value of type '"<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (8a1b66c8)
+2019-02-12T17:27:57.8242790+10:00 0HLKGNEDL2AEJ:00000002 [INF] Executing ObjectResult, writing value of type '"<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (8a1b66c8)
+2019-02-12T17:27:57.8475620+10:00 0HLKGNEDL2AEJ:00000002 [INF] Executed action "BasketballSupercoach.API.Controllers.AuthController.Login (BasketballSupercoach.API)" in 1666.756ms (afa2e885)
+2019-02-12T17:27:57.8475620+10:00 0HLKGNEDL2AEK:00000001 [INF] Executed action "BasketballSupercoach.API.Controllers.AuthController.Login (BasketballSupercoach.API)" in 757.504ms (afa2e885)
+2019-02-12T17:27:57.8540990+10:00 0HLKGNEDL2AEK:00000001 [INF] Request finished in 768.97ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:27:57.8540990+10:00 0HLKGNEDL2AEJ:00000002 [INF] Request finished in 1875.8ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:27:57.8618350+10:00 0HLKGNEDL2AEK:00000002 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/9   (ca22a1cb)
+2019-02-12T17:27:57.8621430+10:00 0HLKGNEDL2AEK:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:57.8626440+10:00 0HLKGNEDL2AEK:00000002 [INF] Request finished in 1.143ms 204  (791a596a)
+2019-02-12T17:27:57.8809320+10:00 0HLKGNEDL2AEK:00000003 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/users/9   (ca22a1cb)
+2019-02-12T17:27:57.8813790+10:00 0HLKGNEDL2AEK:00000003 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:57.8834190+10:00 0HLKGNEDL2AEK:00000003 [INF] Request finished in 2.171ms 204  (791a596a)
+2019-02-12T17:27:57.8883670+10:00 0HLKGNEDL2AEK:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/users/9   (ca22a1cb)
+2019-02-12T17:27:57.8886440+10:00 0HLKGNEDL2AEK:00000004 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:57.9156120+10:00 0HLKGNEDL2AEK:00000004 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:27:57.9205440+10:00 0HLKGNEDL2AEK:00000004 [INF] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing action "BasketballSupercoach.API.Controllers.UsersController.GetUser (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:27:57.9257670+10:00 0HLKGNEDL2AEK:00000004 [INF] Executing action method "BasketballSupercoach.API.Controllers.UsersController.GetUser (BasketballSupercoach.API)" with arguments (["9"]) - Validation state: Valid (4e3479ed)
+2019-02-12T17:27:57.9323880+10:00 0HLKGNEDL2AEK:00000004 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:27:58.1564860+10:00 0HLKGNEDL2AEK:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:27:58.1615540+10:00 0HLKGNEDL2AEK:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"p\".\"Id\", \"p\".\"Active\", \"p\".\"Email\", \"p\".\"Name\", \"p\".\"PasswordHash\", \"p\".\"PasswordSalt\", \"p\".\"SalarySet\", \"p\".\"TeamSelected\", \"p\".\"Teamname\", \"p\".\"Username\"
+FROM \"Users\" AS \"p\"
+WHERE \"p\".\"Id\" = @__id_0
+ORDER BY \"p\".\"Id\"
+LIMIT 1" (0723d8ff)
+2019-02-12T17:27:58.1881990+10:00 0HLKGNEDL2AEK:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"p.Photos\".\"Id\", \"p.Photos\".\"DateAdded\", \"p.Photos\".\"Description\", \"p.Photos\".\"Url\", \"p.Photos\".\"UserID\"
+FROM \"Photos\" AS \"p.Photos\"
+INNER JOIN (
+    SELECT \"p0\".\"Id\"
+    FROM \"Users\" AS \"p0\"
+    WHERE \"p0\".\"Id\" = @__id_0
+    ORDER BY \"p0\".\"Id\"
+    LIMIT 1
+) AS \"t\" ON \"p.Photos\".\"UserID\" = \"t\".\"Id\"
+ORDER BY \"t\".\"Id\"" (0723d8ff)
+2019-02-12T17:27:58.1969800+10:00 0HLKGNEDL2AEK:00000004 [INF] Executed action method "BasketballSupercoach.API.Controllers.UsersController.GetUser (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 270.77ms. (50a9e262)
+2019-02-12T17:27:58.1977240+10:00 0HLKGNEDL2AEK:00000004 [INF] Executing ObjectResult, writing value of type '"BasketballSupercoach.API.Models.User"'. (8a1b66c8)
+2019-02-12T17:27:58.2182210+10:00 0HLKGNEDL2AEK:00000004 [INF] Executed action "BasketballSupercoach.API.Controllers.UsersController.GetUser (BasketballSupercoach.API)" in 297.183ms (afa2e885)
+2019-02-12T17:27:58.2189550+10:00 0HLKGNEDL2AEK:00000004 [INF] Request finished in 330.703ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:27:58.2310980+10:00 0HLKGNEDL2AEK:00000005 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamsalary/9   (ca22a1cb)
+2019-02-12T17:27:58.2313260+10:00 0HLKGNEDL2AEK:00000005 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:58.2316960+10:00 0HLKGNEDL2AEK:00000005 [INF] Request finished in 0.958ms 204  (791a596a)
+2019-02-12T17:27:58.2322560+10:00 0HLKGNEDL2AEJ:00000003 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamdetail/9   (ca22a1cb)
+2019-02-12T17:27:58.2324360+10:00 0HLKGNEDL2AEJ:00000003 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:58.2326970+10:00 0HLKGNEDL2AEJ:00000003 [INF] Request finished in 0.552ms 204  (791a596a)
+2019-02-12T17:27:58.2346430+10:00 0HLKGNEDL2AEJ:00000004 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamrank/9   (ca22a1cb)
+2019-02-12T17:27:58.2349530+10:00 0HLKGNEDL2AEJ:00000004 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:58.2352280+10:00 0HLKGNEDL2AEJ:00000004 [INF] Request finished in 0.723ms 204  (791a596a)
+2019-02-12T17:27:58.2361870+10:00 0HLKGNEDL2AEK:00000006 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamrank/score/9   (ca22a1cb)
+2019-02-12T17:27:58.2363850+10:00 0HLKGNEDL2AEK:00000006 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:58.2366740+10:00 0HLKGNEDL2AEK:00000006 [INF] Request finished in 0.631ms 204  (791a596a)
+2019-02-12T17:27:58.2382100+10:00 0HLKGNEDL2AEJ:00000005 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamrank/totalrank/9   (ca22a1cb)
+2019-02-12T17:27:58.2396800+10:00 0HLKGNEDL2AEJ:00000005 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:58.2404240+10:00 0HLKGNEDL2AEJ:00000005 [INF] Request finished in 3.363ms 204  (791a596a)
+2019-02-12T17:27:58.2418000+10:00 0HLKGNEDL2AEL:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamrank/getround/   (ca22a1cb)
+2019-02-12T17:27:58.2413840+10:00 0HLKGNEDL2AEK:00000007 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/teamrank/totalscore/9   (ca22a1cb)
+2019-02-12T17:27:58.2422490+10:00 0HLKGNEDL2AEL:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:58.2425350+10:00 0HLKGNEDL2AEK:00000007 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:58.2435460+10:00 0HLKGNEDL2AEL:00000001 [INF] Request finished in 1.327ms 204  (791a596a)
+2019-02-12T17:27:58.2460630+10:00 0HLKGNEDL2AEM:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/runscores/getstatus/   (ca22a1cb)
+2019-02-12T17:27:58.2457610+10:00 0HLKGNEDL2AEK:00000007 [INF] Request finished in 2.809ms 204  (791a596a)
+2019-02-12T17:27:58.2469900+10:00 0HLKGNEDL2AEM:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:58.2472570+10:00 0HLKGNEDL2AEM:00000001 [INF] Request finished in 4.503ms 204  (791a596a)
+2019-02-12T17:27:58.2704520+10:00 0HLKGNEDL2AEM:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamsalary/9   (ca22a1cb)
+2019-02-12T17:27:58.2711900+10:00 0HLKGNEDL2AEM:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:58.2724640+10:00 0HLKGNEDL2AEK:00000008 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamrank/9   (ca22a1cb)
+2019-02-12T17:27:58.2734700+10:00 0HLKGNEDL2AEJ:00000006 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamdetail/9   (ca22a1cb)
+2019-02-12T17:27:58.2734880+10:00 0HLKGNEDL2AEL:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamrank/score/9   (ca22a1cb)
+2019-02-12T17:27:58.2735300+10:00 0HLKGNEDL2AEM:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:27:58.2745220+10:00 0HLKGNEDL2AEK:00000008 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:58.2751820+10:00 0HLKGNEDL2AEJ:00000006 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:58.2751890+10:00 0HLKGNEDL2AEL:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:58.2760190+10:00 0HLKGNEDL2AEK:00000008 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:27:58.2765800+10:00 0HLKGNEDL2AEJ:00000006 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:27:58.2767530+10:00 0HLKGNEDL2AEL:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:27:58.2806400+10:00 0HLKGNEDL2AEM:00000002 [INF] Route matched with "{action = \"GetTeamSalary\", controller = \"TeamSalary\"}". Executing action "BasketballSupercoach.API.Controllers.TeamSalaryController.GetTeamSalary (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:27:58.2820270+10:00 0HLKGNEDL2AEM:00000002 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamSalaryController.GetTeamSalary (BasketballSupercoach.API)" with arguments (["9"]) - Validation state: Valid (4e3479ed)
+2019-02-12T17:27:58.2850460+10:00 0HLKGNEDL2AEL:00000002 [INF] Route matched with "{action = \"GetRoundScore\", controller = \"TeamRank\"}". Executing action "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundScore (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:27:58.2853480+10:00 0HLKGNEDL2AEJ:00000006 [INF] Route matched with "{action = \"GetPlayerCardsForUser\", controller = \"TeamDetail\"}". Executing action "BasketballSupercoach.API.Controllers.TeamDetailController.GetPlayerCardsForUser (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:27:58.2860000+10:00 0HLKGNEDL2AEN:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamrank/totalrank/9   (ca22a1cb)
+2019-02-12T17:27:58.2861780+10:00 0HLKGNEDL2AEN:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:58.2876460+10:00 0HLKGNEDL2AEN:00000001 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:27:58.2879720+10:00 0HLKGNEDL2AEM:00000002 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:27:58.2934580+10:00 0HLKGNEDL2AEN:00000001 [INF] Route matched with "{action = \"GetTotalRank\", controller = \"TeamRank\"}". Executing action "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalRank (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:27:58.2938160+10:00 0HLKGNEDL2AEJ:00000006 [INF] Authorization was successful. (0d575a54)
+2019-02-12T17:27:58.2938450+10:00 0HLKGNEDL2AEN:00000001 [INF] Authorization was successful. (0d575a54)
+2019-02-12T17:27:58.2939830+10:00 0HLKGNEDL2AEL:00000002 [INF] Authorization was successful. (0d575a54)
+2019-02-12T17:27:58.2950640+10:00 0HLKGNEDL2AEK:00000008 [INF] Route matched with "{action = \"GetRoundRank\", controller = \"TeamRank\"}". Executing action "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundRank (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:27:58.2959540+10:00 0HLKGNEDL2AEJ:00000006 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamDetailController.GetPlayerCardsForUser (BasketballSupercoach.API)" with arguments (["9"]) - Validation state: Valid (4e3479ed)
+2019-02-12T17:27:58.2959790+10:00 0HLKGNEDL2AEN:00000001 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalRank (BasketballSupercoach.API)" with arguments (["9"]) - Validation state: Valid (4e3479ed)
+2019-02-12T17:27:58.2961150+10:00 0HLKGNEDL2AEL:00000002 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundScore (BasketballSupercoach.API)" with arguments (["9"]) - Validation state: Valid (4e3479ed)
+2019-02-12T17:27:58.2969560+10:00 0HLKGNEDL2AEK:00000008 [INF] Authorization was successful. (0d575a54)
+2019-02-12T17:27:58.2983210+10:00 0HLKGNEDL2AEK:00000008 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundRank (BasketballSupercoach.API)" with arguments (["9"]) - Validation state: Valid (4e3479ed)
+2019-02-12T17:27:58.3052420+10:00 0HLKGNEDL2AEL:00000002 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:27:58.3057610+10:00 0HLKGNEDL2AEK:00000008 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:27:58.3065450+10:00 0HLKGNEDL2AEN:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:27:58.3089570+10:00 0HLKGNEDL2AEO:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamrank/getround/   (ca22a1cb)
+2019-02-12T17:27:58.3083970+10:00 0HLKGNEDL2AEM:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:27:58.3086390+10:00 0HLKGNEDL2AEJ:00000006 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:27:58.3108670+10:00 0HLKGNEDL2AEO:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:58.3144140+10:00 0HLKGNEDL2AEM:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"ts\".\"Id\", \"ts\".\"AvailableSalary\", \"ts\".\"UserId\"
+FROM \"TeamSalary\" AS \"ts\"
+WHERE \"ts\".\"UserId\" = @__userId_0
+LIMIT 1" (0723d8ff)
+2019-02-12T17:27:58.3146190+10:00 0HLKGNEDL2AEO:00000001 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:27:58.3224040+10:00 0HLKGNEDL2AEO:00000001 [INF] Route matched with "{action = \"GetCurrentRound\", controller = \"TeamRank\"}". Executing action "BasketballSupercoach.API.Controllers.TeamRankController.GetCurrentRound (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:27:58.3226970+10:00 0HLKGNEDL2AEO:00000001 [INF] Authorization was successful. (0d575a54)
+2019-02-12T17:27:58.3251200+10:00 0HLKGNEDL2AEM:00000002 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamSalaryController.GetTeamSalary (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 42.738ms. (50a9e262)
+2019-02-12T17:27:58.3254230+10:00 0HLKGNEDL2AEM:00000002 [INF] Executing ObjectResult, writing value of type '"BasketballSupercoach.API.Models.TeamSalary"'. (8a1b66c8)
+2019-02-12T17:27:58.3281070+10:00 0HLKGNEDL2AEM:00000002 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamSalaryController.GetTeamSalary (BasketballSupercoach.API)" in 46.537ms (afa2e885)
+2019-02-12T17:27:58.3284400+10:00 0HLKGNEDL2AEM:00000002 [INF] Request finished in 58.488ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:27:58.3340710+10:00 0HLKGNEDL2AEN:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:27:58.3344450+10:00 0HLKGNEDL2AEO:00000001 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamRankController.GetCurrentRound (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-12T17:27:58.3350200+10:00 0HLKGNEDL2AEN:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"" (0723d8ff)
+2019-02-12T17:27:58.3380800+10:00 0HLKGNEDL2AEJ:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:27:58.3384720+10:00 0HLKGNEDL2AEO:00000001 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:27:58.3392770+10:00 0HLKGNEDL2AEM:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/teamrank/totalscore/9   (ca22a1cb)
+2019-02-12T17:27:58.3394510+10:00 0HLKGNEDL2AEM:00000003 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:58.3397640+10:00 0HLKGNEDL2AEM:00000003 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:27:58.3405210+10:00 0HLKGNEDL2AEJ:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"Id\", \"x\".\"Active\", \"x\".\"Captain\", \"x\".\"Emergency\", \"x\".\"PlayerId\", \"x\".\"Position\", \"x\".\"SixthMan\", \"x\".\"UserId\"
+FROM \"TeamDetails\" AS \"x\"
+WHERE \"x\".\"UserId\" = @__userId_0" (0723d8ff)
+2019-02-12T17:27:58.3405310+10:00 0HLKGNEDL2AEL:00000002 [WRN] Query: '"(from Round <generated>_2 in DbSet<Round> select [<generated>_2]).FirstOrDefault()"' uses First/FirstOrDefault/Last/LastOrDefault operation without OrderBy and filter which may lead to unpredictable results. (6af4db4b)
+2019-02-12T17:27:58.3508360+10:00 0HLKGNEDL2AEJ:00000006 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamDetailController.GetPlayerCardsForUser (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 52.943ms. (50a9e262)
+2019-02-12T17:27:58.3512440+10:00 0HLKGNEDL2AEM:00000003 [INF] Route matched with "{action = \"GetTotalScore\", controller = \"TeamRank\"}". Executing action "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalScore (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:27:58.3513410+10:00 0HLKGNEDL2AEJ:00000006 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[BasketballSupercoach.API.Dtos.PlayerCardDto, BasketballSupercoach.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-02-12T17:27:58.3525880+10:00 0HLKGNEDL2AEM:00000003 [INF] Authorization was successful. (0d575a54)
+2019-02-12T17:27:58.3530920+10:00 0HLKGNEDL2AEM:00000003 [INF] Executing action method "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalScore (BasketballSupercoach.API)" with arguments (["9"]) - Validation state: Valid (4e3479ed)
+2019-02-12T17:27:58.3574710+10:00 0HLKGNEDL2AEN:00000001 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalRank (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 59.57ms. (50a9e262)
+2019-02-12T17:27:58.3577490+10:00 0HLKGNEDL2AEN:00000001 [INF] Executing ObjectResult, writing value of type '"System.Int32"'. (8a1b66c8)
+2019-02-12T17:27:58.3580920+10:00 0HLKGNEDL2AEN:00000001 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalRank (BasketballSupercoach.API)" in 64.336ms (afa2e885)
+2019-02-12T17:27:58.3584000+10:00 0HLKGNEDL2AEN:00000001 [INF] Request finished in 72.504ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:27:58.3593130+10:00 0HLKGNEDL2AEO:00000001 [WRN] Query: '"(from Round <generated>_2 in DbSet<Round> select [<generated>_2]).FirstOrDefault()"' uses First/FirstOrDefault/Last/LastOrDefault operation without OrderBy and filter which may lead to unpredictable results. (6af4db4b)
+2019-02-12T17:27:58.3663580+10:00 0HLKGNEDL2AEM:00000003 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:27:58.3696990+10:00 0HLKGNEDL2AEN:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/runscores/getstatus/   (ca22a1cb)
+2019-02-12T17:27:58.3698870+10:00 0HLKGNEDL2AEN:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:27:58.3702190+10:00 0HLKGNEDL2AEN:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:27:58.3787670+10:00 0HLKGNEDL2AEO:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:27:58.3801100+10:00 0HLKGNEDL2AEN:00000002 [INF] Route matched with "{action = \"GetCompetitionStatus\", controller = \"RunScores\"}". Executing action "BasketballSupercoach.API.Controllers.RunScoresController.GetCompetitionStatus (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:27:58.3751060+10:00 0HLKGNEDL2AEM:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:27:58.3806270+10:00 0HLKGNEDL2AEN:00000002 [INF] Authorization was successful. (0d575a54)
+2019-02-12T17:27:58.3824620+10:00 0HLKGNEDL2AEN:00000002 [INF] Executing action method "BasketballSupercoach.API.Controllers.RunScoresController.GetCompetitionStatus (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-12T17:27:58.3858870+10:00 0HLKGNEDL2AEN:00000002 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:27:58.3901310+10:00 0HLKGNEDL2AEJ:00000006 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamDetailController.GetPlayerCardsForUser (BasketballSupercoach.API)" in 104.476ms (afa2e885)
+2019-02-12T17:27:58.3904590+10:00 0HLKGNEDL2AEJ:00000006 [INF] Request finished in 119.543ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:27:58.3954460+10:00 0HLKGNEDL2AEO:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"r\".\"Id\", \"r\".\"EndDate\", \"r\".\"RoundNumber\", \"r\".\"StartDate\"
+FROM (
+    SELECT * FROM Rounds where CAST(startDate AS INT) <= @p0 and CAST(endDate AS INT) >= @p0
+) AS \"r\"
+LIMIT 1" (0723d8ff)
+2019-02-12T17:27:58.3959140+10:00 0HLKGNEDL2AEM:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamScores where UserId = @p0" (0723d8ff)
+2019-02-12T17:27:58.4032620+10:00 0HLKGNEDL2AEN:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:27:58.4041790+10:00 0HLKGNEDL2AEN:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"l\".\"Id\", \"l\".\"Locked\"
+FROM \"Lockouts\" AS \"l\"" (0723d8ff)
+2019-02-12T17:27:58.4048220+10:00 0HLKGNEDL2AEO:00000001 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamRankController.GetCurrentRound (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 70.054ms. (50a9e262)
+2019-02-12T17:27:58.4051930+10:00 0HLKGNEDL2AEO:00000001 [INF] Executing ObjectResult, writing value of type '"System.Int32"'. (8a1b66c8)
+2019-02-12T17:27:58.4055860+10:00 0HLKGNEDL2AEO:00000001 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamRankController.GetCurrentRound (BasketballSupercoach.API)" in 82.883ms (afa2e885)
+2019-02-12T17:27:58.4058900+10:00 0HLKGNEDL2AEO:00000001 [INF] Request finished in 98.801ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:27:58.4049080+10:00 0HLKGNEDL2AEL:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:27:58.4106710+10:00 0HLKGNEDL2AEL:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"r\".\"Id\", \"r\".\"EndDate\", \"r\".\"RoundNumber\", \"r\".\"StartDate\"
+FROM (
+    SELECT * FROM Rounds where CAST(startDate AS INT) <= @p0 and CAST(endDate AS INT) >= @p0
+) AS \"r\"
+LIMIT 1" (0723d8ff)
+2019-02-12T17:27:58.4114130+10:00 0HLKGNEDL2AEN:00000002 [INF] Executed action method "BasketballSupercoach.API.Controllers.RunScoresController.GetCompetitionStatus (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 28.6ms. (50a9e262)
+2019-02-12T17:27:58.4117280+10:00 0HLKGNEDL2AEN:00000002 [INF] Executing ObjectResult, writing value of type '"System.Int32"'. (8a1b66c8)
+2019-02-12T17:27:58.4121410+10:00 0HLKGNEDL2AEN:00000002 [INF] Executed action "BasketballSupercoach.API.Controllers.RunScoresController.GetCompetitionStatus (BasketballSupercoach.API)" in 31.554ms (afa2e885)
+2019-02-12T17:27:58.4124630+10:00 0HLKGNEDL2AEN:00000002 [INF] Request finished in 42.915ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:27:58.4144530+10:00 0HLKGNEDL2AEL:00000002 [WRN] Query: '"(from TeamScore <generated>_2 in DbSet<TeamScore> select [<generated>_2]).FirstOrDefault()"' uses First/FirstOrDefault/Last/LastOrDefault operation without OrderBy and filter which may lead to unpredictable results. (6af4db4b)
+2019-02-12T17:27:58.4141030+10:00 0HLKGNEDL2AEK:00000008 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:27:58.4157360+10:00 0HLKGNEDL2AEM:00000003 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalScore (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 62.183ms. (50a9e262)
+2019-02-12T17:27:58.4160980+10:00 0HLKGNEDL2AEM:00000003 [INF] Executing ObjectResult, writing value of type '"System.Decimal"'. (8a1b66c8)
+2019-02-12T17:27:58.4166740+10:00 0HLKGNEDL2AEK:00000008 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"r\".\"Id\", \"r\".\"EndDate\", \"r\".\"RoundNumber\", \"r\".\"StartDate\"
+FROM (
+    SELECT * FROM Rounds where CAST(startDate AS INT) <= @p0 and CAST(endDate AS INT) >= @p0
+) AS \"r\"
+LIMIT 1" (0723d8ff)
+2019-02-12T17:27:58.4185910+10:00 0HLKGNEDL2AEM:00000003 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamRankController.GetTotalScore (BasketballSupercoach.API)" in 65.966ms (afa2e885)
+2019-02-12T17:27:58.4189310+10:00 0HLKGNEDL2AEM:00000003 [INF] Request finished in 79.755ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:27:58.4260370+10:00 0HLKGNEDL2AEL:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:27:58.4280770+10:00 0HLKGNEDL2AEL:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM (
+    SELECT * FROM TeamScores where RoundId = @p0 and UserId = @p1
+) AS \"t\"
+LIMIT 1" (0723d8ff)
+2019-02-12T17:27:58.4290550+10:00 0HLKGNEDL2AEK:00000008 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:27:58.4311590+10:00 0HLKGNEDL2AEK:00000008 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""select * from TeamScores where RoundId = @p0 order by Total desc" (0723d8ff)
+2019-02-12T17:27:58.4384720+10:00 0HLKGNEDL2AEL:00000002 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundScore (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 140.371ms. (50a9e262)
+2019-02-12T17:27:58.4389310+10:00 0HLKGNEDL2AEL:00000002 [INF] Executing ObjectResult, writing value of type '"System.Decimal"'. (8a1b66c8)
+2019-02-12T17:27:58.4394160+10:00 0HLKGNEDL2AEL:00000002 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundScore (BasketballSupercoach.API)" in 154.069ms (afa2e885)
+2019-02-12T17:27:58.4406000+10:00 0HLKGNEDL2AEL:00000002 [INF] Request finished in 169.514ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:27:58.4390390+10:00 0HLKGNEDL2AEK:00000008 [INF] Executed action method "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundRank (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 140.401ms. (50a9e262)
+2019-02-12T17:27:58.4416140+10:00 0HLKGNEDL2AEK:00000008 [INF] Executing ObjectResult, writing value of type '"System.Int32"'. (8a1b66c8)
+2019-02-12T17:27:58.4431440+10:00 0HLKGNEDL2AEK:00000008 [INF] Executed action "BasketballSupercoach.API.Controllers.TeamRankController.GetRoundRank (BasketballSupercoach.API)" in 145.987ms (afa2e885)
+2019-02-12T17:27:58.4438110+10:00 0HLKGNEDL2AEK:00000008 [INF] Request finished in 172.944ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:28:03.0645310+10:00 0HLKGNEDL2AEK:00000009 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:28:03.0649700+10:00 0HLKGNEDL2AEK:00000009 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:28:03.0653100+10:00 0HLKGNEDL2AEK:00000009 [INF] Request finished in 1.398ms 204  (791a596a)
+2019-02-12T17:28:03.1012130+10:00 0HLKGNEDL2AEK:0000000A [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:28:03.1014730+10:00 0HLKGNEDL2AEK:0000000A [INF] Policy execution successful. (0204925d)
+2019-02-12T17:28:03.1019360+10:00 0HLKGNEDL2AEK:0000000A [INF] Successfully validated the token. (60169667)
+2019-02-12T17:28:03.1075130+10:00 0HLKGNEDL2AEK:0000000A [INF] Route matched with "{action = \"GetScoringSystem\", controller = \"ScoringSystem\"}". Executing action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:28:03.1078360+10:00 0HLKGNEDL2AEK:0000000A [INF] Authorization was successful. (0d575a54)
+2019-02-12T17:28:03.1085250+10:00 0HLKGNEDL2AEK:0000000A [INF] Executing action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-12T17:28:03.1116570+10:00 0HLKGNEDL2AEK:0000000A [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:28:03.1150050+10:00 0HLKGNEDL2AEK:0000000A [WRN] Query: '"(from ScoringSystem <generated>_1 in DbSet<ScoringSystem> select [<generated>_1]).FirstOrDefault()"' uses First/FirstOrDefault/Last/LastOrDefault operation without OrderBy and filter which may lead to unpredictable results. (6af4db4b)
+2019-02-12T17:28:03.1258440+10:00 0HLKGNEDL2AEK:0000000A [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:28:03.1281100+10:00 0HLKGNEDL2AEK:0000000A [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"s\".\"Id\", \"s\".\"Assists\", \"s\".\"Blocks\", \"s\".\"DRebounds\", \"s\".\"DoubleDouble\", \"s\".\"MadeThrees\", \"s\".\"Minutes\", \"s\".\"ORebounds\", \"s\".\"Points\", \"s\".\"QuadDouble\", \"s\".\"Steals\", \"s\".\"TripleDouble\", \"s\".\"Turnovers\"
+FROM \"ScoringSystems\" AS \"s\"
+LIMIT 1" (0723d8ff)
+2019-02-12T17:28:03.1396420+10:00 0HLKGNEDL2AEK:0000000A [INF] Executed action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 30.77ms. (50a9e262)
+2019-02-12T17:28:03.1399960+10:00 0HLKGNEDL2AEK:0000000A [INF] Executing ObjectResult, writing value of type '"BasketballSupercoach.API.Models.ScoringSystem"'. (8a1b66c8)
+2019-02-12T17:28:03.1446190+10:00 0HLKGNEDL2AEK:0000000A [INF] Executed action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" in 36.688ms (afa2e885)
+2019-02-12T17:28:03.1452950+10:00 0HLKGNEDL2AEK:0000000A [INF] Request finished in 44.112ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:28:32.5244670+10:00 0HLKGNEDL2AEK:0000000B [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/runscores/getallusers   (ca22a1cb)
+2019-02-12T17:28:32.5247250+10:00 0HLKGNEDL2AEK:0000000B [INF] Policy execution successful. (0204925d)
+2019-02-12T17:28:32.5251100+10:00 0HLKGNEDL2AEK:0000000B [INF] Request finished in 0.868ms 204  (791a596a)
+2019-02-12T17:28:32.5282530+10:00 0HLKGNEDL2AEK:0000000C [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/runscores/getallusers   (ca22a1cb)
+2019-02-12T17:28:32.5285820+10:00 0HLKGNEDL2AEK:0000000C [INF] Policy execution successful. (0204925d)
+2019-02-12T17:28:32.5290540+10:00 0HLKGNEDL2AEK:0000000C [INF] Successfully validated the token. (60169667)
+2019-02-12T17:28:32.5337460+10:00 0HLKGNEDL2AEK:0000000C [INF] Route matched with "{action = \"GetAllUsers\", controller = \"RunScores\"}". Executing action "BasketballSupercoach.API.Controllers.RunScoresController.GetAllUsers (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:28:32.5340520+10:00 0HLKGNEDL2AEK:0000000C [INF] Authorization was successful. (0d575a54)
+2019-02-12T17:28:32.5345540+10:00 0HLKGNEDL2AEK:0000000C [INF] Executing action method "BasketballSupercoach.API.Controllers.RunScoresController.GetAllUsers (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-12T17:28:32.5367360+10:00 0HLKGNEDL2AEK:0000000C [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:28:32.5416130+10:00 0HLKGNEDL2AEK:0000000C [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:28:32.5426080+10:00 0HLKGNEDL2AEK:0000000C [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"u\".\"Id\", \"u\".\"Active\", \"u\".\"Email\", \"u\".\"Name\", \"u\".\"PasswordHash\", \"u\".\"PasswordSalt\", \"u\".\"SalarySet\", \"u\".\"TeamSelected\", \"u\".\"Teamname\", \"u\".\"Username\"
+FROM \"Users\" AS \"u\"" (0723d8ff)
+2019-02-12T17:28:32.5436480+10:00 0HLKGNEDL2AEK:0000000C [INF] Executed action method "BasketballSupercoach.API.Controllers.RunScoresController.GetAllUsers (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 8.771ms. (50a9e262)
+2019-02-12T17:28:32.5440230+10:00 0HLKGNEDL2AEK:0000000C [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[BasketballSupercoach.API.Models.User, BasketballSupercoach.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-02-12T17:28:32.5465260+10:00 0HLKGNEDL2AEK:0000000C [INF] Executed action "BasketballSupercoach.API.Controllers.RunScoresController.GetAllUsers (BasketballSupercoach.API)" in 12.369ms (afa2e885)
+2019-02-12T17:28:32.5468950+10:00 0HLKGNEDL2AEK:0000000C [INF] Request finished in 18.812ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:29:58.0660480+10:00 0HLKGNEDL2AEK:0000000D [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:29:58.0662770+10:00 0HLKGNEDL2AEK:0000000D [INF] Policy execution successful. (0204925d)
+2019-02-12T17:29:58.0665640+10:00 0HLKGNEDL2AEK:0000000D [INF] Request finished in 0.7ms 204  (791a596a)
+2019-02-12T17:29:58.1436260+10:00 0HLKGNEDL2AEK:0000000E [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:29:58.1438110+10:00 0HLKGNEDL2AEK:0000000E [INF] Policy execution successful. (0204925d)
+2019-02-12T17:29:58.1442240+10:00 0HLKGNEDL2AEK:0000000E [INF] Successfully validated the token. (60169667)
+2019-02-12T17:29:58.1445920+10:00 0HLKGNEDL2AEK:0000000E [INF] Route matched with "{action = \"GetScoringSystem\", controller = \"ScoringSystem\"}". Executing action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:29:58.1448280+10:00 0HLKGNEDL2AEK:0000000E [INF] Authorization was successful. (0d575a54)
+2019-02-12T17:29:58.1452800+10:00 0HLKGNEDL2AEK:0000000E [INF] Executing action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-12T17:29:58.1458920+10:00 0HLKGNEDL2AEK:0000000E [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:29:58.1477340+10:00 0HLKGNEDL2AEK:0000000E [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:29:58.1508040+10:00 0HLKGNEDL2AEK:0000000E [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"s\".\"Id\", \"s\".\"Assists\", \"s\".\"Blocks\", \"s\".\"DRebounds\", \"s\".\"DoubleDouble\", \"s\".\"MadeThrees\", \"s\".\"Minutes\", \"s\".\"ORebounds\", \"s\".\"Points\", \"s\".\"QuadDouble\", \"s\".\"Steals\", \"s\".\"TripleDouble\", \"s\".\"Turnovers\"
+FROM \"ScoringSystems\" AS \"s\"
+LIMIT 1" (0723d8ff)
+2019-02-12T17:29:58.1514470+10:00 0HLKGNEDL2AEK:0000000E [INF] Executed action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 5.88ms. (50a9e262)
+2019-02-12T17:29:58.1517050+10:00 0HLKGNEDL2AEK:0000000E [INF] Executing ObjectResult, writing value of type '"BasketballSupercoach.API.Models.ScoringSystem"'. (8a1b66c8)
+2019-02-12T17:29:58.1522920+10:00 0HLKGNEDL2AEK:0000000E [INF] Executed action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" in 7.462ms (afa2e885)
+2019-02-12T17:29:58.1525640+10:00 0HLKGNEDL2AEK:0000000E [INF] Request finished in 9.133ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:35:01.3513150+10:00 0HLKGNEDL2AEP:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:35:01.3522830+10:00 0HLKGNEDL2AEP:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:35:01.3540030+10:00 0HLKGNEDL2AEP:00000001 [INF] Request finished in 3.968ms 204  (791a596a)
+2019-02-12T17:35:01.4774160+10:00 0HLKGNEDL2AEP:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:35:01.4776270+10:00 0HLKGNEDL2AEP:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:35:01.4801300+10:00 0HLKGNEDL2AEP:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:35:01.4825030+10:00 0HLKGNEDL2AEP:00000002 [INF] Route matched with "{action = \"GetScoringSystem\", controller = \"ScoringSystem\"}". Executing action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:35:01.4834370+10:00 0HLKGNEDL2AEP:00000002 [INF] Authorization was successful. (0d575a54)
+2019-02-12T17:35:01.4861410+10:00 0HLKGNEDL2AEP:00000002 [INF] Executing action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-12T17:35:01.4900010+10:00 0HLKGNEDL2AEP:00000002 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:35:01.4933950+10:00 0HLKGNEDL2AEP:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:35:01.4946490+10:00 0HLKGNEDL2AEP:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"s\".\"Id\", \"s\".\"Assists\", \"s\".\"Blocks\", \"s\".\"DRebounds\", \"s\".\"DoubleDouble\", \"s\".\"MadeThrees\", \"s\".\"Minutes\", \"s\".\"ORebounds\", \"s\".\"Points\", \"s\".\"QuadDouble\", \"s\".\"Steals\", \"s\".\"TripleDouble\", \"s\".\"Turnovers\"
+FROM \"ScoringSystems\" AS \"s\"
+LIMIT 1" (0723d8ff)
+2019-02-12T17:35:01.4964550+10:00 0HLKGNEDL2AEP:00000002 [INF] Executed action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 9.905ms. (50a9e262)
+2019-02-12T17:35:01.4974950+10:00 0HLKGNEDL2AEP:00000002 [INF] Executing ObjectResult, writing value of type '"BasketballSupercoach.API.Models.ScoringSystem"'. (8a1b66c8)
+2019-02-12T17:35:01.4995390+10:00 0HLKGNEDL2AEP:00000002 [INF] Executed action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" in 16.361ms (afa2e885)
+2019-02-12T17:35:01.5001160+10:00 0HLKGNEDL2AEP:00000002 [INF] Request finished in 22.907ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:35:09.7182280+10:00 0HLKGNEDL2AEP:00000003 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:35:09.7184840+10:00 0HLKGNEDL2AEP:00000003 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:35:09.7187590+10:00 0HLKGNEDL2AEP:00000003 [INF] Request finished in 0.71ms 204  (791a596a)
+2019-02-12T17:35:09.8045630+10:00 0HLKGNEDL2AEP:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:35:09.8047550+10:00 0HLKGNEDL2AEP:00000004 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:35:09.8050910+10:00 0HLKGNEDL2AEP:00000004 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:35:09.8053910+10:00 0HLKGNEDL2AEP:00000004 [INF] Route matched with "{action = \"GetScoringSystem\", controller = \"ScoringSystem\"}". Executing action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:35:09.8056300+10:00 0HLKGNEDL2AEP:00000004 [INF] Authorization was successful. (0d575a54)
+2019-02-12T17:35:09.8060690+10:00 0HLKGNEDL2AEP:00000004 [INF] Executing action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-12T17:35:09.8066360+10:00 0HLKGNEDL2AEP:00000004 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:35:09.8075120+10:00 0HLKGNEDL2AEP:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:35:09.8082940+10:00 0HLKGNEDL2AEP:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"s\".\"Id\", \"s\".\"Assists\", \"s\".\"Blocks\", \"s\".\"DRebounds\", \"s\".\"DoubleDouble\", \"s\".\"MadeThrees\", \"s\".\"Minutes\", \"s\".\"ORebounds\", \"s\".\"Points\", \"s\".\"QuadDouble\", \"s\".\"Steals\", \"s\".\"TripleDouble\", \"s\".\"Turnovers\"
+FROM \"ScoringSystems\" AS \"s\"
+LIMIT 1" (0723d8ff)
+2019-02-12T17:35:09.8087570+10:00 0HLKGNEDL2AEP:00000004 [INF] Executed action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2.386ms. (50a9e262)
+2019-02-12T17:35:09.8090500+10:00 0HLKGNEDL2AEP:00000004 [INF] Executing ObjectResult, writing value of type '"BasketballSupercoach.API.Models.ScoringSystem"'. (8a1b66c8)
+2019-02-12T17:35:09.8093790+10:00 0HLKGNEDL2AEP:00000004 [INF] Executed action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" in 3.751ms (afa2e885)
+2019-02-12T17:35:09.8096740+10:00 0HLKGNEDL2AEP:00000004 [INF] Request finished in 5.279ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:35:25.1668880+10:00 0HLKGNEDL2AEP:00000005 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:35:25.1671480+10:00 0HLKGNEDL2AEP:00000005 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:35:25.1674800+10:00 0HLKGNEDL2AEP:00000005 [INF] Request finished in 0.77ms 204  (791a596a)
+2019-02-12T17:35:25.2401930+10:00 0HLKGNEDL2AEP:00000006 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:35:25.2404150+10:00 0HLKGNEDL2AEP:00000006 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:35:25.2407750+10:00 0HLKGNEDL2AEP:00000006 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:35:25.2411420+10:00 0HLKGNEDL2AEP:00000006 [INF] Route matched with "{action = \"GetScoringSystem\", controller = \"ScoringSystem\"}". Executing action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:35:25.2419860+10:00 0HLKGNEDL2AEP:00000006 [INF] Authorization was successful. (0d575a54)
+2019-02-12T17:35:25.2426510+10:00 0HLKGNEDL2AEP:00000006 [INF] Executing action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-12T17:35:25.2431830+10:00 0HLKGNEDL2AEP:00000006 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:35:25.2439880+10:00 0HLKGNEDL2AEP:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:35:25.2446690+10:00 0HLKGNEDL2AEP:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"s\".\"Id\", \"s\".\"Assists\", \"s\".\"Blocks\", \"s\".\"DRebounds\", \"s\".\"DoubleDouble\", \"s\".\"MadeThrees\", \"s\".\"Minutes\", \"s\".\"ORebounds\", \"s\".\"Points\", \"s\".\"QuadDouble\", \"s\".\"Steals\", \"s\".\"TripleDouble\", \"s\".\"Turnovers\"
+FROM \"ScoringSystems\" AS \"s\"
+LIMIT 1" (0723d8ff)
+2019-02-12T17:35:25.2451060+10:00 0HLKGNEDL2AEP:00000006 [INF] Executed action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2.162ms. (50a9e262)
+2019-02-12T17:35:25.2453420+10:00 0HLKGNEDL2AEP:00000006 [INF] Executing ObjectResult, writing value of type '"BasketballSupercoach.API.Models.ScoringSystem"'. (8a1b66c8)
+2019-02-12T17:35:25.2459220+10:00 0HLKGNEDL2AEP:00000006 [INF] Executed action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" in 4.524ms (afa2e885)
+2019-02-12T17:35:25.2462200+10:00 0HLKGNEDL2AEP:00000006 [INF] Request finished in 6.223ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:35:58.9258720+10:00 0HLKGNEDL2AEP:00000007 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:35:58.9260630+10:00 0HLKGNEDL2AEP:00000007 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:35:58.9263280+10:00 0HLKGNEDL2AEP:00000007 [INF] Request finished in 0.633ms 204  (791a596a)
+2019-02-12T17:35:59.0223940+10:00 0HLKGNEDL2AEP:00000008 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:35:59.0227420+10:00 0HLKGNEDL2AEP:00000008 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:35:59.0231660+10:00 0HLKGNEDL2AEP:00000008 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:35:59.0235640+10:00 0HLKGNEDL2AEP:00000008 [INF] Route matched with "{action = \"GetScoringSystem\", controller = \"ScoringSystem\"}". Executing action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:35:59.0239190+10:00 0HLKGNEDL2AEP:00000008 [INF] Authorization was successful. (0d575a54)
+2019-02-12T17:35:59.0243810+10:00 0HLKGNEDL2AEP:00000008 [INF] Executing action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-12T17:35:59.0252320+10:00 0HLKGNEDL2AEP:00000008 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:35:59.0259710+10:00 0HLKGNEDL2AEP:00000008 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:35:59.0265630+10:00 0HLKGNEDL2AEP:00000008 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"s\".\"Id\", \"s\".\"Assists\", \"s\".\"Blocks\", \"s\".\"DRebounds\", \"s\".\"DoubleDouble\", \"s\".\"MadeThrees\", \"s\".\"Minutes\", \"s\".\"ORebounds\", \"s\".\"Points\", \"s\".\"QuadDouble\", \"s\".\"Steals\", \"s\".\"TripleDouble\", \"s\".\"Turnovers\"
+FROM \"ScoringSystems\" AS \"s\"
+LIMIT 1" (0723d8ff)
+2019-02-12T17:35:59.0269990+10:00 0HLKGNEDL2AEP:00000008 [INF] Executed action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2.331ms. (50a9e262)
+2019-02-12T17:35:59.0272540+10:00 0HLKGNEDL2AEP:00000008 [INF] Executing ObjectResult, writing value of type '"BasketballSupercoach.API.Models.ScoringSystem"'. (8a1b66c8)
+2019-02-12T17:35:59.0275720+10:00 0HLKGNEDL2AEP:00000008 [INF] Executed action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" in 3.651ms (afa2e885)
+2019-02-12T17:35:59.0278330+10:00 0HLKGNEDL2AEP:00000008 [INF] Request finished in 5.641ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:36:27.2262230+10:00 0HLKGNEDL2AEP:00000009 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:36:27.2264360+10:00 0HLKGNEDL2AEP:00000009 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:36:27.2268260+10:00 0HLKGNEDL2AEP:00000009 [INF] Request finished in 0.76ms 204  (791a596a)
+2019-02-12T17:36:27.3093380+10:00 0HLKGNEDL2AEP:0000000A [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:36:27.3095270+10:00 0HLKGNEDL2AEP:0000000A [INF] Policy execution successful. (0204925d)
+2019-02-12T17:36:27.3098990+10:00 0HLKGNEDL2AEP:0000000A [INF] Successfully validated the token. (60169667)
+2019-02-12T17:36:27.3102200+10:00 0HLKGNEDL2AEP:0000000A [INF] Route matched with "{action = \"GetScoringSystem\", controller = \"ScoringSystem\"}". Executing action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:36:27.3105150+10:00 0HLKGNEDL2AEP:0000000A [INF] Authorization was successful. (0d575a54)
+2019-02-12T17:36:27.3109460+10:00 0HLKGNEDL2AEP:0000000A [INF] Executing action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-12T17:36:27.3122730+10:00 0HLKGNEDL2AEP:0000000A [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:36:27.3135430+10:00 0HLKGNEDL2AEP:0000000A [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:36:27.3142970+10:00 0HLKGNEDL2AEP:0000000A [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"s\".\"Id\", \"s\".\"Assists\", \"s\".\"Blocks\", \"s\".\"DRebounds\", \"s\".\"DoubleDouble\", \"s\".\"MadeThrees\", \"s\".\"Minutes\", \"s\".\"ORebounds\", \"s\".\"Points\", \"s\".\"QuadDouble\", \"s\".\"Steals\", \"s\".\"TripleDouble\", \"s\".\"Turnovers\"
+FROM \"ScoringSystems\" AS \"s\"
+LIMIT 1" (0723d8ff)
+2019-02-12T17:36:27.3147960+10:00 0HLKGNEDL2AEP:0000000A [INF] Executed action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 3.304ms. (50a9e262)
+2019-02-12T17:36:27.3150930+10:00 0HLKGNEDL2AEP:0000000A [INF] Executing ObjectResult, writing value of type '"BasketballSupercoach.API.Models.ScoringSystem"'. (8a1b66c8)
+2019-02-12T17:36:27.3156890+10:00 0HLKGNEDL2AEP:0000000A [INF] Executed action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" in 5.196ms (afa2e885)
+2019-02-12T17:36:27.3160160+10:00 0HLKGNEDL2AEP:0000000A [INF] Request finished in 6.876ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:36:56.8464020+10:00 0HLKGNEDL2AEP:0000000B [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:36:56.8466340+10:00 0HLKGNEDL2AEP:0000000B [INF] Policy execution successful. (0204925d)
+2019-02-12T17:36:56.8469250+10:00 0HLKGNEDL2AEP:0000000B [INF] Request finished in 0.743ms 204  (791a596a)
+2019-02-12T17:36:56.9105860+10:00 0HLKGNEDL2AEP:0000000C [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:36:56.9108100+10:00 0HLKGNEDL2AEP:0000000C [INF] Policy execution successful. (0204925d)
+2019-02-12T17:36:56.9111460+10:00 0HLKGNEDL2AEP:0000000C [INF] Successfully validated the token. (60169667)
+2019-02-12T17:36:56.9114460+10:00 0HLKGNEDL2AEP:0000000C [INF] Route matched with "{action = \"GetScoringSystem\", controller = \"ScoringSystem\"}". Executing action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:36:56.9116880+10:00 0HLKGNEDL2AEP:0000000C [INF] Authorization was successful. (0d575a54)
+2019-02-12T17:36:56.9122540+10:00 0HLKGNEDL2AEP:0000000C [INF] Executing action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-12T17:36:56.9129040+10:00 0HLKGNEDL2AEP:0000000C [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:36:56.9136160+10:00 0HLKGNEDL2AEP:0000000C [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:36:56.9142620+10:00 0HLKGNEDL2AEP:0000000C [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"s\".\"Id\", \"s\".\"Assists\", \"s\".\"Blocks\", \"s\".\"DRebounds\", \"s\".\"DoubleDouble\", \"s\".\"MadeThrees\", \"s\".\"Minutes\", \"s\".\"ORebounds\", \"s\".\"Points\", \"s\".\"QuadDouble\", \"s\".\"Steals\", \"s\".\"TripleDouble\", \"s\".\"Turnovers\"
+FROM \"ScoringSystems\" AS \"s\"
+LIMIT 1" (0723d8ff)
+2019-02-12T17:36:56.9147460+10:00 0HLKGNEDL2AEP:0000000C [INF] Executed action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2.165ms. (50a9e262)
+2019-02-12T17:36:56.9150640+10:00 0HLKGNEDL2AEP:0000000C [INF] Executing ObjectResult, writing value of type '"BasketballSupercoach.API.Models.ScoringSystem"'. (8a1b66c8)
+2019-02-12T17:36:56.9155650+10:00 0HLKGNEDL2AEP:0000000C [INF] Executed action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" in 3.825ms (afa2e885)
+2019-02-12T17:36:56.9158420+10:00 0HLKGNEDL2AEP:0000000C [INF] Request finished in 5.444ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:39:36.3776750+10:00 0HLKGNEDL2AEQ:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:39:36.3778650+10:00 0HLKGNEDL2AEQ:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:39:36.3781630+10:00 0HLKGNEDL2AEQ:00000001 [INF] Request finished in 0.718ms 204  (791a596a)
+2019-02-12T17:39:36.4620180+10:00 0HLKGNEDL2AEQ:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:39:36.4621970+10:00 0HLKGNEDL2AEQ:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:39:36.4625760+10:00 0HLKGNEDL2AEQ:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:39:36.4628820+10:00 0HLKGNEDL2AEQ:00000002 [INF] Route matched with "{action = \"GetScoringSystem\", controller = \"ScoringSystem\"}". Executing action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:39:36.4631280+10:00 0HLKGNEDL2AEQ:00000002 [INF] Authorization was successful. (0d575a54)
+2019-02-12T17:39:36.4635160+10:00 0HLKGNEDL2AEQ:00000002 [INF] Executing action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-12T17:39:36.4641650+10:00 0HLKGNEDL2AEQ:00000002 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:39:36.4649320+10:00 0HLKGNEDL2AEQ:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:39:36.4656110+10:00 0HLKGNEDL2AEQ:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"s\".\"Id\", \"s\".\"Assists\", \"s\".\"Blocks\", \"s\".\"DRebounds\", \"s\".\"DoubleDouble\", \"s\".\"MadeThrees\", \"s\".\"Minutes\", \"s\".\"ORebounds\", \"s\".\"Points\", \"s\".\"QuadDouble\", \"s\".\"Steals\", \"s\".\"TripleDouble\", \"s\".\"Turnovers\"
+FROM \"ScoringSystems\" AS \"s\"
+LIMIT 1" (0723d8ff)
+2019-02-12T17:39:36.4660920+10:00 0HLKGNEDL2AEQ:00000002 [INF] Executed action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2.299ms. (50a9e262)
+2019-02-12T17:39:36.4663960+10:00 0HLKGNEDL2AEQ:00000002 [INF] Executing ObjectResult, writing value of type '"BasketballSupercoach.API.Models.ScoringSystem"'. (8a1b66c8)
+2019-02-12T17:39:36.4669020+10:00 0HLKGNEDL2AEQ:00000002 [INF] Executed action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" in 3.776ms (afa2e885)
+2019-02-12T17:39:36.4673190+10:00 0HLKGNEDL2AEQ:00000002 [INF] Request finished in 5.414ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:40:23.0837360+10:00 0HLKGNEDL2AEQ:00000003 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:40:23.0839480+10:00 0HLKGNEDL2AEQ:00000003 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:40:23.0842570+10:00 0HLKGNEDL2AEQ:00000003 [INF] Request finished in 0.681ms 204  (791a596a)
+2019-02-12T17:40:23.1883700+10:00 0HLKGNEDL2AEQ:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:40:23.1885810+10:00 0HLKGNEDL2AEQ:00000004 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:40:23.1889260+10:00 0HLKGNEDL2AEQ:00000004 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:40:23.1892880+10:00 0HLKGNEDL2AEQ:00000004 [INF] Route matched with "{action = \"GetScoringSystem\", controller = \"ScoringSystem\"}". Executing action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T17:40:23.1895290+10:00 0HLKGNEDL2AEQ:00000004 [INF] Authorization was successful. (0d575a54)
+2019-02-12T17:40:23.1899590+10:00 0HLKGNEDL2AEQ:00000004 [INF] Executing action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-12T17:40:23.1904740+10:00 0HLKGNEDL2AEQ:00000004 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T17:40:23.1912000+10:00 0HLKGNEDL2AEQ:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T17:40:23.1918720+10:00 0HLKGNEDL2AEQ:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"s\".\"Id\", \"s\".\"Assists\", \"s\".\"Blocks\", \"s\".\"DRebounds\", \"s\".\"DoubleDouble\", \"s\".\"MadeThrees\", \"s\".\"Minutes\", \"s\".\"ORebounds\", \"s\".\"Points\", \"s\".\"QuadDouble\", \"s\".\"Steals\", \"s\".\"TripleDouble\", \"s\".\"Turnovers\"
+FROM \"ScoringSystems\" AS \"s\"
+LIMIT 1" (0723d8ff)
+2019-02-12T17:40:23.1924660+10:00 0HLKGNEDL2AEQ:00000004 [INF] Executed action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2.2ms. (50a9e262)
+2019-02-12T17:40:23.1928530+10:00 0HLKGNEDL2AEQ:00000004 [INF] Executing ObjectResult, writing value of type '"BasketballSupercoach.API.Models.ScoringSystem"'. (8a1b66c8)
+2019-02-12T17:40:23.1955720+10:00 0HLKGNEDL2AEQ:00000004 [INF] Executed action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" in 5.86ms (afa2e885)
+2019-02-12T17:40:23.1960180+10:00 0HLKGNEDL2AEQ:00000004 [INF] Request finished in 7.823ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T17:57:42.2148250+10:00 0HLKGNV20801H:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:57:42.2404600+10:00 0HLKGNV20801H:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:57:42.2496700+10:00 0HLKGNV20801H:00000001 [INF] Request finished in 44.26ms 204  (791a596a)
+2019-02-12T17:57:42.2669680+10:00 0HLKGNV20801H:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:57:42.2672640+10:00 0HLKGNV20801H:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:57:42.4429660+10:00 0HLKGNV20801H:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:57:42.5364030+10:00 0HLKGNV20801H:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: There is an incomplete parameter in the route template. Check that each '{' character has a matching '}' character.
+Parameter name: routeTemplate
+   at Microsoft.AspNetCore.Routing.Template.TemplateParser.Parse(String routeTemplate)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.ParameterExistsInAnyRoute(ActionModel actionModel, String parameterName)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferBindingSourceForParameter(ParameterModel parameter)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferParameterBindingSources(ActionModel actionModel)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.OnProvidersExecuting(ApplicationModelProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-12T17:57:42.6366780+10:00 0HLKGNV20801H:00000002 [INF] Request finished in 369.139ms 500 text/html; charset=utf-8 (791a596a)
+2019-02-12T17:57:50.5380500+10:00 0HLKGNV20801I:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:57:50.5383250+10:00 0HLKGNV20801I:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:57:50.5388660+10:00 0HLKGNV20801I:00000001 [INF] Request finished in 1.073ms 204  (791a596a)
+2019-02-12T17:57:50.5872480+10:00 0HLKGNV20801I:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:57:50.5874600+10:00 0HLKGNV20801I:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:57:50.5922740+10:00 0HLKGNV20801I:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:57:50.6086070+10:00 0HLKGNV20801I:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: There is an incomplete parameter in the route template. Check that each '{' character has a matching '}' character.
+Parameter name: routeTemplate
+   at Microsoft.AspNetCore.Routing.Template.TemplateParser.Parse(String routeTemplate)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.ParameterExistsInAnyRoute(ActionModel actionModel, String parameterName)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferBindingSourceForParameter(ParameterModel parameter)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferParameterBindingSources(ActionModel actionModel)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.OnProvidersExecuting(ApplicationModelProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-12T17:57:50.6165570+10:00 0HLKGNV20801I:00000002 [INF] Request finished in 29.409ms 500 text/html; charset=utf-8 (791a596a)
+2019-02-12T17:58:16.8458730+10:00 0HLKGNV20801J:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:58:16.8460850+10:00 0HLKGNV20801J:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:58:16.8463670+10:00 0HLKGNV20801J:00000001 [INF] Request finished in 0.749ms 204  (791a596a)
+2019-02-12T17:58:16.9122150+10:00 0HLKGNV20801J:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:58:16.9124120+10:00 0HLKGNV20801J:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:58:16.9127960+10:00 0HLKGNV20801J:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:58:16.9214510+10:00 0HLKGNV20801J:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: There is an incomplete parameter in the route template. Check that each '{' character has a matching '}' character.
+Parameter name: routeTemplate
+   at Microsoft.AspNetCore.Routing.Template.TemplateParser.Parse(String routeTemplate)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.ParameterExistsInAnyRoute(ActionModel actionModel, String parameterName)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferBindingSourceForParameter(ParameterModel parameter)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferParameterBindingSources(ActionModel actionModel)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.OnProvidersExecuting(ApplicationModelProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-12T17:58:16.9258940+10:00 0HLKGNV20801J:00000002 [INF] Request finished in 13.831ms 500 text/html; charset=utf-8 (791a596a)
+2019-02-12T17:58:21.1176460+10:00 0HLKGNV20801K:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:58:21.1178480+10:00 0HLKGNV20801K:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:58:21.1182040+10:00 0HLKGNV20801K:00000001 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:58:21.1305730+10:00 0HLKGNV20801K:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: There is an incomplete parameter in the route template. Check that each '{' character has a matching '}' character.
+Parameter name: routeTemplate
+   at Microsoft.AspNetCore.Routing.Template.TemplateParser.Parse(String routeTemplate)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.ParameterExistsInAnyRoute(ActionModel actionModel, String parameterName)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferBindingSourceForParameter(ParameterModel parameter)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferParameterBindingSources(ActionModel actionModel)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.OnProvidersExecuting(ApplicationModelProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-12T17:58:21.1343810+10:00 0HLKGNV20801K:00000001 [INF] Request finished in 16.865ms 500 text/html; charset=utf-8 (791a596a)
+2019-02-12T17:59:51.6374070+10:00 0HLKGNV20801L:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:59:51.6391380+10:00 0HLKGNV20801L:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:59:51.6400010+10:00 0HLKGNV20801L:00000001 [INF] Request finished in 3.607ms 204  (791a596a)
+2019-02-12T17:59:51.6726460+10:00 0HLKGNV20801L:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T17:59:51.6728920+10:00 0HLKGNV20801L:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:59:51.6744730+10:00 0HLKGNV20801L:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:59:51.6879060+10:00 0HLKGNV20801L:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: There is an incomplete parameter in the route template. Check that each '{' character has a matching '}' character.
+Parameter name: routeTemplate
+   at Microsoft.AspNetCore.Routing.Template.TemplateParser.Parse(String routeTemplate)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.ParameterExistsInAnyRoute(ActionModel actionModel, String parameterName)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferBindingSourceForParameter(ParameterModel parameter)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferParameterBindingSources(ActionModel actionModel)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.OnProvidersExecuting(ApplicationModelProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-12T17:59:51.6942400+10:00 0HLKGNV20801L:00000002 [INF] Request finished in 21.773ms 500 text/html; charset=utf-8 (791a596a)
+2019-02-12T17:59:59.3028270+10:00 0HLKGNV20801M:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/runscores/getallusers   (ca22a1cb)
+2019-02-12T17:59:59.3031680+10:00 0HLKGNV20801M:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:59:59.3035220+10:00 0HLKGNV20801M:00000001 [INF] Request finished in 0.976ms 204  (791a596a)
+2019-02-12T17:59:59.3074070+10:00 0HLKGNV20801M:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/runscores/getallusers   (ca22a1cb)
+2019-02-12T17:59:59.3076360+10:00 0HLKGNV20801M:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T17:59:59.3080190+10:00 0HLKGNV20801M:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T17:59:59.3159740+10:00 0HLKGNV20801M:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: There is an incomplete parameter in the route template. Check that each '{' character has a matching '}' character.
+Parameter name: routeTemplate
+   at Microsoft.AspNetCore.Routing.Template.TemplateParser.Parse(String routeTemplate)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.ParameterExistsInAnyRoute(ActionModel actionModel, String parameterName)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferBindingSourceForParameter(ParameterModel parameter)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferParameterBindingSources(ActionModel actionModel)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.OnProvidersExecuting(ApplicationModelProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-12T17:59:59.3196170+10:00 0HLKGNV20801M:00000002 [INF] Request finished in 12.342ms 500 text/html; charset=utf-8 (791a596a)
+2019-02-12T18:03:04.3555350+10:00 0HLKGNV20801N:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:03:04.3560030+10:00 0HLKGNV20801N:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:03:04.3564180+10:00 0HLKGNV20801N:00000001 [INF] Request finished in 1.175ms 204  (791a596a)
+2019-02-12T18:03:04.4263960+10:00 0HLKGNV20801N:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:03:04.4266440+10:00 0HLKGNV20801N:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:03:04.4280120+10:00 0HLKGNV20801N:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T18:03:04.4440640+10:00 0HLKGNV20801N:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: There is an incomplete parameter in the route template. Check that each '{' character has a matching '}' character.
+Parameter name: routeTemplate
+   at Microsoft.AspNetCore.Routing.Template.TemplateParser.Parse(String routeTemplate)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.ParameterExistsInAnyRoute(ActionModel actionModel, String parameterName)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferBindingSourceForParameter(ParameterModel parameter)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferParameterBindingSources(ActionModel actionModel)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.OnProvidersExecuting(ApplicationModelProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-12T18:03:04.4513660+10:00 0HLKGNV20801N:00000002 [INF] Request finished in 25.148ms 500 text/html; charset=utf-8 (791a596a)
+2019-02-12T18:04:46.9933500+10:00 0HLKGNV20801O:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:04:46.9953820+10:00 0HLKGNV20801O:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:04:46.9972390+10:00 0HLKGNV20801O:00000001 [INF] Request finished in 6.14ms 204  (791a596a)
+2019-02-12T18:04:47.0320230+10:00 0HLKGNV20801O:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:04:47.0322230+10:00 0HLKGNV20801O:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:04:47.0336260+10:00 0HLKGNV20801O:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T18:04:47.0485560+10:00 0HLKGNV20801O:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: There is an incomplete parameter in the route template. Check that each '{' character has a matching '}' character.
+Parameter name: routeTemplate
+   at Microsoft.AspNetCore.Routing.Template.TemplateParser.Parse(String routeTemplate)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.ParameterExistsInAnyRoute(ActionModel actionModel, String parameterName)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferBindingSourceForParameter(ParameterModel parameter)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferParameterBindingSources(ActionModel actionModel)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.OnProvidersExecuting(ApplicationModelProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-12T18:04:47.0546330+10:00 0HLKGNV20801O:00000002 [INF] Request finished in 22.679ms 500 text/html; charset=utf-8 (791a596a)
+2019-02-12T18:04:55.9130820+10:00 0HLKGNV20801P:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/runscores/updateteamscores   (ca22a1cb)
+2019-02-12T18:04:55.9133960+10:00 0HLKGNV20801P:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:04:55.9139090+10:00 0HLKGNV20801P:00000001 [INF] Request finished in 1.124ms 204  (791a596a)
+2019-02-12T18:04:55.9177950+10:00 0HLKGNV20801P:00000002 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/runscores/updateteamscores application/json 22 (ca22a1cb)
+2019-02-12T18:04:55.9179880+10:00 0HLKGNV20801P:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:04:55.9183910+10:00 0HLKGNV20801P:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T18:04:55.9499580+10:00 0HLKGNV20801P:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: There is an incomplete parameter in the route template. Check that each '{' character has a matching '}' character.
+Parameter name: routeTemplate
+   at Microsoft.AspNetCore.Routing.Template.TemplateParser.Parse(String routeTemplate)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.ParameterExistsInAnyRoute(ActionModel actionModel, String parameterName)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferBindingSourceForParameter(ParameterModel parameter)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferParameterBindingSources(ActionModel actionModel)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.OnProvidersExecuting(ApplicationModelProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-12T18:04:55.9551070+10:00 0HLKGNV20801P:00000002 [INF] Request finished in 37.487ms 500 text/html; charset=utf-8 (791a596a)
+2019-02-12T18:08:08.2567910+10:00 0HLKGNV20801Q:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:08:08.2570060+10:00 0HLKGNV20801Q:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:08:08.2573720+10:00 0HLKGNV20801Q:00000001 [INF] Request finished in 0.781ms 204  (791a596a)
+2019-02-12T18:08:08.3018720+10:00 0HLKGNV20801Q:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:08:08.3020730+10:00 0HLKGNV20801Q:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:08:08.3024770+10:00 0HLKGNV20801Q:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T18:08:08.3124460+10:00 0HLKGNV20801Q:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: There is an incomplete parameter in the route template. Check that each '{' character has a matching '}' character.
+Parameter name: routeTemplate
+   at Microsoft.AspNetCore.Routing.Template.TemplateParser.Parse(String routeTemplate)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.ParameterExistsInAnyRoute(ActionModel actionModel, String parameterName)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferBindingSourceForParameter(ParameterModel parameter)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferParameterBindingSources(ActionModel actionModel)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.OnProvidersExecuting(ApplicationModelProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-12T18:08:08.3175790+10:00 0HLKGNV20801Q:00000002 [INF] Request finished in 15.804ms 500 text/html; charset=utf-8 (791a596a)
+2019-02-12T18:08:16.4263950+10:00 0HLKGNV20801R:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/runscores/updateteamscores   (ca22a1cb)
+2019-02-12T18:08:16.4266640+10:00 0HLKGNV20801R:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:08:16.4274050+10:00 0HLKGNV20801R:00000001 [INF] Request finished in 1.765ms 204  (791a596a)
+2019-02-12T18:08:16.4329050+10:00 0HLKGNV20801R:00000002 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/runscores/updateteamscores application/json 22 (ca22a1cb)
+2019-02-12T18:08:16.4331510+10:00 0HLKGNV20801R:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:08:16.4335610+10:00 0HLKGNV20801R:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T18:08:16.4410510+10:00 0HLKGNV20801R:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: There is an incomplete parameter in the route template. Check that each '{' character has a matching '}' character.
+Parameter name: routeTemplate
+   at Microsoft.AspNetCore.Routing.Template.TemplateParser.Parse(String routeTemplate)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.ParameterExistsInAnyRoute(ActionModel actionModel, String parameterName)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferBindingSourceForParameter(ParameterModel parameter)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferParameterBindingSources(ActionModel actionModel)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.OnProvidersExecuting(ApplicationModelProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-12T18:08:16.4463070+10:00 0HLKGNV20801R:00000002 [INF] Request finished in 13.547ms 500 text/html; charset=utf-8 (791a596a)
+2019-02-12T18:08:16.4625720+10:00  [INF] Connection id ""0HLKGNV20801R"", Request id ""0HLKGNV20801R:00000002"": the application completed without reading the entire request body. (54ac9468)
+2019-02-12T18:10:30.1369360+10:00 0HLKGNV20801S:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:10:30.1377940+10:00 0HLKGNV20801S:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:10:30.1384210+10:00 0HLKGNV20801S:00000001 [INF] Request finished in 2.885ms 204  (791a596a)
+2019-02-12T18:10:30.2168830+10:00 0HLKGNV20801S:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:10:30.2170990+10:00 0HLKGNV20801S:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:10:30.2191820+10:00 0HLKGNV20801S:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T18:10:30.2374700+10:00 0HLKGNV20801S:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: There is an incomplete parameter in the route template. Check that each '{' character has a matching '}' character.
+Parameter name: routeTemplate
+   at Microsoft.AspNetCore.Routing.Template.TemplateParser.Parse(String routeTemplate)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.ParameterExistsInAnyRoute(ActionModel actionModel, String parameterName)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferBindingSourceForParameter(ParameterModel parameter)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferParameterBindingSources(ActionModel actionModel)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.OnProvidersExecuting(ApplicationModelProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-12T18:10:30.2428120+10:00 0HLKGNV20801S:00000002 [INF] Request finished in 26.111ms 500 text/html; charset=utf-8 (791a596a)
+2019-02-12T18:10:58.6272830+10:00 0HLKGNV20801T:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:10:58.6275630+10:00 0HLKGNV20801T:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:10:58.6278370+10:00 0HLKGNV20801T:00000001 [INF] Request finished in 0.791ms 204  (791a596a)
+2019-02-12T18:10:58.6989230+10:00 0HLKGNV20801T:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:10:58.6992680+10:00 0HLKGNV20801T:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:10:58.7002150+10:00 0HLKGNV20801T:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T18:10:58.7221450+10:00 0HLKGNV20801T:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: There is an incomplete parameter in the route template. Check that each '{' character has a matching '}' character.
+Parameter name: routeTemplate
+   at Microsoft.AspNetCore.Routing.Template.TemplateParser.Parse(String routeTemplate)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.ParameterExistsInAnyRoute(ActionModel actionModel, String parameterName)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferBindingSourceForParameter(ParameterModel parameter)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferParameterBindingSources(ActionModel actionModel)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.OnProvidersExecuting(ApplicationModelProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-12T18:10:58.7268580+10:00 0HLKGNV20801T:00000002 [INF] Request finished in 28.894ms 500 text/html; charset=utf-8 (791a596a)
+2019-02-12T18:13:34.2350510+10:00 0HLKGNV20801U:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:13:34.2362490+10:00 0HLKGNV20801U:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:13:34.2368730+10:00 0HLKGNV20801U:00000001 [INF] Request finished in 3.089ms 204  (791a596a)
+2019-02-12T18:13:34.3896300+10:00 0HLKGNV20801U:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:13:34.3898520+10:00 0HLKGNV20801U:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:13:34.3919340+10:00 0HLKGNV20801U:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T18:13:34.4141490+10:00 0HLKGNV20801U:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: There is an incomplete parameter in the route template. Check that each '{' character has a matching '}' character.
+Parameter name: routeTemplate
+   at Microsoft.AspNetCore.Routing.Template.TemplateParser.Parse(String routeTemplate)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.ParameterExistsInAnyRoute(ActionModel actionModel, String parameterName)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferBindingSourceForParameter(ParameterModel parameter)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferParameterBindingSources(ActionModel actionModel)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.OnProvidersExecuting(ApplicationModelProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-12T18:13:34.4191860+10:00 0HLKGNV20801U:00000002 [INF] Request finished in 29.712ms 500 text/html; charset=utf-8 (791a596a)
+2019-02-12T18:13:44.9492770+10:00 0HLKGNV20801V:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:13:44.9494770+10:00 0HLKGNV20801V:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:13:44.9498650+10:00 0HLKGNV20801V:00000001 [INF] Request finished in 0.67ms 204  (791a596a)
+2019-02-12T18:13:45.0623890+10:00 0HLKGNV20801V:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:13:45.0626160+10:00 0HLKGNV20801V:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:13:45.0630530+10:00 0HLKGNV20801V:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T18:13:45.0739330+10:00 0HLKGNV20801V:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: There is an incomplete parameter in the route template. Check that each '{' character has a matching '}' character.
+Parameter name: routeTemplate
+   at Microsoft.AspNetCore.Routing.Template.TemplateParser.Parse(String routeTemplate)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.ParameterExistsInAnyRoute(ActionModel actionModel, String parameterName)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferBindingSourceForParameter(ParameterModel parameter)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferParameterBindingSources(ActionModel actionModel)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.OnProvidersExecuting(ApplicationModelProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-12T18:13:45.0785290+10:00 0HLKGNV20801V:00000002 [INF] Request finished in 16.142ms 500 text/html; charset=utf-8 (791a596a)
+2019-02-12T18:13:58.0777500+10:00 0HLKGNV208020:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:13:58.0779520+10:00 0HLKGNV208020:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:13:58.0782420+10:00 0HLKGNV208020:00000001 [INF] Request finished in 0.701ms 204  (791a596a)
+2019-02-12T18:13:58.1669180+10:00 0HLKGNV208020:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:13:58.1671050+10:00 0HLKGNV208020:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:13:58.1674790+10:00 0HLKGNV208020:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T18:13:58.1786240+10:00 0HLKGNV208020:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.ArgumentException: There is an incomplete parameter in the route template. Check that each '{' character has a matching '}' character.
+Parameter name: routeTemplate
+   at Microsoft.AspNetCore.Routing.Template.TemplateParser.Parse(String routeTemplate)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.ParameterExistsInAnyRoute(ActionModel actionModel, String parameterName)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferBindingSourceForParameter(ParameterModel parameter)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.InferParameterBindingSources(ActionModel actionModel)
+   at Microsoft.AspNetCore.Mvc.Internal.ApiBehaviorApplicationModelProvider.OnProvidersExecuting(ApplicationModelProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.BuildModel()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionDescriptorCollectionProvider.get_ActionDescriptors()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.GetTreeRouter()
+   at Microsoft.AspNetCore.Mvc.Internal.AttributeRoute.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-02-12T18:13:58.1826340+10:00 0HLKGNV208020:00000002 [INF] Request finished in 15.877ms 500 text/html; charset=utf-8 (791a596a)
+2019-02-12T18:15:25.8871620+10:00 0HLKGO8UVRK41:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:15:25.9105630+10:00 0HLKGO8UVRK41:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:15:25.9213130+10:00 0HLKGO8UVRK41:00000001 [INF] Request finished in 49.142ms 204  (791a596a)
+2019-02-12T18:15:26.0262690+10:00 0HLKGO8UVRK41:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:15:26.0266540+10:00 0HLKGO8UVRK41:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:15:26.4875700+10:00 0HLKGO8UVRK41:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T18:15:26.6236280+10:00 0HLKGO8UVRK41:00000002 [INF] Route matched with "{action = \"GetScoringSystem\", controller = \"ScoringSystem\"}". Executing action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T18:15:26.6370100+10:00 0HLKGO8UVRK41:00000002 [INF] Authorization was successful. (0d575a54)
+2019-02-12T18:15:26.8195650+10:00 0HLKGO8UVRK41:00000002 [INF] Executing action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-12T18:15:27.5038570+10:00 0HLKGO8UVRK41:00000002 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T18:15:27.5756230+10:00 0HLKGO8UVRK41:00000002 [WRN] Query: '"(from ScoringSystem <generated>_1 in DbSet<ScoringSystem> select [<generated>_1]).FirstOrDefault()"' uses First/FirstOrDefault/Last/LastOrDefault operation without OrderBy and filter which may lead to unpredictable results. (6af4db4b)
+2019-02-12T18:15:27.8566740+10:00 0HLKGO8UVRK41:00000002 [INF] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:15:27.8907360+10:00 0HLKGO8UVRK41:00000002 [INF] Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"s\".\"Id\", \"s\".\"Assists\", \"s\".\"Blocks\", \"s\".\"DRebounds\", \"s\".\"DoubleDouble\", \"s\".\"MadeThrees\", \"s\".\"Minutes\", \"s\".\"ORebounds\", \"s\".\"Points\", \"s\".\"QuadDouble\", \"s\".\"Steals\", \"s\".\"TripleDouble\", \"s\".\"Turnovers\"
+FROM \"ScoringSystems\" AS \"s\"
+LIMIT 1" (0723d8ff)
+2019-02-12T18:15:27.9919480+10:00 0HLKGO8UVRK41:00000002 [INF] Executed action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1167.977ms. (50a9e262)
+2019-02-12T18:15:27.9998060+10:00 0HLKGO8UVRK41:00000002 [INF] Executing ObjectResult, writing value of type '"BasketballSupercoach.API.Models.ScoringSystem"'. (8a1b66c8)
+2019-02-12T18:15:28.0459370+10:00 0HLKGO8UVRK41:00000002 [INF] Executed action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" in 1418.108ms (afa2e885)
+2019-02-12T18:15:28.0522010+10:00 0HLKGO8UVRK41:00000002 [INF] Request finished in 2026.063ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T18:15:51.8925550+10:00 0HLKGO8UVRK41:00000003 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:15:51.8929350+10:00 0HLKGO8UVRK41:00000003 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:15:51.8933510+10:00 0HLKGO8UVRK41:00000003 [INF] Request finished in 1.049ms 204  (791a596a)
+2019-02-12T18:15:51.9276690+10:00 0HLKGO8UVRK41:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:15:51.9279710+10:00 0HLKGO8UVRK41:00000004 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:15:51.9292530+10:00 0HLKGO8UVRK41:00000004 [INF] Successfully validated the token. (60169667)
+2019-02-12T18:15:51.9304590+10:00 0HLKGO8UVRK41:00000004 [INF] Route matched with "{action = \"GetScoringSystem\", controller = \"ScoringSystem\"}". Executing action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T18:15:51.9311750+10:00 0HLKGO8UVRK41:00000004 [INF] Authorization was successful. (0d575a54)
+2019-02-12T18:15:51.9324510+10:00 0HLKGO8UVRK41:00000004 [INF] Executing action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-12T18:15:51.9349310+10:00 0HLKGO8UVRK41:00000004 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T18:15:51.9500210+10:00 0HLKGO8UVRK41:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:15:51.9526930+10:00 0HLKGO8UVRK41:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"s\".\"Id\", \"s\".\"Assists\", \"s\".\"Blocks\", \"s\".\"DRebounds\", \"s\".\"DoubleDouble\", \"s\".\"MadeThrees\", \"s\".\"Minutes\", \"s\".\"ORebounds\", \"s\".\"Points\", \"s\".\"QuadDouble\", \"s\".\"Steals\", \"s\".\"TripleDouble\", \"s\".\"Turnovers\"
+FROM \"ScoringSystems\" AS \"s\"
+LIMIT 1" (0723d8ff)
+2019-02-12T18:15:51.9568900+10:00 0HLKGO8UVRK41:00000004 [INF] Executed action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 21.486ms. (50a9e262)
+2019-02-12T18:15:51.9578940+10:00 0HLKGO8UVRK41:00000004 [INF] Executing ObjectResult, writing value of type '"BasketballSupercoach.API.Models.ScoringSystem"'. (8a1b66c8)
+2019-02-12T18:15:51.9594140+10:00 0HLKGO8UVRK41:00000004 [INF] Executed action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" in 28.539ms (afa2e885)
+2019-02-12T18:15:51.9602820+10:00 0HLKGO8UVRK41:00000004 [INF] Request finished in 32.793ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T18:18:04.5157580+10:00 0HLKGO8UVRK42:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/runscores/updateteamscores   (ca22a1cb)
+2019-02-12T18:18:04.5165020+10:00 0HLKGO8UVRK42:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:18:04.5172930+10:00 0HLKGO8UVRK42:00000001 [INF] Request finished in 2.428ms 204  (791a596a)
+2019-02-12T18:18:04.5217960+10:00 0HLKGO8UVRK42:00000002 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/runscores/updateteamscores application/json 22 (ca22a1cb)
+2019-02-12T18:18:04.5220220+10:00 0HLKGO8UVRK42:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:18:04.5233540+10:00 0HLKGO8UVRK42:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T18:18:04.5515720+10:00 0HLKGO8UVRK42:00000002 [INF] Route matched with "{action = \"RunTeamScoresForDate\", controller = \"RunScores\"}". Executing action "BasketballSupercoach.API.Controllers.RunScoresController.RunTeamScoresForDate (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T18:18:04.5521490+10:00 0HLKGO8UVRK42:00000002 [INF] Authorization was successful. (0d575a54)
+2019-02-12T18:18:04.6194420+10:00 0HLKGO8UVRK42:00000002 [INF] Executing action method "BasketballSupercoach.API.Controllers.RunScoresController.RunTeamScoresForDate (BasketballSupercoach.API)" with arguments (["BasketballSupercoach.API.Dtos.RunTeamDateDto"]) - Validation state: Valid (4e3479ed)
+2019-02-12T18:18:04.6269850+10:00 0HLKGO8UVRK42:00000002 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T18:18:04.6436480+10:00 0HLKGO8UVRK42:00000002 [WRN] Query: '"(from Round <generated>_2 in DbSet<Round> select [<generated>_2]).FirstOrDefault()"' uses First/FirstOrDefault/Last/LastOrDefault operation without OrderBy and filter which may lead to unpredictable results. (6af4db4b)
+2019-02-12T18:18:04.6654320+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.6928650+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("10"ms) [Parameters=["@p0='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"r\".\"Id\", \"r\".\"EndDate\", \"r\".\"RoundNumber\", \"r\".\"StartDate\"
+FROM (
+    SELECT * FROM Rounds where CAST(startDate AS INT) <= @p0 and CAST(endDate AS INT) >= @p0
+) AS \"r\"
+LIMIT 1" (0723d8ff)
+2019-02-12T18:18:04.7150880+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.7159190+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"u\".\"Id\", \"u\".\"Active\", \"u\".\"Email\", \"u\".\"Name\", \"u\".\"PasswordHash\", \"u\".\"PasswordSalt\", \"u\".\"SalarySet\", \"u\".\"TeamSelected\", \"u\".\"Teamname\", \"u\".\"Username\"
+FROM \"Users\" AS \"u\"" (0723d8ff)
+2019-02-12T18:18:04.7450260+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.7475820+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamDetails where userId = @p0" (0723d8ff)
+2019-02-12T18:18:04.8134040+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8213800+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__8__locals1_round_RoundNumber_0='?', @__user_Id_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"
+WHERE (\"t\".\"RoundId\" = @__8__locals1_round_RoundNumber_0) AND (\"t\".\"UserId\" = @__user_Id_1)
+LIMIT 1" (0723d8ff)
+2019-02-12T18:18:04.8369290+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8376760+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamDetails where userId = @p0" (0723d8ff)
+2019-02-12T18:18:04.8471520+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8483770+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8536150+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8542080+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8548640+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8554140+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8560330+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8565910+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8572720+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8578140+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8583650+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8588570+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8595440+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8600780+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8607230+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8612170+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8622260+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8628020+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8634370+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8639650+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8645150+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8651050+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8658230+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8664100+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8669710+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8675090+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8708230+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8713650+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__8__locals1_round_RoundNumber_0='?', @__user_Id_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"
+WHERE (\"t\".\"RoundId\" = @__8__locals1_round_RoundNumber_0) AND (\"t\".\"UserId\" = @__user_Id_1)
+LIMIT 1" (0723d8ff)
+2019-02-12T18:18:04.8721740+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8726810+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamDetails where userId = @p0" (0723d8ff)
+2019-02-12T18:18:04.8733320+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8739820+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__8__locals1_round_RoundNumber_0='?', @__user_Id_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"
+WHERE (\"t\".\"RoundId\" = @__8__locals1_round_RoundNumber_0) AND (\"t\".\"UserId\" = @__user_Id_1)
+LIMIT 1" (0723d8ff)
+2019-02-12T18:18:04.8747740+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8752950+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamDetails where userId = @p0" (0723d8ff)
+2019-02-12T18:18:04.8761110+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8766500+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__8__locals1_round_RoundNumber_0='?', @__user_Id_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"
+WHERE (\"t\".\"RoundId\" = @__8__locals1_round_RoundNumber_0) AND (\"t\".\"UserId\" = @__user_Id_1)
+LIMIT 1" (0723d8ff)
+2019-02-12T18:18:04.8773740+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8778800+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamDetails where userId = @p0" (0723d8ff)
+2019-02-12T18:18:04.8786010+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8791730+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8798640+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8803890+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8810100+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8815250+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8823420+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8829880+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8836940+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8841500+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__8__locals1_round_RoundNumber_0='?', @__user_Id_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"
+WHERE (\"t\".\"RoundId\" = @__8__locals1_round_RoundNumber_0) AND (\"t\".\"UserId\" = @__user_Id_1)
+LIMIT 1" (0723d8ff)
+2019-02-12T18:18:04.8847360+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8851450+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamDetails where userId = @p0" (0723d8ff)
+2019-02-12T18:18:04.8857450+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8861580+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8866270+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8871860+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8877510+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8882850+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8888420+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8892930+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8898280+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8902820+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8907650+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8913290+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8919990+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8925120+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8930780+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8935610+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8941970+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8946500+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8951200+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8955280+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8960840+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8965550+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8972860+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8978440+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8985170+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.8990770+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.8997600+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.9002590+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__8__locals1_round_RoundNumber_0='?', @__user_Id_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"
+WHERE (\"t\".\"RoundId\" = @__8__locals1_round_RoundNumber_0) AND (\"t\".\"UserId\" = @__user_Id_1)
+LIMIT 1" (0723d8ff)
+2019-02-12T18:18:04.9009040+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.9014110+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamDetails where userId = @p0" (0723d8ff)
+2019-02-12T18:18:04.9020330+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.9025340+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.9031640+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.9036790+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:18:04.9043310+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.9048750+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__8__locals1_round_RoundNumber_0='?', @__user_Id_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"
+WHERE (\"t\".\"RoundId\" = @__8__locals1_round_RoundNumber_0) AND (\"t\".\"UserId\" = @__user_Id_1)
+LIMIT 1" (0723d8ff)
+2019-02-12T18:18:04.9055420+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.9060000+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamDetails where userId = @p0" (0723d8ff)
+2019-02-12T18:18:04.9065690+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.9070620+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__8__locals1_round_RoundNumber_0='?', @__user_Id_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"
+WHERE (\"t\".\"RoundId\" = @__8__locals1_round_RoundNumber_0) AND (\"t\".\"UserId\" = @__user_Id_1)
+LIMIT 1" (0723d8ff)
+2019-02-12T18:18:04.9076320+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.9080720+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamDetails where userId = @p0" (0723d8ff)
+2019-02-12T18:18:04.9086280+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:04.9090730+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__8__locals1_round_RoundNumber_0='?', @__user_Id_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"
+WHERE (\"t\".\"RoundId\" = @__8__locals1_round_RoundNumber_0) AND (\"t\".\"UserId\" = @__user_Id_1)
+LIMIT 1" (0723d8ff)
+2019-02-12T18:18:04.9701980+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:18:05.0473150+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("5"ms) [Parameters=["@p3='?', @p0='?', @p1='?', @p2='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"TeamScores\" SET \"RoundId\" = @p0, \"Total\" = @p1, \"UserId\" = @p2
+WHERE \"Id\" = @p3;
+SELECT changes();" (0723d8ff)
+2019-02-12T18:18:05.0580850+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@p3='?', @p0='?', @p1='?', @p2='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"TeamScores\" SET \"RoundId\" = @p0, \"Total\" = @p1, \"UserId\" = @p2
+WHERE \"Id\" = @p3;
+SELECT changes();" (0723d8ff)
+2019-02-12T18:18:05.0586520+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p3='?', @p0='?', @p1='?', @p2='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"TeamScores\" SET \"RoundId\" = @p0, \"Total\" = @p1, \"UserId\" = @p2
+WHERE \"Id\" = @p3;
+SELECT changes();" (0723d8ff)
+2019-02-12T18:18:05.0590710+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p3='?', @p0='?', @p1='?', @p2='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"TeamScores\" SET \"RoundId\" = @p0, \"Total\" = @p1, \"UserId\" = @p2
+WHERE \"Id\" = @p3;
+SELECT changes();" (0723d8ff)
+2019-02-12T18:18:05.0594740+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p3='?', @p0='?', @p1='?', @p2='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"TeamScores\" SET \"RoundId\" = @p0, \"Total\" = @p1, \"UserId\" = @p2
+WHERE \"Id\" = @p3;
+SELECT changes();" (0723d8ff)
+2019-02-12T18:18:05.0599180+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p3='?', @p0='?', @p1='?', @p2='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"TeamScores\" SET \"RoundId\" = @p0, \"Total\" = @p1, \"UserId\" = @p2
+WHERE \"Id\" = @p3;
+SELECT changes();" (0723d8ff)
+2019-02-12T18:18:05.0602990+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p3='?', @p0='?', @p1='?', @p2='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"TeamScores\" SET \"RoundId\" = @p0, \"Total\" = @p1, \"UserId\" = @p2
+WHERE \"Id\" = @p3;
+SELECT changes();" (0723d8ff)
+2019-02-12T18:18:05.0606910+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p3='?', @p0='?', @p1='?', @p2='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"TeamScores\" SET \"RoundId\" = @p0, \"Total\" = @p1, \"UserId\" = @p2
+WHERE \"Id\" = @p3;
+SELECT changes();" (0723d8ff)
+2019-02-12T18:18:05.0611740+10:00 0HLKGO8UVRK42:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p3='?', @p0='?', @p1='?', @p2='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"TeamScores\" SET \"RoundId\" = @p0, \"Total\" = @p1, \"UserId\" = @p2
+WHERE \"Id\" = @p3;
+SELECT changes();" (0723d8ff)
+2019-02-12T18:18:05.0800680+10:00 0HLKGO8UVRK42:00000002 [INF] Executed action method "BasketballSupercoach.API.Controllers.RunScoresController.RunTeamScoresForDate (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.StatusCodeResult" in 459.988ms. (50a9e262)
+2019-02-12T18:18:05.0856180+10:00 0HLKGO8UVRK42:00000002 [INF] Executing HttpStatusCodeResult, setting HTTP status code 201 (e28ccfae)
+2019-02-12T18:18:05.0860710+10:00 0HLKGO8UVRK42:00000002 [INF] Executed action "BasketballSupercoach.API.Controllers.RunScoresController.RunTeamScoresForDate (BasketballSupercoach.API)" in 534.146ms (afa2e885)
+2019-02-12T18:18:05.0869650+10:00 0HLKGO8UVRK42:00000002 [INF] Request finished in 565.428ms 201  (791a596a)
