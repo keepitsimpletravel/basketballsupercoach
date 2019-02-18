@@ -149,7 +149,7 @@ export class AdminComponent implements OnInit {
     const latest_date = this.datePipe.transform(this.selectedDate, 'yyyyMMdd');
     console.log('Date formatted for team score: ' + latest_date);
     this.rd.runDate = latest_date;
-    console.log('round date passed in: ' + this.rd.runDate);
+    console.log('round date that should be passed in: ' + this.rd.runDate);
 
     this.runScoresService.RunTeamScoresForDate(this.rd).subscribe(next => {
       console.log('run team scores body: ' + next);
