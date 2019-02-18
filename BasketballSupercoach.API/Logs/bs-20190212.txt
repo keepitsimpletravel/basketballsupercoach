@@ -1247,3 +1247,317 @@ SELECT changes();" (0723d8ff)
 2019-02-12T18:18:05.0856180+10:00 0HLKGO8UVRK42:00000002 [INF] Executing HttpStatusCodeResult, setting HTTP status code 201 (e28ccfae)
 2019-02-12T18:18:05.0860710+10:00 0HLKGO8UVRK42:00000002 [INF] Executed action "BasketballSupercoach.API.Controllers.RunScoresController.RunTeamScoresForDate (BasketballSupercoach.API)" in 534.146ms (afa2e885)
 2019-02-12T18:18:05.0869650+10:00 0HLKGO8UVRK42:00000002 [INF] Request finished in 565.428ms 201  (791a596a)
+2019-02-12T18:25:20.0259650+10:00 0HLKGOEG2ERIR:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:25:20.0411560+10:00 0HLKGOEG2ERIR:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:25:20.0472290+10:00 0HLKGOEG2ERIR:00000001 [INF] Request finished in 29.453ms 204  (791a596a)
+2019-02-12T18:25:20.0862320+10:00 0HLKGOEG2ERIR:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scoringsystem/   (ca22a1cb)
+2019-02-12T18:25:20.0865040+10:00 0HLKGOEG2ERIR:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:25:20.2717290+10:00 0HLKGOEG2ERIR:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T18:25:20.3850130+10:00 0HLKGOEG2ERIR:00000002 [INF] Route matched with "{action = \"GetScoringSystem\", controller = \"ScoringSystem\"}". Executing action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T18:25:20.3940130+10:00 0HLKGOEG2ERIR:00000002 [INF] Authorization was successful. (0d575a54)
+2019-02-12T18:25:20.5546390+10:00 0HLKGOEG2ERIR:00000002 [INF] Executing action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" - Validation state: Valid (dad538d7)
+2019-02-12T18:25:21.2203390+10:00 0HLKGOEG2ERIR:00000002 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T18:25:21.2868130+10:00 0HLKGOEG2ERIR:00000002 [WRN] Query: '"(from ScoringSystem <generated>_1 in DbSet<ScoringSystem> select [<generated>_1]).FirstOrDefault()"' uses First/FirstOrDefault/Last/LastOrDefault operation without OrderBy and filter which may lead to unpredictable results. (6af4db4b)
+2019-02-12T18:25:21.5443180+10:00 0HLKGOEG2ERIR:00000002 [INF] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:25:21.5815880+10:00 0HLKGOEG2ERIR:00000002 [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"s\".\"Id\", \"s\".\"Assists\", \"s\".\"Blocks\", \"s\".\"DRebounds\", \"s\".\"DoubleDouble\", \"s\".\"MadeThrees\", \"s\".\"Minutes\", \"s\".\"ORebounds\", \"s\".\"Points\", \"s\".\"QuadDouble\", \"s\".\"Steals\", \"s\".\"TripleDouble\", \"s\".\"Turnovers\"
+FROM \"ScoringSystems\" AS \"s\"
+LIMIT 1" (0723d8ff)
+2019-02-12T18:25:21.6745880+10:00 0HLKGOEG2ERIR:00000002 [INF] Executed action method "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1116.734ms. (50a9e262)
+2019-02-12T18:25:21.6798470+10:00 0HLKGOEG2ERIR:00000002 [INF] Executing ObjectResult, writing value of type '"BasketballSupercoach.API.Models.ScoringSystem"'. (8a1b66c8)
+2019-02-12T18:25:21.7248360+10:00 0HLKGOEG2ERIR:00000002 [INF] Executed action "BasketballSupercoach.API.Controllers.ScoringSystemController.GetScoringSystem (BasketballSupercoach.API)" in 1334.96ms (afa2e885)
+2019-02-12T18:25:21.7308830+10:00 0HLKGOEG2ERIR:00000002 [INF] Request finished in 1644.697ms 200 application/json; charset=utf-8 (791a596a)
+2019-02-12T18:30:22.7899080+10:00 0HLKGOEG2ERIS:00000001 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/runscores/updateteamscores   (ca22a1cb)
+2019-02-12T18:30:22.7902650+10:00 0HLKGOEG2ERIS:00000001 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:30:22.7908290+10:00 0HLKGOEG2ERIS:00000001 [INF] Request finished in 1.133ms 204  (791a596a)
+2019-02-12T18:30:22.7958950+10:00 0HLKGOEG2ERIS:00000002 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/runscores/updateteamscores application/json 22 (ca22a1cb)
+2019-02-12T18:30:22.7961360+10:00 0HLKGOEG2ERIS:00000002 [INF] Policy execution successful. (0204925d)
+2019-02-12T18:30:22.7979340+10:00 0HLKGOEG2ERIS:00000002 [INF] Successfully validated the token. (60169667)
+2019-02-12T18:30:22.8175870+10:00 0HLKGOEG2ERIS:00000002 [INF] Route matched with "{action = \"RunTeamScoresForDate\", controller = \"RunScores\"}". Executing action "BasketballSupercoach.API.Controllers.RunScoresController.RunTeamScoresForDate (BasketballSupercoach.API)" (a44c0341)
+2019-02-12T18:30:22.8183180+10:00 0HLKGOEG2ERIS:00000002 [INF] Authorization was successful. (0d575a54)
+2019-02-12T18:30:22.8716020+10:00 0HLKGOEG2ERIS:00000002 [INF] Executing action method "BasketballSupercoach.API.Controllers.RunScoresController.RunTeamScoresForDate (BasketballSupercoach.API)" with arguments (["BasketballSupercoach.API.Dtos.RunTeamDateDto"]) - Validation state: Valid (4e3479ed)
+2019-02-12T18:30:22.8839910+10:00 0HLKGOEG2ERIS:00000002 [INF] Entity Framework Core "2.1.4-rtm-31024" initialized '"DataContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2019-02-12T18:30:22.8936260+10:00 0HLKGOEG2ERIS:00000002 [WRN] Query: '"(from Round <generated>_2 in DbSet<Round> select [<generated>_2]).FirstOrDefault()"' uses First/FirstOrDefault/Last/LastOrDefault operation without OrderBy and filter which may lead to unpredictable results. (6af4db4b)
+2019-02-12T18:30:22.9077340+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:22.9341750+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("9"ms) [Parameters=["@p0='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"r\".\"Id\", \"r\".\"EndDate\", \"r\".\"RoundNumber\", \"r\".\"StartDate\"
+FROM (
+    SELECT * FROM Rounds where CAST(startDate AS INT) <= @p0 and CAST(endDate AS INT) >= @p0
+) AS \"r\"
+LIMIT 1" (0723d8ff)
+2019-02-12T18:30:22.9633270+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:22.9641540+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"u\".\"Id\", \"u\".\"Active\", \"u\".\"Email\", \"u\".\"Name\", \"u\".\"PasswordHash\", \"u\".\"PasswordSalt\", \"u\".\"SalarySet\", \"u\".\"TeamSelected\", \"u\".\"Teamname\", \"u\".\"Username\"
+FROM \"Users\" AS \"u\"" (0723d8ff)
+2019-02-12T18:30:22.9973830+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:22.9994560+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamDetails where userId = @p0" (0723d8ff)
+2019-02-12T18:30:23.0615460+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.0711440+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__8__locals1_round_RoundNumber_0='?', @__user_Id_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"
+WHERE (\"t\".\"RoundId\" = @__8__locals1_round_RoundNumber_0) AND (\"t\".\"UserId\" = @__user_Id_1)
+LIMIT 1" (0723d8ff)
+2019-02-12T18:30:23.0905520+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.0921670+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamDetails where userId = @p0" (0723d8ff)
+2019-02-12T18:30:23.1032600+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1040270+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1100810+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1107850+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1115650+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1122900+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1130280+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1136850+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1144030+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1149380+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1157760+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1164160+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1172060+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1178010+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1184890+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1190140+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1199600+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1204250+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1209420+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1213670+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1222440+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1228030+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1234430+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1239870+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1246060+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1250640+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1284400+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1290020+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__8__locals1_round_RoundNumber_0='?', @__user_Id_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"
+WHERE (\"t\".\"RoundId\" = @__8__locals1_round_RoundNumber_0) AND (\"t\".\"UserId\" = @__user_Id_1)
+LIMIT 1" (0723d8ff)
+2019-02-12T18:30:23.1297590+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1302990+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamDetails where userId = @p0" (0723d8ff)
+2019-02-12T18:30:23.1309750+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1314870+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__8__locals1_round_RoundNumber_0='?', @__user_Id_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"
+WHERE (\"t\".\"RoundId\" = @__8__locals1_round_RoundNumber_0) AND (\"t\".\"UserId\" = @__user_Id_1)
+LIMIT 1" (0723d8ff)
+2019-02-12T18:30:23.1320960+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1325680+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamDetails where userId = @p0" (0723d8ff)
+2019-02-12T18:30:23.1333150+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1338230+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__8__locals1_round_RoundNumber_0='?', @__user_Id_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"
+WHERE (\"t\".\"RoundId\" = @__8__locals1_round_RoundNumber_0) AND (\"t\".\"UserId\" = @__user_Id_1)
+LIMIT 1" (0723d8ff)
+2019-02-12T18:30:23.1345330+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1350370+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamDetails where userId = @p0" (0723d8ff)
+2019-02-12T18:30:23.1357360+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1362010+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1367810+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1373430+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1381890+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1388670+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1395150+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1400590+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1406680+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1410990+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__8__locals1_round_RoundNumber_0='?', @__user_Id_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"
+WHERE (\"t\".\"RoundId\" = @__8__locals1_round_RoundNumber_0) AND (\"t\".\"UserId\" = @__user_Id_1)
+LIMIT 1" (0723d8ff)
+2019-02-12T18:30:23.1416600+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1421280+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamDetails where userId = @p0" (0723d8ff)
+2019-02-12T18:30:23.1430200+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1436230+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1443050+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1447970+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1453390+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1458230+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1464120+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1468730+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1474330+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1478930+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1484560+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1489900+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1497310+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1503300+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1510040+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1515010+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1520690+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1525250+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1531030+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1535610+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1542080+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1547590+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1554640+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1559950+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1567120+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1572230+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1580040+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1585570+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__8__locals1_round_RoundNumber_0='?', @__user_Id_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"
+WHERE (\"t\".\"RoundId\" = @__8__locals1_round_RoundNumber_0) AND (\"t\".\"UserId\" = @__user_Id_1)
+LIMIT 1" (0723d8ff)
+2019-02-12T18:30:23.1592520+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1597000+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamDetails where userId = @p0" (0723d8ff)
+2019-02-12T18:30:23.1603890+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1608860+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1616240+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1621430+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?', @p1='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM PlayerScores where PlayerId = @p0 and GameDate = @p1" (0723d8ff)
+2019-02-12T18:30:23.1628890+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1634570+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__8__locals1_round_RoundNumber_0='?', @__user_Id_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"
+WHERE (\"t\".\"RoundId\" = @__8__locals1_round_RoundNumber_0) AND (\"t\".\"UserId\" = @__user_Id_1)
+LIMIT 1" (0723d8ff)
+2019-02-12T18:30:23.1641970+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1647170+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamDetails where userId = @p0" (0723d8ff)
+2019-02-12T18:30:23.1653520+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1658570+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__8__locals1_round_RoundNumber_0='?', @__user_Id_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"
+WHERE (\"t\".\"RoundId\" = @__8__locals1_round_RoundNumber_0) AND (\"t\".\"UserId\" = @__user_Id_1)
+LIMIT 1" (0723d8ff)
+2019-02-12T18:30:23.1664940+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1669350+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT * FROM TeamDetails where userId = @p0" (0723d8ff)
+2019-02-12T18:30:23.1675470+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.1680480+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__8__locals1_round_RoundNumber_0='?', @__user_Id_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"RoundId\", \"t\".\"Total\", \"t\".\"UserId\"
+FROM \"TeamScores\" AS \"t\"
+WHERE (\"t\".\"RoundId\" = @__8__locals1_round_RoundNumber_0) AND (\"t\".\"UserId\" = @__user_Id_1)
+LIMIT 1" (0723d8ff)
+2019-02-12T18:30:23.2286660+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;" (0723d8ff)
+2019-02-12T18:30:23.3066660+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("4"ms) [Parameters=["@p3='?', @p0='?', @p1='?', @p2='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"TeamScores\" SET \"RoundId\" = @p0, \"Total\" = @p1, \"UserId\" = @p2
+WHERE \"Id\" = @p3;
+SELECT changes();" (0723d8ff)
+2019-02-12T18:30:23.3140010+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@p3='?', @p0='?', @p1='?', @p2='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"TeamScores\" SET \"RoundId\" = @p0, \"Total\" = @p1, \"UserId\" = @p2
+WHERE \"Id\" = @p3;
+SELECT changes();" (0723d8ff)
+2019-02-12T18:30:23.3146200+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p3='?', @p0='?', @p1='?', @p2='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"TeamScores\" SET \"RoundId\" = @p0, \"Total\" = @p1, \"UserId\" = @p2
+WHERE \"Id\" = @p3;
+SELECT changes();" (0723d8ff)
+2019-02-12T18:30:23.3151120+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p3='?', @p0='?', @p1='?', @p2='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"TeamScores\" SET \"RoundId\" = @p0, \"Total\" = @p1, \"UserId\" = @p2
+WHERE \"Id\" = @p3;
+SELECT changes();" (0723d8ff)
+2019-02-12T18:30:23.3155510+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p3='?', @p0='?', @p1='?', @p2='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"TeamScores\" SET \"RoundId\" = @p0, \"Total\" = @p1, \"UserId\" = @p2
+WHERE \"Id\" = @p3;
+SELECT changes();" (0723d8ff)
+2019-02-12T18:30:23.3158750+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p3='?', @p0='?', @p1='?', @p2='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"TeamScores\" SET \"RoundId\" = @p0, \"Total\" = @p1, \"UserId\" = @p2
+WHERE \"Id\" = @p3;
+SELECT changes();" (0723d8ff)
+2019-02-12T18:30:23.3162440+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p3='?', @p0='?', @p1='?', @p2='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"TeamScores\" SET \"RoundId\" = @p0, \"Total\" = @p1, \"UserId\" = @p2
+WHERE \"Id\" = @p3;
+SELECT changes();" (0723d8ff)
+2019-02-12T18:30:23.3166170+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p3='?', @p0='?', @p1='?', @p2='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"TeamScores\" SET \"RoundId\" = @p0, \"Total\" = @p1, \"UserId\" = @p2
+WHERE \"Id\" = @p3;
+SELECT changes();" (0723d8ff)
+2019-02-12T18:30:23.3170610+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@p3='?', @p0='?', @p1='?', @p2='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"TeamScores\" SET \"RoundId\" = @p0, \"Total\" = @p1, \"UserId\" = @p2
+WHERE \"Id\" = @p3;
+SELECT changes();" (0723d8ff)
+2019-02-12T18:30:23.3259430+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed action method "BasketballSupercoach.API.Controllers.RunScoresController.RunTeamScoresForDate (BasketballSupercoach.API)", returned result "Microsoft.AspNetCore.Mvc.StatusCodeResult" in 454.013ms. (50a9e262)
+2019-02-12T18:30:23.3295450+10:00 0HLKGOEG2ERIS:00000002 [INF] Executing HttpStatusCodeResult, setting HTTP status code 201 (e28ccfae)
+2019-02-12T18:30:23.3301570+10:00 0HLKGOEG2ERIS:00000002 [INF] Executed action "BasketballSupercoach.API.Controllers.RunScoresController.RunTeamScoresForDate (BasketballSupercoach.API)" in 512.065ms (afa2e885)
+2019-02-12T18:30:23.3306840+10:00 0HLKGOEG2ERIS:00000002 [INF] Request finished in 534.961ms 201  (791a596a)

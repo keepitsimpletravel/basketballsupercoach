@@ -43,7 +43,7 @@ namespace BasketballSupercoach.API.Controllers
         public async Task<IActionResult> CreateNewTeamScores(int round)
         {
             var result = await _repo.CreateNewTeamScores(round);
-            return Ok(1); //result
+            return Ok(result); //result
         }
 
         [HttpPut("updateteamscores")]

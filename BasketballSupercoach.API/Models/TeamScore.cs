@@ -10,7 +10,7 @@ namespace BasketballSupercoach.API.Models
 
         public int RoundId { get; set; }
 
-        [Column(TypeName = "decimal(5, 2)")]
+        [Column(TypeName = "decimal(15, 2)")]
         public decimal Total { get; set; }
     }
 }

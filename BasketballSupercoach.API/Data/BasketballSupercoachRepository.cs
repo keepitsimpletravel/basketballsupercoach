@@ -105,13 +105,63 @@ namespace BasketballSupercoach.API.Data
             return average;
         }
 
+        // public async Task<bool> RunTeamScoresForDate(RunTeamDateDto value) 
+        // {
+        //     // Get the current round
+        //     var round = await _content.Rounds.FromSql("SELECT * FROM Rounds where CAST(startDate AS INT) <= {0} and CAST(endDate AS INT) >= {0}", value.RunDate).FirstOrDefaultAsync();
+
+        //     // What will be happening is for each userId
+        //     var users = await _content.Users.ToListAsync();
+
+        //     foreach(var user in users) {
+        //         decimal daysScore = 0;
+
+        //         // Need to get the current rounds score
+
+        //         // Their teamDetails are got
+        //         var teamdetails = await _content.TeamDetails.FromSql("SELECT * FROM TeamDetails where userId = {0}", user.Id).ToListAsync();
+
+        //         // Then for each teamdetail record
+        //         foreach(var teamdetail in teamdetails) {
+        //             // Check to see if there is a score for the player for the gameDate of value
+        //             var playerScore = await _content.PlayerScores.FromSql("SELECT * FROM PlayerScores where PlayerId = {0} and GameDate = {1}", teamdetail.PlayerId, value.RunDate).ToListAsync();
+
+        //             if(playerScore.Count > 0) {
+        //                 // if yes add the score to the team score after applying any bonuses (C or 6)
+        //                 if(teamdetail.Position <= 10) {
+        //                     if(teamdetail.Position == teamdetail.Captain) {
+        //                         daysScore = daysScore + (playerScore[0].Score * 2);
+        //                     } else if (teamdetail.Position == teamdetail.SixthMan) {
+        //                         decimal tempValue = (decimal) playerScore[0].Score;
+        //                         daysScore = daysScore + tempValue;
+        //                     } else {
+        //                         daysScore = daysScore + playerScore[0].Score;
+        //                     }
+        //                 }
+        //             }
+        //         }
+                
+        //         // once all teamDetails are completed for the user, then update entry to the TeamScore table for the day
+        //         var teamScore = await _content.TeamScores.FirstOrDefaultAsync(t => t.RoundId == round.RoundNumber && t.UserId == user.Id);
+
+        //         // TeamScore ts = new TeamScore();
+        //         teamScore.UserId = user.Id;
+        //         teamScore.RoundId = round.RoundNumber;
+        //         teamScore.Total = daysScore / 100;
+
+        //         // Now need to update the TeamScore
+        //         _content.TeamScores.Update(teamScore);
+        //     }
+        //     return await _content.SaveChangesAsync() > 0;
+        // }
+
         public async Task<bool> RunTeamScoresForDate(RunTeamDateDto value) 
         {
             // Get the current round
-            var round = _content.Rounds.FromSql("SELECT * FROM Rounds where CAST(startDate AS INT) <= {0} and CAST(endDate AS INT) >= {0}", value.RunDate).FirstOrDefault();
+            var round = await _content.Rounds.FromSql("SELECT * FROM Rounds where CAST(startDate AS INT) <= {0} and CAST(endDate AS INT) >= {0}", value.RunDate).FirstOrDefaultAsync();
 
             // What will be happening is for each userId
-            var users = _content.Users.ToList();
+            var users = await _content.Users.ToListAsync();
 
             foreach(var user in users) {
                 decimal daysScore = 0;
@@ -119,12 +169,12 @@ namespace BasketballSupercoach.API.Data
                 // Need to get the current rounds score
 
                 // Their teamDetails are got
-                var teamdetails = _content.TeamDetails.FromSql("SELECT * FROM TeamDetails where userId = {0}", user.Id).ToList();
+                var teamdetails = await _content.TeamDetails.FromSql("SELECT * FROM TeamDetails where userId = {0}", user.Id).ToListAsync();
 
                 // Then for each teamdetail record
                 foreach(var teamdetail in teamdetails) {
                     // Check to see if there is a score for the player for the gameDate of value
-                    var playerScore = _content.PlayerScores.FromSql("SELECT * FROM PlayerScores where PlayerId = {0} and GameDate = {1}", teamdetail.PlayerId, value.RunDate).ToList();
+                    var playerScore = await _content.PlayerScores.FromSql("SELECT * FROM PlayerScores where PlayerId = {0} and GameDate = {1}", teamdetail.PlayerId, value.RunDate).ToListAsync();
 
                     if(playerScore.Count > 0) {
                         // if yes add the score to the team score after applying any bonuses (C or 6)
@@ -141,18 +191,37 @@ namespace BasketballSupercoach.API.Data
                     }
                 }
                 
-                // once all teamDetails are completed for the user, then update entry to the TeamScore table for the day
+                // // once all teamDetails are completed for the user, then update entry to the TeamScore table for the day
+                // var teamScore = await _content.TeamScores.FirstOrDefaultAsync(t => t.RoundId == round.RoundNumber && t.UserId == user.Id);
+
+                // // TeamScore ts = new TeamScore();
+                // // teamScore.UserId = user.Id;
+                // // teamScore.RoundId = round.RoundNumber;
+                // // teamScore.Total = daysScore / 100;
+
+                // // // Now need to update the TeamScore
+                // // _content.TeamScores.Update(teamScore);
                 var teamScore = _content.TeamScores.FirstOrDefault(t => t.RoundId == round.RoundNumber && t.UserId == user.Id);
-
-                // TeamScore ts = new TeamScore();
-                teamScore.UserId = user.Id;
-                teamScore.RoundId = round.RoundNumber;
-                teamScore.Total = (int)daysScore;
-
-                // Now need to update the TeamScore
-                _content.TeamScores.Update(teamScore);
+ 
+                TeamScore ts = new TeamScore();
+                if(teamScore == null) {
+                    // ts.UserId = user.Id;
+                    // ts.RoundId = round.RoundNumber;
+                    // ts.Total = (int)daysScore;
+               
+                    // // Create a new record
+                    // await _content.TeamScores.AddAsync(ts);
+                } else {
+                    // ts.Id = teamScore.Id;
+                    teamScore.UserId = user.Id;
+                    teamScore.RoundId = round.RoundNumber;
+                    teamScore.Total = (int)daysScore;
+               
+                    // Update
+                    _content.TeamScores.Update(teamScore);
+                }
             }
-            return await _content.SaveChangesAsync() > 0;
+                return true;//await _content.SaveChangesAsync() > 0;
         }
 
         public async Task<bool> CreateNewRound(RoundDto value)
@@ -167,7 +236,7 @@ namespace BasketballSupercoach.API.Data
 
         public async Task<bool> CreateTeamScoresForRound(RoundDto round)
         {
-            var users = _content.Users.ToList();
+            var users = await _content.Users.ToListAsync();
 
             foreach(var user in users) {
                 // Need to create the TeamScore for the Round
@@ -228,6 +297,10 @@ namespace BasketballSupercoach.API.Data
                     int gameId = gamelog.game.id;
                     // value is the date for the game
                     int playerId = gamelog.player.id;
+
+                    string first = gamelog.player.firstName;
+                    string last = gamelog.player.lastName;
+
                     int madeThrees = gamelog.stats.fieldGoals.fg3PtMade;
                     int missedFTs = gamelog.stats.freeThrows.ftAtt - gamelog.stats.freeThrows.ftMade;
                     int offReb = gamelog.stats.rebounds.offReb;
